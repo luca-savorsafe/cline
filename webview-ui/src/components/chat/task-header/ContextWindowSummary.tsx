@@ -60,20 +60,23 @@ AccordionItem.displayName = "AccordionItem"
 
 // Constants
 const TOKEN_DETAILS_CONFIG: Omit<TokenDetail, "value">[] = [
-	{ title: "Prompt Tokens", icon: "codicon-arrow-up" },
-	{ title: "Completion Tokens", icon: "codicon-arrow-down" },
-	{ title: "Cache Writes", icon: "codicon-arrow-left" },
-	{ title: "Cache Reads", icon: "codicon-arrow-right" },
+	{ title: "输入令牌", icon: "codicon-arrow-up" },
+	{ title: "输出令牌", icon: "codicon-arrow-down" },
+	{ title: "缓存写入", icon: "codicon-arrow-left" },
+	{ title: "缓存读取", icon: "codicon-arrow-right" },
 ]
 
 const TokenUsageDetails = memo<TokenUsageInfoProps>(({ tokensIn, tokensOut, cacheWrites, cacheReads }) => {
 	const contextTokenDetails = useMemo(() => {
 		const values = [tokensIn, tokensOut, cacheWrites || 0, cacheReads || 0]
-		return TOKEN_DETAILS_CONFIG.map((config, index) => ({ ...config, value: values[index] })).filter((item) => item.value)
+		return TOKEN_DETAILS_CONFIG.map((config, index) => ({
+			...config,
+			value: values[index],
+		})).filter((item) => item.value)
 	}, [tokensIn, tokensOut, cacheWrites, cacheReads])
 
 	if (!tokensIn) {
-		return <div>No token usage data available</div>
+		return <div>暂无令牌使用数据</div>
 	}
 
 	return (
@@ -126,15 +129,11 @@ export const ContextWindowSummary: React.FC<TaskContextWindowButtonsProps> = ({
 				<AccordionItem
 					isExpanded={expandedSections.has("threshold")}
 					onToggle={(event) => toggleSection("threshold", event)}
-					title="Auto Condense Threshold"
+					title="自动压缩阈值"
 					value={<span className="text-muted-foreground">{`${(autoCompactThreshold * 100).toFixed(0)}%`}</span>}>
 					<div className="space-y-1">
-						<p className="text-xs leading-relaxed text-white">
-							Click on the context window bar to set a new threshold.
-						</p>
-						<p className="text-xs leading-relaxed mt-0 mb-0">
-							When the context window usage exceeds this threshold, the task will be automatically condensed.
-						</p>
+						<p className="text-xs leading-relaxed text-white">点击上下文窗口栏设置新阈值。</p>
+						<p className="text-xs leading-relaxed mt-0 mb-0">当上下文窗口使用超过此阈值时，任务将自动压缩。</p>
 					</div>
 				</AccordionItem>
 			)}
@@ -142,19 +141,19 @@ export const ContextWindowSummary: React.FC<TaskContextWindowButtonsProps> = ({
 			<AccordionItem
 				isExpanded={expandedSections.has("context")}
 				onToggle={(event) => toggleSection("context", event)}
-				title="Context Window"
+				title="上下文窗口"
 				value={percentage ? `${percentage.toFixed(1)}%` : formatTokenNumber(contextWindow)}>
 				<div className="space-y-1">
 					<div className="flex justify-between">
-						<span>Used:</span>
+						<span>已用：</span>
 						<span className="font-mono">{formatTokenNumber(tokenUsed)}</span>
 					</div>
 					<div className="flex justify-between">
-						<span>Total:</span>
+						<span>总计：</span>
 						<span className="font-mono">{formatTokenNumber(contextWindow)}</span>
 					</div>
 					<div className="flex justify-between">
-						<span>Remaining:</span>
+						<span>剩余：</span>
 						<span className="font-mono">{formatTokenNumber(contextWindow - tokenUsed)}</span>
 					</div>
 				</div>
@@ -164,7 +163,7 @@ export const ContextWindowSummary: React.FC<TaskContextWindowButtonsProps> = ({
 				<AccordionItem
 					isExpanded={expandedSections.has("tokens")}
 					onToggle={(event) => toggleSection("tokens", event)}
-					title="Token Usage"
+					title="令牌使用"
 					value={`${formatTokenNumber(totalTokens)}`}>
 					<TokenUsageDetails
 						cacheReads={cacheReads}

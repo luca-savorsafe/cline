@@ -83,9 +83,7 @@ const RuleRow: React.FC<{
 	const handleEditClick = () => {
 		// For remote rules, use the special remote:// URI format
 		const filePath = isRemote ? `${REMOTE_URI_SCHEME}${ruleType === "workflow" ? "workflow" : "rule"}/${rulePath}` : rulePath
-		FileServiceClient.openFile(StringRequest.create({ value: filePath })).catch((err) =>
-			console.error("Failed to open file:", err),
-		)
+		FileServiceClient.openFile(StringRequest.create({ value: filePath })).catch((err) => console.error("打开文件失败:", err))
 	}
 
 	const handleDeleteClick = () => {
@@ -95,7 +93,7 @@ const RuleRow: React.FC<{
 				isGlobal,
 				type: ruleType || "cline",
 			}),
-		).catch((err) => console.error("Failed to delete rule file:", err))
+		).catch((err) => console.error("删除规则文件失败:", err))
 	}
 
 	return (
@@ -109,9 +107,7 @@ const RuleRow: React.FC<{
 							<TooltipTrigger asChild className="cursor-help">
 								<InfoIcon className="ml-1.5 opacity-70 size-[0.85rem]" />
 							</TooltipTrigger>
-							<TooltipContent>
-								Searches recursively for all AGENTS.md files in the workspace when a top-level AGENTS.md exists
-							</TooltipContent>
+							<TooltipContent>当存在顶级 AGENTS.md 文件时，递归搜索工作区中的所有 AGENTS.md 文件</TooltipContent>
 						</Tooltip>
 					)}
 				</span>
@@ -124,22 +120,22 @@ const RuleRow: React.FC<{
 						disabled={isDisabled}
 						key={rulePath}
 						onClick={() => toggleRule(rulePath, !enabled)}
-						title={isDisabled ? "This rule is required and cannot be disabled" : undefined}
+						title={isDisabled ? "此规则是必需的，无法禁用" : undefined}
 					/>
 					<Button
-						aria-label={isRemote ? "View rule file" : "Edit rule file"}
+						aria-label={isRemote ? "查看规则文件" : "编辑规则文件"}
 						onClick={handleEditClick}
 						size="xs"
-						title={isRemote ? "View rule file (read-only)" : "Edit rule file"}
+						title={isRemote ? "查看规则文件（只读）" : "编辑规则文件"}
 						variant="icon">
 						{isRemote ? <EyeIcon /> : <PenIcon />}
 					</Button>
 					<Button
-						aria-label="Delete rule file"
+						aria-label="删除规则文件"
 						disabled={isRemote}
 						onClick={handleDeleteClick}
 						size="xs"
-						title="Delete rule file"
+						title="删除规则文件"
 						variant="icon">
 						<Trash2Icon />
 					</Button>

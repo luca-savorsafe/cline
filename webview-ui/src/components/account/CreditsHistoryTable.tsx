@@ -19,11 +19,11 @@ const CreditsHistoryTable = memo(({ isLoading, usageData, paymentsData, showPaym
 			{/* Tabs container */}
 			<div className="flex border-b border-(--vscode-panel-border)">
 				<TabButton isActive={activeTab === "usage"} onClick={() => setActiveTab("usage")}>
-					USAGE HISTORY
+					使用记录
 				</TabButton>
 				{showPayments && (
 					<TabButton isActive={activeTab === "payments"} onClick={() => setActiveTab("payments")}>
-						PAYMENTS HISTORY
+						支付记录
 					</TabButton>
 				)}
 			</div>
@@ -32,7 +32,7 @@ const CreditsHistoryTable = memo(({ isLoading, usageData, paymentsData, showPaym
 			<div className="mt-[15px] mb-[0px] rounded-md overflow-auto grow">
 				{isLoading ? (
 					<div className="flex justify-center items-center p-4">
-						<div className="text-(--vscode-descriptionForeground)">Loading...</div>
+						<div className="text-(--vscode-descriptionForeground)">加载中...</div>
 					</div>
 				) : (
 					<>
@@ -41,16 +41,16 @@ const CreditsHistoryTable = memo(({ isLoading, usageData, paymentsData, showPaym
 								<VSCodeDataGrid>
 									<VSCodeDataGridRow row-type="header">
 										<VSCodeDataGridCell cell-type="columnheader" grid-column="1">
-											Date
+											日期
 										</VSCodeDataGridCell>
 										<VSCodeDataGridCell cell-type="columnheader" grid-column="2">
-											Model
+											模型
 										</VSCodeDataGridCell>
 										{/* <VSCodeDataGridCell cell-type="columnheader" grid-column="3">
-												Tokens Used
+												已用令牌
 											</VSCodeDataGridCell> */}
 										<VSCodeDataGridCell cell-type="columnheader" grid-column="3">
-											Credits Used
+											已用额度
 										</VSCodeDataGridCell>
 									</VSCodeDataGridRow>
 
@@ -62,21 +62,23 @@ const CreditsHistoryTable = memo(({ isLoading, usageData, paymentsData, showPaym
 											</VSCodeDataGridCell>
 											<VSCodeDataGridCell grid-column="2">
 												{row.operation === "web_search"
-													? "Web Search"
+													? "网络搜索"
 													: row.operation === "web_fetch"
-														? "Web Fetch"
+														? "网页获取"
 														: row.operation === "search_chat_completion"
-															? "Web Fetch (LLM)"
+															? "网页获取 (LLM)"
 															: row.aiModelName}
 											</VSCodeDataGridCell>
 											{/* <VSCodeDataGridCell grid-column="3">{`${row.promptTokens} → ${row.completionTokens}`}</VSCodeDataGridCell> */}
-											<VSCodeDataGridCell grid-column="3">{`$${Number(row.creditsUsed / 1000000).toFixed(4)}`}</VSCodeDataGridCell>
+											<VSCodeDataGridCell grid-column="3">{`$${Number(row.creditsUsed / 1000000).toFixed(
+												4,
+											)}`}</VSCodeDataGridCell>
 										</VSCodeDataGridRow>
 									))}
 								</VSCodeDataGrid>
 							) : (
 								<div className="flex justify-center items-center p-4">
-									<div className="text-(--vscode-descriptionForeground)">No usage history</div>
+									<div className="text-(--vscode-descriptionForeground)">暂无使用记录</div>
 								</div>
 							))}
 
@@ -86,13 +88,13 @@ const CreditsHistoryTable = memo(({ isLoading, usageData, paymentsData, showPaym
 								<VSCodeDataGrid>
 									<VSCodeDataGridRow row-type="header">
 										<VSCodeDataGridCell cell-type="columnheader" grid-column="1">
-											Date
+											日期
 										</VSCodeDataGridCell>
 										<VSCodeDataGridCell cell-type="columnheader" grid-column="2">
-											Total Cost
+											总费用
 										</VSCodeDataGridCell>
 										<VSCodeDataGridCell cell-type="columnheader" grid-column="3">
-											Credits
+											额度
 										</VSCodeDataGridCell>
 									</VSCodeDataGridRow>
 
@@ -100,14 +102,16 @@ const CreditsHistoryTable = memo(({ isLoading, usageData, paymentsData, showPaym
 										// biome-ignore lint/suspicious/noArrayIndexKey: use index as key
 										<VSCodeDataGridRow key={index}>
 											<VSCodeDataGridCell grid-column="1">{formatTimestamp(row.paidAt)}</VSCodeDataGridCell>
-											<VSCodeDataGridCell grid-column="2">{`$${formatDollars(row.amountCents)}`}</VSCodeDataGridCell>
+											<VSCodeDataGridCell grid-column="2">{`$${formatDollars(
+												row.amountCents,
+											)}`}</VSCodeDataGridCell>
 											<VSCodeDataGridCell grid-column="3">{`${row.credits}`}</VSCodeDataGridCell>
 										</VSCodeDataGridRow>
 									))}
 								</VSCodeDataGrid>
 							) : (
 								<div className="flex justify-center items-center p-4">
-									<div className="text-(--vscode-descriptionForeground)">No payment history</div>
+									<div className="text-(--vscode-descriptionForeground)">暂无支付记录</div>
 								</div>
 							))}
 					</>

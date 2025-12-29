@@ -458,7 +458,7 @@ export const ChatRowContent = memo(
 								color: errorColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: errorColor, fontWeight: "bold" }}>Cline is having trouble...</span>,
+						<span style={{ color: errorColor, fontWeight: "bold" }}>Cline 遇到困难...</span>,
 					]
 				case "command":
 					return [
@@ -468,7 +468,7 @@ export const ChatRowContent = memo(
 								color: normalColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: normalColor, fontWeight: "bold" }}>Cline wants to execute this command:</span>,
+						<span style={{ color: normalColor, fontWeight: "bold" }}>Cline 想要执行此命令:</span>,
 					]
 				case "use_mcp_server":
 					const mcpServerUse = JSON.parse(message.text || "{}") as ClineAskUseMcpServer
@@ -486,11 +486,11 @@ export const ChatRowContent = memo(
 						<span
 							className="ph-no-capture"
 							style={{ color: normalColor, fontWeight: "bold", wordBreak: "break-word" }}>
-							Cline wants to {mcpServerUse.type === "use_mcp_tool" ? "use a tool" : "access a resource"} on the{" "}
+							Cline 想要在{" "}
 							<code style={{ wordBreak: "break-all" }}>
 								{getMcpServerDisplayName(mcpServerUse.serverName, mcpMarketplaceCatalog)}
 							</code>{" "}
-							MCP server:
+							MCP 服务器上{mcpServerUse.type === "use_mcp_tool" ? "使用工具" : "访问资源"}:
 						</span>,
 					]
 				case "completion_result":
@@ -501,7 +501,7 @@ export const ChatRowContent = memo(
 								color: successColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: successColor, fontWeight: "bold" }}>Task Completed</span>,
+						<span style={{ color: successColor, fontWeight: "bold" }}>任务完成</span>,
 					]
 				case "api_req_started":
 					return ErrorBlockTitle({
@@ -518,7 +518,7 @@ export const ChatRowContent = memo(
 								color: normalColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: normalColor, fontWeight: "bold" }}>Cline has a question:</span>,
+						<span style={{ color: normalColor, fontWeight: "bold" }}>Cline 有一个问题:</span>,
 					]
 				default:
 					return [null, null]
@@ -583,9 +583,7 @@ export const ChatRowContent = memo(
 				case "editedExistingFile":
 					const content = tool?.content || ""
 					const isApplyingPatch = content?.startsWith("%%bash") && !content.endsWith("*** End Patch\nEOF")
-					const editToolTitle = isApplyingPatch
-						? "Cline is creating patches to edit this file:"
-						: "Cline wants to edit this file:"
+					const editToolTitle = isApplyingPatch ? "Cline 正在创建补丁来编辑此文件:" : "Cline 想要编辑此文件:"
 					return (
 						<>
 							<div style={headerStyle}>
@@ -614,7 +612,7 @@ export const ChatRowContent = memo(
 								{toolIcon("diff-removed")}
 								{tool.operationIsLocatedInWorkspace === false &&
 									toolIcon("sign-out", "yellow", -90, "This file is outside of your workspace")}
-								<span style={{ fontWeight: "bold" }}>Cline wants to delete this file:</span>
+								<span style={{ fontWeight: "bold" }}>Cline 想要删除此文件:</span>
 							</div>
 							<CodeAccordian
 								// isLoading={message.partial}
@@ -632,7 +630,7 @@ export const ChatRowContent = memo(
 								{toolIcon("new-file")}
 								{tool.operationIsLocatedInWorkspace === false &&
 									toolIcon("sign-out", "yellow", -90, "This file is outside of your workspace")}
-								<span style={{ fontWeight: "bold" }}>Cline wants to create a new file:</span>
+								<span style={{ fontWeight: "bold" }}>Cline 想要创建新文件:</span>
 							</div>
 							{backgroundEditEnabled && tool.path && tool.content ? (
 								<DiffEditRow patch={tool.content} path={tool.path} />
@@ -657,7 +655,7 @@ export const ChatRowContent = memo(
 									toolIcon("sign-out", "yellow", -90, "This file is outside of your workspace")}
 								<span style={{ fontWeight: "bold" }}>
 									{/* {message.type === "ask" ? "" : "Cline read this file:"} */}
-									Cline wants to read this file:
+									Cline 想要读取此文件:
 								</span>
 							</div>
 							<div
@@ -724,8 +722,8 @@ export const ChatRowContent = memo(
 									toolIcon("sign-out", "yellow", -90, "This is outside of your workspace")}
 								<span style={{ fontWeight: "bold" }}>
 									{message.type === "ask"
-										? "Cline wants to view the top level files in this directory:"
-										: "Cline viewed the top level files in this directory:"}
+										? "Cline 想要查看此目录中的顶层文件:"
+										: "Cline 查看了此目录中的顶层文件:"}
 								</span>
 							</div>
 							<CodeAccordian
@@ -746,8 +744,8 @@ export const ChatRowContent = memo(
 									toolIcon("sign-out", "yellow", -90, "This is outside of your workspace")}
 								<span style={{ fontWeight: "bold" }}>
 									{message.type === "ask"
-										? "Cline wants to recursively view all files in this directory:"
-										: "Cline recursively viewed all files in this directory:"}
+										? "Cline 想要递归查看此目录中的所有文件:"
+										: "Cline 递归查看了此目录中的所有文件:"}
 								</span>
 							</div>
 							<CodeAccordian
@@ -768,8 +766,8 @@ export const ChatRowContent = memo(
 									toolIcon("sign-out", "yellow", -90, "This file is outside of your workspace")}
 								<span style={{ fontWeight: "bold" }}>
 									{message.type === "ask"
-										? "Cline wants to view source code definition names used in this directory:"
-										: "Cline viewed source code definition names used in this directory:"}
+										? "Cline 想要查看此目录中使用的源代码定义名称:"
+										: "Cline 查看了此目录中使用的源代码定义名称:"}
 								</span>
 							</div>
 							<CodeAccordian
@@ -788,8 +786,7 @@ export const ChatRowContent = memo(
 								{tool.operationIsLocatedInWorkspace === false &&
 									toolIcon("sign-out", "yellow", -90, "This is outside of your workspace")}
 								<span style={{ fontWeight: "bold" }}>
-									Cline wants to search this directory for{" "}
-									<code style={{ wordBreak: "break-all" }}>{tool.regex}</code>:
+									Cline 想要在此目录中搜索 <code style={{ wordBreak: "break-all" }}>{tool.regex}</code>:
 								</span>
 							</div>
 							<SearchResultsDisplay
@@ -808,7 +805,7 @@ export const ChatRowContent = memo(
 								<span style={{ color: normalColor, marginBottom: "-1.5px" }}>
 									<FoldVerticalIcon size={16} />
 								</span>
-								<span style={{ fontWeight: "bold" }}>Cline is condensing the conversation:</span>
+								<span style={{ fontWeight: "bold" }}>Cline 正在压缩对话:</span>
 							</div>
 							<div
 								style={{
@@ -840,7 +837,7 @@ export const ChatRowContent = memo(
 									{isExpanded ? (
 										<div>
 											<div style={{ display: "flex", alignItems: "center", marginBottom: "8px" }}>
-												<span style={{ fontWeight: "bold", marginRight: "4px" }}>Summary:</span>
+												<span style={{ fontWeight: "bold", marginRight: "4px" }}>摘要:</span>
 												<div style={{ flexGrow: 1 }}></div>
 												<span
 													className="codicon codicon-chevron-up"
@@ -897,9 +894,7 @@ export const ChatRowContent = memo(
 								{tool.operationIsLocatedInWorkspace === false &&
 									toolIcon("sign-out", "yellow", -90, "This URL is external")}
 								<span style={{ fontWeight: "bold" }}>
-									{message.type === "ask"
-										? "Cline wants to fetch content from this URL:"
-										: "Cline fetched content from this URL:"}
+									{message.type === "ask" ? "Cline 想要从此 URL 获取内容:" : "Cline 从此 URL 获取了内容:"}
 								</span>
 							</div>
 							<div
@@ -952,9 +947,7 @@ export const ChatRowContent = memo(
 								{tool.operationIsLocatedInWorkspace === false &&
 									toolIcon("sign-out", "yellow", -90, "This search is external")}
 								<span style={{ fontWeight: "bold" }}>
-									{message.type === "ask"
-										? "Cline wants to search the web for:"
-										: "Cline searched the web for:"}
+									{message.type === "ask" ? "Cline 想要在网络上搜索:" : "Cline 在网络上搜索了:"}
 								</span>
 							</div>
 							<div
@@ -1089,7 +1082,7 @@ export const ChatRowContent = memo(
 			)
 
 			const displayTitle = isSubagentCommand ? (
-				<span style={{ color: normalColor, fontWeight: "bold" }}>Cline wants to use a subagent:</span>
+				<span style={{ color: normalColor, fontWeight: "bold" }}>Cline 想要使用子代理:</span>
 			) : (
 				title
 			)
@@ -1160,12 +1153,12 @@ export const ChatRowContent = memo(
 											flexShrink: 0,
 										}}>
 										{isCommandExecuting
-											? "Running"
+											? "运行中"
 											: isCommandPending
-												? "Pending"
+												? "等待中"
 												: isCommandCompleted
-													? "Completed"
-													: "Skipped"}
+													? "已完成"
+													: "已跳过"}
 									</span>
 								</div>
 								<div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
@@ -1198,7 +1191,7 @@ export const ChatRowContent = memo(
 												cursor: "pointer",
 												fontFamily: "inherit",
 											}}>
-											{vscodeTerminalExecutionMode === "backgroundExec" ? "cancel" : "stop"}
+											{vscodeTerminalExecutionMode === "backgroundExec" ? "取消" : "停止"}
 										</button>
 									)}
 								</div>
@@ -1207,7 +1200,7 @@ export const ChatRowContent = memo(
 						{isSubagentCommand && subagentPrompt && (
 							<div style={{ padding: "10px", borderBottom: "1px solid var(--vscode-editorGroup-border)" }}>
 								<div style={{ marginBottom: 0 }}>
-									<strong>Prompt:</strong>{" "}
+									<strong>提示:</strong>{" "}
 									<span className="ph-no-capture" style={{ fontFamily: "var(--vscode-editor-font-family)" }}>
 										{subagentPrompt}
 									</span>
@@ -1261,7 +1254,7 @@ export const ChatRowContent = memo(
 								color: "var(--vscode-editorWarning-foreground)",
 							}}>
 							<i className="codicon codicon-warning"></i>
-							<span>The model has determined this command requires explicit approval.</span>
+							<span>模型已确定此命令需要明确批准。</span>
 						</div>
 					)}
 				</>
@@ -1327,7 +1320,7 @@ export const ChatRowContent = memo(
 												fontSize: "12px",
 												textTransform: "uppercase",
 											}}>
-											Arguments
+											参数
 										</div>
 										<CodeAccordian
 											code={useMcpServer.arguments}
@@ -1494,7 +1487,7 @@ export const ChatRowContent = memo(
 										{isExpanded ? (
 											<div style={{ marginTop: -3 }}>
 												<span style={{ fontWeight: "bold", display: "block", marginBottom: "4px" }}>
-													Thinking
+													思考中
 													<span
 														className="codicon codicon-chevron-down"
 														style={{
@@ -1508,7 +1501,7 @@ export const ChatRowContent = memo(
 											</div>
 										) : (
 											<div style={{ display: "flex", alignItems: "center" }}>
-												<span style={{ fontWeight: "bold", marginRight: "4px" }}>Thinking:</span>
+												<span style={{ fontWeight: "bold", marginRight: "4px" }}>思考中:</span>
 												<span
 													className="ph-no-capture"
 													style={{
@@ -1580,7 +1573,7 @@ export const ChatRowContent = memo(
 									padding: "4px 0",
 								}}>
 								<i className="codicon codicon-book" style={{ marginRight: 6 }} />
-								Loading MCP documentation
+								正在加载 MCP 文档
 							</div>
 						)
 					case "generate_explanation": {
@@ -1645,12 +1638,12 @@ export const ChatRowContent = memo(
 									)}
 									<span style={{ fontWeight: 500 }}>
 										{isGenerating
-											? "Generating explanation"
+											? "正在生成解释"
 											: isError
-												? "Failed to generate explanation"
+												? "生成解释失败"
 												: wasCancelled
-													? "Explanation cancelled"
-													: "Generated explanation"}
+													? "解释已取消"
+													: "已生成解释"}
 									</span>
 								</div>
 								{isError && explanationInfo.error && (
@@ -1756,7 +1749,7 @@ export const ChatRowContent = memo(
 												width: "100%",
 											}}>
 											<i className="codicon codicon-new-file" style={{ marginRight: 6 }} />
-											View Changes
+											查看更改
 										</SuccessButton>
 										{PLATFORM_CONFIG.type === PlatformType.VSCODE && (
 											<SuccessButton
@@ -1778,7 +1771,7 @@ export const ChatRowContent = memo(
 													borderColor: "var(--vscode-button-secondaryBackground)",
 												}}>
 												<i className="codicon codicon-comment-discussion" style={{ marginRight: 6 }} />
-												{explainChangesDisabled ? "Explaining..." : "Explain Changes"}
+												{explainChangesDisabled ? "正在解释..." : "解释更改"}
 											</SuccessButton>
 										)}
 									</div>
@@ -1814,21 +1807,20 @@ export const ChatRowContent = memo(
 											fontWeight: 500,
 											color: "var(--vscode-foreground)",
 										}}>
-										Shell Integration Unavailable
+										Shell 集成不可用
 									</span>
 								</div>
 								<div style={{ color: "var(--vscode-foreground)", opacity: 0.8 }}>
-									Cline may have trouble viewing the command's output. Please update VSCode (
-									<code>CMD/CTRL + Shift + P</code> → "Update") and make sure you're using a supported shell:
-									zsh, bash, fish, or PowerShell (<code>CMD/CTRL + Shift + P</code> → "Terminal: Select Default
-									Profile").{" "}
+									Cline 可能无法查看命令的输出。请更新 VSCode (<code>CMD/CTRL + Shift + P</code> → "更新")
+									并确保您使用的是受支持的 shell: zsh、bash、fish 或 PowerShell (
+									<code>CMD/CTRL + Shift + P</code> → "终端: 选择默认配置文件")。{" "}
 									<a
 										href="https://github.com/cline/cline/wiki/Troubleshooting-%E2%80%90-Shell-Integration-Unavailable"
 										style={{
 											color: "inherit",
 											textDecoration: "underline",
 										}}>
-										Still having trouble?
+										仍有问题？
 									</a>
 								</div>
 							</div>
@@ -1867,19 +1859,18 @@ export const ChatRowContent = memo(
 												fontWeight: 500,
 												color: "var(--vscode-foreground)",
 											}}>
-											{isFailed ? "Auto-Retry Failed" : "Auto-Retry in Progress"}
+											{isFailed ? "自动重试失败" : "自动重试进行中"}
 										</span>
 									</div>
 									<div style={{ color: "var(--vscode-foreground)", opacity: 0.8 }}>
 										{isFailed ? (
 											<>
-												Auto-retry failed after <strong>{maxAttempts}</strong> attempts. Manual
-												intervention required.
+												自动重试在 <strong>{maxAttempts}</strong> 次尝试后失败。需要手动干预。
 											</>
 										) : (
 											<>
-												Attempt <strong>{attempt}</strong> of <strong>{maxAttempts}</strong> - Retrying in{" "}
-												{delaySeconds} seconds...
+												尝试 <strong>{attempt}</strong> / <strong>{maxAttempts}</strong> - 在{" "}
+												{delaySeconds} 秒后重试...
 											</>
 										)}
 									</div>
@@ -1926,12 +1917,11 @@ export const ChatRowContent = memo(
 											fontWeight: 500,
 											color: "var(--vscode-foreground)",
 										}}>
-										Shell integration issues
+										Shell 集成问题
 									</span>
 								</div>
 								<div style={{ color: "var(--vscode-foreground)", opacity: 0.9, marginBottom: 8 }}>
-									Since you're experiencing repeated shell integration issues, we recommend switching to
-									Background Terminal mode for better reliability.
+									由于您反复遇到 shell 集成问题，我们建议切换到后台终端模式以获得更好的可靠性。
 								</div>
 								<button
 									disabled={isBackgroundModeEnabled}
@@ -1972,9 +1962,7 @@ export const ChatRowContent = memo(
 										opacity: isBackgroundModeEnabled ? 0.8 : 1,
 									}}>
 									<i className="codicon codicon-settings-gear"></i>
-									{isBackgroundModeEnabled
-										? "Background Terminal Enabled"
-										: "Enable Background Terminal (Recommended)"}
+									{isBackgroundModeEnabled ? "后台终端已启用" : "启用后台终端（推荐）"}
 								</button>
 							</div>
 						)
@@ -2162,9 +2150,7 @@ export const ChatRowContent = memo(
 											color: normalColor,
 											marginBottom: "-1.5px",
 										}}></span>
-									<span style={{ color: normalColor, fontWeight: "bold" }}>
-										Cline wants to start a new task:
-									</span>
+									<span style={{ color: normalColor, fontWeight: "bold" }}>Cline 想要开始新任务:</span>
 								</div>
 								<NewTaskPreview context={message.text || ""} />
 							</>
@@ -2179,9 +2165,7 @@ export const ChatRowContent = memo(
 											color: normalColor,
 											marginBottom: "-1.5px",
 										}}></span>
-									<span style={{ color: normalColor, fontWeight: "bold" }}>
-										Cline wants to condense your conversation:
-									</span>
+									<span style={{ color: normalColor, fontWeight: "bold" }}>Cline 想要压缩您的对话:</span>
 								</div>
 								<NewTaskPreview context={message.text || ""} />
 							</>
@@ -2196,9 +2180,7 @@ export const ChatRowContent = memo(
 											color: normalColor,
 											marginBottom: "-1.5px",
 										}}></span>
-									<span style={{ color: normalColor, fontWeight: "bold" }}>
-										Cline wants to create a Github issue:
-									</span>
+									<span style={{ color: normalColor, fontWeight: "bold" }}>Cline 想要创建 Github 问题:</span>
 								</div>
 								<ReportBugPreview data={message.text || ""} />
 							</>

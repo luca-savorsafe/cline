@@ -50,9 +50,9 @@ const AccountView = ({ onDone, clineUser, organizations, activeOrganization }: A
 		<div className="fixed inset-0 flex flex-col overflow-hidden pt-[10px] pl-[20px]">
 			<div className="flex justify-between items-center mb-[17px] pr-[17px]">
 				<h3 className={cn("text-(--vscode-foreground) m-0", titleColor)}>
-					Account {environment !== "production" ? ` - ${environment} environment` : ""}
+					账户 {environment !== "production" ? ` - ${environment} 环境` : ""}
 				</h3>
-				<VSCodeButton onClick={onDone}>Done</VSCodeButton>
+				<VSCodeButton onClick={onDone}>完成</VSCodeButton>
 			</div>
 			<div className="grow overflow-hidden pr-[8px] flex flex-col">
 				<div className="h-full mb-1.5">
@@ -337,7 +337,7 @@ export const ClineAccountView = ({ clineUser, userOrganizations, activeOrganizat
 											disabled={isLoading || isLockedByRemoteConfig}
 											onChange={handleOrganizationChange}>
 											<VSCodeOption key="personal" value={uid}>
-												Personal
+												个人
 											</VSCodeOption>
 											{userOrganizations?.map((org: UserOrganization) => (
 												<VSCodeOption key={org.organizationId} value={org.organizationId}>
@@ -347,11 +347,11 @@ export const ClineAccountView = ({ clineUser, userOrganizations, activeOrganizat
 										</VSCodeDropdown>
 									</TooltipTrigger>
 									<TooltipContent hidden={!isLockedByRemoteConfig}>
-										This cannot be changed while your organization has remote configuration enabled.
+										当您的组织启用远程配置时，此项无法更改。
 									</TooltipContent>
 								</Tooltip>
 								{activeOrganization && (
-									<VSCodeTag className="text-xs p-2" title="Role">
+									<VSCodeTag className="text-xs p-2" title="角色">
 										{getMainRole(activeOrganization.roles)}
 									</VSCodeTag>
 								)}
@@ -363,11 +363,11 @@ export const ClineAccountView = ({ clineUser, userOrganizations, activeOrganizat
 				<div className="w-full flex gap-2 flex-col min-[225px]:flex-row">
 					<div className="w-full min-[225px]:w-1/2">
 						<VSCodeButtonLink appearance="primary" className="w-full" href={getClineUris(clineUrl, "dashboard").href}>
-							Dashboard
+							仪表板
 						</VSCodeButtonLink>
 					</div>
 					<VSCodeButton appearance="secondary" className="w-full min-[225px]:w-1/2" onClick={() => handleSignOut()}>
-						Log out
+						退出登录
 					</VSCodeButton>
 				</div>
 
@@ -395,7 +395,7 @@ export const ClineAccountView = ({ clineUser, userOrganizations, activeOrganizat
 				{isClineTester && (
 					<div className="w-full gap-1 items-end">
 						<VSCodeDivider className="w-full my-3" />
-						<div className="text-sm font-semibold">Cline Environment</div>
+						<div className="text-sm font-semibold">Cline 环境</div>
 						<VSCodeDropdown
 							className="w-full mt-1"
 							currentValue={clineEnv}

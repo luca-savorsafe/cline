@@ -41,7 +41,7 @@ class ImagePreview extends React.Component<
 			if (this.state.loading) {
 				this.setState({
 					loading: false,
-					error: `Timeout loading image: ${this.props.url}`,
+					error: `图片加载超时: ${this.props.url}`,
 				})
 			}
 		}, 15000)
@@ -142,7 +142,7 @@ class ImagePreview extends React.Component<
 		console.log(`Image failed to load: ${this.props.url}`)
 		this.setState({
 			loading: false,
-			error: `Failed to load image: ${this.props.url}`,
+			error: `图片加载失败: ${this.props.url}`,
 		})
 		this.cleanup()
 	}
@@ -190,13 +190,13 @@ class ImagePreview extends React.Component<
 								}
 							`}
 						</style>
-						Loading image from {getSafeHostname(url)}...
+						正在从 {getSafeHostname(url)} 加载图片...
 					</div>
 					{elapsedSeconds > 3 && (
 						<div style={{ fontSize: "11px", color: "var(--vscode-descriptionForeground)" }}>
 							{elapsedSeconds > 60
-								? `Waiting for ${Math.floor(elapsedSeconds / 60)}m ${elapsedSeconds % 60}s...`
-								: `Waiting for ${elapsedSeconds}s...`}
+								? `已等待 ${Math.floor(elapsedSeconds / 60)} 分 ${elapsedSeconds % 60} 秒...`
+								: `已等待 ${elapsedSeconds} 秒...`}
 						</div>
 					)}
 					{/* Hidden image that we'll use to detect load/error events */}
@@ -244,10 +244,10 @@ class ImagePreview extends React.Component<
 						borderRadius: "4px",
 						color: "var(--vscode-errorForeground)",
 					}}>
-					<div style={{ fontWeight: "bold" }}>Failed to load image</div>
+					<div style={{ fontWeight: "bold" }}>图片加载失败</div>
 					<div style={{ fontSize: "12px", marginTop: "4px" }}>{getSafeHostname(url)}</div>
 					<div style={{ fontSize: "11px", marginTop: "8px", color: "var(--vscode-textLink-foreground)" }}>
-						Click to open in browser
+						点击在浏览器中打开
 					</div>
 				</div>
 			)
@@ -276,7 +276,7 @@ class ImagePreview extends React.Component<
 				{/\.svg(\?.*)?$/i.test(url) ? (
 					// Special handling for SVG images
 					<object
-						aria-label={`SVG from ${getSafeHostname(url)}`}
+						aria-label={`来自 ${getSafeHostname(url)} 的 SVG 图片`}
 						data={DOMPurify.sanitize(url)}
 						style={{
 							width: "85%",
@@ -286,7 +286,7 @@ class ImagePreview extends React.Component<
 						type="image/svg+xml">
 						{/* Fallback if object tag fails */}
 						<img
-							alt={`SVG from ${getSafeHostname(url)}`}
+							alt={`来自 ${getSafeHostname(url)} 的 SVG 图片`}
 							src={DOMPurify.sanitize(url)}
 							style={{
 								width: "85%",
@@ -297,7 +297,7 @@ class ImagePreview extends React.Component<
 					</object>
 				) : (
 					<img
-						alt={`Image from ${getSafeHostname(url)}`}
+						alt={`来自 ${getSafeHostname(url)} 的图片`}
 						loading="eager"
 						onLoad={(e) => {
 							// Double-check aspect ratio from the actual loaded image
@@ -338,7 +338,7 @@ const MemoizedImagePreview = React.memo(
 // Wrap the ImagePreview component with an error boundary
 const ImagePreviewWithErrorBoundary: React.FC<ImagePreviewProps> = (props) => {
 	return (
-		<ChatErrorBoundary errorTitle="Something went wrong displaying this image">
+		<ChatErrorBoundary errorTitle="显示此图片时出现错误">
 			<MemoizedImagePreview {...props} />
 		</ChatErrorBoundary>
 	)

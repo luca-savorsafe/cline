@@ -89,7 +89,7 @@ const SearchResultsDisplay: React.FC<SearchResultsDisplayProps> = ({
 				border: "1px solid var(--vscode-editorGroup-border)",
 			}}>
 			<div
-				aria-label={isExpanded ? "Collapse search results" : "Expand search results"}
+				aria-label={isExpanded ? "折叠搜索结果" : "展开搜索结果"}
 				onClick={onToggleExpand}
 				onKeyDown={(e) => {
 					if (e.key === "Enter" || e.key === " ") {
@@ -130,7 +130,11 @@ const SearchResultsDisplay: React.FC<SearchResultsDisplayProps> = ({
 			</div>
 
 			{isExpanded && (
-				<div style={{ padding: "10px", borderTop: "1px solid var(--vscode-editorGroup-border)" }}>
+				<div
+					style={{
+						padding: "10px",
+						borderTop: "1px solid var(--vscode-editorGroup-border)",
+					}}>
 					{/* Summary line */}
 					<div
 						style={{
@@ -145,7 +149,9 @@ const SearchResultsDisplay: React.FC<SearchResultsDisplayProps> = ({
 					{sections?.map((section: any, index: number) => (
 						<div
 							key={`workspace-${section.workspace}`}
-							style={{ marginBottom: index < sections.length - 1 ? "16px" : 0 }}>
+							style={{
+								marginBottom: index < sections.length - 1 ? "16px" : 0,
+							}}>
 							<div
 								style={{
 									display: "flex",
@@ -168,7 +174,7 @@ const SearchResultsDisplay: React.FC<SearchResultsDisplayProps> = ({
 										fontWeight: "500",
 										color: "var(--vscode-foreground)",
 									}}>
-									Workspace: {section.workspace}
+									工作空间: {section.workspace}
 								</span>
 							</div>
 

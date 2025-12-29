@@ -92,31 +92,31 @@ export const CliInstallBanner: React.FC = () => {
 			}}>
 			<h4 className="m-0 flex items-center gap-2" style={{ paddingRight: "24px" }}>
 				<Terminal className="w-4 h-4" />
-				{isMacOSOrLinux() ? "Cline for CLI is here!" : "Cline CLI Information"}
+				{isMacOSOrLinux() ? "Cline CLI 现已推出！" : "Cline CLI 信息"}
 			</h4>
 			<p className="m-0">
 				{isMacOSOrLinux() ? (
 					<>
-						Install to use Cline directly in your terminal and enable subagent capabilities. Cline can spawn{" "}
-						<code>cline</code> commands to handle focused tasks like exploring large codebases for information. This
-						keeps your main context window clean by running these operations in separate subprocesses.{" "}
+						安装后可直接在终端中使用 Cline 并启用子代理功能。Cline 可以生成 <code>cline</code>{" "}
+						命令来处理特定任务，例如探索大型代码库以获取信息。
+						通过在单独的子进程中运行这些操作，可以保持主上下文窗口的整洁。{" "}
 						<a
 							href="https://docs.cline.bot/cline-cli/overview"
 							rel="noopener noreferrer"
 							style={{ color: "var(--vscode-textLink-foreground)" }}
 							target="_blank">
-							Learn more
+							了解更多
 						</a>
 					</>
 				) : (
 					<>
-						Cline CLI is available for macOS and Linux! Coming <code>soon</code> to other platforms.{" "}
+						Cline CLI 适用于 macOS 和 Linux！其他平台<code>即将</code>推出。{" "}
 						<a
 							href="https://docs.cline.bot/cline-cli/overview"
 							rel="noopener noreferrer"
 							style={{ color: "var(--vscode-textLink-foreground)" }}
 							target="_blank">
-							Learn more
+							了解更多
 						</a>
 					</>
 				)}
@@ -134,7 +134,7 @@ export const CliInstallBanner: React.FC = () => {
 						appearance="icon"
 						onClick={handleCopyCommand}
 						style={{ marginLeft: "8px", flexShrink: 0 }}
-						title={isCopied ? "Copied!" : "Copy command"}>
+						title={isCopied ? "已复制！" : "复制命令"}>
 						<span className={`codicon ${isCopied ? "codicon-check" : "codicon-copy"}`}></span>
 					</VSCodeButton>
 				</div>
@@ -148,10 +148,10 @@ export const CliInstallBanner: React.FC = () => {
 							{isClineCliInstalled ? (
 								<>
 									<span className="codicon codicon-check" style={{ marginRight: "4px" }}></span>
-									Installed
+									已安装
 								</>
 							) : (
-								"Install"
+								"安装"
 							)}
 						</VSCodeButton>
 						<VSCodeButton
@@ -159,8 +159,8 @@ export const CliInstallBanner: React.FC = () => {
 							className="flex-1"
 							disabled={subagentsEnabled}
 							onClick={handleEnableSubagents}
-							title="Configure Subagents">
-							Enable Subagents
+							title="配置子代理">
+							启用子代理
 						</VSCodeButton>
 					</div>
 				) : (
@@ -173,18 +173,18 @@ export const CliInstallBanner: React.FC = () => {
 							{isClineCliInstalled ? (
 								<>
 									<span className="codicon codicon-check" style={{ marginRight: "4px" }}></span>
-									Installed
+									已安装
 								</>
 							) : (
-								"Install CLI"
+								"安装 CLI"
 							)}
 						</VSCodeButton>
 						<VSCodeButton
 							appearance="secondary"
 							className="flex-1"
 							disabled
-							title="Cline CLI & subagents are only available on macOS & Linux">
-							Subagents (Windows coming soon)
+							title="Cline CLI 和子代理仅适用于 macOS 和 Linux">
+							子代理（Windows 即将推出）
 						</VSCodeButton>
 					</div>
 				)}

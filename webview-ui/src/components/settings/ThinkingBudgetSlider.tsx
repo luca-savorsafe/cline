@@ -120,7 +120,7 @@ const ThinkingBudgetSlider = ({ currentMode }: ThinkingBudgetSliderProps) => {
 	return (
 		<>
 			<VSCodeCheckbox checked={isEnabled} onClick={handleToggleChange}>
-				Enable thinking{localValue && localValue > 0 ? ` (${localValue.toLocaleString()} tokens)` : ""}
+				启用思考预算{localValue && localValue > 0 ? ` (${localValue.toLocaleString()} tokens)` : ""}
 			</VSCodeCheckbox>
 
 			{isEnabled && (

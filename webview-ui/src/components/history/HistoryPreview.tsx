@@ -18,7 +18,7 @@ const HistoryPreview = ({ showHistoryView }: HistoryPreviewProps) => {
 
 	const formatDate = (timestamp: number) => {
 		const date = new Date(timestamp)
-		return date?.toLocaleString("en-US", {
+		return date?.toLocaleString("zh-CN", {
 			month: "short",
 			day: "numeric",
 		})
@@ -105,7 +105,7 @@ const HistoryPreview = ({ showHistoryView }: HistoryPreviewProps) => {
 						fontSize: "0.85em",
 						textTransform: "uppercase",
 					}}>
-					Recent Tasks
+					最近任务
 				</span>
 			</div>
 
@@ -124,7 +124,7 @@ const HistoryPreview = ({ showHistoryView }: HistoryPreviewProps) => {
 										<div className="history-task-content">
 											{item.isFavorited && (
 												<span
-													aria-label="Favorited"
+													aria-label="已收藏"
 													className="codicon codicon-star-full"
 													style={{
 														color: "var(--vscode-button-background)",
@@ -150,7 +150,7 @@ const HistoryPreview = ({ showHistoryView }: HistoryPreviewProps) => {
 								}}>
 								<VSCodeButton
 									appearance="icon"
-									aria-label="View all history"
+									aria-label="查看所有历史记录"
 									onClick={() => showHistoryView()}
 									style={{
 										opacity: 0.9,
@@ -160,7 +160,7 @@ const HistoryPreview = ({ showHistoryView }: HistoryPreviewProps) => {
 											fontSize: "var(--vscode-font-size)",
 											color: "var(--vscode-descriptionForeground)",
 										}}>
-										View All
+										查看全部
 									</div>
 								</VSCodeButton>
 							</div>
@@ -173,7 +173,7 @@ const HistoryPreview = ({ showHistoryView }: HistoryPreviewProps) => {
 								fontSize: "var(--vscode-font-size)",
 								padding: "10px 0",
 							}}>
-							No recent tasks
+							暂无最近任务
 						</div>
 					)}
 				</div>

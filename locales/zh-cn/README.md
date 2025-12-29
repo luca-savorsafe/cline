@@ -8,7 +8,7 @@
 <table>
 <tbody>
 <td align="center">
-<a href="https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev" target="_blank"><strong>在 VS Marketplace 下载</strong></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=saoudrizwan.parrot" target="_blank"><strong>在 VS Marketplace 下载</strong></a>
 </td>
 <td align="center">
 <a href="https://discord.gg/cline" target="_blank"><strong>Discord</strong></a>
@@ -159,4 +159,3 @@ Cline 所做的所有更改都会记录在你的文件时间轴中，提供了�
 ## 许可证
 
 [Apache 2.0 © 2025 Cline Bot Inc.](./LICENSE)
-

@@ -40,79 +40,79 @@ const getProviderInfo = (
 				modelId:
 					effectiveMode === "plan" ? apiConfiguration.planModeLmStudioModelId : apiConfiguration.actModeLmStudioModelId,
 				baseUrl: apiConfiguration.lmStudioBaseUrl,
-				helpText: "Start LM Studio and load a model to begin",
+				helpText: "启动 LM Studio 并加载模型开始使用",
 			}
 		case "ollama":
 			return {
 				modelId:
 					effectiveMode === "plan" ? apiConfiguration.planModeOllamaModelId : apiConfiguration.actModeOllamaModelId,
 				baseUrl: apiConfiguration.ollamaBaseUrl,
-				helpText: "Run `ollama serve` and pull a model",
+				helpText: "运行 `ollama serve` 并拉取模型",
 			}
 		case "litellm":
 			return {
 				modelId:
 					effectiveMode === "plan" ? apiConfiguration.planModeLiteLlmModelId : apiConfiguration.actModeLiteLlmModelId,
 				baseUrl: apiConfiguration.liteLlmBaseUrl,
-				helpText: "Add your LiteLLM proxy URL in settings",
+				helpText: "在设置中添加您的 LiteLLM 代理 URL",
 			}
 		case "openai":
 			return {
 				modelId:
 					effectiveMode === "plan" ? apiConfiguration.planModeOpenAiModelId : apiConfiguration.actModeOpenAiModelId,
 				baseUrl: apiConfiguration.openAiBaseUrl,
-				helpText: "Add your OpenAI API key and endpoint",
+				helpText: "添加您的 OpenAI API 密钥和端点",
 			}
 		case "vscode-lm":
 			return {
 				modelId: undefined,
 				baseUrl: undefined,
-				helpText: "Select a VS Code language model from settings",
+				helpText: "从设置中选择 VS Code 语言模型",
 			}
 		case "requesty":
 			return {
 				modelId:
 					effectiveMode === "plan" ? apiConfiguration.planModeRequestyModelId : apiConfiguration.actModeRequestyModelId,
 				baseUrl: apiConfiguration.requestyBaseUrl,
-				helpText: "Add your Requesty API key in settings",
+				helpText: "在设置中添加您的 Requesty API 密钥",
 			}
 		case "together":
 			return {
 				modelId:
 					effectiveMode === "plan" ? apiConfiguration.planModeTogetherModelId : apiConfiguration.actModeTogetherModelId,
 				baseUrl: undefined,
-				helpText: "Add your Together AI API key in settings",
+				helpText: "添加您的 Together AI API 密钥",
 			}
 		case "dify":
 			return {
 				modelId: undefined,
 				baseUrl: apiConfiguration.difyBaseUrl,
-				helpText: "Configure your Dify workflow URL and API key",
+				helpText: "配置您的 Dify 工作流 URL 和 API 密钥",
 			}
 		case "hicap":
 			return {
 				modelId: effectiveMode === "plan" ? apiConfiguration.planModeHicapModelId : apiConfiguration.actModeHicapModelId,
 				baseUrl: undefined,
-				helpText: "Add your HiCap API key in settings",
+				helpText: "添加您的 HiCap API 密钥",
 			}
 		case "oca":
 			return {
 				modelId: effectiveMode === "plan" ? apiConfiguration.planModeOcaModelId : apiConfiguration.actModeOcaModelId,
 				baseUrl: apiConfiguration.ocaBaseUrl,
-				helpText: "Configure your OCA endpoint in settings",
+				helpText: "在设置中配置您的 OCA 端点",
 			}
 		case "aihubmix":
 			return {
 				modelId:
 					effectiveMode === "plan" ? apiConfiguration.planModeAihubmixModelId : apiConfiguration.actModeAihubmixModelId,
 				baseUrl: apiConfiguration.aihubmixBaseUrl,
-				helpText: "Add your AIHubMix API key in settings",
+				helpText: "添加您的 AIHubMix API 密钥",
 			}
 		default:
 			return {
 				modelId: undefined,
 				baseUrl: undefined,
-				helpText: "Configure this provider in model settings",
+				helpText: "在模型设置中配置此提供商",
 			}
 	}
 }
@@ -601,7 +601,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 									setIsProviderExpanded(false)
 								}}
 								onKeyDown={handleKeyDown}
-								placeholder={`Search ${allModels.length} models`}
+								placeholder={`搜索 ${allModels.length} 个模型`}
 								ref={searchInputRef as any}
 								value={searchQuery}
 							/>
@@ -636,7 +636,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 												setIsProviderExpanded(!isProviderExpanded)
 											}}
 											ref={providerRowRef}>
-											<ProviderLabel>Provider:</ProviderLabel>
+											<ProviderLabel>提供商:</ProviderLabel>
 											<span style={{ fontSize: 11, color: "var(--vscode-foreground)" }}>
 												{getProviderLabel(selectedProvider)}
 											</span>
@@ -645,7 +645,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 									</TooltipTrigger>
 									{!isProviderExpanded && (
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
-											Configured providers
+											已配置的提供商
 										</TooltipContent>
 									)}
 								</Tooltip>
@@ -666,10 +666,10 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 										</TooltipTrigger>
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
 											{!supportsThinking
-												? "Thinking not supported by this model"
+												? "此模型不支持思考功能"
 												: thinkingEnabled
-													? "Extended thinking enabled"
-													: "Enable extended thinking for enhanced reasoning"}
+													? "扩展思考已启用"
+													: "启用扩展思考以增强推理能力"}
 										</TooltipContent>
 									</Tooltip>
 									<Tooltip>
@@ -684,7 +684,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 											</IconToggle>
 										</TooltipTrigger>
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
-											Use different models for Plan vs Act
+											为计划和行动模式使用不同的模型
 										</TooltipContent>
 									</Tooltip>
 								</IconToggles>
@@ -693,7 +693,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 							{supportsThinking && (
 								<ThinkingSliderRow $isDisabled={!thinkingEnabled} onClick={(e) => e.stopPropagation()}>
 									<ThinkingSliderLabel>
-										Thinking ({(thinkingEnabled ? thinkingBudget : 0).toLocaleString()} tokens)
+										思考 ({(thinkingEnabled ? thinkingBudget : 0).toLocaleString()} tokens)
 									</ThinkingSliderLabel>
 									<ThinkingSlider
 										disabled={!thinkingEnabled}
@@ -724,12 +724,12 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 													onClick={() => setActiveEditMode("plan")}>
 													<SplitModeLabel $mode="plan">P</SplitModeLabel>
 													<SplitModeModel>
-														{planModel.selectedModelId?.split("/").pop() || "Not set"}
+														{planModel.selectedModelId?.split("/").pop() || "未设置"}
 													</SplitModeModel>
 												</SplitModeCell>
 											</TooltipTrigger>
 											<TooltipContent side="top" style={{ zIndex: 9999 }}>
-												Plan mode
+												计划模式
 											</TooltipContent>
 										</Tooltip>
 										<Tooltip>
@@ -739,12 +739,12 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 													onClick={() => setActiveEditMode("act")}>
 													<SplitModeLabel $mode="act">A</SplitModeLabel>
 													<SplitModeModel>
-														{actModel.selectedModelId?.split("/").pop() || "Not set"}
+														{actModel.selectedModelId?.split("/").pop() || "未设置"}
 													</SplitModeModel>
 												</SplitModeCell>
 											</TooltipTrigger>
 											<TooltipContent side="top" style={{ zIndex: 9999 }}>
-												Act mode
+												行动模式
 											</TooltipContent>
 										</Tooltip>
 									</SplitModeRow>
@@ -840,14 +840,14 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 												{/* Show configured model if exists */}
 												{providerInfo.modelId && (
 													<ConfiguredModelRow>
-														<ConfiguredModelLabel>Current model:</ConfiguredModelLabel>
+														<ConfiguredModelLabel>当前模型:</ConfiguredModelLabel>
 														<ConfiguredModelName>{providerInfo.modelId}</ConfiguredModelName>
 													</ConfiguredModelRow>
 												)}
 												{/* Show base URL if configured */}
 												{providerInfo.baseUrl && (
 													<ConfiguredModelRow>
-														<ConfiguredModelLabel>Endpoint:</ConfiguredModelLabel>
+														<ConfiguredModelLabel>端点:</ConfiguredModelLabel>
 														<ConfiguredModelUrl>{providerInfo.baseUrl}</ConfiguredModelUrl>
 													</ConfiguredModelRow>
 												)}
@@ -856,9 +856,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 												{/* Configure link */}
 												<SettingsOnlyLink onClick={handleConfigureClick}>
 													<Settings size={12} />
-													<span>
-														{providerInfo.modelId ? "Edit in settings" : "Configure in settings"}
-													</span>
+													<span>{providerInfo.modelId ? "在设置中编辑" : "在设置中配置"}</span>
 												</SettingsOnlyLink>
 											</SettingsOnlyContainer>
 										)
@@ -868,9 +866,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 								{isSearching &&
 									filteredModels.length === 0 &&
 									featuredModels.length === 0 &&
-									!SETTINGS_ONLY_PROVIDERS.includes(selectedProvider) && (
-										<EmptyState>No models found</EmptyState>
-									)}
+									!SETTINGS_ONLY_PROVIDERS.includes(selectedProvider) && <EmptyState>未找到模型</EmptyState>}
 							</>
 						</ModelListContainer>
 					</PopupModalContainer>,
@@ -900,7 +896,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 							</ProviderDropdownItem>
 						))}
 						<ProviderDropdownItem $isSelected={false} onClick={handleConfigureClick}>
-							<span style={{ color: "var(--vscode-textLink-foreground)" }}>+ Add provider</span>
+							<span style={{ color: "var(--vscode-textLink-foreground)" }}>+ 添加提供商</span>
 						</ProviderDropdownItem>
 					</ProviderDropdownPortal>,
 					document.body,

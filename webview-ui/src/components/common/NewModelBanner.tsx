@@ -52,9 +52,7 @@ export const NewModelBanner: React.FC = () => {
 	}
 
 	const handleShowAccount = () => {
-		AccountServiceClient.accountLoginClicked(EmptyRequest.create()).catch((err) =>
-			console.error("Failed to get login URL:", err),
-		)
+		AccountServiceClient.accountLoginClicked(EmptyRequest.create()).catch((err) => console.error("获取登录 URL 失败：", err))
 	}
 
 	const handleBannerClick = () => {
@@ -77,8 +75,8 @@ export const NewModelBanner: React.FC = () => {
 				Claude Opus 4.5
 			</h4>
 			<p className="m-0">
-				Anthropic's latest model with SOTA performance at 3x lower cost than Opus 4.1.{" "}
-				<span className="text-link cursor-pointer">{user ? "Try new model" : "Try with Cline account"} →</span>
+				Anthropic 的最新模型，具有 SOTA 性能，成本比 Opus 4.1 低 3 倍。{" "}
+				<span className="text-link cursor-pointer">{user ? "尝试新模型" : "使用 Cline 账户尝试"} →</span>
 			</p>
 
 			{/* Close button */}

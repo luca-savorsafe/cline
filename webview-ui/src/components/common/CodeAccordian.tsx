@@ -17,8 +17,8 @@ interface CodeAccordianProps {
 /*
 We need to remove leading non-alphanumeric characters from the path in order for our leading ellipses trick to work.
 ^: Anchors the match to the start of the string.
-[^a-zA-Z0-9]+: Matches one or more characters that are not alphanumeric.
-The replace method removes these matched characters, effectively trimming the string up to the first alphanumeric character.
+[^\u4e00-\u9fa5a-zA-Z0-9]+: Matches one or more characters that are not alphanumeric or Chinese characters.
+The replace method removes these matched characters, effectively trimming the string up to the first alphanumeric or Chinese character.
 */
 export const cleanPathPrefix = (path: string): string => path.replace(/^[^\u4e00-\u9fa5a-zA-Z0-9]+/, "")
 
@@ -91,7 +91,7 @@ const CodeAccordian = ({
 									textOverflow: "ellipsis",
 									marginRight: "8px",
 								}}>
-								{isFeedback ? "User Edits" : "Console Logs"}
+								{isFeedback ? "用户编辑" : "控制台日志"}
 							</span>
 						</div>
 					) : (

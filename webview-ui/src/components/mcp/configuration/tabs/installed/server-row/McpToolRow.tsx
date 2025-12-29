@@ -56,7 +56,7 @@ const McpToolRow = ({ tool, serverName }: McpToolRowProps) => {
 						data-tool={tool.name}
 						onChange={handleAutoApproveChange}
 						style={{ fontSize: "11px" }}>
-						Auto-approve
+						自动批准
 					</VSCodeCheckbox>
 				)}
 			</div>
@@ -89,7 +89,7 @@ const McpToolRow = ({ tool, serverName }: McpToolRowProps) => {
 								fontSize: "11px",
 								textTransform: "uppercase",
 							}}>
-							Parameters
+							参数
 						</div>
 						{Object.entries(tool.inputSchema.properties as Record<string, any>).map(([paramName, schema]) => {
 							const isRequired =
@@ -127,7 +127,7 @@ const McpToolRow = ({ tool, serverName }: McpToolRowProps) => {
 											overflowWrap: "break-word",
 											wordBreak: "break-word",
 										}}>
-										{schema.description || "No description"}
+										{schema.description || "无描述"}
 									</span>
 								</div>
 							)

@@ -269,11 +269,28 @@ const StyledMarkdown = styled.div<{ compact?: boolean }>`
 		sans-serif;
 	font-size: var(--vscode-font-size, 13px);
 
+	/* 优化中文显示 */
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-ideograph; /* 优化中文排版 */
+
 	p,
 	li,
 	ol,
 	ul {
-		line-height: 1.25;
+		line-height: 1.6; /* 增加行高以改善中文可读性 */
+		text-align: justify;
+		text-justify: inter-ideograph;
+	}
+
+	/* 优化中文标点符号的换行 */
+	p, li {
+		hyphens: auto;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		ms-hyphens: auto;
 	}
 
 	ol,
@@ -284,7 +301,9 @@ const StyledMarkdown = styled.div<{ compact?: boolean }>`
 
 	p {
 		white-space: pre-wrap;
+		margin: 0.8em 0; /* 增加段落间距 */
 		${(props) => props.compact && "margin: 0;"}
+		text-indent: 2em; /* 中文段落首行缩进 */
 	}
 
 	a {
@@ -302,6 +321,28 @@ const StyledMarkdown = styled.div<{ compact?: boolean }>`
 
 	li > ul, li > ol {
 		margin: 4px 0; /* or 0 if you want them very tight */
+	}
+
+	/* 优化列表项中的中文文本 */
+	li {
+		margin-bottom: 0.3em;
+	}
+
+	/* 优化标题中的中文 */
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 600;
+		line-height: 1.3;
+		margin: 1.2em 0 0.6em 0;
+	}
+
+	/* 优化引用块中的中文 */
+	blockquote {
+		border-left: 3px solid var(--vscode-textBlockQuote-border);
+		padding-left: 1em;
+		margin: 1em 0;
+		color: var(--vscode-textBlockQuote-foreground);
+		font-style: italic;
+		line-height: 1.6;
 	}
 
 `

@@ -29,7 +29,7 @@ const ServersToggleModal: React.FC = () => {
 					}
 				})
 				.catch((error) => {
-					console.error("Failed to fetch MCP servers:", error)
+					console.error("获取MCP服务器失败:", error)
 				})
 		}
 	}, [isVisible, setMcpServers])
@@ -55,11 +55,11 @@ const ServersToggleModal: React.FC = () => {
 		<div className="inline-flex min-w-0 max-w-full items-center" ref={modalRef}>
 			<div className="inline-flex w-full items-center" ref={buttonRef}>
 				<Tooltip>
-					{!isVisible && <TooltipContent>Manage MCP Servers</TooltipContent>}
+					{!isVisible && <TooltipContent>管理MCP服务器</TooltipContent>}
 					<TooltipTrigger>
 						<VSCodeButton
 							appearance="icon"
-							aria-label={isVisible ? "Hide MCP Servers" : "Show MCP Servers"}
+							aria-label={isVisible ? "隐藏MCP服务器" : "显示MCP服务器"}
 							className="p-0 m-0 flex items-center"
 							onClick={() => setIsVisible(!isVisible)}>
 							<i className="codicon codicon-server" style={{ fontSize: "12.5px" }} />
@@ -72,10 +72,10 @@ const ServersToggleModal: React.FC = () => {
 				<PopupModalContainer $arrowPosition={arrowPosition} $menuPosition={menuPosition}>
 					<div className="flex-shrink-0 px-3 pt-2">
 						<div className="flex justify-between items-center mb-2.5">
-							<div className="m-0 text-sm font-medium">MCP Servers</div>
+							<div className="m-0 text-sm font-medium">MCP服务器</div>
 							<VSCodeButton
 								appearance="icon"
-								aria-label="Go to MCP server settings"
+								aria-label="转到MCP服务器设置"
 								onClick={() => {
 									setIsVisible(false)
 									navigateToMcp("configure")

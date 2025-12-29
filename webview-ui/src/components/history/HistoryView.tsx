@@ -174,15 +174,17 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 	const formatDate = useCallback((timestamp: number) => {
 		const date = new Date(timestamp)
 		return date
-			?.toLocaleString("en-US", {
+			?.toLocaleString("zh-CN", {
+				year: "numeric",
 				month: "long",
 				day: "numeric",
-				hour: "numeric",
+				hour: "2-digit",
 				minute: "2-digit",
-				hour12: true,
+				hour12: false,
 			})
-			.replace(", ", " ")
-			.replace(" at", ",")
+			.replace("年", "/")
+			.replace("月", "/")
+			.replace("日", " ")
 			.toUpperCase()
 	}, [])
 
@@ -282,9 +284,9 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 							color: getEnvironmentColor(environment),
 							margin: 0,
 						}}>
-						History
+						历史记录
 					</h3>
-					<VSCodeButton onClick={() => onDone()}>Done</VSCodeButton>
+					<VSCodeButton onClick={() => onDone()}>完成</VSCodeButton>
 				</div>
 				<div style={{ padding: "5px 17px 6px 17px" }}>
 					<div className="flex flex-col gap-3">
@@ -297,7 +299,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 									setSortOption("mostRelevant")
 								}
 							}}
-							placeholder="Fuzzy search history..."
+							placeholder="模糊搜索历史记录..."
 							style={{ width: "100%" }}
 							value={searchQuery}>
 							<div
@@ -310,7 +312,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 								}}></div>
 							{searchQuery && (
 								<div
-									aria-label="Clear search"
+									aria-label="清除搜索"
 									className="input-icon-button codicon codicon-close"
 									onClick={() => setSearchQuery("")}
 									slot="end"
@@ -327,12 +329,12 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 							className="flex flex-wrap"
 							onChange={(e) => setSortOption((e.target as HTMLInputElement).value as SortOption)}
 							value={sortOption}>
-							<VSCodeRadio value="newest">Newest</VSCodeRadio>
-							<VSCodeRadio value="oldest">Oldest</VSCodeRadio>
-							<VSCodeRadio value="mostExpensive">Most Expensive</VSCodeRadio>
-							<VSCodeRadio value="mostTokens">Most Tokens</VSCodeRadio>
+							<VSCodeRadio value="newest">最新</VSCodeRadio>
+							<VSCodeRadio value="oldest">最旧</VSCodeRadio>
+							<VSCodeRadio value="mostExpensive">最昂贵</VSCodeRadio>
+							<VSCodeRadio value="mostTokens">最多令牌</VSCodeRadio>
 							<VSCodeRadio disabled={!searchQuery} style={{ opacity: searchQuery ? 1 : 0.5 }} value="mostRelevant">
-								Most Relevant
+								最相关
 							</VSCodeRadio>
 						</VSCodeRadioGroup>
 						<div className="flex flex-wrap" style={{ marginTop: -8 }}>
@@ -341,15 +343,13 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 								onClick={() => setShowCurrentWorkspaceOnly(!showCurrentWorkspaceOnly)}>
 								<span className="flex items-center gap-[3px]">
 									<span className="codicon codicon-folder text-(--vscode-button-background)" />
-									Workspace
+									工作区
 								</span>
 							</VSCodeRadio>
-							<VSCodeRadio
-								checked={showFavoritesOnly}
-								onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}>
+							<VSCodeRadio checked={showFavoritesOnly} onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}>
 								<span className="flex items-center gap-[3px]">
 									<span className="codicon codicon-star-full text-(--vscode-button-background)" />
-									Favorites
+									收藏夹
 								</span>
 							</VSCodeRadio>
 						</div>
@@ -408,7 +408,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 											{!(pendingFavoriteToggles[item.id] ?? item.isFavorited) && (
 												<VSCodeButton
 													appearance="icon"
-													aria-label="Delete"
+													aria-label="删除"
 													className="delete-button"
 													onClick={(e) => {
 														e.stopPropagation()
@@ -429,7 +429,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 											)}
 											<VSCodeButton
 												appearance="icon"
-												aria-label={item.isFavorited ? "Remove from favorites" : "Add to favorites"}
+												aria-label={item.isFavorited ? "从收藏夹移除" : "添加到收藏夹"}
 												onClick={(e) => {
 													e.stopPropagation()
 													toggleFavorite(item.id, item.isFavorited || false)
@@ -506,7 +506,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 														fontWeight: 500,
 														color: "var(--vscode-descriptionForeground)",
 													}}>
-													Tokens:
+													令牌:
 												</span>
 												<span
 													style={{
@@ -559,7 +559,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 														fontWeight: 500,
 														color: "var(--vscode-descriptionForeground)",
 													}}>
-													Cache:
+													缓存:
 												</span>
 												{item.cacheWrites > 0 && (
 													<span
@@ -601,7 +601,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 												)}
 											</div>
 										)}
-										{item.modelId && <div className="text-description">Model: {item.modelId}</div>}
+										{item.modelId && <div className="text-description">模型: {item.modelId}</div>}
 										{!!item.totalCost && (
 											<div
 												style={{
@@ -621,7 +621,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 															fontWeight: 500,
 															color: "var(--vscode-descriptionForeground)",
 														}}>
-														API Cost:
+														API 成本:
 													</span>
 													<span
 														style={{
@@ -650,25 +650,25 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 					}}>
 					<div className="flex gap-2.5 mb-2.5">
 						<VSCodeButton appearance="secondary" onClick={() => handleBatchHistorySelect(true)} style={{ flex: 1 }}>
-							Select All
+							全选
 						</VSCodeButton>
 						<VSCodeButton appearance="secondary" onClick={() => handleBatchHistorySelect(false)} style={{ flex: 1 }}>
-							Select None
+							全不选
 						</VSCodeButton>
 					</div>
 					{selectedItems.length > 0 ? (
 						<DangerButton
-							aria-label="Delete selected items"
+							aria-label="删除选中项"
 							onClick={() => {
 								handleDeleteSelectedHistoryItems(selectedItems)
 							}}
 							style={{ width: "100%" }}>
-							Delete {selectedItems.length > 1 ? selectedItems.length : ""} Selected
+							删除{selectedItems.length > 1 ? ` ${selectedItems.length} 个` : ""}选中项
 							{selectedItemsSize > 0 ? ` (${formatSize(selectedItemsSize)})` : ""}
 						</DangerButton>
 					) : (
 						<DangerButton
-							aria-label="Delete all history"
+							aria-label="删除所有历史记录"
 							disabled={deleteAllDisabled || taskHistory.length === 0}
 							onClick={() => {
 								setDeleteAllDisabled(true)
@@ -678,7 +678,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 									.finally(() => setDeleteAllDisabled(false))
 							}}
 							style={{ width: "100%" }}>
-							Delete All History{totalTasksSize !== null ? ` (${formatSize(totalTasksSize)})` : ""}
+							删除所有历史记录{totalTasksSize !== null ? ` (${formatSize(totalTasksSize)})` : ""}
 						</DangerButton>
 					)}
 				</div>
@@ -690,7 +690,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 const ExportButton = ({ itemId }: { itemId: string }) => (
 	<VSCodeButton
 		appearance="icon"
-		aria-label="Export"
+		aria-label="导出"
 		className="export-button"
 		onClick={(e) => {
 			e.stopPropagation()
@@ -698,7 +698,7 @@ const ExportButton = ({ itemId }: { itemId: string }) => (
 				console.error("Failed to export task:", err),
 			)
 		}}>
-		<div style={{ fontSize: "11px", fontWeight: 500, opacity: 1 }}>EXPORT</div>
+		<div style={{ fontSize: "11px", fontWeight: 500, opacity: 1 }}>导出</div>
 	</VSCodeButton>
 )
 

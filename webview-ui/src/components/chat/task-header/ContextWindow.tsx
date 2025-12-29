@@ -31,24 +31,19 @@ const ConfirmationDialog = memo<{
 	onCancel: (e: React.MouseEvent) => void
 }>(({ onConfirm, onCancel }) => (
 	<div className="text-sm my-2 flex items-center gap-0 justify-between">
-		<span className="font-semibold text-sm">Compact the current task?</span>
+		<span className="font-semibold text-sm">折叠当前任务？</span>
 		<span className="flex gap-1">
-			<VSCodeButton
-				appearance="secondary"
-				className="text-sm"
-				onClick={onCancel}
-				title="No, keep the task as is"
-				type="button">
-				Cancel
+			<VSCodeButton appearance="secondary" className="text-sm" onClick={onCancel} title="否，保持任务原样" type="button">
+				取消
 			</VSCodeButton>
 			<VSCodeButton
 				appearance="primary"
 				autoFocus={true}
 				className="text-sm"
 				onClick={onConfirm}
-				title="Yes, compact the task"
+				title="是，折叠任务"
 				type="button">
-				Yes
+				是
 			</VSCodeButton>
 		</span>
 	</div>
@@ -207,7 +202,7 @@ const ContextWindow: React.FC<ContextWindowProgressProps> = ({
 		<div className="flex flex-col my-1.5" onMouseLeave={debounceCloseHover}>
 			<div className="flex gap-1 flex-row @max-xs:flex-col @max-xs:items-start items-center text-sm">
 				<div className="flex items-center gap-1.5 flex-1 whitespace-nowrap">
-					<span className="cursor-pointer text-sm" title="Current tokens used in this request">
+					<span className="cursor-pointer text-sm" title="本次请求使用的当前令牌数">
 						{formatTokenNumber(tokenData.used)}
 					</span>
 					<div className="flex relative items-center gap-1 flex-1 w-full h-full" onMouseEnter={() => setIsOpened(true)}>
@@ -226,7 +221,7 @@ const ContextWindow: React.FC<ContextWindowProgressProps> = ({
 							</HoverCardContent>
 							<HoverCardTrigger asChild>
 								<div
-									aria-label="Auto condense threshold"
+									aria-label="自动折叠阈值"
 									aria-valuemax={100}
 									aria-valuemin={0}
 									aria-valuenow={Math.round(threshold * 100)}
@@ -256,7 +251,7 @@ const ContextWindow: React.FC<ContextWindowProgressProps> = ({
 							</HoverCardTrigger>
 						</HoverCard>
 					</div>
-					<span className="cursor-pointer text-sm" title="Maximum context window size for this model">
+					<span className="cursor-pointer text-sm" title="此模型的最大上下文窗口大小">
 						{formatTokenNumber(tokenData.max)}
 					</span>
 				</div>

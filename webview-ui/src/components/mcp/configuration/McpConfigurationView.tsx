@@ -48,7 +48,7 @@ const McpConfigurationView = ({ onDone, initialTab }: McpViewProps) => {
 					setMcpMarketplaceCatalog(response)
 				})
 				.catch((error) => {
-					console.error("Error refreshing MCP marketplace:", error)
+					console.error("刷新 MCP 市场时出错：", error)
 				})
 
 			McpServiceClient.getLatestMcpServers(EmptyRequest.create({}))
@@ -59,7 +59,7 @@ const McpConfigurationView = ({ onDone, initialTab }: McpViewProps) => {
 					}
 				})
 				.catch((error) => {
-					console.error("Failed to fetch MCP servers:", error)
+					console.error("获取 MCP 服务器失败：", error)
 				})
 		}
 	}, [showMarketplace])
@@ -87,9 +87,9 @@ const McpConfigurationView = ({ onDone, initialTab }: McpViewProps) => {
 						color: getEnvironmentColor(environment),
 						margin: 0,
 					}}>
-					MCP Servers
+					MCP 服务器
 				</h3>
-				<VSCodeButton onClick={onDone}>Done</VSCodeButton>
+				<VSCodeButton onClick={onDone}>完成</VSCodeButton>
 			</div>
 
 			<div style={{ flex: 1, overflow: "auto" }}>
@@ -103,16 +103,16 @@ const McpConfigurationView = ({ onDone, initialTab }: McpViewProps) => {
 					}}>
 					{showMarketplace && (
 						<TabButton isActive={activeTab === "marketplace"} onClick={() => handleTabChange("marketplace")}>
-							Marketplace
+							市场
 						</TabButton>
 					)}
 					{showRemoteServers && (
 						<TabButton isActive={activeTab === "addRemote"} onClick={() => handleTabChange("addRemote")}>
-							Remote Servers
+							远程服务器
 						</TabButton>
 					)}
 					<TabButton isActive={activeTab === "configure"} onClick={() => handleTabChange("configure")}>
-						Configure
+						配置
 					</TabButton>
 				</div>
 

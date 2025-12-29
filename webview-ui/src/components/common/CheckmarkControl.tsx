@@ -106,7 +106,7 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 				}),
 			)
 		} catch (err) {
-			console.error("Checkpoint restore task error:", err)
+			console.error("检查点恢复任务错误:", err)
 			setRestoreTaskDisabled(false)
 		}
 	}
@@ -122,7 +122,7 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 				}),
 			)
 		} catch (err) {
-			console.error("Checkpoint restore workspace error:", err)
+			console.error("检查点恢复工作区错误:", err)
 			setRestoreWorkspaceDisabled(false)
 		}
 	}
@@ -138,7 +138,7 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 				}),
 			)
 		} catch (err) {
-			console.error("Checkpoint restore both error:", err)
+			console.error("检查点恢复两者错误:", err)
 			setRestoreBothDisabled(false)
 		}
 	}
@@ -175,9 +175,7 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 			/>
 			<DottedLine $isCheckedOut={isCheckpointCheckedOut} className="hover-show-inverse" />
 			<div className="hover-content">
-				<Label $isCheckedOut={isCheckpointCheckedOut}>
-					{isCheckpointCheckedOut ? "Checkpoint (restored)" : "Checkpoint"}
-				</Label>
+				<Label $isCheckedOut={isCheckpointCheckedOut}>{isCheckpointCheckedOut ? "检查点（已恢复）" : "检查点"}</Label>
 				<DottedLine $isCheckedOut={isCheckpointCheckedOut} />
 				<ButtonGroup>
 					<CustomButton
@@ -192,13 +190,13 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 									}),
 								)
 							} catch (err) {
-								console.error("CheckpointDiff error:", err)
+								console.error("检查点差异错误:", err)
 							} finally {
 								setCompareDisabled(false)
 							}
 						}}
 						style={{ cursor: compareDisabled ? "wait" : "pointer" }}>
-						Compare
+						比较
 					</CustomButton>
 					<DottedLine $isCheckedOut={isCheckpointCheckedOut} small />
 					<div ref={refs.setReference} style={{ position: "relative", marginTop: -2 }}>
@@ -206,7 +204,7 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 							$isCheckedOut={isCheckpointCheckedOut}
 							isActive={showRestoreConfirm}
 							onClick={() => setShowRestoreConfirm(true)}>
-							Restore
+							恢复
 						</CustomButton>
 						{showRestoreConfirm &&
 							createPortal(
@@ -229,12 +227,9 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 												width: "100%",
 												marginBottom: "10px",
 											}}>
-											Restore Files
+											恢复文件
 										</VSCodeButton>
-										<p>
-											Restores your project's files back to a snapshot taken at this point (use "Compare" to
-											see what will be reverted)
-										</p>
+										<p>将项目文件恢复到此时拍摄的快照（使用'比较'查看将恢复的内容）</p>
 									</RestoreOption>
 									<RestoreOption>
 										<VSCodeButton
@@ -245,9 +240,9 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 												width: "100%",
 												marginBottom: "10px",
 											}}>
-											Restore Task Only
+											仅恢复任务
 										</VSCodeButton>
-										<p>Deletes messages after this point (does not affect workspace files)</p>
+										<p>删除此点之后的消息（不影响工作区文件）</p>
 									</RestoreOption>
 									<RestoreOption>
 										<VSCodeButton
@@ -258,9 +253,9 @@ export const CheckmarkControl = ({ messageTs, isCheckpointCheckedOut }: Checkmar
 												width: "100%",
 												marginBottom: "10px",
 											}}>
-											Restore Files & Task
+											恢复文件和任务
 										</VSCodeButton>
-										<p>Restores your project's files and deletes all messages after this point</p>
+										<p>恢复项目文件并删除此点之后的所有消息</p>
 									</RestoreOption>
 								</RestoreConfirmTooltip>,
 								document.body,
@@ -430,43 +425,5 @@ const RestoreConfirmTooltip = styled.div`
 		left: 0;
 		right: 0;
 		height: 8px;
-	}
-
-	// Adjust arrow to be above the padding
-	&::after {
-		content: "";
-		position: absolute;
-		top: -6px;
-		right: 24px;
-		width: 10px;
-		height: 10px;
-		background: ${CODE_BLOCK_BG_COLOR};
-		border-left: 1px solid var(--vscode-editorGroup-border);
-		border-top: 1px solid var(--vscode-editorGroup-border);
-		transform: rotate(45deg);
-		z-index: 1;
-	}
-
-	// When menu appears above the button
-	&[data-placement^="top"] {
-		&::before {
-			top: auto;
-			bottom: -8px;
-		}
-
-		&::after {
-			top: auto;
-			bottom: -6px;
-			right: 24px;
-			transform: rotate(225deg);
-		}
-	}
-
-	p {
-		margin: 0 0 6px 0;
-		color: var(--vscode-descriptionForeground);
-		font-size: 12px;
-		white-space: normal;
-		word-wrap: break-word;
 	}
 `

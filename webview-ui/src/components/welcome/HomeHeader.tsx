@@ -52,11 +52,11 @@ const HomeHeader = ({ shouldShowQuickWins = false }: HomeHeaderProps) => {
 				<LogoComponent className="size-20" environment={environment} />
 			</div>
 			<div className="text-center flex items-center justify-center px-4">
-				<h1 className="m-0 font-bold">What can I do for you?</h1>
+				<h1 className="m-0 font-bold">我能为您做什么？</h1>
 				<Tooltip>
 					<TooltipContent side="bottom">
-						I can develop software step-by-step by editing files, exploring projects, running commands, and using
-						browsers. I can even extend my capabilities with MCP tools to assist beyond basic code completion.
+						我可以通过编辑文件、探索项目、运行命令和使用浏览器来逐步开发软件。我甚至可以使用 MCP
+						工具扩展我的能力，超越基本的代码补全。
 					</TooltipContent>
 					<TooltipTrigger asChild>
 						<InfoIcon className="ml-2 cursor-pointer text-link text-sm size-2 shrink-0" />
@@ -69,7 +69,7 @@ const HomeHeader = ({ shouldShowQuickWins = false }: HomeHeaderProps) => {
 						className="flex items-center gap-2 px-4 py-2 rounded-full border border-border-panel bg-white/2 hover:bg-list-background-hover transition-colors duration-150 ease-in-out text-code-foreground text-sm font-medium cursor-pointer"
 						onClick={handleTakeATour}
 						type="button">
-						Take a Tour
+						开始导览
 						<span className="codicon codicon-play scale-90"></span>
 					</button>
 				</div>

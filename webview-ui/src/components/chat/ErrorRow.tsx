@@ -51,7 +51,7 @@ const ErrorRow = memo(({ message, errorType, apiRequestFailedMessage, apiReqStre
 						return (
 							<p className="m-0 whitespace-pre-wrap text-(--vscode-errorForeground) wrap-anywhere">
 								{errorMessage}
-								{requestId && <div>Request ID: {requestId}</div>}
+								{requestId && <div>请求ID: {requestId}</div>}
 							</p>
 						)
 					}
@@ -64,19 +64,19 @@ const ErrorRow = memo(({ message, errorType, apiRequestFailedMessage, apiReqStre
 								{providerId && <span className="uppercase">[{providerId}] </span>}
 								{errorCode && <span>{errorCode}</span>}
 								{errorMessage}
-								{requestId && <div>Request ID: {requestId}</div>}
+								{requestId && <div>请求ID: {requestId}</div>}
 							</header>
 
 							{/* Windows Powershell Issue */}
 							{errorMessage?.toLowerCase()?.includes("powershell") && (
 								<div>
-									It seems like you're having Windows PowerShell issues, please see this{" "}
+									看起来您遇到了Windows PowerShell问题，请查看此{" "}
 									<a
 										className="underline text-inherit"
 										href="https://github.com/cline/cline/wiki/TroubleShooting-%E2%80%90-%22PowerShell-is-not-recognized-as-an-internal-or-external-command%22">
-										troubleshooting guide
+										故障排除指南
 									</a>
-									.
+									。
 								</div>
 							)}
 
@@ -88,7 +88,7 @@ const ErrorRow = memo(({ message, errorType, apiRequestFailedMessage, apiReqStre
 								{/* The user is signed in or not using cline provider */}
 								{isClineProvider && !clineUser ? (
 									<VSCodeButton className="w-full mb-4" disabled={isLoginLoading} onClick={handleSignIn}>
-										Sign in to Cline
+										登录到Cline
 										{isLoginLoading && (
 											<span className="ml-1 animate-spin">
 												<span className="codicon codicon-refresh"></span>
@@ -96,7 +96,7 @@ const ErrorRow = memo(({ message, errorType, apiRequestFailedMessage, apiReqStre
 										)}
 									</VSCodeButton>
 								) : (
-									<span className="mb-4 text-description">(Click "Retry" below)</span>
+									<span className="mb-4 text-description">(点击下方的"重试")</span>
 								)}
 							</div>
 						</p>
@@ -109,7 +109,7 @@ const ErrorRow = memo(({ message, errorType, apiRequestFailedMessage, apiReqStre
 			case "diff_error":
 				return (
 					<div className="flex flex-col p-2 rounded text-xs opacity-80 bg-(--vscode-textBlockQuote-background) text-(--vscode-foreground)">
-						<div>The model used search patterns that don't match anything in the file. Retrying...</div>
+						<div>模型使用的搜索模式在文件中没有匹配到任何内容。正在重试...</div>
 					</div>
 				)
 
@@ -117,8 +117,7 @@ const ErrorRow = memo(({ message, errorType, apiRequestFailedMessage, apiReqStre
 				return (
 					<div className="flex flex-col p-2 rounded text-xs bg-(--vscode-textBlockQuote-background) text-(--vscode-foreground) opacity-80">
 						<div>
-							Cline tried to access <code>{message.text}</code> which is blocked by the <code>.clineignore</code>
-							file.
+							Cline尝试访问 <code>{message.text}</code>，但被 <code>.clineignore</code> 文件阻止。
 						</div>
 					</div>
 				)

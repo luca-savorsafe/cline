@@ -192,7 +192,7 @@ const GroqModelPicker: React.FC<GroqModelPickerProps> = ({ isPopup, currentMode 
 			</style>
 			<div className="flex flex-col">
 				<label htmlFor="model-search">
-					<span className="font-medium">Model</span>
+					<span className="font-medium">模型</span>
 				</label>
 				<div className="relative w-full" ref={dropdownRef}>
 					<VSCodeTextField
@@ -203,7 +203,7 @@ const GroqModelPicker: React.FC<GroqModelPickerProps> = ({ isPopup, currentMode 
 							setIsDropdownVisible(true)
 						}}
 						onKeyDown={handleKeyDown}
-						placeholder="Search and select a model..."
+						placeholder="搜索并选择模型..."
 						style={{
 							width: "100%",
 							zIndex: GROQ_MODEL_PICKER_Z_INDEX,
@@ -256,13 +256,13 @@ const GroqModelPicker: React.FC<GroqModelPickerProps> = ({ isPopup, currentMode 
 				<ModelInfoView isPopup={isPopup} modelInfo={selectedModelInfo} selectedModelId={selectedModelId} />
 			) : (
 				<p className="text-xs mt-0 text-(--vscode-descriptionForeground)">
-					The extension automatically fetches the latest list of models available on{" "}
+					扩展会自动获取{" "}
 					<VSCodeLink className="inline text-inherit" href="https://console.groq.com/docs/models">
-						Groq.
+						Groq
 					</VSCodeLink>
-					If you're unsure which model to choose, Cline works best with{" "}
+					上可用的最新模型列表。如果您不确定选择哪个模型，Cline 最适合使用{" "}
 					<VSCodeLink className="inline text-inherit" onClick={() => handleModelChange("llama-3.3-70b-versatile")}>
-						llama-3.3-70b-versatile.
+						llama-3.3-70b-versatile。
 					</VSCodeLink>
 				</p>
 			)}

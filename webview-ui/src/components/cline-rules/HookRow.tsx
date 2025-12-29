@@ -28,7 +28,7 @@ const HookRow: React.FC<HookRowProps> = ({
 }) => {
 	const handleEditClick = () => {
 		FileServiceClient.openFile(StringRequest.create({ value: absolutePath })).catch((err) =>
-			console.error("Failed to open file:", err),
+			console.error("打开文件失败:", err),
 		)
 	}
 
@@ -45,7 +45,7 @@ const HookRow: React.FC<HookRowProps> = ({
 					onDelete(response.hooksToggles)
 				}
 			})
-			.catch((err) => console.error("Failed to delete hook:", err))
+			.catch((err) => console.error("删除钩子失败:", err))
 	}
 
 	return (
@@ -57,12 +57,7 @@ const HookRow: React.FC<HookRowProps> = ({
 
 				{/* Toggle Switch */}
 				<div className="flex items-center space-x-2 gap-2">
-					<div
-						title={
-							isWindows
-								? "Hook toggling not supported on Windows. Hooks can be edited and deleted, but won't execute."
-								: undefined
-						}>
+					<div title={isWindows ? "Windows 不支持钩子切换。可以编辑和删除钩子，但不会执行。" : undefined}>
 						<Switch
 							checked={enabled}
 							className="mx-1"
@@ -72,15 +67,10 @@ const HookRow: React.FC<HookRowProps> = ({
 							style={isWindows ? { opacity: 0.5, cursor: "not-allowed" } : undefined}
 						/>
 					</div>
-					<Button aria-label="Edit hook file" onClick={handleEditClick} size="xs" title="Edit hook file" variant="icon">
+					<Button aria-label="编辑钩子文件" onClick={handleEditClick} size="xs" title="编辑钩子文件" variant="icon">
 						<PenIcon />
 					</Button>
-					<Button
-						aria-label="Delete hook file"
-						onClick={handleDeleteClick}
-						size="xs"
-						title="Delete hook file"
-						variant="icon">
+					<Button aria-label="删除钩子文件" onClick={handleDeleteClick} size="xs" title="删除钩子文件" variant="icon">
 						<Trash2Icon />
 					</Button>
 				</div>

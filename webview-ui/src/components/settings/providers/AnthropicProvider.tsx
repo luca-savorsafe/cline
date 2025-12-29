@@ -58,15 +58,15 @@ export const AnthropicProvider = ({ showModelOptions, isPopup, currentMode }: An
 
 			<BaseUrlField
 				initialValue={apiConfiguration?.anthropicBaseUrl}
-				label="Use custom base URL"
+				label="使用自定义基础 URL"
 				onChange={(value) => handleFieldChange("anthropicBaseUrl", value)}
-				placeholder="Default: https://api.anthropic.com"
+				placeholder="默认：https://api.anthropic.com"
 			/>
 
 			{showModelOptions && (
 				<>
 					<ModelSelector
-						label="Model"
+						label="模型"
 						models={anthropicModels}
 						onChange={(e) =>
 							handleModeFieldChange(

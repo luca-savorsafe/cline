@@ -100,7 +100,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 										className="codicon codicon-warning mr-1"
 										style={{ fontSize: "12px", marginTop: "1px", flexShrink: 0 }}></span>
 									<span>
-										Cline for CLI is required for subagents. Install it with:
+										子代理需要 Cline CLI。使用以下命令安装：
 										<code
 											className="ml-1 px-1 rounded"
 											style={{
@@ -110,7 +110,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 											}}>
 											npm install -g cline
 										</code>
-										, then run
+										，然后运行
 										<code
 											className="ml-1 px-1 rounded"
 											style={{
@@ -120,7 +120,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 											}}>
 											cline auth
 										</code>
-										To authenticate with Cline or configure an API provider.
+										以使用 Cline 进行身份验证或配置 API 提供商。
 									</span>
 								</p>
 								{!isClineCliInstalled && (
@@ -138,7 +138,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 											transformOrigin: "left center",
 											marginLeft: "-2px",
 										}}>
-										Install Now
+										立即安装
 									</VSCodeButton>
 								)}
 							</div>
@@ -149,15 +149,12 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 									const checked = e.target.checked === true
 									updateSetting("subagentsEnabled", checked)
 								}}>
-								<span className="font-semibold">
-									{subagentsEnabled ? "Subagents Enabled" : "Enable Subagents"}
-								</span>
+								<span className="font-semibold">{subagentsEnabled ? "子代理已启用" : "启用子代理"}</span>
 							</VSCodeCheckbox>
 							<p className="text-xs mt-1 mb-0">
-								<span className="text-[var(--vscode-errorForeground)]">Experimental: </span>{" "}
+								<span className="text-[var(--vscode-errorForeground)]">实验性：</span>{" "}
 								<span className="text-description">
-									Allows Cline to spawn subprocesses to handle focused tasks like exploring large codebases,
-									keeping your main context clean.
+									允许 Cline 生成子进程来处理专注任务，如探索大型代码库，保持您的主上下文清洁。
 								</span>
 							</p>
 							{subagentsEnabled && (
@@ -175,18 +172,17 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const checked = e.target.checked === true
 								updateSetting("enableCheckpointsSetting", checked)
 							}}>
-							Enable Checkpoints
+							启用检查点
 						</VSCodeCheckbox>
 						<p className="text-xs text-(--vscode-descriptionForeground)">
-							Enables extension to save checkpoints of workspace throughout the task. Uses git under the hood which
-							may not work well with large workspaces.
+							允许扩展在任务期间保存工作空间的检查点。底层使用 git，可能不适用于大型工作空间。
 						</p>
 					</div>
 					<div style={{ marginTop: 10 }}>
 						<label
 							className="block text-sm font-medium text-(--vscode-foreground) mb-1"
 							htmlFor="mcp-display-mode-dropdown">
-							MCP Display Mode
+							MCP 显示模式
 						</label>
 						<McpDisplayModeDropdown
 							className="w-full"
@@ -195,8 +191,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 							value={mcpDisplayMode}
 						/>
 						<p className="text-xs mt-[5px] text-(--vscode-descriptionForeground)">
-							Controls how MCP responses are displayed: plain text, rich formatting with links/images, or markdown
-							rendering.
+							控制 MCP 响应的显示方式：纯文本、带链接/图像的富格式或 Markdown 渲染。
 						</p>
 					</div>
 					<div style={{ marginTop: 10 }}>
@@ -206,17 +201,15 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const checked = e.target.checked === true
 								updateSetting("mcpResponsesCollapsed", checked)
 							}}>
-							Collapse MCP Responses
+							折叠 MCP 响应
 						</VSCodeCheckbox>
-						<p className="text-xs text-(--vscode-descriptionForeground)">
-							Sets the default display mode for MCP response panels
-						</p>
+						<p className="text-xs text-(--vscode-descriptionForeground)">设置 MCP 响应面板的默认显示模式</p>
 					</div>
 					<div style={{ marginTop: 10 }}>
 						<label
 							className="block text-sm font-medium text-(--vscode-foreground) mb-1"
 							htmlFor="openai-reasoning-effort-dropdown">
-							OpenAI Reasoning Effort
+							OpenAI 推理力度
 						</label>
 						<VSCodeDropdown
 							className="w-full"
@@ -232,7 +225,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 							<VSCodeOption value="high">High</VSCodeOption>
 						</VSCodeDropdown>
 						<p className="text-xs mt-[5px] text-(--vscode-descriptionForeground)">
-							Reasoning effort for the OpenAI family of models(applies to all OpenAI model providers)
+							OpenAI 系列模型的推理力度（适用于所有 OpenAI 模型提供商）
 						</p>
 					</div>
 					<div style={{ marginTop: 10 }}>
@@ -242,10 +235,10 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const checked = e.target.checked === true
 								updateSetting("strictPlanModeEnabled", checked)
 							}}>
-							Enable strict plan mode
+							启用严格计划模式
 						</VSCodeCheckbox>
 						<p className="text-xs text-(--vscode-descriptionForeground)">
-							Enforces strict tool use while in plan mode, preventing file edits.
+							在计划模式下强制执行严格的工具使用，防止文件编辑。
 						</p>
 					</div>
 					{
@@ -256,11 +249,10 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 									const checked = e.target.checked === true
 									updateSetting("focusChainSettings", { ...focusChainSettings, enabled: checked })
 								}}>
-								Enable Focus Chain
+								启用焦点链
 							</VSCodeCheckbox>
 							<p className="text-xs text-(--vscode-descriptionForeground)">
-								Enables enhanced task progress tracking and automatic focus chain list management throughout
-								tasks.
+								启用增强的任务进度跟踪和整个任务期间的自动焦点链列表管理。
 							</p>
 						</div>
 					}
@@ -269,7 +261,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 							<label
 								className="block text-sm font-medium text-(--vscode-foreground) mb-1"
 								htmlFor="focus-chain-remind-interval">
-								Focus Chain Reminder Interval
+								焦点链提醒间隔
 							</label>
 							<VSCodeTextField
 								className="w-20"
@@ -286,8 +278,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								value={String(focusChainSettings?.remindClineInterval || 6)}
 							/>
 							<p className="text-xs mt-[5px] text-(--vscode-descriptionForeground)">
-								Interval (in messages) to remind Cline about its focus chain checklist (1-100). Lower values
-								provide more frequent reminders.
+								提醒 Cline 其焦点链检查表的间隔（以消息数计，1-100）。较低的值提供更频繁的提醒。
 							</p>
 						</div>
 					)}
@@ -303,11 +294,11 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 									}
 									updateSetting("dictationSettings", updatedDictationSettings)
 								}}>
-								Enable Dictation
+								启用听写
 							</VSCodeCheckbox>
 							<p className="text-xs text-description mt-1">
-								Enables speech-to-text transcription using your Cline account. Uses the Aqua Voice's Avalon model,
-								at $0.0065 credits per minute of audio processed. 5 minutes max per message.
+								使用您的 Cline 账户启用语音到文本转录。使用 Aqua Voice 的 Avalon 模型，每分钟处理的音频费用为
+								$0.0065 积分。每条消息最多 5 分钟。
 							</p>
 						</div>
 					)}
@@ -318,16 +309,16 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const checked = e.target.checked === true
 								updateSetting("useAutoCondense", checked)
 							}}>
-							Enable Auto Compact
+							启用自动压缩
 						</VSCodeCheckbox>
 						<p className="text-xs text-(--vscode-descriptionForeground)">
-							Enables advanced context management system which uses LLM based condensing for next-gen models.{" "}
+							启用高级上下文管理系统，该系统使用基于 LLM 的压缩技术用于下一代模型。{" "}
 							<a
 								className="text-(--vscode-textLink-foreground) hover:text-(--vscode-textLink-activeForeground)"
 								href="https://docs.cline.bot/features/auto-compact"
 								rel="noopener noreferrer"
 								target="_blank">
-								Learn more
+								了解更多
 							</a>
 						</p>
 					</div>
@@ -339,10 +330,10 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 									const checked = e.target.checked === true
 									updateSetting("clineWebToolsEnabled", checked)
 								}}>
-								Enable Cline Web Tools
+								启用 Cline 网络工具
 							</VSCodeCheckbox>
 							<p className="text-xs text-(--vscode-descriptionForeground)">
-								Enables websearch and webfetch tools while using the Cline provider.
+								在使用 Cline 提供商时启用网络搜索和网络获取工具。
 							</p>
 						</div>
 					)}

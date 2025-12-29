@@ -112,7 +112,7 @@ const McpMarketplaceCard = ({ item, installedServers, setError }: McpMarketplace
 												StringRequest.create({ value: item.mcpId }),
 											)
 											if (response.error) {
-												console.error("MCP download failed:", response.error)
+												console.error("MCP 下载失败：", response.error)
 												setError(response.error)
 											} else {
 												console.log("MCP download successful:", response)
@@ -120,7 +120,7 @@ const McpMarketplaceCard = ({ item, installedServers, setError }: McpMarketplace
 												setError(null)
 											}
 										} catch (error) {
-											console.error("Failed to download MCP:", error)
+											console.error("下载 MCP 失败：", error)
 										} finally {
 											setIsDownloading(false)
 										}
@@ -128,7 +128,7 @@ const McpMarketplaceCard = ({ item, installedServers, setError }: McpMarketplace
 								}}
 								style={{}}>
 								<StyledInstallButton $isInstalled={isInstalled} disabled={isInstalled || isDownloading}>
-									{isInstalled ? "Installed" : isDownloading ? "Installing..." : "Install"}
+									{isInstalled ? "已安装" : isDownloading ? "安装中..." : "安装"}
 								</StyledInstallButton>
 							</div>
 						</div>
@@ -201,7 +201,7 @@ const McpMarketplaceCard = ({ item, installedServers, setError }: McpMarketplace
 								<span style={{ wordBreak: "break-all" }}>{item.downloadCount?.toLocaleString() ?? 0}</span>
 							</div>
 							{item.requiresApiKey && (
-								<span className="codicon codicon-key" style={{ flexShrink: 0 }} title="Requires API key" />
+								<span className="codicon codicon-key" style={{ flexShrink: 0 }} title="需要 API 密钥" />
 							)}
 						</div>
 					</div>
@@ -221,7 +221,7 @@ const McpMarketplaceCard = ({ item, installedServers, setError }: McpMarketplace
 								marginBottom: -3,
 							}}>
 							<span className="codicon codicon-warning" style={{ fontSize: "14px" }} />
-							<span>Community Made (use at your own risk)</span>
+							<span>社区制作（使用风险自负）</span>
 						</div>
 					)} */}
 

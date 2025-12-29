@@ -83,10 +83,10 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
 
 	// Shared label definitions for simple option types
 	const SIMPLE_OPTION_LABELS: Partial<Record<ContextMenuOptionType, string>> = {
-		[ContextMenuOptionType.Problems]: "Problems",
-		[ContextMenuOptionType.Terminal]: "Terminal",
-		[ContextMenuOptionType.URL]: "Paste URL to fetch contents",
-		[ContextMenuOptionType.NoResults]: "No results found",
+		[ContextMenuOptionType.Problems]: "问题",
+		[ContextMenuOptionType.Terminal]: "终端",
+		[ContextMenuOptionType.URL]: "粘贴URL以获取内容",
+		[ContextMenuOptionType.NoResults]: "未找到结果",
 	}
 
 	// Get accessible label for an option (used for screen readers and aria-label)
@@ -102,7 +102,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
 				if (option.value) {
 					return `${option.label}${option.description ? `, ${option.description}` : ""}`
 				}
-				return "Git Commits"
+				return "Git提交"
 			case ContextMenuOptionType.File:
 			case ContextMenuOptionType.Folder:
 				if (option.value) {
@@ -144,7 +144,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
 						</div>
 					)
 				}
-				return <span>Git Commits</span>
+				return <span>Git提交</span>
 			case ContextMenuOptionType.File:
 			case ContextMenuOptionType.Folder:
 				if (option.value) {
@@ -170,7 +170,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
 						</>
 					)
 				}
-				return <span>Add {option.type === ContextMenuOptionType.File ? "File" : "Folder"}</span>
+				return <span>添加{option.type === ContextMenuOptionType.File ? "文件" : "文件夹"}</span>
 			default:
 				return null
 		}
@@ -237,7 +237,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
 						? `context-menu-item-${selectedIndex}`
 						: undefined
 				}
-				aria-label="Context mentions"
+				aria-label="上下文提及"
 				ref={menuRef}
 				role="listbox"
 				style={{
@@ -262,7 +262,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
 							opacity: 0.7,
 						}}>
 						<i className="codicon codicon-loading codicon-modifier-spin" style={{ fontSize: "14px" }} />
-						<span>Searching...</span>
+						<span>搜索中...</span>
 					</div>
 				)}
 				{filteredOptions.map((option, index) => {

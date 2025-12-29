@@ -107,7 +107,7 @@ const McpResponseDisplay: React.FC<McpResponseDisplayProps> = ({ responseText })
 			return
 		}
 
-		console.log("Processing MCP response for URL extraction")
+		console.log("正在处理 MCP 响应以提取 URL")
 		setIsLoading(true)
 		setError(null)
 
@@ -224,7 +224,7 @@ const McpResponseDisplay: React.FC<McpResponseDisplayProps> = ({ responseText })
 					}}>
 					<div className="header-title">
 						<span className={`codicon codicon-chevron-${isExpanded ? "down" : "right"} header-icon`}></span>
-						Response
+						响应
 					</div>
 					<DropdownContainer
 						style={{ minWidth: isExpanded ? "auto" : "0", visibility: isExpanded ? "visible" : "hidden" }}>
@@ -241,19 +241,19 @@ const McpResponseDisplay: React.FC<McpResponseDisplayProps> = ({ responseText })
 			</ResponseContainer>
 		)
 	} catch (_error) {
-		console.log("Error rendering MCP response - falling back to plain text") // Restored comment
+		console.log("渲染 MCP 响应时出错 - 回退到纯文本") // Restored comment
 		// Fallback for critical rendering errors
 		return (
 			<ResponseContainer>
 				<ResponseHeader onClick={toggleExpand}>
 					<div className="header-title">
 						<span className={`codicon codicon-chevron-${isExpanded ? "down" : "right"} header-icon`}></span>
-						Response (Error)
+						响应（错误）
 					</div>
 				</ResponseHeader>
 				{isExpanded && (
 					<div className="response-content">
-						<div style={{ color: "var(--vscode-errorForeground)" }}>Error parsing response:</div>
+						<div style={{ color: "var(--vscode-errorForeground)" }}>解析响应时出错：</div>
 						<UrlText>{responseText}</UrlText>
 					</div>
 				)}

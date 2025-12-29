@@ -19,7 +19,7 @@ const DEFAULT_BUY_CREDITS_URL = {
 }
 
 const CreditLimitError: React.FC<CreditLimitErrorProps> = ({
-	message = "You have run out of credits.",
+	message = "您的额度已用完。",
 	buyCreditsUrl,
 	currentBalance,
 	totalPromotions,
@@ -40,7 +40,7 @@ const CreditLimitError: React.FC<CreditLimitErrorProps> = ({
 				url.searchParams.set("callback_url", callbackUrl)
 				setFullBuyCreditsUrl(url.toString())
 			} catch (error) {
-				console.error("Error fetching callback URL:", error)
+				console.error("获取回调URL时出错:", error)
 				// Fallback to URL without callback if the API call fails
 				setFullBuyCreditsUrl(dashboardUrl)
 			}
@@ -56,19 +56,17 @@ const CreditLimitError: React.FC<CreditLimitErrorProps> = ({
 				<div className="mb-3">
 					{currentBalance ? (
 						<div className="text-foreground">
-							Current Balance: <span className="font-bold">{currentBalance.toFixed(2)}</span>
+							当前余额: <span className="font-bold">{currentBalance.toFixed(2)}</span>
 						</div>
 					) : null}
-					{totalSpent ? <div className="text-foreground">Total Spent: {totalSpent.toFixed(2)}</div> : null}
-					{totalPromotions ? (
-						<div className="text-foreground">Total Promotions: {totalPromotions.toFixed(2)}</div>
-					) : null}
+					{totalSpent ? <div className="text-foreground">总消费: {totalSpent.toFixed(2)}</div> : null}
+					{totalPromotions ? <div className="text-foreground">总促销额度: {totalPromotions.toFixed(2)}</div> : null}
 				</div>
 			</div>
 
 			<VSCodeButtonLink className="w-full mb-2" href={fullBuyCreditsUrl}>
 				<span className="codicon codicon-credit-card mr-[6px] text-[14px]" />
-				Buy Credits
+				购买额度
 			</VSCodeButtonLink>
 
 			<VSCodeButton
@@ -82,11 +80,11 @@ const CreditLimitError: React.FC<CreditLimitErrorProps> = ({
 							}),
 						)
 					} catch (error) {
-						console.error("Error invoking action:", error)
+						console.error("调用操作时出错:", error)
 					}
 				}}>
 				<span className="codicon codicon-refresh mr-1.5" />
-				Retry Request
+				重试请求
 			</VSCodeButton>
 		</div>
 	)

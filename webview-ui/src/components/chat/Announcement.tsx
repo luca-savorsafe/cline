@@ -81,52 +81,51 @@ const Announcement = ({ version, hideAnnouncement }: AnnouncementProps) => {
 				<XIcon />
 			</Button>
 			<h2 style={h2TitleStyle}>
-				🎉{"  "}New in v{version}
+				🎉{"  "}v{version} 版本新功能
 			</h2>
 			<ul style={ulStyle}>
 				{isVscode && (
 					<>
 						<li>
-							New{" "}
+							新增{" "}
 							<VSCodeLink href="https://docs.cline.bot/features/explain-changes" style={linkStyle}>
-								Explain Changes
+								解释更改
 							</VSCodeLink>{" "}
-							button when Cline completes a task to help review code with inline chat. You can reply to comments, or
-							send the chat as context back to Cline.
+							按钮，当 Cline 完成任务时，可帮助通过内联聊天审查代码。您可以回复评论，或将聊天内容作为上下文发送回
+							Cline。
 						</li>
 						<li>
-							Use the new{" "}
+							使用新的{" "}
 							<VSCodeLink href="https://docs.cline.bot/features/slash-commands/explain-changes" style={linkStyle}>
 								/explain-changes
 							</VSCodeLink>{" "}
-							slash command to explain the changes in branches, commits, etc. (Try asking Cline to explain a PR you
-							need to review!)
+							斜杠命令来解释分支、提交等中的更改。（尝试让 Cline 解释您需要审查的 PR！）
 						</li>
 					</>
 				)}
 			</ul>
 			{isVscode && (
 				<p style={{ margin: "0" }}>
-					See a{" "}
+					查看{" "}
 					<VSCodeLink href="https://x.com/sdrzn/status/1995840893816111246" style={linkStyle}>
-						demo of "Explain Changes"
+						"解释更改"演示
 					</VSCodeLink>
 				</p>
 			)}
 			<div style={hrStyle} />
 			<p style={linkContainerStyle}>
-				Join us on{" "}
+				加入我们的{" "}
 				<VSCodeLink href="https://x.com/cline" style={linkStyle}>
-					X,
+					X、
 				</VSCodeLink>{" "}
 				<VSCodeLink href="https://discord.gg/cline" style={linkStyle}>
-					discord,
+					Discord、
 				</VSCodeLink>{" "}
-				or{" "}
+				或{" "}
 				<VSCodeLink href="https://www.reddit.com/r/cline/" style={linkStyle}>
 					r/cline
 				</VSCodeLink>
-				for more updates!
+				获取更多更新！
 			</p>
 		</div>
 	)

@@ -9,7 +9,11 @@ import { FileServiceClient } from "@/services/grpc-client"
 
 // Optimized interface with readonly properties to prevent accidental mutations
 interface TodoInfo {
-	readonly currentTodo: { text: string; completed: boolean; index: number } | null
+	readonly currentTodo: {
+		text: string
+		completed: boolean
+		index: number
+	} | null
 	readonly currentIndex: number
 	readonly completedCount: number
 	readonly totalCount: number
@@ -22,10 +26,10 @@ interface FocusChainProps {
 }
 
 // Static strings to avoid recreating them
-const COMPLETED_MESSAGE = "All tasks have been completed!"
-const TODO_LIST_LABEL = "To-Do list"
-const NEW_STEPS_MESSAGE = "New steps will be generated if you continue the task"
-const CLICK_TO_EDIT_TITLE = "Click to edit to-do list in file"
+const COMPLETED_MESSAGE = "所有任务已完成！"
+const TODO_LIST_LABEL = "待办事项列表"
+const NEW_STEPS_MESSAGE = "如果继续任务，将生成新步骤"
+const CLICK_TO_EDIT_TITLE = "点击在文件中编辑待办事项列表"
 
 // Optimized header component with minimal re-renders
 const ToDoListHeader = memo<{
@@ -133,7 +137,13 @@ const parseCurrentTodoInfo = (text: string): TodoInfo | null => {
 		return null
 	}
 
-	const currentTodo = firstIncompleteText ? { text: firstIncompleteText, completed: false, index: firstIncompleteIndex } : null
+	const currentTodo = firstIncompleteText
+		? {
+				text: firstIncompleteText,
+				completed: false,
+				index: firstIncompleteIndex,
+			}
+		: null
 
 	const result: TodoInfo = {
 		currentTodo,
@@ -189,7 +199,7 @@ export const FocusChain: React.FC<FocusChainProps> = memo(
 
 		return (
 			<div
-				aria-label={isExpanded ? "Collapse focus chain" : "Expand focus chain"}
+				aria-label={isExpanded ? "折叠焦点链" : "展开焦点链"}
 				className="relative rounded-sm bg-toolbar-hover/65 flex flex-col gap-1.5 select-none hover:bg-toolbar-hover overflow-hidden opacity-80 hover:opacity-100 transition-[transform,box-shadow] duration-200 cursor-pointer"
 				onClick={handleToggle}
 				onKeyDown={(e) => {

@@ -309,7 +309,7 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 			</style>
 			<div style={{ display: "flex", flexDirection: "column" }}>
 				<label htmlFor="model-search">
-					<span style={{ fontWeight: 500 }}>Model</span>
+					<span style={{ fontWeight: 500 }}>模型</span>
 				</label>
 
 				{modeFields.apiProvider === "cline" && (
@@ -317,10 +317,10 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 						{/* Tabs */}
 						<TabsContainer style={{ marginTop: 4 }}>
 							<Tab active={activeTab === "recommended"} onClick={() => setActiveTab("recommended")}>
-								Recommended
+								推荐
 							</Tab>
 							<Tab active={activeTab === "free"} onClick={() => setActiveTab("free")}>
-								Free
+								免费
 							</Tab>
 						</TabsContainer>
 
@@ -372,7 +372,7 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 							setIsDropdownVisible(true)
 						}}
 						onKeyDown={handleKeyDown}
-						placeholder="Search and select a model..."
+						placeholder="搜索并选择模型..."
 						style={{
 							width: "100%",
 							zIndex: OPENROUTER_MODEL_PICKER_Z_INDEX,
@@ -454,7 +454,7 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 					{showThinkingLevel && (
 						<DropdownContainer className="dropdown-container" zIndex={1}>
 							<label htmlFor="thinking-level">
-								<span className="font-medium">Thinking Level</span>
+								<span className="font-medium">思考级别</span>
 							</label>
 							<VSCodeDropdown
 								className="w-full"
@@ -467,8 +467,8 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 									)
 								}
 								value={geminiThinkingLevel || "high"}>
-								<VSCodeOption value="low">Low</VSCodeOption>
-								<VSCodeOption value="high">High</VSCodeOption>
+								<VSCodeOption value="low">低</VSCodeOption>
+								<VSCodeOption value="high">高</VSCodeOption>
 							</VSCodeDropdown>
 						</DropdownContainer>
 					)}
@@ -489,12 +489,11 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 						marginTop: 3,
 						color: "var(--vscode-descriptionForeground)",
 					}}>
-					Using OpenRouter preset: <strong>{searchTerm}</strong>. Preset models reference your configured model
-					preferences on{" "}
+					正在使用 OpenRouter 预设: <strong>{searchTerm}</strong>。预设模型引用您在{" "}
 					<VSCodeLink href="https://openrouter.ai/settings/presets" style={{ display: "inline", fontSize: "inherit" }}>
-						OpenRouter.
+						OpenRouter
 					</VSCodeLink>
-					Model info and pricing will depend on your preset configuration.
+					上配置的模型偏好。模型信息和定价将取决于您的预设配置。
 				</p>
 			) : (
 				<p
@@ -503,18 +502,17 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 						marginTop: 0,
 						color: "var(--vscode-descriptionForeground)",
 					}}>
-					The extension automatically fetches the latest list of models available on{" "}
+					扩展会自动获取{" "}
 					<VSCodeLink href="https://openrouter.ai/models" style={{ display: "inline", fontSize: "inherit" }}>
-						OpenRouter.
+						OpenRouter
 					</VSCodeLink>
-					If you're unsure which model to choose, Cline works best with{" "}
+					上可用的最新模型列表。如果您不确定选择哪个模型，Cline 最适合使用{" "}
 					<VSCodeLink
 						onClick={() => handleModelChange("anthropic/claude-sonnet-4.5")}
 						style={{ display: "inline", fontSize: "inherit" }}>
-						anthropic/claude-sonnet-4.5.
+						anthropic/claude-sonnet-4.5。
 					</VSCodeLink>
-					You can also try searching "free" for no-cost options currently available. OpenRouter presets can be used by
-					entering @preset/your-preset-name
+					您也可以尝试搜索"free"来查找当前可用的免费选项。可以通过输入 @preset/your-preset-name 来使用 OpenRouter 预设。
 				</p>
 			)}
 		</div>

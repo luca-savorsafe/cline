@@ -33,7 +33,7 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				setShouldShow(false)
 			}
 		} catch (e) {
-			console.error("Error checking feedback history:", e)
+			console.error("检查反馈历史时出错:", e)
 		}
 	}, [messageTs])
 
@@ -63,10 +63,10 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				history[messageTs] = true
 				localStorage.setItem("taskFeedbackHistory", JSON.stringify(history))
 			} catch (e) {
-				console.error("Error updating feedback history:", e)
+				console.error("更新反馈历史时出错:", e)
 			}
 		} catch (error) {
-			console.error("Error sending task feedback:", error)
+			console.error("发送任务反馈时出错:", error)
 		}
 	}
 
@@ -76,10 +76,10 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				<ButtonWrapper>
 					<VSCodeButton
 						appearance="icon"
-						aria-label="This was helpful"
+						aria-label="这很有帮助"
 						disabled={feedback !== null}
 						onClick={() => handleFeedback("thumbs_up")}
-						title="This was helpful">
+						title="这很有帮助">
 						<IconWrapper>
 							<span
 								className={`codicon ${feedback === "thumbs_up" ? "codicon-thumbsup-filled" : "codicon-thumbsup"}`}
@@ -90,10 +90,10 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				<ButtonWrapper>
 					<VSCodeButton
 						appearance="icon"
-						aria-label="This wasn't helpful"
+						aria-label="这没有帮助"
 						disabled={feedback !== null && feedback !== "thumbs_down"}
 						onClick={() => handleFeedback("thumbs_down")}
-						title="This wasn't helpful">
+						title="这没有帮助">
 						<IconWrapper>
 							<span
 								className={`codicon ${feedback === "thumbs_down" ? "codicon-thumbsdown-filled" : "codicon-thumbsdown"}`}
@@ -104,8 +104,8 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				{/* <VSCodeButtonLink
 					href="https://github.com/cline/cline/issues/new?template=bug_report.yml"
 					appearance="icon"
-					title="Report a bug"
-					aria-label="Report a bug">
+					title="报告错误"
+					aria-label="报告错误">
 					<span className="codicon codicon-bug" />
 				</VSCodeButtonLink> */}
 			</ButtonsContainer>

@@ -7,30 +7,30 @@ import { FileServiceClient } from "@/services/grpc-client"
 import { useDebounceEffect } from "@/utils/useDebounceEffect"
 
 const MERMAID_THEME = {
-	background: "#1e1e1e", // VS Code dark theme background
-	textColor: "#ffffff", // Main text color
-	mainBkg: "#2d2d2d", // Background for nodes
-	nodeBorder: "#888888", // Border color for nodes
-	lineColor: "#cccccc", // Lines connecting nodes
-	primaryColor: "#3c3c3c", // Primary color for highlights
-	primaryTextColor: "#ffffff", // Text in primary colored elements
+	background: "#1e1e1e", // VS Code 深色主题背景
+	textColor: "#ffffff", // 主文本颜色
+	mainBkg: "#2d2d2d", // 节点背景
+	nodeBorder: "#888888", // 节点边框颜色
+	lineColor: "#cccccc", // 连接线颜色
+	primaryColor: "#3c3c3c", // 高亮主色
+	primaryTextColor: "#ffffff", // 主色元素中的文本
 	primaryBorderColor: "#888888",
-	secondaryColor: "#2d2d2d", // Secondary color for alternate elements
-	tertiaryColor: "#454545", // Third color for special elements
+	secondaryColor: "#2d2d2d", // 备用元素次色
+	tertiaryColor: "#454545", // 特殊元素第三色
 
-	// Class diagram specific
+	// 类图特定
 	classText: "#ffffff",
 
-	// State diagram specific
+	// 状态图特定
 	labelColor: "#ffffff",
 
-	// Sequence diagram specific
+	// 序列图特定
 	actorLineColor: "#cccccc",
 	actorBkg: "#2d2d2d",
 	actorBorder: "#888888",
 	actorTextColor: "#ffffff",
 
-	// Flow diagram specific
+	// 流程图特定
 	fillType0: "#2d2d2d",
 	fillType1: "#3c3c3c",
 	fillType2: "#454545",
@@ -45,31 +45,31 @@ mermaid.initialize({
 		fontSize: "16px",
 		fontFamily: "var(--vscode-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif)",
 
-		// Additional styling
+		// 额外样式
 		noteTextColor: "#ffffff",
 		noteBkgColor: "#454545",
 		noteBorderColor: "#888888",
 
-		// Improve contrast for special elements
+		// 提高特殊元素的对比度
 		critBorderColor: "#ff9580",
 		critBkgColor: "#803d36",
 
-		// Task diagram specific
+		// 任务图特定
 		taskTextColor: "#ffffff",
 		taskTextOutsideColor: "#ffffff",
 		taskTextLightColor: "#ffffff",
 
-		// Numbers/sections
+		// 数字/部分
 		sectionBkgColor: "#2d2d2d",
 		sectionBkgColor2: "#3c3c3c",
 
-		// Alt sections in sequence diagrams
+		// 序列图中的备用部分
 		altBackground: "#2d2d2d",
 
-		// Links
+		// 链接
 		linkColor: "#6cb6ff",
 
-		// Borders and lines
+		// 边框和线条
 		compositeBackground: "#2d2d2d",
 		compositeBorder: "#888888",
 		titleColor: "#ffffff",
@@ -84,12 +84,12 @@ export default function MermaidBlock({ code }: MermaidBlockProps) {
 	const containerRef = useRef<HTMLDivElement>(null)
 	const [isLoading, setIsLoading] = useState(false)
 
-	// 1) Whenever `code` changes, mark that we need to re-render a new chart
+	// 1) 每当 `code` 变化时，标记需要重新渲染新图表
 	useEffect(() => {
 		setIsLoading(true)
 	}, [code])
 
-	// 2) Debounce the actual parse/render
+	// 2) 防抖实际解析/渲染
 	useDebounceEffect(
 		() => {
 			if (containerRef.current) {
@@ -110,20 +110,20 @@ export default function MermaidBlock({ code }: MermaidBlockProps) {
 					}
 				})
 				.catch((err) => {
-					console.warn("Mermaid parse/render failed:", err)
-					containerRef.current!.innerHTML = code.replace(/</g, "&lt;").replace(/>/g, "&gt;")
+					console.warn("Mermaid 解析/渲染失败：", err)
+					containerRef.current!.innerHTML = code.replace(/</g, "<").replace(/>/g, ">")
 				})
 				.finally(() => {
 					setIsLoading(false)
 				})
 		},
-		500, // Delay 500ms
-		[code], // Dependencies for scheduling
+		500, // 延迟 500ms
+		[code], // 调度依赖项
 	)
 
 	/**
-	 * Called when user clicks the rendered diagram.
-	 * Converts the <svg> to a PNG and sends it to the extension.
+	 * 用户点击渲染的图表时调用。
+	 * 将 <svg> 转换为 PNG 并发送到扩展。
 	 */
 	const handleClick = async () => {
 		if (!containerRef.current) {
@@ -137,10 +137,10 @@ export default function MermaidBlock({ code }: MermaidBlockProps) {
 		try {
 			const pngDataUrl = await svgToPng(svgEl)
 			FileServiceClient.openImage(StringRequest.create({ value: pngDataUrl })).catch((err) =>
-				console.error("Failed to open image:", err),
+				console.error("打开图像失败：", err),
 			)
 		} catch (err) {
-			console.error("Error converting SVG to PNG:", err)
+			console.error("SVG 转换为 PNG 时出错：", err)
 		}
 	}
 
@@ -148,15 +148,15 @@ export default function MermaidBlock({ code }: MermaidBlockProps) {
 		try {
 			await navigator.clipboard.writeText(code)
 		} catch (err) {
-			console.error("Copy failed", err)
+			console.error("复制失败", err)
 		}
 	}
 
 	return (
 		<MermaidBlockContainer>
-			{isLoading && <LoadingMessage>Generating mermaid diagram...</LoadingMessage>}
+			{isLoading && <LoadingMessage>正在生成 Mermaid 图表...</LoadingMessage>}
 			<ButtonContainer>
-				<StyledVSCodeButton aria-label="Copy Code" onClick={handleCopyCode} title="Copy Code">
+				<StyledVSCodeButton aria-label="复制代码" onClick={handleCopyCode} title="复制代码">
 					<span className="codicon codicon-copy"></span>
 				</StyledVSCodeButton>
 			</ButtonContainer>
@@ -166,25 +166,25 @@ export default function MermaidBlock({ code }: MermaidBlockProps) {
 }
 
 async function svgToPng(svgEl: SVGElement): Promise<string> {
-	console.log("svgToPng function called")
-	// Clone the SVG to avoid modifying the original
+	console.log("svgToPng 函数被调用")
+	// 克隆 SVG 以避免修改原始元素
 	const svgClone = svgEl.cloneNode(true) as SVGElement
 
-	// Get the original viewBox
+	// 获取原始 viewBox
 	const viewBox = svgClone.getAttribute("viewBox")?.split(" ").map(Number) || []
 	const originalWidth = viewBox[2] || svgClone.clientWidth
 	const originalHeight = viewBox[3] || svgClone.clientHeight
 
-	// Calculate the scale factor to fit editor width while maintaining aspect ratio
+	// 计算缩放因子以适合编辑器宽度，同时保持宽高比
 
-	// Unless we can find a way to get the actual editor window dimensions through the VS Code API (which might be possible but would require changes to the extension side),
-	// the fixed width seems like a reliable approach.
+	// 除非我们能找到通过 VS Code API 获取实际编辑器窗口尺寸的方法（可能可行但需要修改扩展端），
+	// 否则固定宽度似乎是可靠的方法。
 	const editorWidth = 3_600
 
 	const scale = editorWidth / originalWidth
 	const scaledHeight = originalHeight * scale
 
-	// Update SVG dimensions
+	// 更新 SVG 尺寸
 	svgClone.setAttribute("width", `${editorWidth}`)
 	svgClone.setAttribute("height", `${scaledHeight}`)
 
@@ -204,10 +204,10 @@ async function svgToPng(svgEl: SVGElement): Promise<string> {
 
 			const ctx = canvas.getContext("2d")
 			if (!ctx) {
-				return reject("Canvas context not available")
+				return reject("Canvas 上下文不可用")
 			}
 
-			// Fill background with Mermaid's dark theme background color
+			// 用 Mermaid 深色主题背景色填充背景
 			ctx.fillStyle = MERMAID_THEME.background
 			ctx.fillRect(0, 0, canvas.width, canvas.height)
 

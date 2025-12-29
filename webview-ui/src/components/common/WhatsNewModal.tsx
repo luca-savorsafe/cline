@@ -66,7 +66,7 @@ export const WhatsNewModal: React.FC<WhatsNewModalProps> = ({ open, onClose, ver
 			<div className="flex gap-2 flex-wrap">{children}</div>
 		) : (
 			<Button className="my-1" onClick={handleShowAccount} size="sm">
-				Sign Up with Cline
+				使用 Cline 注册
 			</Button>
 		)
 
@@ -81,33 +81,33 @@ export const WhatsNewModal: React.FC<WhatsNewModalProps> = ({ open, onClose, ver
 						className="text-lg font-semibold mb-3 pr-6"
 						id="whats-new-title"
 						style={{ color: "var(--vscode-editor-foreground)" }}>
-						🎉 New in v{version}
+						🎉 版本 v{version} 新功能
 					</h2>
 
 					{/* Description */}
 					<ul className="text-sm pl-3 list-disc" style={{ color: "var(--vscode-descriptionForeground)" }}>
 						<li className="mb-2">
-							<strong>Cline provider</strong> now runs on the Vercel AI Gateway for better latency and fewer errors.
+							<strong>Cline 提供程序</strong> 现在运行在 Vercel AI 网关上，以获得更低的延迟和更少的错误。
 						</li>
 						<li>
-							<strong>GLM 4.7</strong> now available!
+							<strong>GLM 4.7</strong> 现已可用！
 							<br />
 							<AuthButton>
-								<ModelButton label="Try GLM 4.7" modelId="z-ai/glm-4.7" />
+								<ModelButton label="尝试 GLM 4.7" modelId="z-ai/glm-4.7" />
 							</AuthButton>
 						</li>
 						<li>
-							<strong>Kat-Coder Pro</strong>, free for a limited time!
+							<strong>Kat-Coder Pro</strong>，限时免费！
 							<br />
 							<AuthButton>
-								<ModelButton label="Try Kat-Coder Pro" modelId="kwaipilot/kat-coder-pro:free" />
+								<ModelButton label="尝试 Kat-Coder Pro" modelId="kwaipilot/kat-coder-pro:free" />
 							</AuthButton>
 						</li>
 						<li>
-							<strong>Gemini 3 Flash Preview</strong> now available!
+							<strong>Gemini 3 Flash Preview</strong> 现已可用！
 							<br />
 							<AuthButton>
-								<ModelButton label="Try Gemini 3 Flash Preview" modelId="google/gemini-3-flash-preview" />
+								<ModelButton label="尝试 Gemini 3 Flash Preview" modelId="google/gemini-3-flash-preview" />
 							</AuthButton>
 						</li>
 					</ul>

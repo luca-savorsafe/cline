@@ -13,7 +13,7 @@ const SubagentOutputLineLimitSlider: React.FC = () => {
 	return (
 		<div>
 			<label htmlFor="subagent-output-limit" style={{ fontWeight: "700", fontSize: 12, display: "block", marginBottom: 5 }}>
-				Subagent output limit
+				子代理输出限制
 			</label>
 			<div style={{ display: "flex", alignItems: "center" }}>
 				<input
@@ -29,7 +29,7 @@ const SubagentOutputLineLimitSlider: React.FC = () => {
 				<span>{subagentTerminalOutputLineLimit ?? 2000}</span>
 			</div>
 			<p style={{ fontSize: 11, color: "var(--vscode-descriptionForeground)", margin: "5px 0 0 0" }}>
-				Maximum number of lines to include in output from CLI subagents. Truncates middle to save tokens.
+				CLI 子代理输出中包含的最大行数。截断中间部分以节省 tokens。
 			</p>
 		</div>
 	)

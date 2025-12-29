@@ -362,11 +362,11 @@ const ClineRulesToggleModal: React.FC = () => {
 		<div className="inline-flex min-w-0 max-w-full items-center" ref={modalRef}>
 			<div className="inline-flex w-full items-center" ref={buttonRef}>
 				<Tooltip>
-					{!isVisible && <TooltipContent>Manage Cline Rules & Workflows</TooltipContent>}
+					{!isVisible && <TooltipContent>管理 Cline 规则和工作流</TooltipContent>}
 					<TooltipTrigger>
 						<VSCodeButton
 							appearance="icon"
-							aria-label={isVisible ? "Hide Cline Rules & Workflows" : "Show Cline Rules & Workflows"}
+							aria-label={isVisible ? "隐藏 Cline 规则和工作流" : "显示 Cline 规则和工作流"}
 							className="p-0 m-0 flex items-center"
 							onClick={() => setIsVisible(!isVisible)}>
 							<i className="codicon codicon-law" style={{ fontSize: "12.5px" }} />
@@ -393,14 +393,14 @@ const ClineRulesToggleModal: React.FC = () => {
 									borderBottom: "1px solid var(--vscode-panel-border)",
 								}}>
 								<TabButton isActive={currentView === "rules"} onClick={() => setCurrentView("rules")}>
-									Rules
+									规则
 								</TabButton>
 								<TabButton isActive={currentView === "workflows"} onClick={() => setCurrentView("workflows")}>
-									Workflows
+									工作流
 								</TabButton>
 								{hooksEnabled && (
 									<TabButton isActive={currentView === "hooks"} onClick={() => setCurrentView("hooks")}>
-										Hooks
+										钩子
 									</TabButton>
 								)}
 							</div>
@@ -411,9 +411,7 @@ const ClineRulesToggleModal: React.FC = () => {
 							<div className="flex items-center gap-2 px-5 py-3 mb-4 bg-vscode-textBlockQuote-background border-l-[3px] border-vscode-textLink-foreground">
 								<i className="codicon codicon-lock text-sm" />
 								<span className="text-base">
-									{currentView === "rules"
-										? "Your organization manages some rules"
-										: "Your organization manages some workflows"}
+									{currentView === "rules" ? "您的组织管理一些规则" : "您的组织管理一些工作流"}
 								</span>
 							</div>
 						) : null}
@@ -422,31 +420,28 @@ const ClineRulesToggleModal: React.FC = () => {
 						<div className="text-xs text-description mb-4">
 							{currentView === "rules" ? (
 								<p>
-									Rules allow you to provide Cline with system-level guidance. Think of them as a persistent way
-									to include context and preferences for your projects or globally for every conversation.{" "}
+									规则允许您为 Cline
+									提供系统级指导。将它们视为一种持久的方式，用于为您的项目或全局的每次对话包含上下文和偏好。{" "}
 									<VSCodeLink
 										className="text-xs"
 										href="https://docs.cline.bot/features/cline-rules"
 										style={{ display: "inline", fontSize: "inherit" }}>
-										Docs
+										文档
 									</VSCodeLink>
 								</p>
 							) : currentView === "workflows" ? (
 								<p>
-									Workflows allow you to define a series of steps to guide Cline through a repetitive set of
-									tasks, such as deploying a service or submitting a PR. To invoke a workflow, type{" "}
-									<span className="text-foreground font-bold">/workflow-name</span> in the chat.{" "}
+									工作流允许您定义一系列步骤来指导 Cline 完成重复性任务，例如部署服务或提交
+									PR。要调用工作流，请在聊天中输入{" "}
+									<span className="text-foreground font-bold">/workflow-name</span>。{" "}
 									<VSCodeLink
 										className="text-xs inline"
 										href="https://docs.cline.bot/features/slash-commands/workflows">
-										Docs
+										文档
 									</VSCodeLink>
 								</p>
 							) : (
-								<p>
-									Hooks allow you to execute custom scripts at specific points in Cline's execution lifecycle,
-									enabling automation and integration with external tools.
-								</p>
+								<p>钩子允许您在 Cline 执行生命周期的特定点执行自定义脚本，实现与外部工具的自动化和集成。</p>
 							)}
 						</div>
 					</div>
@@ -458,7 +453,7 @@ const ClineRulesToggleModal: React.FC = () => {
 								{/* Remote Rules Section */}
 								{hasRemoteRules && (
 									<div className="mb-3">
-										<div className="text-sm font-normal mb-2">Enterprise Rules</div>
+										<div className="text-sm font-normal mb-2">企业规则</div>
 										<div className="flex flex-col gap-0">
 											{remoteGlobalRules.map((rule) => {
 												const enabled = rule.alwaysEnabled || remoteRulesToggles[rule.name] === true
@@ -481,7 +476,7 @@ const ClineRulesToggleModal: React.FC = () => {
 
 								{/* Global Rules Section */}
 								<div className="mb-3">
-									<div className="text-sm font-normal mb-2">Global Rules</div>
+									<div className="text-sm font-normal mb-2">全局规则</div>
 
 									{/* File-based Global Rules */}
 									<RulesToggleList
@@ -497,7 +492,7 @@ const ClineRulesToggleModal: React.FC = () => {
 
 								{/* Local Rules Section */}
 								<div style={{ marginBottom: -10 }}>
-									<div className="text-sm font-normal mb-2">Workspace Rules</div>
+									<div className="text-sm font-normal mb-2">工作区规则</div>
 									<RulesToggleList
 										isGlobal={false}
 										listGap="small"
@@ -542,7 +537,7 @@ const ClineRulesToggleModal: React.FC = () => {
 								{/* Remote Workflows Section */}
 								{hasRemoteWorkflows && (
 									<div className="mb-3">
-										<div className="text-sm font-normal mb-2">Enterprise Workflows</div>
+										<div className="text-sm font-normal mb-2">企业工作流</div>
 										<div className="flex flex-col gap-0">
 											{remoteGlobalWorkflows.map((workflow) => {
 												const enabled =
@@ -566,7 +561,7 @@ const ClineRulesToggleModal: React.FC = () => {
 
 								{/* Global Workflows Section */}
 								<div className="mb-3">
-									<div className="text-sm font-normal mb-2">Global Workflows</div>
+									<div className="text-sm font-normal mb-2">全局工作流</div>
 
 									{/* File-based Global Workflows */}
 									<RulesToggleList
@@ -582,7 +577,7 @@ const ClineRulesToggleModal: React.FC = () => {
 
 								{/* Local Workflows Section */}
 								<div style={{ marginBottom: -10 }}>
-									<div className="text-sm font-normal mb-2">Workspace Workflows</div>
+									<div className="text-sm font-normal mb-2">工作区工作流</div>
 									<RulesToggleList
 										isGlobal={false}
 										listGap="small"
@@ -598,12 +593,12 @@ const ClineRulesToggleModal: React.FC = () => {
 							<>
 								<div className="text-xs text-description mb-4">
 									<p>
-										Toggle to enable/disable (chmod +x/-x).{" "}
+										切换以启用/禁用 (chmod +x/-x)。{" "}
 										<VSCodeLink
 											className="text-xs"
 											href="https://docs.cline.bot/features/hooks"
 											style={{ display: "inline", fontSize: "inherit" }}>
-											Docs
+											文档
 										</VSCodeLink>
 									</p>
 								</div>
@@ -613,15 +608,14 @@ const ClineRulesToggleModal: React.FC = () => {
 									<div className="flex items-center gap-2 px-5 py-3 mb-4 bg-vscode-inputValidation-warningBackground border-l-[3px] border-vscode-inputValidation-warningBorder">
 										<i className="codicon codicon-warning text-sm" />
 										<span className="text-base">
-											Hook toggling is not supported on Windows. Hooks can be created, edited, and deleted,
-											but cannot be enabled/disabled and will not execute.
+											Windows 不支持钩子切换。可以创建、编辑和删除钩子，但无法启用/禁用，也不会执行。
 										</span>
 									</div>
 								)}
 
 								{/* Global Hooks */}
 								<div className="mb-3">
-									<div className="text-sm font-normal mb-2">Global Hooks</div>
+									<div className="text-sm font-normal mb-2">全局钩子</div>
 									<div className="flex flex-col gap-0">
 										{globalHooks
 											.sort((a, b) => a.name.localeCompare(b.name))
