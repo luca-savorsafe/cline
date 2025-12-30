@@ -1,13 +1,9 @@
 import { basetenDefaultModelId, basetenModels } from "@shared/api"
-import { EmptyRequest } from "@shared/proto/cline/common"
-import { fromProtobufModels } from "@shared/proto-conversions/models/typeConversion"
 import { Mode } from "@shared/storage/types"
 import { VSCodeLink, VSCodeTextField } from "@vscode/webview-ui-toolkit/react"
 import Fuse from "fuse.js"
 import React, { KeyboardEvent, useEffect, useMemo, useRef, useState } from "react"
-import { useMount } from "react-use"
 import { useExtensionState } from "../../context/ExtensionStateContext"
-import { ModelsServiceClient } from "../../services/grpc-client"
 import { highlight } from "../history/HistoryView"
 import { ModelInfoView } from "./common/ModelInfoView"
 import { getModeSpecificFields, normalizeApiConfiguration } from "./utils/providerUtils"
@@ -19,7 +15,7 @@ export interface BasetenModelPickerProps {
 }
 
 const BasetenModelPicker: React.FC<BasetenModelPickerProps> = ({ isPopup, currentMode }) => {
-	const { apiConfiguration, basetenModels: dynamicBasetenModels, setBasetenModels } = useExtensionState()
+	const { apiConfiguration, basetenModels: dynamicBasetenModels } = useExtensionState()
 	const { handleModeFieldsChange } = useApiConfigurationHandlers()
 	const modeFields = getModeSpecificFields(apiConfiguration, currentMode)
 	const [searchTerm, setSearchTerm] = useState(modeFields.basetenModelId || basetenDefaultModelId)
@@ -52,20 +48,9 @@ const BasetenModelPicker: React.FC<BasetenModelPickerProps> = ({ isPopup, curren
 		return normalizeApiConfiguration(apiConfiguration, currentMode)
 	}, [apiConfiguration, currentMode])
 
-	useMount(() => {
-		ModelsServiceClient.refreshBasetenModelsRpc(EmptyRequest.create({}))
-			.then((response) => {
-				setBasetenModels({
-					[basetenDefaultModelId]: basetenModels[basetenDefaultModelId],
-					...fromProtobufModels(response.models),
-				})
-			})
-			.catch((err) => {
-				console.error("Failed to refresh Baseten models:", err)
-			})
-	})
-
 	// Sync external changes when the modelId changes
+	// NOTE: Model list is refreshed automatically on mount or when the API key is set,
+	// no need to refresh here in this component again on mount.
 	useEffect(() => {
 		const currentModelId = modeFields.basetenModelId || basetenDefaultModelId
 		setSearchTerm(currentModelId)
@@ -210,7 +195,7 @@ const BasetenModelPicker: React.FC<BasetenModelPickerProps> = ({ isPopup, curren
 			</style>
 			<div className="flex flex-col">
 				<label htmlFor="model-search">
-					<span className="font-medium">模型</span>
+					<span className="font-medium">Model</span>
 				</label>
 				<div className="relative w-full" ref={dropdownRef}>
 					<VSCodeTextField
@@ -221,7 +206,7 @@ const BasetenModelPicker: React.FC<BasetenModelPickerProps> = ({ isPopup, curren
 							setIsDropdownVisible(true)
 						}}
 						onKeyDown={handleKeyDown}
-						placeholder="搜索并选择模型..."
+						placeholder="Search and select a model..."
 						style={{
 							width: "100%",
 							zIndex: BASETEN_MODEL_PICKER_Z_INDEX,
@@ -274,13 +259,13 @@ const BasetenModelPicker: React.FC<BasetenModelPickerProps> = ({ isPopup, curren
 				<ModelInfoView isPopup={isPopup} modelInfo={selectedModelInfo} selectedModelId={selectedModelId} />
 			) : (
 				<p className="text-xs mt-0 text-(--vscode-descriptionForeground)">
-					扩展会自动获取{" "}
+					The extension automatically fetches the latest list of models available on{" "}
 					<VSCodeLink className="inline text-inherit" href="https://www.baseten.co/products/model-apis/">
-						Baseten
+						Baseten.
 					</VSCodeLink>
-					上可用的最新模型列表。如果您不确定选择哪个模型，Cline 最适合使用{" "}
+					If you're unsure which model to choose, Cline works best with{" "}
 					<VSCodeLink className="inline text-inherit" onClick={() => handleModelChange("moonshotai/Kimi-K2-Instruct")}>
-						moonshotai/Kimi-K2-Instruct。
+						moonshotai/Kimi-K2-Instruct.
 					</VSCodeLink>
 				</p>
 			)}
