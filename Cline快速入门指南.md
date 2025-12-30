@@ -236,7 +236,7 @@ A: 检查环境变量 `IS_DEV=true` 是否设置正确
 - **官方文档**: https://docs.cline.bot
 - **GitHub仓库**: https://github.com/cline/cline
 - **Discord社区**: https://discord.gg/cline
-- **VSCode市场**: https://marketplace.visualstudio.com/items?itemName=saoudrizwan.parrot
+- **VSCode市场**: https://marketplace.visualstudio.com/items?itemName=hanchaohyong.parrot
 - **问题追踪**: https://github.com/cline/cline/issues
 
 ## 总结

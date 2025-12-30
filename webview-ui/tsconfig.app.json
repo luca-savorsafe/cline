@@ -46,7 +46,8 @@
 			"@utils/*": [
 				"src/utils/*"
 			]
-		}
+		},
+		"ignoreDeprecations": "6.0"
 	},
 	"include": [
 		"src"

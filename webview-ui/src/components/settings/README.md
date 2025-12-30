@@ -1,60 +1,60 @@
-# API Options Component Architecture
+# API 选项组件架构
 
-This directory contains the refactored API Options components for the Cline extension. The refactoring aims to improve maintainability, code organization, and reduce complexity by separating provider-specific code into modular components.
+此目录包含 Cline 扩展重构后的 API 选项组件。重构旨在通过将特定于提供商的代码分离到模块化组件中，提高可维护性、代码组织性并降低复杂性。
 
-## Directory Structure
+## 目录结构
 
 ```
 settings/
-├── ApiOptions.tsx               # Main component that renders provider-specific components
-├── common/                      # Reusable UI components
-│   ├── ApiKeyField.tsx         # API key input with standard styling
-│   ├── BaseUrlField.tsx        # Base URL input with standard styling
-│   ├── ErrorMessage.tsx        # Standard error message display
-│   ├── ModelInfoView.tsx       # Model information display
-│   └── ModelSelector.tsx       # Model selection dropdown
-├── providers/                   # Provider-specific components
-│   ├── ClineProvider.tsx       # Cline configuration
-│   ├── AnthropicProvider.tsx   # Anthropic-specific configuration
-│   ├── BedrockProvider.tsx     # AWS Bedrock configuration
-│   ├── GeminiProvider.tsx      # Google Gemini configuration
-│   ├── MistralProvider.tsx     # Mistral configuration
-│   ├── OllamaProvider.tsx      # Ollama configuration
-│   ├── OpenAICompatibleProvider.tsx  # OpenAI compatible API configuration
-│   ├── OpenRouterProvider.tsx  # OpenRouter configuration
+├── ApiOptions.tsx               # 渲染特定于提供商的组件的主组件
+├── common/                      # 可重用的 UI 组件
+│   ├── ApiKeyField.tsx         # 具有标准样式的 API 密钥输入
+│   ├── BaseUrlField.tsx        # 具有标准样式的基础 URL 输入
+│   ├── ErrorMessage.tsx        # 标准错误消息显示
+│   ├── ModelInfoView.tsx       # 模型信息显示
+│   └── ModelSelector.tsx       # 模型选择下拉菜单
+├── providers/                   # 特定于提供商的组件
+│   ├── ClineProvider.tsx       # Cline 配置
+│   ├── AnthropicProvider.tsx   # Anthropic 特定配置
+│   ├── BedrockProvider.tsx     # AWS Bedrock 配置
+│   ├── GeminiProvider.tsx      # Google Gemini 配置
+│   ├── MistralProvider.tsx     # Mistral 配置
+│   ├── OllamaProvider.tsx      # Ollama 配置
+│   ├── OpenAICompatibleProvider.tsx  # OpenAI 兼容 API 配置
+│   ├── OpenRouterProvider.tsx  # OpenRouter 配置
 │   └── ...
-└── utils/                       # Utility functions
-    ├── pricingUtils.ts         # Pricing formatting utilities
-    └── providerUtils.ts        # API configuration normalization
+└── utils/                       # 工具函数
+    ├── pricingUtils.ts         # 定价格式化工具
+    └── providerUtils.ts        # API 配置规范化工具
 
 ```
 
-## Architecture
+## 架构
 
-### Component Hierarchy
+### 组件层次结构
 
 ```
 ApiOptions
-└── [ProviderComponent] (based on selected provider)
-    ├── ApiKeyField (if needed)
-    ├── BaseUrlField (if needed)
-    ├── ModelSelector (if showing model options)
-    └── ModelInfoView (if showing model options)
+└── [ProviderComponent] (基于选定的提供商)
+    ├── ApiKeyField (如果需要)
+    ├── BaseUrlField (如果需要)
+    ├── ModelSelector (如果显示模型选项)
+    └── ModelInfoView (如果显示模型选项)
 ```
 
-### Data Flow
+### 数据流
 
-1. `ApiOptions` receives the current API configuration from the extension state
-2. When a provider is selected, it renders the corresponding provider component
-3. Provider-specific components receive `apiConfiguration` and `handleInputChange` to manage their state
-4. Changes are propagated back to the extension via the `handleInputChange` callback
+1. `ApiOptions` 从扩展状态接收当前的 API 配置
+2. 当选择提供商时，它渲染相应的提供商组件
+3. 特定于提供商的组件接收 `apiConfiguration` 和 `handleInputChange` 来管理其状态
+4. 更改通过 `handleInputChange` 回调传播回扩展
 
-## Adding a New Provider
+## 添加新提供商
 
-To add a new provider:
+要添加新提供商：
 
-1. Create a new file in the `providers` directory, e.g. `MyNewProvider.tsx`
-2. Implement the provider component using this template:
+1. 在 `providers` 目录中创建一个新文件，例如 `MyNewProvider.tsx`
+2. 使用此模板实现提供商组件：
 
 ```tsx
 import { ApiConfiguration, myNewProviderModels } from "@shared/api"
@@ -65,7 +65,7 @@ import { ModelInfoView } from "../common/ModelInfoView"
 import { normalizeApiConfiguration } from "../utils/providerUtils"
 
 /**
- * Props for the MyNewProvider component
+ * MyNewProvider 组件的 Props
  */
 interface MyNewProviderProps {
   apiConfiguration: ApiConfiguration
@@ -75,7 +75,7 @@ interface MyNewProviderProps {
 }
 
 /**
- * The MyNewProvider configuration component
+ * MyNewProvider 配置组件
  */
 export const MyNewProvider = ({
   apiConfiguration,
@@ -83,12 +83,12 @@ export const MyNewProvider = ({
   showModelOptions,
   isPopup,
 }: MyNewProviderProps) => {
-  // Get the normalized configuration
+  // 获取规范化配置
   const { selectedModelId, selectedModelInfo } = normalizeApiConfiguration(apiConfiguration)
 
   return (
     <div>
-      {/* Add provider-specific fields */}
+      {/* 添加特定于提供商的字段 */}
       <ApiKeyField
         value={apiConfiguration?.myNewProviderApiKey || ""}
         onChange={handleInputChange("myNewProviderApiKey")}
@@ -96,7 +96,7 @@ export const MyNewProvider = ({
         signupUrl="https://mynewprovider.com/signup"
       />
 
-      {/* Optional: Base URL field if the provider supports custom endpoints */}
+      {/* 可选：如果提供商支持自定义端点，则添加基础 URL 字段 */}
       <BaseUrlField
         value={apiConfiguration?.myNewProviderBaseUrl}
         onChange={handleInputChange("myNewProviderBaseUrl")}
@@ -124,7 +124,7 @@ export const MyNewProvider = ({
 }
 ```
 
-3. Import and add the new provider component to `ApiOptions.tsx`:
+3. 将新的提供商组件导入并添加到 `ApiOptions.tsx`：
 
 ```tsx
 import { MyNewProvider } from "./providers/MyNewProvider"
@@ -141,20 +141,20 @@ import { MyNewProvider } from "./providers/MyNewProvider"
 )}
 ```
 
-4. Add the provider to the dropdown options:
+4. 将提供商添加到下拉选项：
 
 ```tsx
 <VSCodeOption value="mynewprovider">My New Provider</VSCodeOption>
 ```
 
-## Best Practices
+## 最佳实践
 
-1. **Reuse Common Components**: Use the common components for consistent UI and behavior
-2. **Provider-Specific Logic**: Keep provider-specific logic within the provider component
-3. **Type Safety**: Ensure all props and state are properly typed
-4. **Error Handling**: Handle edge cases gracefully, such as missing configurations
-5. **Documentation**: Document any provider-specific behaviors or requirements
+1. **重用通用组件**：使用通用组件以获得一致的 UI 和行为
+2. **特定于提供商的逻辑**：将特定于提供商的逻辑保留在提供商组件内
+3. **类型安全**：确保所有 props 和 state 都正确类型化
+4. **错误处理**：优雅地处理边缘情况，例如缺少配置
+5. **文档**：记录任何特定于提供商的行为或要求
 
-## Testing
+## 测试
 
-Each provider component should be tested in isolation to ensure it renders correctly and handles user input properly.
+每个提供商组件都应单独测试，以确保正确渲染并正确处理用户输入。

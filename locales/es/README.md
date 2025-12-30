@@ -8,7 +8,7 @@
 <table>
 <tbody>
 <td align="center">
-<a href="https://marketplace.visualstudio.com/items?itemName=saoudrizwan.parrot" target="_blank"><strong>Descargar en VS Marketplace</strong></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=hanchaoyong.parrot" target="_blank"><strong>Descargar en VS Marketplace</strong></a>
 </td>
 <td align="center">
 <a href="https://discord.gg/cline" target="_blank"><strong>Discord</strong></a>

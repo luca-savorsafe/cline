@@ -219,10 +219,10 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const newValue = e.target.currentValue as OpenaiReasoningEffort
 								handleReasoningEffortChange(newValue)
 							}}>
-							<VSCodeOption value="minimal">Minimal</VSCodeOption>
-							<VSCodeOption value="low">Low</VSCodeOption>
-							<VSCodeOption value="medium">Medium</VSCodeOption>
-							<VSCodeOption value="high">High</VSCodeOption>
+							<VSCodeOption value="minimal">最小</VSCodeOption>
+							<VSCodeOption value="low">低</VSCodeOption>
+							<VSCodeOption value="medium">中等</VSCodeOption>
+							<VSCodeOption value="high">高</VSCodeOption>
 						</VSCodeDropdown>
 						<p className="text-xs mt-[5px] text-(--vscode-descriptionForeground)">
 							OpenAI 系列模型的推理力度（适用于所有 OpenAI 模型提供商）
@@ -344,11 +344,10 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const enabled = (e?.target as HTMLInputElement).checked
 								updateSetting("nativeToolCallEnabled", enabled)
 							}}>
-							Enable Native Tool Call
+							启用原生工具调用
 						</VSCodeCheckbox>
 						<p className="text-xs text-(--vscode-descriptionForeground)">
-							Uses the model's native tool calling API instead of XML-based tool parsing. This will improve
-							performance for supported models.
+							使用模型的原生工具调用 API 而不是基于 XML 的工具解析。这将提高支持模型的性能。
 						</p>
 					</div>
 					<div className="mt-2.5">
@@ -358,13 +357,11 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const enabled = (e?.target as HTMLInputElement).checked
 								updateSetting("enableParallelToolCalling", enabled)
 							}}>
-							Enable Parallel Tool Calling
+							启用并行工具调用
 						</VSCodeCheckbox>
 						<p className="text-xs">
-							<span className="text-(--vscode-errorForeground)">Experimental: </span>{" "}
-							<span className="text-description">
-								Allows models to call multiple tools in a single response. Automatically enabled for GPT-5 models.
-							</span>
+							<span className="text-(--vscode-errorForeground)">实验性：</span>{" "}
+							<span className="text-description">允许模型在单个响应中调用多个工具。对于 GPT-5 模型自动启用。</span>
 						</p>
 					</div>
 					<div className="mt-2.5">
@@ -374,13 +371,11 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const checked = e.target.checked === true
 								updateSetting("backgroundEditEnabled", checked)
 							}}>
-							Enable Background Edit
+							启用后台编辑
 						</VSCodeCheckbox>
 						<p className="text-xs">
-							<span className="text-error">Experimental: </span>
-							<span className="text-description">
-								Allows editing files in background without opening the diff view in editor.
-							</span>
+							<span className="text-error">实验性：</span>
+							<span className="text-description">允许在后台编辑文件而无需在编辑器中打开差异视图。</span>
 						</p>
 					</div>
 					{multiRootSetting.featureFlag && (
@@ -391,11 +386,11 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 									const checked = e.target.checked === true
 									updateSetting("multiRootEnabled", checked)
 								}}>
-								Enable Multi-Root Workspace
+								启用多根工作区
 							</VSCodeCheckbox>
 							<p className="text-xs">
-								<span className="text-error">Experimental: </span>{" "}
-								<span className="text-description">Allows cline to work across multiple workspaces.</span>
+								<span className="text-error">实验性：</span>{" "}
+								<span className="text-description">允许 Cline 在多个工作区之间工作。</span>
 							</p>
 						</div>
 					)}
@@ -407,19 +402,16 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const checked = e.target.checked === true
 								updateSetting("hooksEnabled", checked)
 							}}>
-							Enable Hooks
+							启用钩子
 						</VSCodeCheckbox>
 						{!isMacOSOrLinux() ? (
 							<p className="text-xs mt-1" style={{ color: "var(--vscode-inputValidation-warningForeground)" }}>
-								Hooks are not yet supported on Windows. This feature is currently available on macOS and Linux
-								only.
+								钩子功能尚未在 Windows 上支持。此功能目前仅在 macOS 和 Linux 上可用。
 							</p>
 						) : (
 							<p className="text-xs">
-								<span className="text-(--vscode-errorForeground)">Experimental: </span>{" "}
-								<span className="text-description">
-									Allows execution of hooks from .clinerules/hooks/ directory.
-								</span>
+								<span className="text-(--vscode-errorForeground)">实验性：</span>{" "}
+								<span className="text-description">允许从 .clinerules/hooks/ 目录执行钩子。</span>
 							</p>
 						)}
 					</div>
@@ -434,7 +426,7 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 											const checked = e.target.checked === true
 											updateSetting("yoloModeToggled", checked)
 										}}>
-										Enable YOLO Mode
+										启用 YOLO 模式
 									</VSCodeCheckbox>
 									{remoteConfigSettings?.yoloModeToggled !== undefined && (
 										<i className="codicon codicon-lock text-description text-sm" />
@@ -445,13 +437,12 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								className="max-w-xs"
 								hidden={remoteConfigSettings?.yoloModeToggled === undefined}
 								side="top">
-								This setting is managed by your organization's remote configuration
+								此设置由您组织的远程配置管理
 							</TooltipContent>
 						</Tooltip>
 
 						<p className="text-xs text-(--vscode-errorForeground)">
-							EXPERIMENTAL & DANGEROUS: This mode disables safety checks and user confirmations. Cline will
-							automatically approve all actions without asking. Use with extreme caution.
+							实验性且危险：此模式禁用安全检查用户确认。Cline 将自动批准所有操作而无需询问。请极其谨慎使用。
 						</p>
 					</div>
 				</div>

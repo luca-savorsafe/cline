@@ -505,7 +505,7 @@ A: 可以通过MCP协议添加自定义工具，或在`src/integrations/`目录�
 - [官方文档](https://docs.cline.bot)
 - [GitHub仓库](https://github.com/cline/cline)
 - [Discord社区](https://discord.gg/cline)
-- [VSCode市场](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.parrot)
+- [VSCode市场](https://marketplace.visualstudio.com/items?itemName=hanchaohyong.parrot)
 
 ## 总结
 

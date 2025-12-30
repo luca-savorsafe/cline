@@ -207,144 +207,95 @@ const remarkPreventBoldFilenames = () => {
 }
 
 const StyledMarkdown = styled.div<{ compact?: boolean }>`
-	pre {
-		background-color: ${CODE_BLOCK_BG_COLOR};
-		border-radius: 3px;
-		margin: 13px 0;
-		padding: 10px 10px;
-		max-width: calc(100vw - 20px);
-		overflow-x: auto;
-		overflow-y: hidden;
-		padding-right: 70px;
-	}
+  pre {
+    background-color: ${CODE_BLOCK_BG_COLOR};
+    border-radius: 3px;
+    margin: 13px 0;
+    padding: 10px 10px;
+    max-width: calc(100vw - 20px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-right: 70px;
+  }
 
-	pre > code {
-		.hljs-deletion {
-			background-color: var(--vscode-diffEditor-removedTextBackground);
-			display: inline-block;
-			width: 100%;
-		}
-		.hljs-addition {
-			background-color: var(--vscode-diffEditor-insertedTextBackground);
-			display: inline-block;
-			width: 100%;
-		}
-	}
+  pre > code {
+    .hljs-deletion {
+      background-color: var(--vscode-diffEditor-removedTextBackground);
+      display: inline-block;
+      width: 100%;
+    }
+    .hljs-addition {
+      background-color: var(--vscode-diffEditor-insertedTextBackground);
+      display: inline-block;
+      width: 100%;
+    }
+  }
 
-	code {
-		span.line:empty {
-			display: none;
-		}
-		word-wrap: break-word;
-		border-radius: 3px;
-		background-color: ${CODE_BLOCK_BG_COLOR};
-		font-size: var(--vscode-editor-font-size, var(--vscode-font-size, 12px));
-		font-family: var(--vscode-editor-font-family);
-	}
+  code {
+    span.line:empty {
+      display: none;
+    }
+    word-wrap: break-word;
+    border-radius: 3px;
+    background-color: ${CODE_BLOCK_BG_COLOR};
+    font-size: var(--vscode-editor-font-size, var(--vscode-font-size, 12px));
+    font-family: var(--vscode-editor-font-family);
+  }
 
-	code:not(pre > code) {
-		font-family: var(--vscode-editor-font-family, monospace);
-		color: var(--vscode-textPreformat-foreground, #f78383);
-		background-color: var(--vscode-textCodeBlock-background, #1e1e1e);
-		padding: 0px 2px;
-		border-radius: 3px;
-		border: 1px solid var(--vscode-textSeparator-foreground, #424242);
-		white-space: pre-line;
-		word-break: break-word;
-		overflow-wrap: anywhere;
-	}
+  code:not(pre > code) {
+    font-family: var(--vscode-editor-font-family, monospace);
+    color: var(--vscode-textPreformat-foreground, #f78383);
+    background-color: var(--vscode-textCodeBlock-background, #1e1e1e);
+    padding: 0px 2px;
+    border-radius: 3px;
+    border: 1px solid var(--vscode-textSeparator-foreground, #424242);
+    white-space: pre-line;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
 
-	font-family:
-		var(--vscode-font-family),
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		"Segoe UI",
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		"Open Sans",
-		"Helvetica Neue",
-		sans-serif;
-	font-size: var(--vscode-font-size, 13px);
+  font-family: var(--vscode-font-family), system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: var(--vscode-font-size, 13px);
 
-	/* 优化中文显示 */
-	word-wrap: break-word;
-	word-break: break-word;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-ideograph; /* 优化中文排版 */
+  p,
+  li,
+  ol,
+  ul {
+    line-height: 1.25;
+  }
 
-	p,
-	li,
-	ol,
-	ul {
-		line-height: 1.6; /* 增加行高以改善中文可读性 */
-		text-align: justify;
-		text-justify: inter-ideograph;
-	}
+  ol,
+  ul {
+    padding-left: 2.5em;
+    margin-left: 0;
+  }
 
-	/* 优化中文标点符号的换行 */
-	p, li {
-		hyphens: auto;
-		-webkit-hyphens: auto;
-		-moz-hyphens: auto;
-		ms-hyphens: auto;
-	}
+  p {
+    white-space: pre-wrap;
+    ${(props) => props.compact && "margin: 0;"}
+  }
 
-	ol,
-	ul {
-		padding-left: 2.5em;
-		margin-left: 0;
-	}
+  a {
+    text-decoration: none;
+  }
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-	p {
-		white-space: pre-wrap;
-		margin: 0.8em 0; /* 增加段落间距 */
-		${(props) => props.compact && "margin: 0;"}
-		text-indent: 2em; /* 中文段落首行缩进 */
-	}
+  hr,
+  ul,
+  ol {
+    margin: 13px 0;
+  }
 
-	a {
-		text-decoration: none;
-	}
-	a {
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	hr, ul, ol {
-		margin: 13px 0;
-	}
-
-	li > ul, li > ol {
-		margin: 4px 0; /* or 0 if you want them very tight */
-	}
-
-	/* 优化列表项中的中文文本 */
-	li {
-		margin-bottom: 0.3em;
-	}
-
-	/* 优化标题中的中文 */
-	h1, h2, h3, h4, h5, h6 {
-		font-weight: 600;
-		line-height: 1.3;
-		margin: 1.2em 0 0.6em 0;
-	}
-
-	/* 优化引用块中的中文 */
-	blockquote {
-		border-left: 3px solid var(--vscode-textBlockQuote-border);
-		padding-left: 1em;
-		margin: 1em 0;
-		color: var(--vscode-textBlockQuote-foreground);
-		font-style: italic;
-		line-height: 1.6;
-	}
-
+  li > ul,
+  li > ol {
+    margin: 4px 0; /* or 0 if you want them very tight */
+  }
 `
 
 const PreWithCopyButton = ({ children, ...preProps }: React.HTMLAttributes<HTMLPreElement>) => {
@@ -434,7 +385,9 @@ const MarkdownBlock = memo(({ markdown, compact }: MarkdownBlockProps) => {
 			components: {
 				pre: ({ children, ...preProps }: React.HTMLAttributes<HTMLPreElement>) => {
 					if (Array.isArray(children) && children.length === 1 && React.isValidElement(children[0])) {
-						const child = children[0] as React.ReactElement<{ className?: string }>
+						const child = children[0] as React.ReactElement<{
+							className?: string
+						}>
 						if (child.props?.className?.includes("language-mermaid")) {
 							return child
 						}
