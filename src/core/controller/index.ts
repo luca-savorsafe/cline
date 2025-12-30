@@ -7,6 +7,7 @@ import type { WorkspaceRootManager } from "@core/workspace/WorkspaceRootManager"
 import { cleanupLegacyCheckpoints } from "@integrations/checkpoints/CheckpointMigration"
 import { ClineAccountService } from "@services/account/ClineAccountService"
 import { McpHub } from "@services/mcp/McpHub"
+import { SkillsManager } from "@services/skills/SkillsManager"
 import type { ApiProvider, ModelInfo } from "@shared/api"
 import type { ChatContent } from "@shared/ChatContent"
 import type { ExtensionState, Platform } from "@shared/ExtensionMessage"
@@ -66,6 +67,7 @@ export class Controller {
 	task?: Task
 
 	mcpHub: McpHub
+	skillsManager?: SkillsManager
 	accountService: ClineAccountService
 	authService: AuthService
 	ocaAuthService: OcaAuthService
@@ -282,6 +284,11 @@ export class Controller {
 
 		const cwd = this.workspaceManager?.getPrimaryRoot()?.path || (await getCwd(getDesktopDir()))
 
+		// Initialize skills manager for this task
+		this.skillsManager?.dispose()
+		this.skillsManager = new SkillsManager(cwd)
+		await this.skillsManager.initialize()
+
 		const taskId = historyItem?.id || Date.now().toString()
 
 		// Acquire task lock
@@ -310,6 +317,7 @@ export class Controller {
 		this.task = new Task({
 			controller: this,
 			mcpHub: this.mcpHub,
+			skillsManager: this.skillsManager,
 			updateTaskHistory: (historyItem) => this.updateTaskHistory(historyItem),
 			postStateToWebview: () => this.postStateToWebview(),
 			reinitExistingTaskFromId: (taskId) => this.reinitExistingTaskFromId(taskId),
