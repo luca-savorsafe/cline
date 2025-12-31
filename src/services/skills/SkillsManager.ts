@@ -42,7 +42,8 @@ export class SkillsManager {
 		const globalSkillsDir = await ensureSkillsDirectoryExists()
 		const projectDirs = [
 			path.join(this.cwd, ".clinerules", "skills"),
-			path.join(this.cwd, ".claude", "skills"), // For portability with Claude skills
+			path.join(this.cwd, ".cline", "skills"),
+			path.join(this.cwd, ".claude", "skills"),
 		]
 
 		// Load global skills first (lower priority)

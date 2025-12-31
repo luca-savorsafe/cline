@@ -105,6 +105,30 @@ Use analogies and ASCII diagrams when explaining code.`)
 			expect(skills[0].source).to.equal("project")
 		})
 
+		it("should discover skills from project .cline/skills directory", async () => {
+			const clineSkillsDir = path.join(TEST_CWD, ".cline", "skills")
+			const skillDir = path.join(clineSkillsDir, "debugging")
+			const skillMdPath = path.join(skillDir, "SKILL.md")
+
+			fileExistsStub.withArgs(clineSkillsDir).resolves(true)
+			fileExistsStub.withArgs(skillMdPath).resolves(true)
+			isDirectoryStub.withArgs(clineSkillsDir).resolves(true)
+			readdirStub.withArgs(clineSkillsDir).resolves(["debugging"])
+			statStub.withArgs(skillDir).resolves({ isDirectory: () => true })
+			readFileStub.withArgs(skillMdPath, "utf-8").resolves(`---
+name: debugging
+description: Debug code systematically
+---
+Use systematic debugging approaches.`)
+
+			await manager.initialize()
+			const skills = manager.getAvailableSkills()
+
+			expect(skills).to.have.lengthOf(1)
+			expect(skills[0].name).to.equal("debugging")
+			expect(skills[0].source).to.equal("project")
+		})
+
 		it("should discover skills from project .claude/skills directory", async () => {
 			const claudeSkillsDir = path.join(TEST_CWD, ".claude", "skills")
 			const skillDir = path.join(claudeSkillsDir, "coding")
