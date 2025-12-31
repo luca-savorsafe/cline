@@ -5,6 +5,7 @@ import { DiffViewProvider } from "@integrations/editor/DiffViewProvider"
 import { BrowserSession } from "@services/browser/BrowserSession"
 import { UrlContentFetcher } from "@services/browser/UrlContentFetcher"
 import { McpHub } from "@services/mcp/McpHub"
+import type { SkillsManager } from "@services/skills/SkillsManager"
 import { ClineAsk, ClineSay } from "@shared/ExtensionMessage"
 import { ClineContent } from "@shared/messages/content"
 import { ClineDefaultTool } from "@shared/tools"
@@ -39,6 +40,7 @@ import { ReportBugHandler } from "./tools/handlers/ReportBugHandler"
 import { SearchFilesToolHandler } from "./tools/handlers/SearchFilesToolHandler"
 import { SummarizeTaskHandler } from "./tools/handlers/SummarizeTaskHandler"
 import { UseMcpToolHandler } from "./tools/handlers/UseMcpToolHandler"
+import { UseSkillToolHandler } from "./tools/handlers/UseSkillToolHandler"
 import { WebFetchToolHandler } from "./tools/handlers/WebFetchToolHandler"
 import { WebSearchToolHandler } from "./tools/handlers/WebSearchToolHandler"
 import { WriteToFileToolHandler } from "./tools/handlers/WriteToFileToolHandler"
@@ -126,6 +128,9 @@ export class ToolExecutor {
 			userContent: ClineContent[],
 			context: "initial_task" | "resume" | "feedback",
 		) => Promise<{ cancel?: boolean; wasCancelled?: boolean; contextModification?: string; errorMessage?: string }>,
+
+		// Optional services
+		private skillsManager?: SkillsManager,
 	) {
 		this.autoApprover = new AutoApprove(this.stateManager)
 
@@ -165,6 +170,7 @@ export class ToolExecutor {
 				clineIgnoreController: this.clineIgnoreController,
 				contextManager: this.contextManager,
 				stateManager: this.stateManager,
+				skillsManager: this.skillsManager,
 			},
 			callbacks: {
 				say: this.say,
@@ -222,6 +228,7 @@ export class ToolExecutor {
 		this.coordinator.register(new UseMcpToolHandler())
 		this.coordinator.register(new AccessMcpResourceHandler())
 		this.coordinator.register(new LoadMcpDocumentationHandler())
+		this.coordinator.register(new UseSkillToolHandler())
 		this.coordinator.register(new PlanModeRespondHandler())
 		this.coordinator.register(new ActModeRespondHandler())
 		this.coordinator.register(new NewTaskHandler())

@@ -564,6 +564,8 @@ export class Task {
 			this.clearActiveHookExecution.bind(this),
 			this.getActiveHookExecution.bind(this),
 			this.runUserPromptSubmitHook.bind(this),
+			// Optional services
+			this.skillsManager,
 		)
 	}
 
