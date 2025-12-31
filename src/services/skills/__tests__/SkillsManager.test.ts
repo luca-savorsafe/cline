@@ -206,11 +206,11 @@ Content`)
 	})
 
 	describe("Override Resolution", () => {
-		it("should override global skill with project skill of same name", async () => {
+		it("should override project skill with global skill of same name", async () => {
 			const globalSkillDir = path.join(GLOBAL_SKILLS_DIR, "coding")
 			const globalSkillMdPath = path.join(globalSkillDir, "SKILL.md")
 
-			// Setup global skill
+			// Setup global skill (higher priority)
 			fileExistsStub.withArgs(GLOBAL_SKILLS_DIR).resolves(true)
 			fileExistsStub.withArgs(globalSkillMdPath).resolves(true)
 			isDirectoryStub.withArgs(GLOBAL_SKILLS_DIR).resolves(true)
@@ -222,7 +222,7 @@ description: Global coding skill
 ---
 Global instructions`)
 
-			// Setup project skill with same name
+			// Setup project skill with same name (lower priority)
 			const projectSkillsDir = path.join(TEST_CWD, ".clinerules", "skills")
 			const projectSkillDir = path.join(projectSkillsDir, "coding")
 			const projectSkillMdPath = path.join(projectSkillDir, "SKILL.md")
@@ -242,8 +242,8 @@ Project instructions`)
 			const skills = manager.getAvailableSkills()
 
 			expect(skills).to.have.lengthOf(1)
-			expect(skills[0].description).to.equal("Project coding skill")
-			expect(skills[0].source).to.equal("project")
+			expect(skills[0].description).to.equal("Global coding skill")
+			expect(skills[0].source).to.equal("global")
 		})
 
 		it("should keep both skills when names are different", async () => {

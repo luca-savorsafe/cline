@@ -34,7 +34,7 @@ export class SkillsManager {
 
 	/**
 	 * Discover all skills from global and project directories.
-	 * Project skills override global skills with the same name.
+	 * Global (personal) skills override project skills with the same name.
 	 */
 	async discoverSkills(): Promise<void> {
 		this.skills = []
@@ -46,13 +46,13 @@ export class SkillsManager {
 			path.join(this.cwd, ".claude", "skills"),
 		]
 
-		// Load global skills first (lower priority)
-		await this.scanSkillsDirectory(globalSkillsDir, "global")
-
-		// Load project skills (higher priority - will override global)
+		// Load project skills first (lower priority)
 		for (const dir of projectDirs) {
 			await this.scanSkillsDirectory(dir, "project")
 		}
+
+		// Load global skills last (higher priority - will override project)
+		await this.scanSkillsDirectory(globalSkillsDir, "global")
 	}
 
 	/**
