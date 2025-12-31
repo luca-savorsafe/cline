@@ -72,8 +72,11 @@ export class SkillsManager {
 
 				await this.loadSkillMetadata(entryPath, source, entryName)
 			}
-		} catch {
-			// Directory doesn't exist or can't be read - that's fine
+		} catch (error: unknown) {
+			// Log permission errors, but not "directory doesn't exist"
+			if (error instanceof Error && "code" in error && (error as NodeJS.ErrnoException).code === "EACCES") {
+				console.warn(`Permission denied reading skills directory: ${dirPath}`)
+			}
 		}
 	}
 
