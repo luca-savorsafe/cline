@@ -1,5 +1,5 @@
 ---
-"claude-dev": patch
+"parrot": patch
 ---
 
 Fix Baseten model selector issue in model picker modal mode
