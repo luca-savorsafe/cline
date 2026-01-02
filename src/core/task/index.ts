@@ -50,6 +50,7 @@ import { featureFlagsService } from "@services/feature-flags"
 import { listFiles } from "@services/glob/list-files"
 import { Logger } from "@services/logging/Logger"
 import { McpHub } from "@services/mcp/McpHub"
+import type { SkillsManager } from "@services/skills/SkillsManager"
 import { ApiConfiguration } from "@shared/api"
 import { findLast, findLastIndex } from "@shared/array"
 import { combineApiRequests } from "@shared/combineApiRequests"
@@ -111,6 +112,7 @@ export type ToolResponse = ClineToolResponseContent
 type TaskParams = {
 	controller: Controller
 	mcpHub: McpHub
+	skillsManager?: SkillsManager
 	updateTaskHistory: (historyItem: HistoryItem) => Promise<HistoryItem[]>
 	postStateToWebview: () => Promise<void>
 	reinitExistingTaskFromId: (taskId: string) => Promise<void>
@@ -189,6 +191,7 @@ export class Task {
 	// Core dependencies
 	private controller: Controller
 	private mcpHub: McpHub
+	private skillsManager?: SkillsManager
 
 	// Service handlers
 	api: ApiHandler
@@ -245,6 +248,7 @@ export class Task {
 		const {
 			controller,
 			mcpHub,
+			skillsManager,
 			updateTaskHistory,
 			postStateToWebview,
 			reinitExistingTaskFromId,
@@ -270,6 +274,7 @@ export class Task {
 		this.taskState = new TaskState()
 		this.controller = controller
 		this.mcpHub = mcpHub
+		this.skillsManager = skillsManager
 		this.updateTaskHistory = updateTaskHistory
 		this.postStateToWebview = postStateToWebview
 		this.reinitExistingTaskFromId = reinitExistingTaskFromId
@@ -559,6 +564,8 @@ export class Task {
 			this.clearActiveHookExecution.bind(this),
 			this.getActiveHookExecution.bind(this),
 			this.runUserPromptSubmitHook.bind(this),
+			// Optional services
+			this.skillsManager,
 		)
 	}
 
@@ -1765,6 +1772,7 @@ export class Task {
 			providerInfo,
 			supportsBrowserUse,
 			mcpHub: this.mcpHub,
+			skillsManager: this.skillsManager,
 			focusChainSettings: this.stateManager.getGlobalSettingsKey("focusChainSettings"),
 			globalClineRulesFileInstructions,
 			localClineRulesFileInstructions,
@@ -1782,8 +1790,18 @@ export class Task {
 			workspaceRoots,
 			isSubagentsEnabledAndCliInstalled,
 			isCliSubagent,
-			enableNativeToolCalls: this.stateManager.getGlobalStateKey("nativeToolCallEnabled"),
+			enableParallelToolCalling: this.stateManager.getGlobalSettingsKey("enableParallelToolCalling"),
 			terminalExecutionMode: this.terminalExecutionMode,
+>>>>>>> theirs
+		}
+			enableNativeToolCalls: this.stateManager.getGlobalStateKey("nativeToolCallEnabled"),
+			enableParallelToolCalling: this.stateManager.getGlobalSettingsKey("enableParallelToolCalling"),
+			terminalExecutionMode: this.terminalExecutionMode,
+		}
+=======
+			enableParallelToolCalling: this.stateManager.getGlobalSettingsKey("enableParallelToolCalling"),
+			terminalExecutionMode: this.terminalExecutionMode,
+>>>>>>> theirs
 		}
 
 		const { systemPrompt, tools } = await getSystemPrompt(promptContext)

@@ -4,6 +4,7 @@
 
 import { ApiProviderInfo } from "@/core/api"
 import type { McpHub } from "@/services/mcp/McpHub"
+import type { SkillsManager } from "@/services/skills/SkillsManager"
 import type { BrowserSettings } from "@/shared/BrowserSettings"
 import type { FocusChainSettings } from "@/shared/FocusChainSettings"
 import { ModelFamily } from "@/shared/prompts"
@@ -96,6 +97,7 @@ export interface SystemPromptContext {
 	readonly ide: string
 	readonly supportsBrowserUse?: boolean
 	readonly mcpHub?: McpHub
+	readonly skillsManager?: SkillsManager
 	readonly focusChainSettings?: FocusChainSettings
 	readonly globalClineRulesFileInstructions?: string
 	readonly localClineRulesFileInstructions?: string
@@ -115,6 +117,8 @@ export interface SystemPromptContext {
 	readonly isSubagentsEnabledAndCliInstalled?: boolean
 	readonly isCliSubagent?: boolean
 	readonly enableNativeToolCalls?: boolean
+	readonly enableParallelToolCalling?: boolean
+	readonly terminalExecutionMode?: "vscodeTerminal" | "backgroundExec"
 	readonly terminalExecutionMode?: "vscodeTerminal" | "backgroundExec"
 }
 
