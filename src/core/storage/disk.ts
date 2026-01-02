@@ -145,6 +145,17 @@ export async function ensureHooksDirectoryExists(): Promise<string> {
 	return clineHooksDir
 }
 
+export async function ensureSkillsDirectoryExists(): Promise<string> {
+	const userDocumentsPath = await getDocumentsPath()
+	const clineSkillsDir = path.join(userDocumentsPath, "Cline", "Skills")
+	try {
+		await fs.mkdir(clineSkillsDir, { recursive: true })
+	} catch (_error) {
+		return path.join(os.homedir(), "Documents", "Cline", "Skills")
+	}
+	return clineSkillsDir
+}
+
 export async function ensureSettingsDirectoryExists(): Promise<string> {
 	return getGlobalStorageDir("settings")
 }

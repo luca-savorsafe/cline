@@ -5,6 +5,7 @@ import type { DiffViewProvider } from "@integrations/editor/DiffViewProvider"
 import type { BrowserSession } from "@services/browser/BrowserSession"
 import type { UrlContentFetcher } from "@services/browser/UrlContentFetcher"
 import type { McpHub } from "@services/mcp/McpHub"
+import type { SkillsManager } from "@services/skills/SkillsManager"
 import type { AutoApprovalSettings } from "@shared/AutoApprovalSettings"
 import type { BrowserSettings } from "@shared/BrowserSettings"
 import type { ClineAsk, ClineSay } from "@shared/ExtensionMessage"
@@ -76,6 +77,7 @@ export interface TaskServices {
 	clineIgnoreController: ClineIgnoreController
 	contextManager: ContextManager
 	stateManager: StateManager
+	skillsManager?: SkillsManager
 }
 
 /**
