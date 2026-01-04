@@ -5,10 +5,14 @@ import type { PromptVariant, SystemPromptContext } from "../types"
  */
 export async function getSkillsSection(_variant: PromptVariant, context: SystemPromptContext): Promise<string | undefined> {
 	const skillsManager = context.skillsManager
-	if (!skillsManager) return undefined
+	if (!skillsManager) {
+		return undefined
+	}
 
 	const skills = skillsManager.getAvailableSkills()
-	if (skills.length === 0) return undefined
+	if (skills.length === 0) {
+		return undefined
+	}
 
 	const skillsList = skills.map((skill) => `  - "${skill.name}": ${skill.description}`).join("\n")
 

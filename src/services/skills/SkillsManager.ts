@@ -10,7 +10,10 @@ import { fileExistsAtPath, isDirectory } from "@/utils/fs"
  * Parse YAML frontmatter from markdown content.
  * Returns { data, content } similar to gray-matter.
  */
-function parseFrontmatter(fileContent: string): { data: Record<string, unknown>; content: string } {
+function parseFrontmatter(fileContent: string): {
+	data: Record<string, unknown>
+	content: string
+} {
 	const frontmatterRegex = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/
 	const match = fileContent.match(frontmatterRegex)
 
@@ -69,7 +72,9 @@ export class SkillsManager {
 			for (const entryName of entries) {
 				const entryPath = path.join(dirPath, entryName)
 				const stats = await fs.stat(entryPath).catch(() => null)
-				if (!stats?.isDirectory()) continue
+				if (!stats?.isDirectory()) {
+					continue
+				}
 
 				await this.loadSkillMetadata(entryPath, source, entryName)
 			}
@@ -86,7 +91,9 @@ export class SkillsManager {
 	 */
 	private async loadSkillMetadata(skillDir: string, source: "global" | "project", skillName: string): Promise<void> {
 		const skillMdPath = path.join(skillDir, "SKILL.md")
-		if (!(await fileExistsAtPath(skillMdPath))) return
+		if (!(await fileExistsAtPath(skillMdPath))) {
+			return
+		}
 
 		try {
 			const fileContent = await fs.readFile(skillMdPath, "utf-8")
@@ -143,7 +150,9 @@ export class SkillsManager {
 	 */
 	async getSkillContent(name: string): Promise<SkillContent | null> {
 		const skill = this.getAvailableSkills().find((s) => s.name === name)
-		if (!skill) return null
+		if (!skill) {
+			return null
+		}
 
 		try {
 			const fileContent = await fs.readFile(skill.path, "utf-8")

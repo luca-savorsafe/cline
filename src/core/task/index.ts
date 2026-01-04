@@ -1790,18 +1790,9 @@ export class Task {
 			workspaceRoots,
 			isSubagentsEnabledAndCliInstalled,
 			isCliSubagent,
-			enableParallelToolCalling: this.stateManager.getGlobalSettingsKey("enableParallelToolCalling"),
-			terminalExecutionMode: this.terminalExecutionMode,
->>>>>>> theirs
-		}
 			enableNativeToolCalls: this.stateManager.getGlobalStateKey("nativeToolCallEnabled"),
 			enableParallelToolCalling: this.stateManager.getGlobalSettingsKey("enableParallelToolCalling"),
 			terminalExecutionMode: this.terminalExecutionMode,
-		}
-=======
-			enableParallelToolCalling: this.stateManager.getGlobalSettingsKey("enableParallelToolCalling"),
-			terminalExecutionMode: this.terminalExecutionMode,
->>>>>>> theirs
 		}
 
 		const { systemPrompt, tools } = await getSystemPrompt(promptContext)
