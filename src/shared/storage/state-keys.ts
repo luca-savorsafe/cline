@@ -131,6 +131,7 @@ export interface Settings {
 	hooksEnabled: boolean
 	subagentsEnabled: boolean
 	skillsEnabled: boolean
+	globalSkillsToggles: Record<string, boolean>
 	enableParallelToolCalling: boolean
 	backgroundEditEnabled: boolean
 
@@ -283,4 +284,5 @@ export interface LocalState {
 	localWindsurfRulesToggles: ClineRulesToggles
 	localAgentsRulesToggles: ClineRulesToggles
 	workflowToggles: ClineRulesToggles
+	localSkillsToggles: ClineRulesToggles
 }
