@@ -1,0 +1,100 @@
+{
+	"common": {
+		"loading": "Cargando...",
+		"save": "Guardar",
+		"cancel": "Cancelar",
+		"close": "Cerrar",
+		"done": "Hecho",
+		"edit": "Editar",
+		"delete": "Eliminar",
+		"confirm": "Confirmar",
+		"back": "Atrás",
+		"next": "Siguiente",
+		"previous": "Anterior",
+		"search": "Buscar",
+		"filter": "Filtrar",
+		"refresh": "Actualizar",
+		"settings": "Configuración",
+		"help": "Ayuda",
+		"about": "Acerca de"
+	},
+	"settings": {
+		"title": "Configuración",
+		"general": "General",
+		"appearance": "Apariencia",
+		"language": {
+			"title": "Idioma preferido",
+			"description": "El idioma que Cline debe usar para la comunicación.",
+			"english": "Inglés",
+			"simplifiedChinese": "Chino simplificado",
+			"traditionalChinese": "Chino tradicional",
+			"japanese": "Japonés",
+			"korean": "Coreano",
+			"spanish": "Español",
+			"german": "Alemán",
+			"french": "Francés",
+			"arabic": "Árabe",
+			"portugueseBR": "Portugués (Brasil)",
+			"czech": "Checo",
+			"hindi": "Hindi",
+			"hungarian": "Húngaro",
+			"italian": "Italiano",
+			"polish": "Polaco",
+			"portuguesePT": "Portugués (Portugal)",
+			"russian": "Ruso",
+			"turkish": "Turco"
+		}
+	},
+	"chat": {
+		"placeholder": {
+			"withTask": "Escribe un mensaje...",
+			"withoutTask": "Escribe tu tarea aquí..."
+		},
+		"send": "Enviar",
+		"attachFiles": "Adjuntar archivos",
+		"attachImages": "Adjuntar imágenes",
+		"thinking": "Pensando...",
+		"processing": "Procesando...",
+		"error": "Error",
+		"retry": "Reintentar",
+		"copy": "Copiar",
+		"copyCode": "Copiar código",
+		"expand": "Expandir",
+		"collapse": "Contraer"
+	},
+	"navigation": {
+		"chat": "Chat",
+		"history": "Historial",
+		"mcp": "MCP",
+		"account": "Cuenta",
+		"newTask": "Nueva tarea",
+		"planMode": "Modo plan",
+		"actMode": "Modo acto"
+	},
+	"welcome": {
+		"title": "Bienvenido a Cline",
+		"subtitle": "Tu asistente de codificación con IA",
+		"getStarted": "Comienza gratis",
+		"quickStart": "Inicio rápido",
+		"tutorial": "Tutorial",
+		"examples": "Ejemplos",
+		"description": {
+			"part1": "Puedo realizar todo tipo de tareas gracias a los avances en",
+			"claudeLink": "Claude 4 Sonnet",
+			"part2": "capacidades de codificación agentica y acceso a herramientas que me permiten crear y editar archivos, explorar proyectos complejos, usar un navegador y ejecutar comandos de terminal",
+			"permissionNote": "con tu permiso, por supuesto",
+			"part3": "Incluso puedo usar MCP para crear nuevas herramientas y extender mis propias capacidades."
+		},
+		"signupPrompt": "Regístrate para una cuenta para comenzar gratis, o usa una clave API que proporcione acceso a modelos como Claude Sonnet.",
+		"useOwnApiKey": "Usa tu propia clave API",
+		"letsGo": "¡Vamos!",
+		"homeHeader": {
+			"title": "¿Qué puedo hacer por ti?",
+			"tooltip": "Puedo desarrollar software paso a paso editando archivos, explorando proyectos, ejecutando comandos y usando navegadores. Incluso puedo extender mis capacidades con herramientas MCP para ayudar más allá de la finalización básica de código.",
+			"takeTour": "Comenzar recorrido"
+		},
+		"suggestedTasks": {
+			"title": "Rápidas<span class=\"text-white\">[Victorias]</span> con Cline"
+		}
+	}
+}

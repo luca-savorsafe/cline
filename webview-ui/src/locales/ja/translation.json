@@ -1,0 +1,132 @@
+{
+	"common": {
+		"loading": "読み込み中...",
+		"save": "保存",
+		"cancel": "キャンセル",
+		"close": "閉じる",
+		"done": "完了",
+		"edit": "編集",
+		"delete": "削除",
+		"confirm": "確認",
+		"back": "戻る",
+		"next": "次へ",
+		"previous": "前へ",
+		"search": "検索",
+		"filter": "フィルター",
+		"refresh": "更新",
+		"settings": "設定",
+		"help": "ヘルプ",
+		"about": "について"
+	},
+	"settings": {
+		"title": "設定",
+		"general": "一般",
+		"appearance": "外観",
+		"language": {
+			"title": "優先言語",
+			"description": "Clineが通信に使用する言語。",
+			"english": "英語",
+			"simplifiedChinese": "簡体字中国語",
+			"traditionalChinese": "繁体字中国語",
+			"japanese": "日本語",
+			"korean": "韓国語",
+			"spanish": "スペイン語",
+			"german": "ドイツ語",
+			"french": "フランス語",
+			"arabic": "アラビア語",
+			"portugueseBR": "ポルトガル語 (ブラジル)",
+			"czech": "チェコ語",
+			"hindi": "ヒンディー語",
+			"hungarian": "ハンガリー語",
+			"italian": "イタリア語",
+			"polish": "ポーランド語",
+			"portuguesePT": "ポルトガル語 (ポルトガル)",
+			"russian": "ロシア語",
+			"turkish": "トルコ語"
+		},
+		"tabs": {
+			"apiConfig": "API設定",
+			"features": "機能",
+			"browser": "ブラウザ",
+			"terminal": "ターミナル",
+			"general": "一般",
+			"about": "について",
+			"debug": "デバッグ"
+		},
+		"sections": {
+			"apiConfig": "API設定",
+			"features": "機能設定",
+			"browser": "ブラウザ設定",
+			"terminal": "ターミナル設定",
+			"general": "一般設定",
+			"about": "について",
+			"debug": "デバッグツール"
+		},
+		"buttons": {
+			"done": "完了"
+		}
+	},
+	"chat": {
+		"placeholder": {
+			"withTask": "メッセージを入力...",
+			"withoutTask": "タスクを入力..."
+		},
+		"send": "送信",
+		"attachFiles": "ファイルを添付",
+		"attachImages": "画像を添付",
+		"thinking": "考え中...",
+		"processing": "処理中...",
+		"error": "エラー",
+		"retry": "再試行",
+		"copy": "コピー",
+		"copyCode": "コードをコピー",
+		"expand": "展開",
+		"collapse": "折りたたむ"
+	},
+	"navigation": {
+		"chat": "チャット",
+		"history": "履歴",
+		"mcp": "MCP",
+		"account": "アカウント",
+		"newTask": "新規タスク",
+		"planMode": "計画モード",
+		"actMode": "実行モード"
+	},
+	"welcome": {
+		"title": "Clineへようこそ",
+		"subtitle": "あなたのAIコーディングアシスタント",
+		"getStarted": "無料で始める",
+		"quickStart": "クイックスタート",
+		"tutorial": "チュートリアル",
+		"examples": "例",
+		"description": {
+			"part1": "私は、",
+			"claudeLink": "Claude 4 Sonnet",
+			"part2": "のエージェント的コーディング能力のブレークスルーと、ファイルの作成・編集、複雑なプロジェクトの探索、ブラウザの使用、ターミナルコマンドの実行を可能にするツールへのアクセスにより、あらゆる種類のタスクを実行できます",
+			"permissionNote": "もちろん、あなたの許可が必要です",
+			"part3": "MCPを使用して新しいツールを作成し、自分の能力を拡張することもできます。"
+		},
+		"signupPrompt": "アカウントに登録して無料で始めるか、Claude Sonnetなどのモデルへのアクセスを提供するAPIキーを使用してください。",
+		"useOwnApiKey": "独自のAPIキーを使用",
+		"letsGo": "始めましょう！",
+		"homeHeader": {
+			"title": "何をお手伝いしましょうか？",
+			"tooltip": "ファイルの編集、プロジェクトの探索、コマンドの実行、ブラウザの使用により、ソフトウェアを段階的に開発できます。MCPツールを使用して能力を拡張し、基本的なコード補完を超えた支援を提供することもできます。",
+			"takeTour": "ツアーを開始"
+		},
+		"suggestedTasks": {
+			"title": "Clineでのクイック<span class=\"text-white\">[勝利]</span>"
+		}
+	},
+	"account": {
+		"title": "アカウント",
+		"done": "完了",
+		"personal": "個人",
+		"dashboard": "ダッシュボード",
+		"logout": "ログアウト",
+		"clineEnvironment": "Cline環境",
+		"tooltips": {
+			"lockedOrganization": "組織でリモート設定が有効になっている間は、これを変更できません。"
+		}
+	}
+}

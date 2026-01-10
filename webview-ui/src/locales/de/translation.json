@@ -1,0 +1,100 @@
+{
+	"common": {
+		"loading": "Laden...",
+		"save": "Speichern",
+		"cancel": "Abbrechen",
+		"close": "Schließen",
+		"done": "Fertig",
+		"edit": "Bearbeiten",
+		"delete": "Löschen",
+		"confirm": "Bestätigen",
+		"back": "Zurück",
+		"next": "Weiter",
+		"previous": "Zurück",
+		"search": "Suchen",
+		"filter": "Filtern",
+		"refresh": "Aktualisieren",
+		"settings": "Einstellungen",
+		"help": "Hilfe",
+		"about": "Über"
+	},
+	"settings": {
+		"title": "Einstellungen",
+		"general": "Allgemein",
+		"appearance": "Erscheinungsbild",
+		"language": {
+			"title": "Bevorzugte Sprache",
+			"description": "Die Sprache, die Cline für die Kommunikation verwenden soll.",
+			"english": "Englisch",
+			"simplifiedChinese": "Vereinfachtes Chinesisch",
+			"traditionalChinese": "Traditionelles Chinesisch",
+			"japanese": "Japanisch",
+			"korean": "Koreanisch",
+			"spanish": "Spanisch",
+			"german": "Deutsch",
+			"french": "Französisch",
+			"arabic": "Arabisch",
+			"portugueseBR": "Portugiesisch (Brasilien)",
+			"czech": "Tschechisch",
+			"hindi": "Hindi",
+			"hungarian": "Ungarisch",
+			"italian": "Italienisch",
+			"polish": "Polnisch",
+			"portuguesePT": "Portugiesisch (Portugal)",
+			"russian": "Russisch",
+			"turkish": "Türkisch"
+		}
+	},
+	"chat": {
+		"placeholder": {
+			"withTask": "Nachricht eingeben...",
+			"withoutTask": "Aufgabe hier eingeben..."
+		},
+		"send": "Senden",
+		"attachFiles": "Dateien anhängen",
+		"attachImages": "Bilder anhängen",
+		"thinking": "Denke...",
+		"processing": "Verarbeite...",
+		"error": "Fehler",
+		"retry": "Wiederholen",
+		"copy": "Kopieren",
+		"copyCode": "Code kopieren",
+		"expand": "Erweitern",
+		"collapse": "Zusammenklappen"
+	},
+	"navigation": {
+		"chat": "Chat",
+		"history": "Verlauf",
+		"mcp": "MCP",
+		"account": "Konto",
+		"newTask": "Neue Aufgabe",
+		"planMode": "Planmodus",
+		"actMode": "Aktionsmodus"
+	},
+	"welcome": {
+		"title": "Willkommen bei Cline",
+		"subtitle": "Ihr KI-Codierungsassistent",
+		"getStarted": "Kostenlos starten",
+		"quickStart": "Schnellstart",
+		"tutorial": "Tutorial",
+		"examples": "Beispiele",
+		"description": {
+			"part1": "Ich kann alle Arten von Aufgaben dank der Durchbrüche in",
+			"claudeLink": "Claude 4 Sonnet",
+			"part2": "agentischen Codierungsfähigkeiten und dem Zugang zu Werkzeugen, die es mir ermöglichen, Dateien zu erstellen und zu bearbeiten, komplexe Projekte zu erkunden, einen Browser zu verwenden und Terminalbefehle auszuführen",
+			"permissionNote": "natürlich mit Ihrer Erlaubnis",
+			"part3": "Ich kann sogar MCP verwenden, um neue Werkzeuge zu erstellen und meine eigenen Fähigkeiten zu erweitern."
+		},
+		"signupPrompt": "Registrieren Sie sich für ein Konto, um kostenlos zu starten, oder verwenden Sie einen API-Schlüssel, der Zugang zu Modellen wie Claude Sonnet bietet.",
+		"useOwnApiKey": "Eigenen API-Schlüssel verwenden",
+		"letsGo": "Los geht's!",
+		"homeHeader": {
+			"title": "Was kann ich für Sie tun?",
+			"tooltip": "Ich kann Software Schritt für Schritt entwickeln, indem ich Dateien bearbeite, Projekte erkunde, Befehle ausführe und Browser verwende. Ich kann meine Fähigkeiten sogar mit MCP-Werkzeugen erweitern, um über die grundlegende Code-Vervollständigung hinaus zu helfen.",
+			"takeTour": "Tour starten"
+		},
+		"suggestedTasks": {
+			"title": "Schnelle<span class=\"text-white\">[Erfolge]</span> mit Cline"
+		}
+	}
+}

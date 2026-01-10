@@ -1,0 +1,465 @@
+{
+	"common": {
+		"loading": "加载中...",
+		"save": "保存",
+		"cancel": "取消",
+		"close": "关闭",
+		"done": "完成",
+		"edit": "编辑",
+		"delete": "删除",
+		"confirm": "确认",
+		"back": "返回",
+		"next": "下一步",
+		"previous": "上一步",
+		"search": "搜索",
+		"filter": "筛选",
+		"refresh": "刷新",
+		"settings": "设置",
+		"help": "帮助",
+		"about": "关于"
+	},
+	"settings": {
+		"title": "设置",
+		"general": "通用",
+		"appearance": "外观",
+		"language": {
+			"title": "首选语言",
+			"description": "Cline 用于通信的语言。",
+			"english": "英语",
+			"simplifiedChinese": "简体中文",
+			"traditionalChinese": "繁體中文",
+			"japanese": "日语",
+			"korean": "韩语",
+			"spanish": "西班牙语",
+			"german": "德语",
+			"french": "法语",
+			"arabic": "阿拉伯语",
+			"portugueseBR": "葡萄牙语 (巴西)",
+			"czech": "捷克语",
+			"hindi": "印地语",
+			"hungarian": "匈牙利语",
+			"italian": "意大利语",
+			"polish": "波兰语",
+			"portuguesePT": "葡萄牙语 (葡萄牙)",
+			"russian": "俄语",
+			"turkish": "土耳其语"
+		},
+		"tabs": {
+			"apiConfig": "API 配置",
+			"features": "功能",
+			"browser": "浏览器",
+			"terminal": "终端",
+			"general": "通用",
+			"about": "关于",
+			"debug": "调试"
+		},
+		"sections": {
+			"apiConfig": "API 配置",
+			"features": "功能设置",
+			"browser": "浏览器设置",
+			"terminal": "终端设置",
+			"general": "通用设置",
+			"about": "关于",
+			"debug": "调试工具"
+		},
+		"buttons": {
+			"done": "完成"
+		},
+		"telemetry": {
+			"checkbox": "允许错误和使用情况报告",
+			"tooltip": "此设置由您组织的远程配置管理",
+			"description": "通过发送使用数据和错误报告来帮助改进 Cline。永远不会发送代码、提示或个人信息，有关更多详细信息，请参阅我们的{telemetryLink}和{privacyLink}。",
+			"telemetryLink": "遥测概述",
+			"privacyLink": "隐私政策"
+		},
+		"apiProvider": {
+			"label": "API 提供商",
+			"remoteConfigTooltip": "提供商选项由您组织的远程配置管理",
+			"searchPlaceholder": "搜索并选择提供商..."
+		}
+	},
+	"chat": {
+		"placeholder": {
+			"withTask": "输入消息...",
+			"withoutTask": "输入您的任务..."
+		},
+		"send": "发送",
+		"attachFiles": "附加文件",
+		"attachImages": "附加图片",
+		"thinking": "思考中...",
+		"processing": "处理中...",
+		"error": "错误",
+		"retry": "重试",
+		"copy": "复制",
+		"copyCode": "复制代码",
+		"expand": "展开",
+		"collapse": "折叠",
+		"browserSession": {
+			"clineUsingBrowser": "Cline 正在使用浏览器:",
+			"clineWantsToUseBrowser": "Cline 想要使用浏览器:",
+			"consoleLogs": "控制台日志",
+			"noNewLogs": "(无新日志)",
+			"stepOf": "第 {current} 步，共 {total} 步",
+			"previous": "上一步",
+			"next": "下一步",
+			"browserSessionStarted": "浏览器会话已启动"
+		},
+		"browserAction": {
+			"launch": "启动浏览器于 {text}",
+			"click": "点击 ({coordinate})",
+			"type": "输入 \"{text}\"",
+			"scrollDown": "向下滚动",
+			"scrollUp": "向上滚动",
+			"close": "关闭浏览器",
+			"browseAction": "浏览操作:"
+		},
+		"errorBoundary": {
+			"somethingWentWrong": "显示此内容时出错",
+			"errorLabel": "错误:",
+			"unknownError": "未知错误"
+		},
+		"contextMenu": {
+			"problems": "问题",
+			"terminal": "终端",
+			"pasteUrl": "粘贴 URL 以获取内容",
+			"noResultsFound": "未找到结果",
+			"gitCommits": "Git 提交",
+			"addFile": "添加文件",
+			"addFolder": "添加文件夹",
+			"contextMentions": "上下文提及",
+			"searching": "搜索中..."
+		},
+		"creditLimit": {
+			"outOfCredits": "您的积分已用完。",
+			"currentBalance": "当前余额:",
+			"totalSpent": "总支出:",
+			"totalPromotions": "总促销:",
+			"buyCredits": "购买积分",
+			"retryRequest": "重试请求"
+		},
+		"chatRow": {
+			"error": "错误",
+			"clineHavingTrouble": "Cline 遇到问题...",
+			"executeCommand": "Cline 想要执行此命令:",
+			"useMcpTool": "使用工具",
+			"useMcpResource": "访问资源",
+			"mcpServer": "MCP 服务器",
+			"taskCompleted": "任务已完成",
+			"clineHasQuestion": "Cline 有一个问题:",
+			"condensingConversation": "Cline 正在压缩对话:",
+			"summary": "摘要:",
+			"thinking": "思考:",
+			"viewChanges": "查看更改",
+			"explainChanges": "解释更改",
+			"explaining": "解释中...",
+			"running": "运行中",
+			"pending": "待处理",
+			"completed": "已完成",
+			"skipped": "已跳过",
+			"cancel": "取消",
+			"stop": "停止",
+			"commandRequiresApproval": "模型确定此命令需要明确批准。",
+			"arguments": "参数",
+			"thinkingTitle": "思考",
+			"generateExplanation": "生成解释",
+			"failedToGenerateExplanation": "生成解释失败",
+			"explanationCancelled": "解释已取消",
+			"generatedExplanation": "已生成解释",
+			"shellIntegrationUnavailable": "Shell 集成不可用",
+			"shellIntegrationDescription": "Cline 可能无法查看命令输出。请更新 VSCode ({updateLink}) 并确保使用支持的 shell: zsh、bash、fish 或 PowerShell ({selectProfileLink})。{troubleshootLink}",
+			"autoRetryFailed": "自动重试失败",
+			"autoRetryInProgress": "自动重试进行中",
+			"autoRetryFailedDescription": "自动重试 {maxAttempts} 次后失败。需要手动干预。",
+			"autoRetryDescription": "第 {attempt} 次尝试，共 {maxAttempts} 次 - {delaySeconds} 秒后重试...",
+			"loadingMcpDocumentation": "正在加载 MCP 文档...",
+			"startNewTask": "Cline 想要开始新任务:",
+			"condenseConversation": "Cline 想要压缩对话:",
+			"createGithubIssue": "Cline 想要创建 GitHub issue:",
+			"useSubagent": "Cline 想要使用子代理:",
+			"prompt": "提示:",
+			"mcpNotification": "MCP 通知:",
+			"shellIntegrationIssues": "Shell 集成问题",
+			"shellIntegrationRecommendation": "由于您遇到重复的 shell 集成问题，我们建议切换到后台终端模式以提高可靠性。",
+			"enableBackgroundTerminal": "启用后台终端 (推荐)",
+			"backgroundTerminalEnabled": "后台终端已启用",
+			"newTask": "Cline 想要开始新任务:",
+			"condense": "Cline 想要压缩对话:",
+			"reportBug": "Cline 想要创建 GitHub issue:"
+		},
+		"diffEdit": {
+			"additions": "添加",
+			"deletions": "删除"
+		},
+		"errorBlock": {
+			"apiRequest": "API 请求...",
+			"apiRequestCancelled": "API 请求已取消",
+			"apiRequestFailed": "API 请求失败",
+			"creditLimitReached": "达到信用额度"
+		}
+	},
+	"taskHeader": {
+		"buttons": {
+			"compactTask": "紧凑任务",
+			"copyText": "复制文本",
+			"startNewTask": "开始新任务",
+			"openConversationHistory": "打开对话历史文件"
+		},
+		"contextWindow": {
+			"compactTaskQuestion": "是否压缩此任务以减少上下文窗口使用？",
+			"cancelTitle": "取消压缩任务",
+			"cancel": "取消",
+			"confirmTitle": "确认压缩任务",
+			"confirm": "确认",
+			"promptTokens": "提示词令牌",
+			"completionTokens": "完成令牌",
+			"cacheWrites": "缓存写入",
+			"cacheReads": "缓存读取",
+			"noTokenData": "无令牌使用数据",
+			"autoCondenseThreshold": "自动压缩阈值",
+			"thresholdDescription1": "点击上下文窗口栏设置新阈值。",
+			"thresholdDescription2": "当上下文窗口使用量超过此阈值时，任务将自动压缩。",
+			"contextWindow": "上下文窗口",
+			"used": "已使用:",
+			"total": "总计:",
+			"remaining": "剩余:",
+			"tokenUsage": "令牌使用量"
+		},
+		"focusChain": {
+			"allTasksCompleted": "所有任务已完成！",
+			"todoList": "待办列表",
+			"newStepsMessage": "继续任务将生成新步骤",
+			"clickToEditTitle": "点击在文件中编辑待办列表",
+			"collapseFocusChain": "收起焦点链",
+			"expandFocusChain": "展开焦点链"
+		},
+		"stickyUserMessage": {
+			"scrollToMessage": "滚动到您的消息",
+			"clickToScroll": "点击滚动到您的消息"
+		}
+	},
+	"navigation": {
+		"chat": "聊天",
+		"history": "历史",
+		"mcp": "MCP",
+		"account": "账户",
+		"newTask": "新任务",
+		"planMode": "计划模式",
+		"actMode": "执行模式"
+	},
+	"welcome": {
+		"title": "欢迎使用 Cline",
+		"subtitle": "您的 AI 编程助手",
+		"getStarted": "免费开始使用",
+		"quickStart": "快速开始",
+		"tutorial": "教程",
+		"examples": "示例",
+		"description": {
+			"part1": "得益于",
+			"claudeLink": "Claude 4 Sonnet",
+			"part2": "在智能编码能力方面的突破，以及能够让我创建和编辑文件、探索复杂项目、使用浏览器和执行终端命令的工具访问权限",
+			"permissionNote": "当然，需要您的许可",
+			"part3": "我甚至可以使用 MCP 创建新工具并扩展自己的能力。"
+		},
+		"signupPrompt": "注册账户即可免费开始使用，或者使用提供 Claude Sonnet 等模型访问权限的 API 密钥。",
+		"useOwnApiKey": "使用您自己的 API 密钥",
+		"letsGo": "开始吧！",
+		"homeHeader": {
+			"title": "我能为您做什么？",
+			"tooltip": "我可以通过编辑文件、探索项目、运行命令和使用浏览器来逐步开发软件。我甚至可以使用 MCP 工具扩展自己的能力，提供超越基本代码完成功能的帮助。",
+			"takeTour": "开始导览"
+		},
+		"suggestedTasks": {
+			"title": "Cline 快速<span class=\"text-white\">[胜利]</span>",
+			"nextjsNotetakingApp": {
+				"title": "构建一个 Next.js 应用",
+				"description": "使用 Next.js 和 Tailwind 创建一个漂亮的笔记应用"
+			},
+			"terminalCliTool": {
+				"title": "制作一个 CLI 工具",
+				"description": "开发一个强大的终端 CLI 来自动化酷炫任务"
+			},
+			"snakeGame": {
+				"title": "开发一个游戏",
+				"description": "编写一个在浏览器中运行的经典贪吃蛇游戏"
+			}
+		}
+	},
+	"account": {
+		"title": "账户",
+		"done": "完成",
+		"personal": "个人",
+		"dashboard": "仪表板",
+		"logout": "退出登录",
+		"clineEnvironment": "Cline 环境",
+		"tooltips": {
+			"lockedOrganization": "当您的组织启用远程配置时，此项无法更改。"
+		},
+		"welcome": {
+			"description": "注册免费的 Cline 账户，开始使用 AI 编程助手。",
+			"signUpButton": "免费注册",
+			"termsAndPrivacy": "注册即表示您同意我们的{termsLink}和{privacyLink}。",
+			"termsOfService": "服务条款",
+			"privacyPolicy": "隐私政策"
+		},
+		"accountInfoCard": {
+			"viewBillingUsage": "查看账单和使用情况",
+			"signUpWithCline": "使用 Cline 注册"
+		}
+	},
+	"history": {
+		"title": "历史",
+		"done": "完成",
+		"searchPlaceholder": "模糊搜索历史...",
+		"sortOptions": {
+			"newest": "最新",
+			"oldest": "最旧",
+			"mostExpensive": "最昂贵",
+			"mostTokens": "最多令牌",
+			"mostRelevant": "最相关"
+		},
+		"filters": {
+			"workspace": "工作区",
+			"favorites": "收藏"
+		},
+		"buttons": {
+			"selectAll": "全选",
+			"selectNone": "全不选",
+			"deleteSelected": "删除 {count} 个选中项",
+			"deleteAll": "删除所有历史"
+		},
+		"labels": {
+			"tokens": "令牌:",
+			"cache": "缓存:",
+			"apiCost": "API 成本:",
+			"model": "模型:"
+		}
+	},
+	"mcp": {
+		"title": "MCP 服务器",
+		"done": "完成",
+		"tabs": {
+			"marketplace": "市场",
+			"addRemote": "远程服务器",
+			"configure": "配置"
+		}
+	},
+	"modelPicker": {
+		"searchPlaceholder": "搜索 {count} 个模型",
+		"providerLabel": "提供商:",
+		"thinking": {
+			"label": "思考 ({tokens} 令牌)",
+			"notSupported": "此模型不支持思考功能",
+			"enabled": "扩展思考已启用",
+			"disabled": "启用扩展思考以增强推理能力"
+		},
+		"splitMode": {
+			"tooltip": "为计划和执行模式使用不同的模型",
+			"plan": "计划模式",
+			"act": "执行模式"
+		},
+		"currentModel": "当前模型:",
+		"endpoint": "端点:",
+		"configure": {
+			"edit": "在设置中编辑",
+			"add": "在设置中配置"
+		},
+		"emptyState": {
+			"selectModel": "在下方选择模型",
+			"noModels": "未找到模型"
+		},
+		"addProvider": "+ 添加提供商"
+	},
+	"chatTextArea": {
+		"placeholderHint": "输入 @ 添加上下文，/ 使用斜杠命令和工作流，按住 Shift 拖入文件/图片",
+		"tooltips": {
+			"addContext": "添加上下文",
+			"addFilesImages": "添加文件和图片",
+			"selectModel": "选择模型 / API 提供商",
+			"modeToggle": {
+				"plan": "在计划模式下，Cline 将收集信息以制定计划",
+				"act": "在执行模式下，Cline 将立即完成任务",
+				"keyboardShortcut": "切换使用 {shortcut}"
+			}
+		}
+	},
+	"errorRow": {
+		"requestId": "请求ID:",
+		"windowsPowershell": {
+			"message": "看起来您遇到了 Windows PowerShell 问题，请参阅此",
+			"troubleshootingGuide": "故障排除指南"
+		},
+		"signIn": {
+			"button": "登录到 Cline",
+			"retryHint": "(点击下方的\"重试\")"
+		},
+		"diffError": "模型使用的搜索模式与文件中的任何内容都不匹配。正在重试...",
+		"clineignoreError": {
+			"message": "Cline 尝试访问",
+			"blockedBy": "但被",
+			"file": "文件阻止"
+		}
+	},
+	"browser": {
+		"connection": {
+			"info": "浏览器连接信息",
+			"title": "浏览器连接",
+			"status": "状态",
+			"connected": "已连接",
+			"disconnected": "未连接",
+			"type": "类型",
+			"remote": "远程",
+			"local": "本地",
+			"remoteHost": "远程主机"
+		}
+	},
+	"autoApprove": {
+		"bar": {
+			"yoloTitle": "自动批准: YOLO模式",
+			"yoloMessage": "YOLO模式已启用",
+			"disableInSettings": "在设置中禁用",
+			"title": "自动批准:",
+			"none": "无",
+			"closeSettings": "关闭自动批准设置",
+			"openSettings": "打开自动批准设置"
+		},
+		"modal": {
+			"description": "让Cline执行这些操作而无需请求批准",
+			"docs": "文档",
+			"enableNotifications": "启用通知"
+		},
+		"actions": {
+			"readFiles": {
+				"label": "读取项目文件",
+				"shortName": "读取"
+			},
+			"readFilesExternally": {
+				"label": "读取所有文件",
+				"shortName": "读取 (全部)"
+			},
+			"editFiles": {
+				"label": "编辑项目文件",
+				"shortName": "编辑"
+			},
+			"editFilesExternally": {
+				"label": "编辑所有文件",
+				"shortName": "编辑 (全部)"
+			},
+			"executeSafeCommands": {
+				"label": "执行安全命令",
+				"shortName": "安全命令"
+			},
+			"executeAllCommands": {
+				"label": "执行所有命令",
+				"shortName": "所有命令"
+			},
+			"useBrowser": {
+				"label": "使用浏览器",
+				"shortName": "浏览器"
+			},
+			"useMcp": {
+				"label": "使用 MCP 服务器",
+				"shortName": "MCP"
+			}
+		}
+	}
+}

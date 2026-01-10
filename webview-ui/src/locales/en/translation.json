@@ -1,0 +1,315 @@
+{
+	"common": {
+		"loading": "Loading...",
+		"save": "Save",
+		"cancel": "Cancel",
+		"close": "Close",
+		"done": "Done",
+		"edit": "Edit",
+		"delete": "Delete",
+		"confirm": "Confirm",
+		"back": "Back",
+		"next": "Next",
+		"previous": "Previous",
+		"search": "Search",
+		"filter": "Filter",
+		"refresh": "Refresh",
+		"settings": "Settings",
+		"help": "Help",
+		"about": "About"
+	},
+	"settings": {
+		"title": "Settings",
+		"general": "General",
+		"appearance": "Appearance",
+		"language": {
+			"title": "Preferred Language",
+			"description": "The language that Cline should use for communication.",
+			"english": "English",
+			"simplifiedChinese": "Simplified Chinese - 简体中文",
+			"traditionalChinese": "Traditional Chinese - 繁體中文",
+			"japanese": "Japanese - 日本語",
+			"korean": "Korean - 한국어",
+			"spanish": "Spanish - Español",
+			"german": "German - Deutsch",
+			"french": "French - Français",
+			"arabic": "Arabic - العربية",
+			"portugueseBR": "Portuguese - Português (Brasil)",
+			"czech": "Czech - Čeština",
+			"hindi": "Hindi - हिन्दी",
+			"hungarian": "Hungarian - Magyar",
+			"italian": "Italian - Italiano",
+			"polish": "Polish - Polski",
+			"portuguesePT": "Portuguese - Português (Portugal)",
+			"russian": "Russian - Русский",
+			"turkish": "Turkish - Türkçe"
+		},
+		"tabs": {
+			"apiConfig": "API Configuration",
+			"features": "Features",
+			"browser": "Browser",
+			"terminal": "Terminal",
+			"general": "General",
+			"about": "About",
+			"debug": "Debug"
+		},
+		"sections": {
+			"apiConfig": "API Configuration",
+			"features": "Feature Settings",
+			"browser": "Browser Settings",
+			"terminal": "Terminal Settings",
+			"general": "General Settings",
+			"about": "About",
+			"debug": "Debug Tools"
+		},
+		"buttons": {
+			"done": "Done"
+		},
+		"telemetry": {
+			"checkbox": "Allow error and usage reporting",
+			"tooltip": "This setting is managed by your organization's remote configuration",
+			"description": "Help improve Cline by sending usage data and error reports. No code, prompts, or personal information are ever sent. See our {telemetryLink} and {privacyLink} for more details.",
+			"telemetryLink": "telemetry overview",
+			"privacyLink": "privacy policy"
+		},
+		"apiProvider": {
+			"label": "API Provider",
+			"remoteConfigTooltip": "Provider options are managed by your organization's remote configuration",
+			"searchPlaceholder": "Search and select provider..."
+		}
+	},
+	"chat": {
+		"placeholder": {
+			"withTask": "Type a message...",
+			"withoutTask": "Type your task here..."
+		},
+		"send": "Send",
+		"attachFiles": "Attach files",
+		"attachImages": "Attach images",
+		"thinking": "Thinking...",
+		"processing": "Processing...",
+		"error": "Error",
+		"retry": "Retry",
+		"copy": "Copy",
+		"copyCode": "Copy code",
+		"expand": "Expand",
+		"collapse": "Collapse"
+	},
+	"taskHeader": {
+		"buttons": {
+			"compactTask": "Compact Task",
+			"copyText": "Copy Text",
+			"startNewTask": "Start a New Task",
+			"openConversationHistory": "Open Conversation History File"
+		}
+	},
+	"navigation": {
+		"chat": "Chat",
+		"history": "History",
+		"mcp": "MCP",
+		"account": "Account",
+		"newTask": "New Task",
+		"planMode": "Plan Mode",
+		"actMode": "Act Mode"
+	},
+	"welcome": {
+		"title": "Welcome to Cline",
+		"subtitle": "Your AI coding assistant",
+		"getStarted": "Get Started for Free",
+		"quickStart": "Quick Start",
+		"tutorial": "Tutorial",
+		"examples": "Examples",
+		"description": {
+			"part1": "I can do all kinds of tasks thanks to breakthroughs in",
+			"claudeLink": "Claude 4 Sonnet's",
+			"part2": "agentic coding capabilities and access to tools that let me create & edit files, explore complex projects, use a browser, and execute terminal commands",
+			"permissionNote": "with your permission, of course",
+			"part3": "I can even use MCP to create new tools and extend my own capabilities."
+		},
+		"signupPrompt": "Sign up for an account to get started for free, or use an API key that provides access to models like Claude Sonnet.",
+		"useOwnApiKey": "Use your own API key",
+		"letsGo": "Let's go!",
+		"homeHeader": {
+			"title": "What can I do for you?",
+			"tooltip": "I can develop software step-by-step by editing files, exploring projects, running commands, and using browsers. I can even extend my capabilities with MCP tools to assist beyond basic code completion.",
+			"takeTour": "Take a Tour"
+		},
+		"suggestedTasks": {
+			"title": "Quick <span class=\"text-white\">[Wins]</span> with Cline"
+		}
+	},
+	"account": {
+		"title": "Account",
+		"done": "Done",
+		"personal": "Personal",
+		"dashboard": "Dashboard",
+		"logout": "Log out",
+		"clineEnvironment": "Cline Environment",
+		"tooltips": {
+			"lockedOrganization": "This cannot be changed while your organization has remote configuration enabled."
+		},
+		"welcome": {
+			"description": "Sign up for a free Cline account to get started with AI coding assistance.",
+			"signUpButton": "Sign up for free",
+			"termsAndPrivacy": "By signing up, you agree to our {termsLink} and {privacyLink}.",
+			"termsOfService": "Terms of Service",
+			"privacyPolicy": "Privacy Policy"
+		}
+	},
+	"history": {
+		"title": "History",
+		"done": "Done",
+		"searchPlaceholder": "Fuzzy search history...",
+		"sortOptions": {
+			"newest": "Newest",
+			"oldest": "Oldest",
+			"mostExpensive": "Most Expensive",
+			"mostTokens": "Most Tokens",
+			"mostRelevant": "Most Relevant"
+		},
+		"filters": {
+			"workspace": "Workspace",
+			"favorites": "Favorites"
+		},
+		"buttons": {
+			"selectAll": "Select All",
+			"selectNone": "Select None",
+			"deleteSelected": "Delete {count} Selected",
+			"deleteAll": "Delete All History"
+		},
+		"labels": {
+			"tokens": "Tokens:",
+			"cache": "Cache:",
+			"apiCost": "API Cost:",
+			"model": "Model:"
+		}
+	},
+	"mcp": {
+		"title": "MCP Servers",
+		"done": "Done",
+		"tabs": {
+			"marketplace": "Marketplace",
+			"addRemote": "Remote Servers",
+			"configure": "Configure"
+		}
+	},
+	"modelPicker": {
+		"searchPlaceholder": "Search {count} models",
+		"providerLabel": "Provider:",
+		"thinking": {
+			"label": "Thinking ({tokens} tokens)",
+			"notSupported": "Thinking not supported by this model",
+			"enabled": "Extended thinking enabled",
+			"disabled": "Enable extended thinking for enhanced reasoning"
+		},
+		"splitMode": {
+			"tooltip": "Use different models for Plan vs Act",
+			"plan": "Plan mode",
+			"act": "Act mode"
+		},
+		"currentModel": "Current model:",
+		"endpoint": "Endpoint:",
+		"configure": {
+			"edit": "Edit in settings",
+			"add": "Configure in settings"
+		},
+		"emptyState": {
+			"selectModel": "Select a model below",
+			"noModels": "No models found"
+		},
+		"addProvider": "+ Add provider"
+	},
+	"chatTextArea": {
+		"placeholderHint": "Type @ for context, / for slash commands & workflows, hold shift to drag in files/images",
+		"tooltips": {
+			"addContext": "Add Context",
+			"addFilesImages": "Add Files & Images",
+			"selectModel": "Select Model / API Provider",
+			"modeToggle": {
+				"plan": "In Plan mode, Cline will gather information to architect a plan",
+				"act": "In Act mode, Cline will complete the task immediately",
+				"keyboardShortcut": "Toggle w/ {shortcut}"
+			}
+		}
+	},
+	"errorRow": {
+		"requestId": "Request ID:",
+		"windowsPowershell": {
+			"message": "It seems like you're having Windows PowerShell issues, please see this",
+			"troubleshootingGuide": "troubleshooting guide"
+		},
+		"signIn": {
+			"button": "Sign in to Cline",
+			"retryHint": "(Click \"Retry\" below)"
+		},
+		"diffError": "The model used search patterns that don't match anything in the file. Retrying...",
+		"clineignoreError": {
+			"message": "Cline tried to access",
+			"blockedBy": "which is blocked by the",
+			"file": "file"
+		}
+	},
+	"browser": {
+		"connection": {
+			"info": "Browser connection info",
+			"title": "Browser Connection",
+			"status": "Status",
+			"connected": "Connected",
+			"disconnected": "Disconnected",
+			"type": "Type",
+			"remote": "Remote",
+			"local": "Local",
+			"remoteHost": "Remote Host"
+		}
+	},
+	"autoApprove": {
+		"bar": {
+			"yoloTitle": "Auto-approve: YOLO",
+			"yoloMessage": "YOLO mode is enabled",
+			"disableInSettings": "Disable it in Settings",
+			"title": "Auto-approve:",
+			"none": "None",
+			"closeSettings": "Close auto-approve settings",
+			"openSettings": "Open auto-approve settings"
+		},
+		"modal": {
+			"description": "Let Cline take these actions without asking for approval",
+			"docs": "Docs",
+			"enableNotifications": "Enable notifications"
+		},
+		"actions": {
+			"readFiles": {
+				"label": "Read project files",
+				"shortName": "Read"
+			},
+			"readFilesExternally": {
+				"label": "Read all files",
+				"shortName": "Read (all)"
+			},
+			"editFiles": {
+				"label": "Edit project files",
+				"shortName": "Edit"
+			},
+			"editFilesExternally": {
+				"label": "Edit all files",
+				"shortName": "Edit (all)"
+			},
+			"executeSafeCommands": {
+				"label": "Execute safe commands",
+				"shortName": "Safe Commands"
+			},
+			"executeAllCommands": {
+				"label": "Execute all commands",
+				"shortName": "All Commands"
+			},
+			"useBrowser": {
+				"label": "Use the browser",
+				"shortName": "Browser"
+			},
+			"useMcp": {
+				"label": "Use MCP servers",
+				"shortName": "MCP"
+			}
+		}
+	}
+}
