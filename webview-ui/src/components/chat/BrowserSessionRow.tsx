@@ -4,6 +4,7 @@ import { StringRequest } from "@shared/proto/cline/common"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import deepEqual from "fast-deep-equal"
 import React, { CSSProperties, memo, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useSize } from "react-use"
 import styled from "styled-components"
 import { BrowserSettingsMenu } from "@/components/browser/BrowserSettingsMenu"
@@ -106,6 +107,7 @@ const headerStyle: CSSProperties = {
 const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 	const { messages, isLast, onHeightChange, lastModifiedMessage, onSetQuote } = props
 	const { browserSettings } = useExtensionState()
+	const { t } = useTranslation()
 	const prevHeightRef = useRef(0)
 	const [maxActionHeight, setMaxActionHeight] = useState(0)
 	const [consoleLogsExpanded, setConsoleLogsExpanded] = useState(false)
@@ -359,7 +361,7 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 					<span className="codicon codicon-inspect" style={browserIconStyle}></span>
 				)}
 				<span style={approveTextStyle}>
-					{isAutoApproved ? "Cline is using the browser:" : "Cline wants to use the browser:"}
+					{isAutoApproved ? t("chat.browserSession.clineUsingBrowser") : t("chat.browserSession.clineWantsToUseBrowser")}
 				</span>
 			</div>
 			<div
@@ -382,7 +384,7 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 							},
 						)}>
 						<span className="text-xs text-ellipsis overflow-hidden whitespace-nowrap">
-							{displayState.url || "http"}
+							{displayState.url || t("chat.browserSession.defaultUrl", { defaultValue: "http" })}
 						</span>
 					</div>
 					<BrowserSettingsMenu />
@@ -439,10 +441,10 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 							padding: `9px 8px ${consoleLogsExpanded ? 0 : 8}px 8px`,
 						}}>
 						<span className={`codicon codicon-chevron-${consoleLogsExpanded ? "down" : "right"}`}></span>
-						<span style={consoleLogsTextStyle}>Console Logs</span>
+						<span style={consoleLogsTextStyle}>{t("chat.browserSession.consoleLogs")}</span>
 					</div>
 					{consoleLogsExpanded && (
-						<CodeBlock source={`${"```"}shell\n${displayState.consoleLogs || "(No new logs)"}\n${"```"}`} />
+						<CodeBlock source={`${"```"}shell\n${displayState.consoleLogs || t("chat.browserSession.noNewLogs")}\n${"```"}`} />
 					)}
 				</div>
 			</div>
@@ -454,18 +456,18 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 			{pages.length > 1 && (
 				<div style={paginationContainerStyle}>
 					<div>
-						Step {currentPageIndex + 1} of {pages.length}
+						{t("chat.browserSession.stepOf", { current: currentPageIndex + 1, total: pages.length })}
 					</div>
 					<div style={paginationButtonGroupStyle}>
 						<VSCodeButton
 							disabled={currentPageIndex === 0 || isBrowsing}
 							onClick={() => setCurrentPageIndex((i) => i - 1)}>
-							Previous
+							{t("common.previous")}
 						</VSCodeButton>
 						<VSCodeButton
 							disabled={currentPageIndex === pages.length - 1 || isBrowsing}
 							onClick={() => setCurrentPageIndex((i) => i + 1)}>
-							Next
+							{t("common.next")}
 						</VSCodeButton>
 					</div>
 				</div>
@@ -505,6 +507,7 @@ const BrowserSessionRowContent = memo(
 		setMaxActionHeight,
 		onSetQuote,
 	}: BrowserSessionRowContentProps) => {
+		const { t } = useTranslation()
 		const handleToggle = useCallback(() => {
 			if (message.say === "api_req_started") {
 				setMaxActionHeight(0)
@@ -516,7 +519,7 @@ const BrowserSessionRowContent = memo(
 			return (
 				<>
 					<div style={headerStyle}>
-						<span style={browserSessionStartedTextStyle}>Browser Session Started</span>
+						<span style={browserSessionStartedTextStyle}>{t("chat.browserSession.browserSessionStarted")}</span>
 					</div>
 					<div style={codeBlockContainerStyle}>
 						<CodeBlock forceWrap={true} source={`${"```"}shell\n${message.text}\n${"```"}`} />
@@ -570,20 +573,21 @@ const BrowserSessionRowContent = memo(
 )
 
 const BrowserActionBox = ({ action, coordinate, text }: { action: BrowserAction; coordinate?: string; text?: string }) => {
+	const { t } = useTranslation()
 	const getBrowserActionText = (action: BrowserAction, coordinate?: string, text?: string) => {
 		switch (action) {
 			case "launch":
-				return `Launch browser at ${text}`
+				return t("chat.browserAction.launch", { text: text || "" })
 			case "click":
-				return `Click (${coordinate?.replace(",", ", ")})`
+				return t("chat.browserAction.click", { coordinate: coordinate?.replace(",", ", ") || "" })
 			case "type":
-				return `Type "${text}"`
+				return t("chat.browserAction.type", { text: text || "" })
 			case "scroll_down":
-				return "Scroll down"
+				return t("chat.browserAction.scrollDown")
 			case "scroll_up":
-				return "Scroll up"
+				return t("chat.browserAction.scrollUp")
 			case "close":
-				return "Close browser"
+				return t("chat.browserAction.close")
 			default:
 				return action
 		}
@@ -593,7 +597,7 @@ const BrowserActionBox = ({ action, coordinate, text }: { action: BrowserAction;
 			<div style={browserActionBoxContainerInnerStyle}>
 				<div style={browseActionRowContainerStyle}>
 					<span style={browseActionRowStyle}>
-						<span style={browseActionTextStyle}>Browse Action: </span>
+						<span style={browseActionTextStyle}>{t("chat.browserAction.browseAction")} </span>
 						{getBrowserActionText(action, coordinate, text)}
 					</span>
 				</div>

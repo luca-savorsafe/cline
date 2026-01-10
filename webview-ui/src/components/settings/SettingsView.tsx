@@ -12,6 +12,7 @@ import {
 	Wrench,
 } from "lucide-react"
 import { useCallback, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useEvent } from "react-use"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { useExtensionState } from "@/context/ExtensionStateContext"
@@ -40,60 +41,6 @@ interface SettingsTab {
 	hidden?: boolean
 }
 
-export const SETTINGS_TABS: SettingsTab[] = [
-	{
-		id: "api-config",
-		name: "API Configuration",
-		tooltipText: "API Configuration",
-		headerText: "API Configuration",
-		icon: SlidersHorizontal,
-	},
-	{
-		id: "features",
-		name: "Features",
-		tooltipText: "Feature Settings",
-		headerText: "Feature Settings",
-		icon: CheckCheck,
-	},
-	{
-		id: "browser",
-		name: "Browser",
-		tooltipText: "Browser Settings",
-		headerText: "Browser Settings",
-		icon: SquareMousePointer,
-	},
-	{
-		id: "terminal",
-		name: "Terminal",
-		tooltipText: "Terminal Settings",
-		headerText: "Terminal Settings",
-		icon: SquareTerminal,
-	},
-	{
-		id: "general",
-		name: "General",
-		tooltipText: "General Settings",
-		headerText: "General Settings",
-		icon: Wrench,
-	},
-	{
-		id: "about",
-		name: "About",
-		tooltipText: "About Cline",
-		headerText: "About",
-		icon: Info,
-	},
-	// Only show in dev mode
-	{
-		id: "debug",
-		name: "Debug",
-		tooltipText: "Debug Tools",
-		headerText: "Debug",
-		icon: FlaskConical,
-		hidden: !IS_DEV,
-	},
-]
-
 type SettingsViewProps = {
 	onDone: () => void
 	targetSection?: string
@@ -101,22 +48,13 @@ type SettingsViewProps = {
 
 // Helper to render section header - moved outside component for better performance
 const renderSectionHeader = (tabId: string) => {
-	const tab = SETTINGS_TABS.find((t) => t.id === tabId)
-	if (!tab) {
-		return null
-	}
-
-	return (
-		<SectionHeader>
-			<div className="flex items-center gap-2">
-				<tab.icon className="w-4" />
-				<div>{tab.headerText}</div>
-			</div>
-		</SectionHeader>
-	)
+	// This function will be called from child components, so we need to handle translation there
+	return null
 }
 
 const SettingsView = ({ onDone, targetSection }: SettingsViewProps) => {
+	const { t } = useTranslation()
+	
 	// Memoize to avoid recreation
 	const TAB_CONTENT_MAP = useMemo(
 		() => ({
@@ -133,7 +71,62 @@ const SettingsView = ({ onDone, targetSection }: SettingsViewProps) => {
 
 	const { version, environment } = useExtensionState()
 
-	const [activeTab, setActiveTab] = useState<string>(targetSection || SETTINGS_TABS[0].id)
+	// Create tabs with translated text
+	const SETTINGS_TABS: SettingsTab[] = useMemo(() => [
+		{
+			id: "api-config",
+			name: t("settings.tabs.apiConfig"),
+			tooltipText: t("settings.sections.apiConfig"),
+			headerText: t("settings.sections.apiConfig"),
+			icon: SlidersHorizontal,
+		},
+		{
+			id: "features",
+			name: t("settings.tabs.features"),
+			tooltipText: t("settings.sections.features"),
+			headerText: t("settings.sections.features"),
+			icon: CheckCheck,
+		},
+		{
+			id: "browser",
+			name: t("settings.tabs.browser"),
+			tooltipText: t("settings.sections.browser"),
+			headerText: t("settings.sections.browser"),
+			icon: SquareMousePointer,
+		},
+		{
+			id: "terminal",
+			name: t("settings.tabs.terminal"),
+			tooltipText: t("settings.sections.terminal"),
+			headerText: t("settings.sections.terminal"),
+			icon: SquareTerminal,
+		},
+		{
+			id: "general",
+			name: t("settings.tabs.general"),
+			tooltipText: t("settings.sections.general"),
+			headerText: t("settings.sections.general"),
+			icon: Wrench,
+		},
+		{
+			id: "about",
+			name: t("settings.tabs.about"),
+			tooltipText: t("settings.sections.about"),
+			headerText: t("settings.sections.about"),
+			icon: Info,
+		},
+		// Only show in dev mode
+		{
+			id: "debug",
+			name: t("settings.tabs.debug"),
+			tooltipText: t("settings.sections.debug"),
+			headerText: t("settings.sections.debug"),
+			icon: FlaskConical,
+			hidden: !IS_DEV,
+		},
+	], [t])
+
+	const [activeTab, setActiveTab] = useState<string>(targetSection || "api-config")
 
 	// Optimized message handler with early returns
 	const handleMessage = useCallback((event: MessageEvent) => {
@@ -245,11 +238,11 @@ const SettingsView = ({ onDone, targetSection }: SettingsViewProps) => {
 			<TabHeader className="flex justify-between items-center gap-2">
 				<div className="flex items-center gap-1">
 					<h3 className="text-md m-0" style={{ color: titleColor }}>
-						Settings
+						{t("settings.title")}
 					</h3>
 				</div>
 				<div className="flex gap-2">
-					<VSCodeButton onClick={onDone}>Done</VSCodeButton>
+					<VSCodeButton onClick={onDone}>{t("settings.buttons.done")}</VSCodeButton>
 				</div>
 			</TabHeader>
 

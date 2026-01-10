@@ -1,6 +1,7 @@
 import React from "react"
+import { WithTranslation, withTranslation } from "react-i18next"
 
-interface ChatErrorBoundaryProps {
+interface ChatErrorBoundaryProps extends WithTranslation {
 	children: React.ReactNode
 	errorTitle?: string
 	errorBody?: string
@@ -32,7 +33,7 @@ export class ChatErrorBoundary extends React.Component<ChatErrorBoundaryProps, C
 	}
 
 	render() {
-		const { errorTitle, errorBody, height } = this.props
+		const { errorTitle, errorBody, height, t } = this.props
 
 		if (this.state.hasError) {
 			return (
@@ -47,8 +48,10 @@ export class ChatErrorBoundary extends React.Component<ChatErrorBoundaryProps, C
 						borderRadius: "4px",
 						backgroundColor: "var(--vscode-inputValidation-errorBackground, rgba(255, 0, 0, 0.1))",
 					}}>
-					<h3 style={{ margin: "0 0 8px 0" }}>{errorTitle || "Something went wrong displaying this content"}</h3>
-					<p style={{ margin: "0" }}>{errorBody || `Error: ${this.state.error?.message || "Unknown error"}`}</p>
+					<h3 style={{ margin: "0 0 8px 0" }}>{errorTitle || t("chat.errorBoundary.somethingWentWrong")}</h3>
+					<p style={{ margin: "0" }}>
+						{errorBody || `${t("chat.errorBoundary.errorLabel")} ${this.state.error?.message || t("chat.errorBoundary.unknownError", { defaultValue: "Unknown error" })}`}
+					</p>
 				</div>
 			)
 		}
@@ -56,6 +59,9 @@ export class ChatErrorBoundary extends React.Component<ChatErrorBoundaryProps, C
 		return this.props.children
 	}
 }
+
+// Wrap with translation HOC
+const ChatErrorBoundaryWithTranslation = withTranslation()(ChatErrorBoundary)
 
 /**
  * A demo component that throws an error after a delay.
@@ -127,4 +133,4 @@ export class ErrorAfterDelay extends React.Component<ErrorAfterDelayProps, Error
 	}
 }
 
-export default ChatErrorBoundary
+export default ChatErrorBoundaryWithTranslation

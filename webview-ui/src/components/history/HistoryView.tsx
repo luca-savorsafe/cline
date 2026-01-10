@@ -3,6 +3,7 @@ import { GetTaskHistoryRequest, TaskFavoriteRequest } from "@shared/proto/cline/
 import { VSCodeCheckbox, VSCodeRadio, VSCodeRadioGroup, VSCodeTextField } from "@vscode/webview-ui-toolkit/react"
 import Fuse, { FuseResult } from "fuse.js"
 import { memo, useCallback, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { Virtuoso } from "react-virtuoso"
 import { Button } from "@/components/ui/button"
 import { useExtensionState } from "@/context/ExtensionStateContext"
@@ -18,6 +19,7 @@ type HistoryViewProps = {
 type SortOption = "newest" | "oldest" | "mostExpensive" | "mostTokens" | "mostRelevant"
 
 const HistoryView = ({ onDone }: HistoryViewProps) => {
+	const { t } = useTranslation()
 	const extensionStateContext = useExtensionState()
 	const { taskHistory, onRelinquishControl, environment } = extensionStateContext
 	const [searchQuery, setSearchQuery] = useState("")
@@ -272,14 +274,14 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 			</style>
 			<div className="fixed overflow-hidden inset-0 flex flex-col">
 				<div className="flex justify-between items-center py-2.5 px-5">
-					<h3
-						className="m-0"
-						style={{
-							color: getEnvironmentColor(environment),
-						}}>
-						History
-					</h3>
-					<Button onClick={() => onDone()}>Done</Button>
+				<h3
+					className="m-0"
+					style={{
+						color: getEnvironmentColor(environment),
+					}}>
+					{t("history.title")}
+				</h3>
+				<Button onClick={() => onDone()}>{t("history.done")}</Button>
 				</div>
 				<div className="py-1.5 px-4">
 					<div className="flex flex-col gap-3">
@@ -293,7 +295,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 									setSortOption("mostRelevant")
 								}
 							}}
-							placeholder="Fuzzy search history..."
+							placeholder={t("history.searchPlaceholder")}
 							value={searchQuery}>
 							<div
 								className="codicon codicon-search"
@@ -317,12 +319,12 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 							className="flex flex-wrap"
 							onChange={(e) => setSortOption((e.target as HTMLInputElement).value as SortOption)}
 							value={sortOption}>
-							<VSCodeRadio value="newest">Newest</VSCodeRadio>
-							<VSCodeRadio value="oldest">Oldest</VSCodeRadio>
-							<VSCodeRadio value="mostExpensive">Most Expensive</VSCodeRadio>
-							<VSCodeRadio value="mostTokens">Most Tokens</VSCodeRadio>
+							<VSCodeRadio value="newest">{t("history.sortOptions.newest")}</VSCodeRadio>
+							<VSCodeRadio value="oldest">{t("history.sortOptions.oldest")}</VSCodeRadio>
+							<VSCodeRadio value="mostExpensive">{t("history.sortOptions.mostExpensive")}</VSCodeRadio>
+							<VSCodeRadio value="mostTokens">{t("history.sortOptions.mostTokens")}</VSCodeRadio>
 							<VSCodeRadio disabled={!searchQuery} style={{ opacity: searchQuery ? 1 : 0.5 }} value="mostRelevant">
-								Most Relevant
+								{t("history.sortOptions.mostRelevant")}
 							</VSCodeRadio>
 						</VSCodeRadioGroup>
 						<div className="flex flex-wrap -mt-2">
@@ -331,13 +333,13 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 								onClick={() => setShowCurrentWorkspaceOnly(!showCurrentWorkspaceOnly)}>
 								<span className="flex items-center gap-[3px]">
 									<span className="codicon codicon-folder text-button-background" />
-									Workspace
+									{t("history.filters.workspace")}
 								</span>
 							</VSCodeRadio>
 							<VSCodeRadio checked={showFavoritesOnly} onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}>
 								<span className="flex items-center gap-[3px]">
 									<span className="codicon codicon-star-full text-button-background" />
-									Favorites
+									{t("history.filters.favorites")}
 								</span>
 							</VSCodeRadio>
 						</div>
@@ -438,7 +440,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 									<div className="flex flex-col gap-1">
 										<div className="flex items-center justify-between">
 											<div className="flex items-center gap-1 flex-wrap">
-												<span className="font-medium text-description">Tokens:</span>
+												<span className="font-medium text-description">{t("history.labels.tokens")}</span>
 												<span className="flex items-center gap-1 text-description">
 													<i
 														className="codicon codicon-arrow-up font-bold -mb-0.5"
@@ -463,7 +465,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 
 										{!!(item.cacheWrites || item.cacheReads) && (
 											<div className="flex items-center gap-1 flex-wrap">
-												<span className="font-medium text-description">Cache:</span>
+												<span className="font-medium text-description">{t("history.labels.cache")}</span>
 												{item.cacheWrites > 0 && (
 													<span className="flex items-center gap-1 text-description">
 														<i
@@ -488,11 +490,11 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 												)}
 											</div>
 										)}
-										{item.modelId && <div className="text-description">Model: {item.modelId}</div>}
+										{item.modelId && <div className="text-description">{t("history.labels.model")} {item.modelId}</div>}
 										{!!item.totalCost && (
 											<div className="flex justify-between items-center -mt-0.5">
 												<div className="flex items-center gap-1">
-													<span className="font-medium text-description">API Cost:</span>
+													<span className="font-medium text-description">{t("history.labels.apiCost")}</span>
 													<span className="text-description">${item.totalCost?.toFixed(4)}</span>
 												</div>
 												<ExportButton itemId={item.id} />
@@ -507,10 +509,10 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 				<div className="p-2.5 border-t border-t-border-panel">
 					<div className="flex gap-2.5 mb-2.5">
 						<Button className="flex-1" onClick={() => handleBatchHistorySelect(true)} variant="secondary">
-							Select All
+							{t("history.buttons.selectAll")}
 						</Button>
 						<Button className="flex-1" onClick={() => handleBatchHistorySelect(false)} variant="secondary">
-							Select None
+							{t("history.buttons.selectNone")}
 						</Button>
 					</div>
 					{selectedItems.length > 0 ? (
@@ -521,7 +523,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 								handleDeleteSelectedHistoryItems(selectedItems)
 							}}
 							variant="danger">
-							Delete {selectedItems.length > 1 ? selectedItems.length : ""} Selected
+							{t("history.buttons.deleteSelected", { count: selectedItems.length > 1 ? selectedItems.length : 0 })}
 							{selectedItemsSize > 0 ? ` (${formatSize(selectedItemsSize)})` : ""}
 						</Button>
 					) : (
@@ -537,7 +539,7 @@ const HistoryView = ({ onDone }: HistoryViewProps) => {
 									.finally(() => setDeleteAllDisabled(false))
 							}}
 							variant="danger">
-							Delete All History{totalTasksSize !== null ? ` (${formatSize(totalTasksSize)})` : ""}
+							{t("history.buttons.deleteAll")}{totalTasksSize !== null ? ` (${formatSize(totalTasksSize)})` : ""}
 						</Button>
 					)}
 				</div>

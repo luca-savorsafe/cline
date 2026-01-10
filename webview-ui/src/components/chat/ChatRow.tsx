@@ -14,6 +14,7 @@ import { VSCodeBadge, VSCodeProgressRing } from "@vscode/webview-ui-toolkit/reac
 import deepEqual from "fast-deep-equal"
 import { FoldVerticalIcon } from "lucide-react"
 import React, { MouseEvent, memo, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useSize } from "react-use"
 import styled from "styled-components"
 import { OptionsButtons } from "@/components/chat/OptionsButtons"
@@ -324,6 +325,7 @@ export const ChatRowContent = memo(
 			selectedText: "",
 		})
 		const contentRef = useRef<HTMLDivElement>(null)
+		const { t } = useTranslation()
 
 		// Command output expansion state (for all messages, but only used by command messages)
 		const [isOutputFullyExpanded, setIsOutputFullyExpanded] = useState(false)
@@ -448,7 +450,7 @@ export const ChatRowContent = memo(
 								color: errorColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: errorColor, fontWeight: "bold" }}>Error</span>,
+						<span style={{ color: errorColor, fontWeight: "bold" }}>{t("chat.chatRow.error")}</span>,
 					]
 				case "mistake_limit_reached":
 					return [
@@ -458,7 +460,7 @@ export const ChatRowContent = memo(
 								color: errorColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: errorColor, fontWeight: "bold" }}>Cline is having trouble...</span>,
+						<span style={{ color: errorColor, fontWeight: "bold" }}>{t("chat.chatRow.clineHavingTrouble")}</span>,
 					]
 				case "command":
 					return [
@@ -468,7 +470,7 @@ export const ChatRowContent = memo(
 								color: normalColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: normalColor, fontWeight: "bold" }}>Cline wants to execute this command:</span>,
+						<span style={{ color: normalColor, fontWeight: "bold" }}>{t("chat.chatRow.executeCommand")}</span>,
 					]
 				case "use_mcp_server":
 					const mcpServerUse = JSON.parse(message.text || "{}") as ClineAskUseMcpServer
@@ -486,11 +488,11 @@ export const ChatRowContent = memo(
 						<span
 							className="ph-no-capture"
 							style={{ color: normalColor, fontWeight: "bold", wordBreak: "break-word" }}>
-							Cline wants to {mcpServerUse.type === "use_mcp_tool" ? "use a tool" : "access a resource"} on the{" "}
+							Cline wants to {mcpServerUse.type === "use_mcp_tool" ? t("chat.chatRow.useMcpTool") : t("chat.chatRow.useMcpResource")} on the{" "}
 							<code style={{ wordBreak: "break-all" }}>
 								{getMcpServerDisplayName(mcpServerUse.serverName, mcpMarketplaceCatalog)}
 							</code>{" "}
-							MCP server:
+							{t("chat.chatRow.mcpServer")}:
 						</span>,
 					]
 				case "completion_result":
@@ -501,7 +503,7 @@ export const ChatRowContent = memo(
 								color: successColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: successColor, fontWeight: "bold" }}>Task Completed</span>,
+						<span style={{ color: successColor, fontWeight: "bold" }}>{t("chat.chatRow.taskCompleted")}</span>,
 					]
 				case "api_req_started":
 					return ErrorBlockTitle({
@@ -518,7 +520,7 @@ export const ChatRowContent = memo(
 								color: normalColor,
 								marginBottom: "-1.5px",
 							}}></span>,
-						<span style={{ color: normalColor, fontWeight: "bold" }}>Cline has a question:</span>,
+						<span style={{ color: normalColor, fontWeight: "bold" }}>{t("chat.chatRow.clineHasQuestion")}</span>,
 					]
 				default:
 					return [null, null]
@@ -532,6 +534,7 @@ export const ChatRowContent = memo(
 			apiReqCancelReason,
 			isMcpServerResponding,
 			message.text,
+			t,
 		])
 
 		const headerStyle: React.CSSProperties = {
@@ -1148,25 +1151,25 @@ export const ChatRowContent = memo(
 											flexShrink: 0,
 										}}
 									/>
-									<span
-										style={{
-											color: isCommandExecuting
-												? successColor
+										<span
+											style={{
+												color: isCommandExecuting
+													? successColor
+													: isCommandPending
+														? "var(--vscode-editorWarning-foreground)"
+														: "var(--vscode-descriptionForeground)",
+												fontWeight: 500,
+												fontSize: "13px",
+												flexShrink: 0,
+											}}>
+											{isCommandExecuting
+												? t("chat.chatRow.running")
 												: isCommandPending
-													? "var(--vscode-editorWarning-foreground)"
-													: "var(--vscode-descriptionForeground)",
-											fontWeight: 500,
-											fontSize: "13px",
-											flexShrink: 0,
-										}}>
-										{isCommandExecuting
-											? "Running"
-											: isCommandPending
-												? "Pending"
-												: isCommandCompleted
-													? "Completed"
-													: "Skipped"}
-									</span>
+													? t("chat.chatRow.pending")
+													: isCommandCompleted
+														? t("chat.chatRow.completed")
+														: t("chat.chatRow.skipped")}
+										</span>
 								</div>
 								<div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
 									{showCancelButton && (
@@ -1327,7 +1330,7 @@ export const ChatRowContent = memo(
 												fontSize: "12px",
 												textTransform: "uppercase",
 											}}>
-											Arguments
+											{t("chat.chatRow.arguments")}
 										</div>
 										<CodeAccordian
 											code={useMcpServer.arguments}
@@ -1443,10 +1446,10 @@ export const ChatRowContent = memo(
 										flexShrink: 0,
 									}}
 								/>
-								<div style={{ flex: 1, wordBreak: "break-word" }}>
-									<span style={{ fontWeight: 500 }}>MCP Notification: </span>
-									<span className="ph-no-capture">{message.text}</span>
-								</div>
+									<div style={{ flex: 1, wordBreak: "break-word" }}>
+										<span style={{ fontWeight: 500 }}>{t("chat.chatRow.mcpNotification")}</span>
+										<span className="ph-no-capture">{message.text}</span>
+									</div>
 							</div>
 						)
 					case "text":
@@ -1494,7 +1497,7 @@ export const ChatRowContent = memo(
 										{isExpanded ? (
 											<div style={{ marginTop: -3 }}>
 												<span style={{ fontWeight: "bold", display: "block", marginBottom: "4px" }}>
-													Thinking
+													{t("chat.chatRow.thinkingTitle")}
 													<span
 														className="codicon codicon-chevron-down"
 														style={{
@@ -1508,7 +1511,7 @@ export const ChatRowContent = memo(
 											</div>
 										) : (
 											<div style={{ display: "flex", alignItems: "center" }}>
-												<span style={{ fontWeight: "bold", marginRight: "4px" }}>Thinking:</span>
+												<span style={{ fontWeight: "bold", marginRight: "4px" }}>{t("chat.chatRow.thinking")}</span>
 												<span
 													className="ph-no-capture"
 													style={{
@@ -1814,7 +1817,7 @@ export const ChatRowContent = memo(
 											fontWeight: 500,
 											color: "var(--vscode-foreground)",
 										}}>
-										Shell Integration Unavailable
+										{t("chat.chatRow.shellIntegrationUnavailable")}
 									</span>
 								</div>
 								<div style={{ color: "var(--vscode-foreground)", opacity: 0.8 }}>
@@ -1867,7 +1870,7 @@ export const ChatRowContent = memo(
 												fontWeight: 500,
 												color: "var(--vscode-foreground)",
 											}}>
-											{isFailed ? "Auto-Retry Failed" : "Auto-Retry in Progress"}
+											{isFailed ? t("chat.chatRow.autoRetryFailed") : t("chat.chatRow.autoRetryInProgress")}
 										</span>
 									</div>
 									<div style={{ color: "var(--vscode-foreground)", opacity: 0.8 }}>
@@ -1926,7 +1929,7 @@ export const ChatRowContent = memo(
 											fontWeight: 500,
 											color: "var(--vscode-foreground)",
 										}}>
-										Shell integration issues
+										{t("chat.chatRow.shellIntegrationIssues")}
 									</span>
 								</div>
 								<div style={{ color: "var(--vscode-foreground)", opacity: 0.9, marginBottom: 8 }}>
@@ -2163,7 +2166,7 @@ export const ChatRowContent = memo(
 											marginBottom: "-1.5px",
 										}}></span>
 									<span style={{ color: normalColor, fontWeight: "bold" }}>
-										Cline wants to start a new task:
+										{t("chat.chatRow.newTask")}
 									</span>
 								</div>
 								<NewTaskPreview context={message.text || ""} />
@@ -2180,7 +2183,7 @@ export const ChatRowContent = memo(
 											marginBottom: "-1.5px",
 										}}></span>
 									<span style={{ color: normalColor, fontWeight: "bold" }}>
-										Cline wants to condense your conversation:
+										{t("chat.chatRow.condense")}
 									</span>
 								</div>
 								<NewTaskPreview context={message.text || ""} />
@@ -2197,7 +2200,7 @@ export const ChatRowContent = memo(
 											marginBottom: "-1.5px",
 										}}></span>
 									<span style={{ color: normalColor, fontWeight: "bold" }}>
-										Cline wants to create a Github issue:
+										{t("chat.chatRow.reportBug")}
 									</span>
 								</div>
 								<ReportBugPreview data={message.text || ""} />

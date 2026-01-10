@@ -11,7 +11,7 @@
 		"name": "Parrot Bot Inc."
 	},
 	"license": "Apache-2.0",
-	"publisher": "parrot",
+	"publisher": "Parrot",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/cline/cline"

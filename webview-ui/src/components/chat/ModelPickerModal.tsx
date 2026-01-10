@@ -5,6 +5,7 @@ import { UpdateSettingsRequest } from "@shared/proto/cline/state"
 import { Mode } from "@shared/storage/types"
 import { ArrowLeftRight, Brain, Check, ChevronDownIcon, Search, Settings } from "lucide-react"
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { createPortal } from "react-dom"
 import { useWindowSize } from "react-use"
 import styled from "styled-components"
@@ -86,6 +87,7 @@ const StarIcon = ({ isFavorite, onClick }: { isFavorite: boolean; onClick: (e: R
 }
 
 const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChange, currentMode, children }) => {
+	const { t } = useTranslation()
 	const {
 		apiConfiguration,
 		openRouterModels,
@@ -551,7 +553,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 									setIsProviderExpanded(false)
 								}}
 								onKeyDown={handleKeyDown}
-								placeholder={`Search ${allModels.length} models`}
+								placeholder={t("modelPicker.searchPlaceholder", { count: allModels.length })}
 								ref={searchInputRef as any}
 								value={searchQuery}
 							/>
@@ -586,7 +588,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 												setIsProviderExpanded(!isProviderExpanded)
 											}}
 											ref={providerRowRef}>
-											<div className="text-[11px] text-description">Provider:</div>
+											<div className="text-[11px] text-description">{t("modelPicker.providerLabel")}</div>
 											<span className="text-[11px] text-description">
 												{getProviderLabel(selectedProvider)}
 											</span>
@@ -595,7 +597,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 									</TooltipTrigger>
 									{!isProviderExpanded && (
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
-											Configured providers
+											{t("modelPicker.providerLabel")}
 										</TooltipContent>
 									)}
 								</Tooltip>
@@ -616,10 +618,10 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 										</TooltipTrigger>
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
 											{!supportsThinking
-												? "Thinking not supported by this model"
+												? t("modelPicker.thinking.notSupported")
 												: thinkingEnabled
-													? "Extended thinking enabled"
-													: "Enable extended thinking for enhanced reasoning"}
+													? t("modelPicker.thinking.enabled")
+													: t("modelPicker.thinking.disabled")}
 										</TooltipContent>
 									</Tooltip>
 									<Tooltip>
@@ -634,7 +636,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 											</IconToggle>
 										</TooltipTrigger>
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
-											Use different models for Plan vs Act
+											{t("modelPicker.splitMode.tooltip")}
 										</TooltipContent>
 									</Tooltip>
 								</div>
@@ -642,9 +644,9 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 							{/* Thinking budget slider - shown when model supports thinking, greyed out when disabled */}
 							{supportsThinking && (
 								<div className="flex items-center gap-2 py-1.5 px-0 mt-0.5 w-full">
-									<div className="text-description whitespace-nowrap min-w-[130px] text-[10px]">
-										Thinking ({(thinkingBudget ?? 0).toLocaleString()} tokens)
-									</div>
+											<div className="text-description whitespace-nowrap min-w-[130px] text-[10px]">
+												{t("modelPicker.thinking.label", { tokens: (thinkingBudget ?? 0).toLocaleString() })}
+											</div>
 									<ThinkingBudgetSlider currentMode={currentMode} showEnableToggle={false} />
 								</div>
 							)}
@@ -667,7 +669,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 											</SplitModeCell>
 										</TooltipTrigger>
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
-											Plan mode
+											{t("modelPicker.splitMode.plan")}
 										</TooltipContent>
 									</Tooltip>
 									<Tooltip>
@@ -682,7 +684,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 											</SplitModeCell>
 										</TooltipTrigger>
 										<TooltipContent side="top" style={{ zIndex: 9999 }}>
-											Act mode
+											{t("modelPicker.splitMode.act")}
 										</TooltipContent>
 									</Tooltip>
 								</SplitModeRow>
@@ -716,9 +718,9 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 									)
 								})()
 							) : !selectedModelId && selectedProvider === "vercel-ai-gateway" ? (
-								<EmptyModelRow>
-									<span className="text-[11px] text-description">Select a model below</span>
-								</EmptyModelRow>
+									<EmptyModelRow>
+										<span className="text-[11px] text-description">{t("modelPicker.emptyState.selectModel")}</span>
+									</EmptyModelRow>
 							) : null}
 
 							{/* For Cline: Show recommended models */}
@@ -780,14 +782,14 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 											{/* Show configured model if exists */}
 											{providerInfo.modelId && (
 												<div className="flex items-center gap-1.5">
-													<div className="text-[10px] text-description shrink-0">Current model:</div>
+													<div className="text-[10px] text-description shrink-0">{t("modelPicker.currentModel")}</div>
 													<ConfiguredModelName>{providerInfo.modelId}</ConfiguredModelName>
 												</div>
 											)}
 											{/* Show base URL if configured */}
 											{providerInfo.baseUrl && (
 												<div className="flex items-center gap-1.5">
-													<div className="text-[10px] text-description shrink-0">Endpoint:</div>
+													<div className="text-[10px] text-description shrink-0">{t("modelPicker.endpoint")}</div>
 													<div className="text-[10px] text-description whitespace-nowrap overflow-hidden text-ellipsis font-editor">
 														{providerInfo.baseUrl}
 													</div>
@@ -802,7 +804,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 											{/* Configure link */}
 											<SettingsOnlyLink onClick={handleConfigureClick}>
 												<Settings size={12} />
-												<span>{providerInfo.modelId ? "Edit in settings" : "Configure in settings"}</span>
+												<span>{providerInfo.modelId ? t("modelPicker.configure.edit") : t("modelPicker.configure.add")}</span>
 											</SettingsOnlyLink>
 										</SettingsOnlyContainer>
 									)
@@ -812,7 +814,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 							{isSearching &&
 								filteredModels.length === 0 &&
 								featuredModels.length === 0 &&
-								!SETTINGS_ONLY_PROVIDERS.includes(selectedProvider) && <EmptyState>No models found</EmptyState>}
+								!SETTINGS_ONLY_PROVIDERS.includes(selectedProvider) && <EmptyState>{t("modelPicker.emptyState.noModels")}</EmptyState>}
 						</ModelListContainer>
 					</PopupModalContainer>,
 					document.body,
@@ -841,7 +843,7 @@ const ModelPickerModal: React.FC<ModelPickerModalProps> = ({ isOpen, onOpenChang
 							</ProviderDropdownItem>
 						))}
 						<ProviderDropdownItem $isSelected={false} onClick={handleConfigureClick}>
-							<span style={{ color: "var(--vscode-textLink-foreground)" }}>+ Add provider</span>
+							<span style={{ color: "var(--vscode-textLink-foreground)" }}>{t("modelPicker.addProvider")}</span>
 						</ProviderDropdownItem>
 					</ProviderDropdownPortal>,
 					document.body,

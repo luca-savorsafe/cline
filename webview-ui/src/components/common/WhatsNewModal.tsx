@@ -66,7 +66,7 @@ export const WhatsNewModal: React.FC<WhatsNewModalProps> = ({ open, onClose, ver
 			<div className="flex gap-2 flex-wrap">{children}</div>
 		) : (
 			<Button className="my-1" onClick={handleShowAccount} size="sm">
-				Sign Up with Cline
+				Sign Up with Parrot
 			</Button>
 		)
 
@@ -87,15 +87,15 @@ export const WhatsNewModal: React.FC<WhatsNewModalProps> = ({ open, onClose, ver
 					{/* Description */}
 					<ul className="text-sm pl-3 list-disc" style={{ color: "var(--vscode-descriptionForeground)" }}>
 						<li className="mb-2">
-							<strong>Skills:</strong> Extend Cline with instruction sets for specialized tasks.{" "}
+							<strong>Skills:</strong> Extend Parrot with instruction sets for specialized tasks.{" "}
 							<a
 								href="https://docs.cline.bot/features/skills"
 								style={{ color: "var(--vscode-textLink-foreground)" }}>
 								Learn more
 							</a>
 						</li>
-						<li>
-							<strong>Web Search:</strong> Improved websearch tooling in Cline provider.
+						<li className="mb-2">
+							<strong>Web Search:</strong> Improved websearch tooling in Parrot provider.
 						</li>
 					</ul>
 				</div>

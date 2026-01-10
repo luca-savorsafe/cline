@@ -15,6 +15,7 @@ import { fromProtobufModels } from "@shared/proto-conversions/models/typeConvers
 import type React from "react"
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react"
 import { Environment } from "../../../src/config"
+import { changeLanguage } from "../i18n"
 import {
 	basetenDefaultModelId,
 	basetenModels,
@@ -698,6 +699,15 @@ export const ExtensionStateContextProvider: React.FC<{
 			refreshBasetenModels()
 		}
 	}, [refreshOpenRouterModels, refreshVercelAiGatewayModels, state?.apiConfiguration?.basetenApiKey, refreshBasetenModels])
+
+	// Update i18n language when preferredLanguage changes
+	useEffect(() => {
+		if (state.preferredLanguage) {
+			changeLanguage(state.preferredLanguage).catch((error) => {
+				console.error("Failed to change language:", error)
+			})
+		}
+	}, [state.preferredLanguage])
 
 	const contextValue: ExtensionStateContextType = {
 		...state,
