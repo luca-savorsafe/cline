@@ -648,7 +648,7 @@
 			"chromeNotDetected": "（未在您的机器上检测到）",
 			"specifyCustomPath": "您可以在下方指定自定义路径。",
 			"remoteConnectionRequiresDebugMode": "使用远程浏览器连接需要以调试模式启动 Chrome",
-			"manuallyOrUsingButton": "手动（<code>--remote-debugging-port=9222</code>）或使用下方按钮。输入主机地址或留空以自动发现。",
+			"manuallyOrUsingButton": "手动（--remote-debugging-port=9222）或使用下方按钮。输入主机地址或留空以自动发现。",
 			"period": "。"
 		}
 	},

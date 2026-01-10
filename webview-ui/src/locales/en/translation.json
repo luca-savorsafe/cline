@@ -648,7 +648,7 @@
 			"chromeNotDetected": "(not detected on your machine)",
 			"specifyCustomPath": "You can specify a custom path below.",
 			"remoteConnectionRequiresDebugMode": "Using remote browser connection requires launching Chrome in debug mode",
-			"manuallyOrUsingButton": "Manually (<code>--remote-debugging-port=9222</code>) or using the button below. Enter a host address or leave blank for auto-discovery.",
+			"manuallyOrUsingButton": "Manually (--remote-debugging-port=9222) or using the button below. Enter a host address or leave blank for auto-discovery.",
 			"period": "."
 		}
 	},
