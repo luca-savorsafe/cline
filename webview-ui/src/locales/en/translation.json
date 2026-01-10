@@ -76,6 +76,87 @@
 			"label": "API Provider",
 			"remoteConfigTooltip": "Provider options are managed by your organization's remote configuration",
 			"searchPlaceholder": "Search and select provider..."
+		},
+		"features": {
+			"subagents": {
+				"title": "Subagents",
+				"newBadge": "NEW",
+				"cliRequired": "Cline for CLI is required for subagents. Install it with:",
+				"installCommand": "npm install -g cline",
+				"thenRun": "then run",
+				"authCommand": "cline auth",
+				"authDescription": "To authenticate with Cline or configure an API provider.",
+				"installButton": "Install Now",
+				"enabled": "Subagents Enabled",
+				"enable": "Enable Subagents",
+				"experimental": "Experimental:",
+				"description": "Allows Cline to spawn subprocesses to handle focused tasks like exploring large codebases, keeping your main context clean."
+			},
+			"checkpoints": {
+				"title": "Enable Checkpoints",
+				"description": "Enables extension to save checkpoints of workspace throughout the task. Uses git under the hood which may not work well with large workspaces."
+			},
+			"mcpDisplay": {
+				"title": "MCP Display Mode",
+				"description": "Controls how MCP responses are displayed: plain text, rich formatting with links/images, or markdown rendering."
+			},
+			"openaiReasoning": {
+				"title": "OpenAI Reasoning Effort",
+				"description": "Reasoning effort for the OpenAI family of models(applies to all OpenAI model providers)"
+			},
+			"strictPlanMode": {
+				"title": "Enable strict plan mode",
+				"description": "Enforces strict tool use while in plan mode, preventing file edits."
+			},
+			"focusChain": {
+				"title": "Enable Focus Chain",
+				"description": "Enables enhanced task progress tracking and automatic focus chain list management throughout tasks.",
+				"reminderInterval": "Focus Chain Reminder Interval",
+				"reminderDescription": "Interval (in messages) to remind Cline about its focus chain checklist (1-100). Lower values provide more frequent reminders."
+			},
+			"dictation": {
+				"title": "Enable Dictation",
+				"description": "Enables speech-to-text transcription using your Cline account. Uses the Aqua Voice's Avalon model, at $0.0065 credits per minute of audio processed. 5 minutes max per message."
+			},
+			"autoCompact": {
+				"title": "Enable Auto Compact",
+				"description": "Enables advanced context management system which uses LLM based condensing for next-gen models.",
+				"learnMore": "Learn more"
+			},
+			"webTools": {
+				"title": "Enable Cline Web Tools",
+				"description": "Enables websearch and webfetch tools while using the Cline provider."
+			},
+			"nativeToolCall": {
+				"title": "Enable Native Tool Call",
+				"description": "Uses the model's native tool calling API instead of XML-based tool parsing. This will improve performance for supported models."
+			},
+			"parallelToolCalling": {
+				"title": "Enable Parallel Tool Calling",
+				"description": "Allows models to call multiple tools in a single response. Automatically enabled for GPT-5 models."
+			},
+			"backgroundEdit": {
+				"title": "Enable Background Edit",
+				"description": "Allows editing files in background without opening the diff view in editor."
+			},
+			"multiRootWorkspace": {
+				"title": "Enable Multi-Root Workspace",
+				"description": "Allows cline to work across multiple workspaces."
+			},
+			"hooks": {
+				"title": "Enable Hooks",
+				"windowsWarning": "Hooks are not yet supported on Windows. This feature is currently available on macOS and Linux only.",
+				"description": "Allows execution of hooks from .clinerules/hooks/ directory."
+			},
+			"skills": {
+				"title": "Enable Skills",
+				"description": "Enables Skills for reusable, on-demand agent instructions from .cline/skills/ directories."
+			},
+			"yoloMode": {
+				"title": "Enable YOLO Mode",
+				"remoteConfigTooltip": "This setting is managed by your organization's remote configuration",
+				"warning": "EXPERIMENTAL & DANGEROUS: This mode disables safety checks and user confirmations. Cline will automatically approve all actions without asking. Use with extreme caution."
+			}
 		}
 	},
 	"chat": {

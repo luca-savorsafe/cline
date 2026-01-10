@@ -186,6 +186,21 @@
 			"condense": "Cline 想要压缩对话:",
 			"reportBug": "Cline 想要创建 GitHub issue:"
 		},
+		"reportBug": {
+			"title": "Bug 报告",
+			"whatHappened": "发生了什么？",
+			"stepsToReproduce": "重现步骤",
+			"relevantApiRequestOutput": "相关 API 请求输出",
+			"providerAndModel": "提供商/模型",
+			"operatingSystem": "操作系统",
+			"systemInfo": "系统信息",
+			"clineVersion": "Cline 版本",
+			"additionalContext": "附加上下文"
+		},
+		"quoteButton": {
+			"ariaLabel": "引用选中内容",
+			"title": "在回复中引用选中内容"
+		},
 		"diffEdit": {
 			"additions": "添加",
 			"deletions": "删除"
@@ -195,6 +210,17 @@
 			"apiRequestCancelled": "API 请求已取消",
 			"apiRequestFailed": "API 请求失败",
 			"creditLimitReached": "达到信用额度"
+		},
+		"hook": {
+			"title": "Hook:",
+			"running": "运行中",
+			"failed": "失败",
+			"aborted": "已中止",
+			"completed": "已完成",
+			"unknown": "未知",
+			"abort": "中止",
+			"timeoutMessage": "超过30秒。检查是否有无限循环或为网络请求添加超时。",
+			"validationMessage": "Hook返回了无效的JSON。请查看下面的错误详情获取更多信息。"
 		}
 	},
 	"taskHeader": {
