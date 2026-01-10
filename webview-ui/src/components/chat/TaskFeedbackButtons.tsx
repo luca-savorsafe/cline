@@ -2,6 +2,7 @@ import { StringRequest } from "@shared/proto/cline/common"
 import { TaskFeedbackType } from "@shared/WebviewMessage"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import React, { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import { TaskServiceClient } from "@/services/grpc-client"
 
@@ -20,6 +21,7 @@ const ButtonWrapper = styled.div`
 `
 
 const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, isFromHistory = false, style }) => {
+	const { t } = useTranslation()
 	const [feedback, setFeedback] = useState<TaskFeedbackType | null>(null)
 	const [shouldShow, setShouldShow] = useState<boolean>(true)
 
@@ -76,10 +78,10 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				<ButtonWrapper>
 					<VSCodeButton
 						appearance="icon"
-						aria-label="This was helpful"
+						aria-label={t("chat.feedback.wasHelpful")}
 						disabled={feedback !== null}
 						onClick={() => handleFeedback("thumbs_up")}
-						title="This was helpful">
+						title={t("chat.feedback.wasHelpful")}>
 						<IconWrapper>
 							<span
 								className={`codicon ${feedback === "thumbs_up" ? "codicon-thumbsup-filled" : "codicon-thumbsup"}`}
@@ -90,10 +92,10 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				<ButtonWrapper>
 					<VSCodeButton
 						appearance="icon"
-						aria-label="This wasn't helpful"
+						aria-label={t("chat.feedback.wasNotHelpful")}
 						disabled={feedback !== null && feedback !== "thumbs_down"}
 						onClick={() => handleFeedback("thumbs_down")}
-						title="This wasn't helpful">
+						title={t("chat.feedback.wasNotHelpful")}>
 						<IconWrapper>
 							<span
 								className={`codicon ${feedback === "thumbs_down" ? "codicon-thumbsdown-filled" : "codicon-thumbsdown"}`}
@@ -104,8 +106,8 @@ const TaskFeedbackButtons: React.FC<TaskFeedbackButtonsProps> = ({ messageTs, is
 				{/* <VSCodeButtonLink
 					href="https://github.com/cline/cline/issues/new?template=bug_report.yml"
 					appearance="icon"
-					title="Report a bug"
-					aria-label="Report a bug">
+					title={t("chat.feedback.reportBug")}
+					aria-label={t("chat.feedback.reportBug")}>
 					<span className="codicon codicon-bug" />
 				</VSCodeButtonLink> */}
 			</ButtonsContainer>

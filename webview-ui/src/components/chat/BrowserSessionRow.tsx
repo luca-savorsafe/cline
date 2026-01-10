@@ -361,7 +361,9 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 					<span className="codicon codicon-inspect" style={browserIconStyle}></span>
 				)}
 				<span style={approveTextStyle}>
-					{isAutoApproved ? t("chat.browserSession.clineUsingBrowser") : t("chat.browserSession.clineWantsToUseBrowser")}
+					{isAutoApproved
+						? t("chat.browserSession.clineUsingBrowser")
+						: t("chat.browserSession.clineWantsToUseBrowser")}
 				</span>
 			</div>
 			<div
@@ -384,7 +386,7 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 							},
 						)}>
 						<span className="text-xs text-ellipsis overflow-hidden whitespace-nowrap">
-							{displayState.url || t("chat.browserSession.defaultUrl", { defaultValue: "http" })}
+							{displayState.url || "http"}
 						</span>
 					</div>
 					<BrowserSettingsMenu />
@@ -444,7 +446,9 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 						<span style={consoleLogsTextStyle}>{t("chat.browserSession.consoleLogs")}</span>
 					</div>
 					{consoleLogsExpanded && (
-						<CodeBlock source={`${"```"}shell\n${displayState.consoleLogs || t("chat.browserSession.noNewLogs")}\n${"```"}`} />
+						<CodeBlock
+							source={`${"```"}shell\n${displayState.consoleLogs || t("chat.browserSession.noNewLogs")}\n${"```"}`}
+						/>
 					)}
 				</div>
 			</div>
@@ -455,9 +459,7 @@ const BrowserSessionRow = memo((props: BrowserSessionRowProps) => {
 			{/* Pagination moved to bottom */}
 			{pages.length > 1 && (
 				<div style={paginationContainerStyle}>
-					<div>
-						{t("chat.browserSession.stepOf", { current: currentPageIndex + 1, total: pages.length })}
-					</div>
+					<div>{t("chat.browserSession.stepOf", { current: currentPageIndex + 1, total: pages.length })}</div>
 					<div style={paginationButtonGroupStyle}>
 						<VSCodeButton
 							disabled={currentPageIndex === 0 || isBrowsing}

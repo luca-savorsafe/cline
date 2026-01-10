@@ -5,6 +5,7 @@ import { VSCodeDropdown, VSCodeLink, VSCodeOption, VSCodeTextField } from "@vsco
 import Fuse from "fuse.js"
 import type React from "react"
 import { type KeyboardEvent, useEffect, useMemo, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useMount } from "react-use"
 import styled from "styled-components"
 import { useExtensionState } from "@/context/ExtensionStateContext"
@@ -95,6 +96,7 @@ export const freeModels = [
 const FREE_CLINE_MODELS = freeModels.map((m) => m.id)
 
 const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, currentMode, showProviderRouting }) => {
+	const { t } = useTranslation()
 	const { handleModeFieldChange, handleModeFieldsChange, handleFieldChange } = useApiConfigurationHandlers()
 	const { apiConfiguration, favoritedModelIds, openRouterModels, refreshOpenRouterModels } = useExtensionState()
 	const modeFields = getModeSpecificFields(apiConfiguration, currentMode)
@@ -367,7 +369,7 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 							setIsDropdownVisible(true)
 						}}
 						onKeyDown={handleKeyDown}
-						placeholder="Search and select a model..."
+						placeholder={t("openRouter.searchModelPlaceholder")}
 						style={{
 							width: "100%",
 							zIndex: OPENROUTER_MODEL_PICKER_Z_INDEX,
@@ -376,7 +378,7 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 						value={searchTerm}>
 						{searchTerm && (
 							<div
-								aria-label="Clear search"
+								aria-label={t("openRouter.clearSearch")}
 								className="input-icon-button codicon codicon-close"
 								onClick={() => {
 									setSearchTerm("")
@@ -449,7 +451,7 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 					{showThinkingLevel && (
 						<DropdownContainer className="dropdown-container" zIndex={1}>
 							<label htmlFor="thinking-level">
-								<span className="font-medium">Thinking Level</span>
+								<span className="font-medium">{t("openRouter.thinkingLevel")}</span>
 							</label>
 							<VSCodeDropdown
 								className="w-full"
@@ -484,12 +486,12 @@ const OpenRouterModelPicker: React.FC<OpenRouterModelPickerProps> = ({ isPopup, 
 						marginTop: 3,
 						color: "var(--vscode-descriptionForeground)",
 					}}>
-					Using OpenRouter preset: <strong>{searchTerm}</strong>. Preset models reference your configured model
-					preferences on{" "}
+					{t("openRouter.usingOpenRouterPreset")} <strong>{searchTerm}</strong>. Preset models reference your configured
+					model preferences on{" "}
 					<VSCodeLink href="https://openrouter.ai/settings/presets" style={{ display: "inline", fontSize: "inherit" }}>
-						OpenRouter.
+						{t("openRouter.openRouterLink")}
 					</VSCodeLink>
-					Model info and pricing will depend on your preset configuration.
+					{t("openRouter.modelInfoDependsOnPreset")}
 				</p>
 			) : (
 				<p

@@ -5,7 +5,7 @@
 
 这些文件包含用户界面文本但尚未使用国际化:
 
-### 1. `settings/sections/FeatureSettingsSection.tsx`
+### 1. `components/settings/sections/FeatureSettingsSection.tsx`
 - 所有界面文本:
   1. JSX文本: "Enable Background Edit"
   2. JSX文本: "Enable Skills"
@@ -72,7 +72,7 @@
   54. 文本: "Experimental:"
   55. JSX文本: "Allows models to call multiple tools in a single response. Automatically enabled for GPT-5 models."
 
-### 2. `settings/providers/BedrockProvider.tsx`
+### 2. `components/settings/providers/BedrockProvider.tsx`
 - 所有界面文本:
   1. JSX文本: "AWS Secret Key"
   2. JSX文本: "Use global inference profile"
@@ -110,7 +110,7 @@
   34. 文本: "AWS Access Key"
   35. placeholder: "Enter Session Token..."
 
-### 3. `settings/providers/SapAiCoreProvider.tsx`
+### 3. `components/settings/providers/SapAiCoreProvider.tsx`
 - 所有界面文本:
   1. placeholder: "Enter AI Core Resource Group..."
   2. 文本: "AI Core Client Secret"
@@ -147,7 +147,7 @@
   32. label: "Orchestration Mode"
   33. placeholder: "Enter AI Core Client Id..."
 
-### 4. `settings/providers/OpenAICompatible.tsx`
+### 4. `components/settings/providers/OpenAICompatible.tsx`
 - 所有界面文本:
   1. 文本: "Base URL"
   2. 文本: "Input Price / 1M tokens"
@@ -201,7 +201,7 @@
   20. JSX文本: "Manage Cline Rules & Workflows"
   21. 文本: "Workspace Rules"
 
-### 6. `settings/sections/BrowserSettingsSection.tsx`
+### 6. `components/settings/sections/BrowserSettingsSection.tsx`
 - 所有界面文本:
   1. 段落文本: "Space-separated arguments to pass to the browser executable."
   3. JSX文本: "Disable browser tool usage"
@@ -222,7 +222,7 @@
   18. JSX文本: "Leave blank to auto-detect."
   19. JSX文本: "Set the size of the browser viewport for screenshots and interactions."
 
-### 7. `settings/providers/OcaProvider.tsx`
+### 7. `components/settings/providers/OcaProvider.tsx`
 - 所有界面文本:
   1. label: "Custom Base URL (optional)"
   2. 链接文本: "Provide feedback"
@@ -245,7 +245,7 @@
   19. JSX文本: "Provide feedback"
   20. JSX文本: "quickstart guide"
 
-### 8. `settings/sections/TerminalSettingsSection.tsx`
+### 8. `components/settings/sections/TerminalSettingsSection.tsx`
 - 所有界面文本:
   1. JSX文本: "Default Terminal Profile"
   2. JSX文本: "Having terminal issues?"
@@ -271,28 +271,6 @@
   20. JSX文本: "Enable aggressive terminal reuse"
   21. 链接文本: "Terminal Quick Fixes"
 
-### 9. `components/common/Demo.tsx`
-- 所有界面文本:
-  1. JSX文本: "Custom Title"
-  2. label: "Match Case"
-  3. JSX文本: "A Custom Header Title"
-  4. aria-label: "Use Regular Expression"
-  5. JSX文本: "Panel View 1"
-  6. JSX文本: "Radio 1"
-  7. aria-label: "Match Case"
-  8. 标题文本: "Hello World!"
-  9. JSX文本: "Another Custom Title"
-  10. aria-label: "Match Whole Word"
-  11. label: "Match Whole Word"
-  12. JSX文本: "Radio 2"
-  13. JSX文本: "Option 1"
-  14. JSX文本: "Title Is Custom"
-  15. JSX文本: "Panel View 2"
-  16. label: "Use Regular Expression"
-  17. JSX文本: "Option 2"
-  18. JSX文本: "Hello World!"
-  19. JSX文本: "Howdy!"
-  20. placeholder: "Text Area"
 
 ### 10. `components/onboarding/OnboardingView.tsx`
 - 所有界面文本:
@@ -309,7 +287,7 @@
   11. 文本: "Speed:"
   12. 文本: "Support:"
 
-### 11. `settings/providers/OllamaProvider.tsx`
+### 11. `components/settings/providers/OllamaProvider.tsx`
 - 所有界面文本:
   1. JSX文本: "Maximum time in milliseconds to wait for API responses before timing out."
   2. label: "Use custom base URL"
@@ -338,7 +316,7 @@
   8.  JSX文本: "OpenRouter."
   10. JSX文本: "Model info and pricing will depend on your preset configuration."
 
-### 13. `settings/providers/QwenCodeProvider.tsx`
+### 13. `components/settings/providers/QwenCodeProvider.tsx`
 - 所有界面文本:
   1. JSX文本: "2. Authenticate using your account"
   2. JSX文本: "To get started:"
@@ -353,7 +331,7 @@
   11. JSX文本: "Qwen Code API Configuration"
   12. JSX文本: "Path to your Qwen OAuth credentials file. Use ~/.qwen/oauth_creds.json or provide a custom path."
 
-### 14. `settings/common/ModelInfoView.tsx`
+### 14. `components/settings/common/ModelInfoView.tsx`
 - 所有界面文本:
   1. JSX文本: "Output:"
   2. JSX文本: "Prompt Caching"
@@ -448,7 +426,6 @@
 - 所有界面文本:
   1. JSX文本: "Server URL"
   2. 标签文本: "Transport Type"
-  3. placeholder: "mcp-server"
   4. JSX文本: "here."
   5. JSX文本: "Server Name"
   6. JSX文本: "Transport Type"
@@ -568,15 +545,6 @@
   5. JSX文本: "Your organization manages some MCP servers"
   6. 文本: "Your organization manages some MCP servers"
   7. JSX文本: "Configure MCP Servers"
-
-### 34. `src/context/ExtensionStateContext.tsx`
-- 所有界面文本:
-  1. JSX文本: "liteLlmModels: Record"
-  2. JSX文本: "basetenModels: Record"
-  3. JSX文本: "groqModels: Record"
-  4. JSX文本: "huggingFaceModels: Record"
-  5. JSX文本: "hicapModels: Record"
-  6. JSX文本: "vercelAiGatewayModels: Record"
 
 ### 35. `components/settings/VercelModelPicker.tsx`
 - 所有界面文本:

@@ -1,6 +1,7 @@
 import { geminiModels, ModelInfo } from "@shared/api"
 import { VSCodeDropdown, VSCodeOption } from "@vscode/webview-ui-toolkit/react"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import { ModelDescriptionMarkdown } from "../ModelDescriptionMarkdown"
 import { formatPrice, hasThinkingBudget, supportsBrowserUse, supportsImages, supportsPromptCache } from "../utils/pricingUtils"
@@ -186,6 +187,7 @@ export const ModelInfoView = ({
 	onProviderSortingChange,
 	showProviderRouting,
 }: ModelInfoViewProps) => {
+	const { t } = useTranslation()
 	const [advancedExpanded, setAdvancedExpanded] = useState(false)
 
 	const isGemini = Object.keys(geminiModels).includes(selectedModelId)
@@ -211,19 +213,19 @@ export const ModelInfoView = ({
 			<InfoRow>
 				{modelInfo.contextWindow !== undefined && modelInfo.contextWindow > 0 && (
 					<InfoItem>
-						<InfoLabel>Context: </InfoLabel>
+						<InfoLabel>{t("modelInfo.context")} </InfoLabel>
 						<InfoValue>{formatCompactContext(modelInfo.contextWindow)}</InfoValue>
 					</InfoItem>
 				)}
 				{modelInfo.inputPrice !== undefined && (
 					<InfoItem>
-						<InfoLabel>Input: </InfoLabel>
+						<InfoLabel>{t("modelInfo.input")} </InfoLabel>
 						<InfoValue>{formatCompactPrice(modelInfo.inputPrice)}</InfoValue>
 					</InfoItem>
 				)}
 				{modelInfo.outputPrice !== undefined && (
 					<InfoItem>
-						<InfoLabel>Output: </InfoLabel>
+						<InfoLabel>{t("modelInfo.output")} </InfoLabel>
 						<InfoValue>
 							{hasThinkingConfig && modelInfo.thinkingConfig?.outputPrice !== undefined
 								? formatCompactPrice(modelInfo.thinkingConfig.outputPrice)
@@ -251,7 +253,7 @@ export const ModelInfoView = ({
 					</AdvancedRow>
 					{!isGemini && (
 						<AdvancedRow>
-							<AdvancedLabel>Prompt Caching</AdvancedLabel>
+							<AdvancedLabel>{t("modelInfo.promptCaching")}</AdvancedLabel>
 							<AdvancedValue>{hasCaching ? "Yes" : "No"}</AdvancedValue>
 						</AdvancedRow>
 					)}
@@ -261,13 +263,13 @@ export const ModelInfoView = ({
 						<>
 							{modelInfo.cacheReadsPrice !== undefined && (
 								<AdvancedRow>
-									<AdvancedLabel>Cache Reads</AdvancedLabel>
+									<AdvancedLabel>{t("modelInfo.cacheReads")}</AdvancedLabel>
 									<AdvancedValue>{formatCompactPrice(modelInfo.cacheReadsPrice)}</AdvancedValue>
 								</AdvancedRow>
 							)}
 							{modelInfo.cacheWritesPrice !== undefined && (
 								<AdvancedRow>
-									<AdvancedLabel>Cache Writes</AdvancedLabel>
+									<AdvancedLabel>{t("modelInfo.cacheWrites")}</AdvancedLabel>
 									<AdvancedValue>{formatCompactPrice(modelInfo.cacheWritesPrice)}</AdvancedValue>
 								</AdvancedRow>
 							)}
@@ -277,16 +279,16 @@ export const ModelInfoView = ({
 					{/* Tiered Pricing */}
 					{hasTiers && (
 						<div style={{ marginTop: 8 }}>
-							<div style={{ fontWeight: 500, marginBottom: 4 }}>Tiered Pricing:</div>
+							<div style={{ fontWeight: 500, marginBottom: 4 }}>{t("modelInfo.tieredPricing")}</div>
 							{modelInfo.tiers && (
 								<>
 									<div>
-										<span style={{ fontWeight: 500 }}>Input:</span>
+										<span style={{ fontWeight: 500 }}>{t("modelInfo.input")}</span>
 										<br />
 										{formatTiers(modelInfo.tiers, "inputPrice")}
 									</div>
 									<div style={{ marginTop: 4 }}>
-										<span style={{ fontWeight: 500 }}>Output:</span>
+										<span style={{ fontWeight: 500 }}>{t("modelInfo.output")}</span>
 										<br />
 										{formatTiers(modelInfo.tiers, "outputPrice")}
 									</div>
@@ -298,7 +300,7 @@ export const ModelInfoView = ({
 					{/* Provider Routing */}
 					{showProviderRouting && onProviderSortingChange && (
 						<ProviderRoutingContainer>
-							<ProviderRoutingLabel>Provider Routing</ProviderRoutingLabel>
+							<ProviderRoutingLabel>{t("modelInfo.providerRouting")}</ProviderRoutingLabel>
 							<VSCodeDropdown
 								onChange={(e: any) => onProviderSortingChange(e.target.value)}
 								style={{ width: "100%" }}

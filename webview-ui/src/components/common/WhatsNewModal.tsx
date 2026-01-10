@@ -1,6 +1,7 @@
 import { Button } from "@components/ui/button"
 import { EmptyRequest } from "@shared/proto/cline/common"
 import React, { useCallback, useRef } from "react"
+import { useTranslation } from "react-i18next"
 import { useMount } from "react-use"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { useClineAuth } from "@/context/ClineAuthContext"
@@ -15,6 +16,7 @@ interface WhatsNewModalProps {
 }
 
 export const WhatsNewModal: React.FC<WhatsNewModalProps> = ({ open, onClose, version }) => {
+	const { t } = useTranslation()
 	const { clineUser } = useClineAuth()
 	const { openRouterModels, setShowChatModelSelector, refreshOpenRouterModels } = useExtensionState()
 	const { handleFieldsChange } = useApiConfigurationHandlers()
@@ -66,7 +68,7 @@ export const WhatsNewModal: React.FC<WhatsNewModalProps> = ({ open, onClose, ver
 			<div className="flex gap-2 flex-wrap">{children}</div>
 		) : (
 			<Button className="my-1" onClick={handleShowAccount} size="sm">
-				Sign Up with Parrot
+				{t("whatsNew.signUpWithParrot")}
 			</Button>
 		)
 
@@ -81,21 +83,21 @@ export const WhatsNewModal: React.FC<WhatsNewModalProps> = ({ open, onClose, ver
 						className="text-lg font-semibold mb-3 pr-6"
 						id="whats-new-title"
 						style={{ color: "var(--vscode-editor-foreground)" }}>
-						🎉 New in v{version}
+						{t("whatsNew.title", { version })}
 					</h2>
 
 					{/* Description */}
 					<ul className="text-sm pl-3 list-disc" style={{ color: "var(--vscode-descriptionForeground)" }}>
 						<li className="mb-2">
-							<strong>Skills:</strong> Extend Parrot with instruction sets for specialized tasks.{" "}
+							<strong>{t("whatsNew.skills.title")}</strong> {t("whatsNew.skills.description")}{" "}
 							<a
 								href="https://docs.cline.bot/features/skills"
 								style={{ color: "var(--vscode-textLink-foreground)" }}>
-								Learn more
+								{t("whatsNew.skills.learnMore")}
 							</a>
 						</li>
 						<li className="mb-2">
-							<strong>Web Search:</strong> Improved websearch tooling in Parrot provider.
+							<strong>{t("whatsNew.webSearch.title")}</strong> {t("whatsNew.webSearch.description")}
 						</li>
 					</ul>
 				</div>

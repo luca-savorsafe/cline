@@ -2,6 +2,7 @@ import type { ModelInfo } from "@shared/api"
 import type { OnboardingModel, OnboardingModelGroup, OpenRouterModelInfo } from "@shared/proto/index.cline"
 import { AlertCircleIcon, CircleCheckIcon, CircleIcon, ListIcon, LoaderCircleIcon, StarIcon, ZapIcon } from "lucide-react"
 import { useCallback, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import ClineLogoWhite from "@/assets/ClineLogoWhite"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -41,6 +42,7 @@ const ModelSelection = ({
 	setSearchTerm,
 	onboardingModels,
 }: ModelSelectionProps) => {
+	const { t } = useTranslation()
 	const modelGroups = onboardingModels[userType === NEW_USER_TYPE.FREE ? "free" : "power"]
 
 	const searchedModels = useMemo(() => {
@@ -57,6 +59,7 @@ const ModelSelection = ({
 
 	// Model Item Component
 	const ModelItem = ({ id, model, isSelected }: { id: string; model: OnboardingModel; isSelected: boolean }) => {
+		const { t } = useTranslation()
 		return (
 			<Item
 				className={cn("cursor-pointer hover:cursor-pointer", {
@@ -76,7 +79,7 @@ const ModelSelection = ({
 					</ItemTitle>
 					{isSelected && model.info && (
 						<ItemDescription>
-							<span className="text-foreground/70 text-sm">Support: </span>
+							<span className="text-foreground/70 text-sm">{t("onboarding.support")} </span>
 							<span className="text-foreground text-sm">{getCapabilities(model.info).join(", ")}</span>
 						</ItemDescription>
 					)}
@@ -87,21 +90,21 @@ const ModelSelection = ({
 							{model.score && (
 								<div className="inline-flex gap-1 [&_svg]:stroke-warning [&_svg]:size-3 items-center text-sm">
 									<StarIcon />
-									<span>Model Overview: </span>
+									<span>{t("onboarding.modelOverview")} </span>
 									<span className="text-foreground/70">{model.score}%</span>
 									<span className="text-foreground/70 hidden xs:block">{getOverviewLabel(model.score)}</span>
 								</div>
 							)}
 							<div className="inline-flex gap-1 [&_svg]:stroke-success [&_svg]:size-3 items-center text-sm">
 								<ZapIcon />
-								<span>Speed: </span>
+								<span>{t("onboarding.speed")} </span>
 								<span className="text-foreground/70">{getSpeedLabel(model.latency)}</span>
 							</div>
 							{model.info && (
 								<div className="flex w-full justify-between">
 									<div className="inline-flex gap-1 [&_svg]:stroke-foreground [&_svg]:size-3 items-center text-sm">
 										<ListIcon />
-										<span>Context: </span>
+										<span>{t("onboarding.context")} </span>
 										<span className="text-foreground/70">{(model?.info.contextWindow || 0) / 1000}k</span>
 									</div>
 									<Badge>{getPriceRange(model.info)}</Badge>
@@ -130,7 +133,7 @@ const ModelSelection = ({
 			{/* SEARCH MODEL */}
 			<div className="flex w-full max-w-lg flex-col gap-6 my-4 border-t border-muted-foreground">
 				<div className="flex flex-col gap-3 mt-6" key="search-results">
-					<h4 className="text-sm font-bold text-foreground/70 uppercase mb-2">other options</h4>
+					<h4 className="text-sm font-bold text-foreground/70 uppercase mb-2">{t("onboarding.otherOptions")}</h4>
 					<Input
 						autoFocus={false}
 						className="focus-visible:border-button-background"
@@ -141,7 +144,7 @@ const ModelSelection = ({
 							setSearchTerm(e.target.value)
 						}}
 						onClick={() => onSelectModel("")}
-						placeholder="Search model..."
+						placeholder={t("onboarding.searchModelPlaceholder")}
 						type="search"
 						value={searchTerm}
 					/>
@@ -271,6 +274,7 @@ const OnboardingStepContent = ({
 }
 
 const OnboardingView = ({ onboardingModels }: { onboardingModels: OnboardingModelGroup }) => {
+	const { t } = useTranslation()
 	const { handleFieldsChange } = useApiConfigurationHandlers()
 	const { openRouterModels, hideSettings, hideAccount, setShowWelcome } = useExtensionState()
 
@@ -416,7 +420,7 @@ const OnboardingView = ({ onboardingModels }: { onboardingModels: OnboardingMode
 
 					{stepNumber !== 2 && (
 						<div className="items-center justify-center flex text-sm text-foreground gap-2 mb-3 text-pretty">
-							<AlertCircleIcon className="shrink-0 size-2" /> You can change this later in settings
+							<AlertCircleIcon className="shrink-0 size-2" /> {t("onboarding.changeLaterInSettings")}
 						</div>
 					)}
 				</footer>

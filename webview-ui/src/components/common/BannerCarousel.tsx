@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight, XIcon } from "lucide-react"
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useRemark } from "react-remark"
 import { Button } from "@/components/ui/button"
 
@@ -73,6 +74,7 @@ const BannerCardContent: React.FC<BannerCardContentProps> = ({ banner, isActive,
 }
 
 export const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners }) => {
+	const { t } = useTranslation()
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [isPaused, setIsPaused] = useState(false)
 	const [isTransitioning, setIsTransitioning] = useState(false)
@@ -146,7 +148,7 @@ export const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners }) => {
 
 	return (
 		<div
-			aria-label="Announcements"
+			aria-label={t("bannerCarousel.ariaLabel")}
 			aria-live="polite"
 			aria-roledescription="carousel"
 			className="mx-3 mb-3"
@@ -158,7 +160,7 @@ export const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners }) => {
 				{/* Dismiss button - only show on last card, dismisses ALL banners */}
 				{showDismissButton && (
 					<Button
-						aria-label="Dismiss all banners"
+						aria-label={t("bannerCarousel.dismissAllBanners")}
 						className="absolute top-2.5 right-2 z-10"
 						data-testid="banner-dismiss-button"
 						onClick={(e) => {
@@ -201,10 +203,14 @@ export const BannerCarousel: React.FC<BannerCarouselProps> = ({ banners }) => {
 
 						{/* Navigation arrows */}
 						<div className="flex gap-0.5">
-							<Button aria-label="Previous banner" onClick={handlePrevious} size="icon" variant="icon">
+							<Button
+								aria-label={t("bannerCarousel.previousBanner")}
+								onClick={handlePrevious}
+								size="icon"
+								variant="icon">
 								<ChevronLeft className="size-4" />
 							</Button>
-							<Button aria-label="Next banner" onClick={handleNext} size="icon" variant="icon">
+							<Button aria-label={t("bannerCarousel.nextBanner")} onClick={handleNext} size="icon" variant="icon">
 								<ChevronRight className="size-4" />
 							</Button>
 						</div>
