@@ -20,7 +20,6 @@ import { cn } from "@/lib/utils"
 import { StateServiceClient } from "@/services/grpc-client"
 import { getEnvironmentColor } from "@/utils/environmentColors"
 import { Tab, TabContent, TabHeader, TabList, TabTrigger } from "../common/Tab"
-import SectionHeader from "./SectionHeader"
 import AboutSection from "./sections/AboutSection"
 import ApiConfigurationSection from "./sections/ApiConfigurationSection"
 import BrowserSettingsSection from "./sections/BrowserSettingsSection"
@@ -47,14 +46,14 @@ type SettingsViewProps = {
 }
 
 // Helper to render section header - moved outside component for better performance
-const renderSectionHeader = (tabId: string) => {
+const renderSectionHeader = (_tabId: string) => {
 	// This function will be called from child components, so we need to handle translation there
 	return null
 }
 
 const SettingsView = ({ onDone, targetSection }: SettingsViewProps) => {
 	const { t } = useTranslation()
-	
+
 	// Memoize to avoid recreation
 	const TAB_CONTENT_MAP = useMemo(
 		() => ({
@@ -72,59 +71,62 @@ const SettingsView = ({ onDone, targetSection }: SettingsViewProps) => {
 	const { version, environment } = useExtensionState()
 
 	// Create tabs with translated text
-	const SETTINGS_TABS: SettingsTab[] = useMemo(() => [
-		{
-			id: "api-config",
-			name: t("settings.tabs.apiConfig"),
-			tooltipText: t("settings.sections.apiConfig"),
-			headerText: t("settings.sections.apiConfig"),
-			icon: SlidersHorizontal,
-		},
-		{
-			id: "features",
-			name: t("settings.tabs.features"),
-			tooltipText: t("settings.sections.features"),
-			headerText: t("settings.sections.features"),
-			icon: CheckCheck,
-		},
-		{
-			id: "browser",
-			name: t("settings.tabs.browser"),
-			tooltipText: t("settings.sections.browser"),
-			headerText: t("settings.sections.browser"),
-			icon: SquareMousePointer,
-		},
-		{
-			id: "terminal",
-			name: t("settings.tabs.terminal"),
-			tooltipText: t("settings.sections.terminal"),
-			headerText: t("settings.sections.terminal"),
-			icon: SquareTerminal,
-		},
-		{
-			id: "general",
-			name: t("settings.tabs.general"),
-			tooltipText: t("settings.sections.general"),
-			headerText: t("settings.sections.general"),
-			icon: Wrench,
-		},
-		{
-			id: "about",
-			name: t("settings.tabs.about"),
-			tooltipText: t("settings.sections.about"),
-			headerText: t("settings.sections.about"),
-			icon: Info,
-		},
-		// Only show in dev mode
-		{
-			id: "debug",
-			name: t("settings.tabs.debug"),
-			tooltipText: t("settings.sections.debug"),
-			headerText: t("settings.sections.debug"),
-			icon: FlaskConical,
-			hidden: !IS_DEV,
-		},
-	], [t])
+	const SETTINGS_TABS: SettingsTab[] = useMemo(
+		() => [
+			{
+				id: "api-config",
+				name: t("settings.tabs.apiConfig"),
+				tooltipText: t("settings.sections.apiConfig"),
+				headerText: t("settings.sections.apiConfig"),
+				icon: SlidersHorizontal,
+			},
+			{
+				id: "features",
+				name: t("settings.tabs.features"),
+				tooltipText: t("settings.sections.features"),
+				headerText: t("settings.sections.features"),
+				icon: CheckCheck,
+			},
+			{
+				id: "browser",
+				name: t("settings.tabs.browser"),
+				tooltipText: t("settings.sections.browser"),
+				headerText: t("settings.sections.browser"),
+				icon: SquareMousePointer,
+			},
+			{
+				id: "terminal",
+				name: t("settings.tabs.terminal"),
+				tooltipText: t("settings.sections.terminal"),
+				headerText: t("settings.sections.terminal"),
+				icon: SquareTerminal,
+			},
+			{
+				id: "general",
+				name: t("settings.tabs.general"),
+				tooltipText: t("settings.sections.general"),
+				headerText: t("settings.sections.general"),
+				icon: Wrench,
+			},
+			{
+				id: "about",
+				name: t("settings.tabs.about"),
+				tooltipText: t("settings.sections.about"),
+				headerText: t("settings.sections.about"),
+				icon: Info,
+			},
+			// Only show in dev mode
+			{
+				id: "debug",
+				name: t("settings.tabs.debug"),
+				tooltipText: t("settings.sections.debug"),
+				headerText: t("settings.sections.debug"),
+				icon: FlaskConical,
+				hidden: !IS_DEV,
+			},
+		],
+		[t],
+	)
 
 	const [activeTab, setActiveTab] = useState<string>(targetSection || "api-config")
 

@@ -67,10 +67,10 @@
 		},
 		"telemetry": {
 			"checkbox": "Allow error and usage reporting",
-			"tooltip": "This setting is managed by your organization's remote config",
-			"description": "Help improve Cline by sending usage data and error reports. Never sends code, prompts, or personal private information. See our {telemetryLink} and {privacyLink}.",
-			"telemetryLink": "Telemetry Overview",
-			"privacyLink": "Privacy Policy"
+			"tooltip": "This setting is managed by your organization's remote configuration",
+			"description": "Help improve Cline by sending usage data and error reports. No code, prompts, or personal information are ever sent. See our {telemetryLink} and {privacyLink} for more details.",
+			"telemetryLink": "telemetry overview",
+			"privacyLink": "privacy policy"
 		},
 		"apiProvider": {
 			"label": "API Provider",
@@ -294,7 +294,40 @@
 			"backgroundTerminalEnabled": "Background Terminal Enabled",
 			"newTask": "Cline wants to start a new task:",
 			"condense": "Cline wants to condense conversation:",
-			"reportBug": "Cline wants to create a GitHub issue:"
+			"reportBug": "Cline wants to create a GitHub issue:",
+			"outputLoggedTo": "📋 Output is being logged to:",
+			"subagentOutput": "Subagent Output",
+			"commandOutput": "Command Output",
+			"commandRunningInTerminal": "This command is running in the VSCode terminal. You can manually stop it using Ctrl+C in the terminal, or switch to Background Execution mode in settings for cancellable commands.",
+			"wantsTo": "Cline wants to",
+			"onThe": "on the",
+			"collapseApiRequest": "Collapse API request",
+			"expandApiRequest": "Expand API request",
+			"collapseThinking": "Collapse thinking",
+			"expandThinking": "Expand thinking",
+			"collapseSummary": "Collapse summary",
+			"expandSummary": "Expand summary",
+			"tool": {
+				"editFile": "Cline wants to edit this file:",
+				"deleteFile": "Cline wants to delete this file:",
+				"createFile": "Cline wants to create a new file:",
+				"readFile": "Cline wants to read this file:",
+				"listFilesTopLevel": "Cline wants to view the top level files in this directory:",
+				"listFilesRecursive": "Cline wants to recursively view all files in this directory:",
+				"listCodeDefinitions": "Cline wants to view source code definition names used in this directory:",
+				"searchFiles": "Cline wants to search this directory for {regex}:",
+				"webFetch": "Cline wants to fetch content from this URL:",
+				"webSearch": "Cline wants to search the web for:",
+				"creatingPatches": "Cline is creating patches to edit this file:",
+				"outsideWorkspace": "This is outside of your workspace",
+				"viewedTopLevelFiles": "Cline viewed the top level files in this directory:",
+				"viewedAllFiles": "Cline recursively viewed all files in this directory:",
+				"viewedCodeDefinitions": "Cline viewed source code definition names used in this directory:",
+				"condensingConversation": "Cline is condensing the conversation:",
+				"fetchedContentFromUrl": "Cline fetched content from this URL:",
+				"wantsToSearchWeb": "Cline wants to search the web for:",
+				"searchedWeb": "Cline searched the web for:"
+			}
 		},
 		"reportBug": {
 			"title": "Bug Report",
@@ -836,7 +869,10 @@
 	"imagePreview": {
 		"errorTitle": "Error displaying this image",
 		"failedToLoadImage": "Failed to load image",
-		"clickToOpenInBrowser": "Click to open in browser"
+		"clickToOpenInBrowser": "Click to open in browser",
+		"loadingImageFrom": "Loading image from {hostname}...",
+		"waitingForSeconds": "Waiting for {seconds}s...",
+		"waitingForMinutesSeconds": "Waiting for {minutes}m {seconds}s..."
 	},
 	"ruleRow": {
 		"agentsTooltip": "When a top-level AGENTS.md file exists, recursively searches all AGENTS.md files in the workspace",

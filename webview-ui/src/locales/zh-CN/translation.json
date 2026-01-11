@@ -68,7 +68,7 @@
 		"telemetry": {
 			"checkbox": "允许错误和使用情况报告",
 			"tooltip": "此设置由您组织的远程配置管理",
-			"description": "通过发送使用数据和错误报告帮助改进 Cline。从不发送代码、提示或个人隐私信息。详见我们的 {telemetryLink} 和 {privacyLink}。",
+			"description": "通过发送使用数据和错误报告帮助改进 Cline。从不发送代码、提示或个人隐私信息。详见我们的 {telemetryLink} 和 {privacyLink} 获取更多详情。",
 			"telemetryLink": "遥测概览",
 			"privacyLink": "隐私政策"
 		},
@@ -294,7 +294,40 @@
 			"backgroundTerminalEnabled": "后台终端已启用",
 			"newTask": "Cline 想要开始新任务：",
 			"condense": "Cline 想要压缩对话：",
-			"reportBug": "Cline 想要创建 GitHub issue："
+			"reportBug": "Cline 想要创建 GitHub issue：",
+			"outputLoggedTo": "📋 输出正在记录到：",
+			"subagentOutput": "子代理输出",
+			"commandOutput": "命令输出",
+			"commandRunningInTerminal": "此命令正在 VSCode 终端中运行。您可以在终端中使用 Ctrl+C 手动停止它，或在设置中切换到后台执行模式以获得可取消的命令。",
+			"wantsTo": "Cline 想要",
+			"onThe": "在",
+			"collapseApiRequest": "收起 API 请求",
+			"expandApiRequest": "展开 API 请求",
+			"collapseThinking": "收起思考",
+			"expandThinking": "展开思考",
+			"collapseSummary": "收起摘要",
+			"expandSummary": "展开摘要",
+			"tool": {
+				"editFile": "Cline 想要编辑此文件：",
+				"deleteFile": "Cline 想要删除此文件：",
+				"createFile": "Cline 想要创建新文件：",
+				"readFile": "Cline 想要读取此文件：",
+				"listFilesTopLevel": "Cline 想要查看此目录中的顶层文件：",
+				"listFilesRecursive": "Cline 想要递归查看此目录中的所有文件：",
+				"listCodeDefinitions": "Cline 想要查看此目录中使用的源代码定义名称：",
+				"searchFiles": "Cline 想要在此目录中搜索 {regex}：",
+				"webFetch": "Cline 想要从此 URL 获取内容：",
+				"webSearch": "Cline 想要搜索网络：",
+				"creatingPatches": "Cline 正在创建补丁来编辑此文件：",
+				"outsideWorkspace": "这超出了您的工作空间",
+				"viewedTopLevelFiles": "Cline 查看了此目录中的顶层文件：",
+				"viewedAllFiles": "Cline 递归查看了此目录中的所有文件：",
+				"viewedCodeDefinitions": "Cline 查看了此目录中使用的源代码定义名称：",
+				"condensingConversation": "Cline 正在压缩对话：",
+				"fetchedContentFromUrl": "Cline 从此 URL 获取了内容：",
+				"wantsToSearchWeb": "Cline 想要搜索网络：",
+				"searchedWeb": "Cline 搜索了网络："
+			}
 		},
 		"reportBug": {
 			"title": "错误报告",
@@ -836,7 +869,10 @@
 	"imagePreview": {
 		"errorTitle": "显示此图片时出错",
 		"failedToLoadImage": "加载图片失败",
-		"clickToOpenInBrowser": "点击在浏览器中打开"
+		"clickToOpenInBrowser": "点击在浏览器中打开",
+		"loadingImageFrom": "正在从 {hostname} 加载图片...",
+		"waitingForSeconds": "等待 {seconds} 秒...",
+		"waitingForMinutesSeconds": "等待 {minutes} 分 {seconds} 秒..."
 	},
 	"ruleRow": {
 		"agentsTooltip": "当顶级 AGENTS.md 文件存在时，递归搜索工作空间中的所有 AGENTS.md 文件",
