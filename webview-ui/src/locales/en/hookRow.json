@@ -1,0 +1,13 @@
+{
+	"hookRow": {
+		"editHookFile": {
+			"title": "Edit Hook File",
+			"ariaLabel": "Edit Hook File"
+		},
+		"deleteHookFile": {
+			"title": "Delete Hook File",
+			"ariaLabel": "Delete Hook File"
+		},
+		"windowsToggleTooltip": "Hook toggling not supported on Windows. Hooks can be edited and deleted but will not execute."
+	}
+}

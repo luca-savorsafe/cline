@@ -1,0 +1,59 @@
+{
+	"buttonConfig": {
+		"apiReqFailed": {
+			"primary": "Retry",
+			"secondary": "Start New Task"
+		},
+		"mistakeLimitReached": {
+			"primary": "Proceed Anyways",
+			"secondary": "Start New Task"
+		},
+		"toolApprove": {
+			"primary": "Approve",
+			"secondary": "Reject"
+		},
+		"toolSave": {
+			"primary": "Save",
+			"secondary": "Reject"
+		},
+		"command": {
+			"primary": "Run Command",
+			"secondary": "Reject"
+		},
+		"commandOutput": {
+			"primary": "Proceed While Running"
+		},
+		"browserActionLaunch": {
+			"primary": "Approve",
+			"secondary": "Reject"
+		},
+		"useMcpServer": {
+			"primary": "Approve",
+			"secondary": "Reject"
+		},
+		"completionResult": {
+			"primary": "Start New Task"
+		},
+		"resumeTask": {
+			"primary": "Resume Task"
+		},
+		"resumeCompletedTask": {
+			"primary": "Start New Task"
+		},
+		"newTask": {
+			"primary": "Start New Task with Context"
+		},
+		"condense": {
+			"primary": "Condense Conversation"
+		},
+		"reportBug": {
+			"primary": "Report GitHub issue"
+		},
+		"partial": {
+			"secondary": "Cancel"
+		},
+		"apiReqActive": {
+			"secondary": "Cancel"
+		}
+	}
+}

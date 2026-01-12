@@ -1,0 +1,34 @@
+{
+	"browser": {
+		"connection": {
+			"info": "Browser Connection Info",
+			"title": "Browser Connection",
+			"status": "Status",
+			"connected": "Connected",
+			"disconnected": "Disconnected",
+			"type": "Type",
+			"remote": "Remote",
+			"local": "Local",
+			"remoteHost": "Remote Host"
+		},
+		"settings": {
+			"disableToolUse": "Disable Browser Tool Use",
+			"disableToolUseDescription": "Prevent Parrot from using browser actions (e.g., launch, click, type).",
+			"viewportSize": "Viewport Size",
+			"viewportSizeDescription": "Set the size of the browser viewport, used for screenshots and interaction.",
+			"useRemoteConnection": "Use Remote Browser Connection",
+			"checkingConnection": "Checking connection...",
+			"notConnected": "Not Connected",
+			"chromeExecutablePath": "Chrome Executable Path (optional)",
+			"leaveBlankAutoDetect": "Leave blank for auto-detection.",
+			"customBrowserArgs": "Custom Browser Arguments (optional)",
+			"customBrowserArgsDescription": "Space-separated arguments passed to the browser executable.",
+			"enableClineToUseChrome": "Enable Parrot to use your Chrome",
+			"chromeNotDetected": "(not detected on your machine)",
+			"specifyCustomPath": "You can specify a custom path below.",
+			"remoteConnectionRequiresDebugMode": "Using remote browser connection requires launching Chrome in debug mode",
+			"manuallyOrUsingButton": "Manually (--remote-debugging-port=9222) or using the button below. Enter a host address or leave blank for auto-discovery.",
+			"period": "."
+		}
+	}
+}

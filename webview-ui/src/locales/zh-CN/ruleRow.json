@@ -1,0 +1,10 @@
+{
+	"ruleRow": {
+		"agentsTooltip": "当顶级 AGENTS.md 文件存在时，递归搜索工作空间中的所有 AGENTS.md 文件",
+		"ruleRequiredCannotDisable": "此规则为必需项且无法禁用",
+		"viewRuleFile": "查看规则文件",
+		"viewRuleFileReadOnly": "查看规则文件（只读）",
+		"editRuleFile": "编辑规则文件",
+		"deleteRuleFile": "删除规则文件"
+	}
+}

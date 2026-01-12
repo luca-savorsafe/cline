@@ -1,0 +1,52 @@
+{
+	"autoApprove": {
+		"bar": {
+			"yoloTitle": "自动批准：YOLO",
+			"yoloMessage": "YOLO 模式已启用",
+			"disableInSettings": "在设置中禁用它",
+			"title": "自动批准：",
+			"none": "无",
+			"closeSettings": "关闭自动批准设置",
+			"openSettings": "打开自动批准设置"
+		},
+		"modal": {
+			"description": "让 Parrot 执行这些操作而无需请求批准",
+			"docs": "文档",
+			"enableNotifications": "启用通知"
+		},
+		"actions": {
+			"readFiles": {
+				"label": "读取项目文件",
+				"shortName": "读取"
+			},
+			"readFilesExternally": {
+				"label": "读取所有文件",
+				"shortName": "读取（所有）"
+			},
+			"editFiles": {
+				"label": "编辑项目文件",
+				"shortName": "编辑"
+			},
+			"editFilesExternally": {
+				"label": "编辑所有文件",
+				"shortName": "编辑（所有）"
+			},
+			"executeSafeCommands": {
+				"label": "执行安全命令",
+				"shortName": "安全命令"
+			},
+			"executeAllCommands": {
+				"label": "执行所有命令",
+				"shortName": "所有命令"
+			},
+			"useBrowser": {
+				"label": "使用浏览器",
+				"shortName": "浏览器"
+			},
+			"useMcp": {
+				"label": "使用 MCP 服务器",
+				"shortName": "MCP"
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"onboarding": {
+		"otherOptions": "其他选项",
+		"modelOverview": "模型概览：",
+		"support": "支持：",
+		"speed": "速度：",
+		"searchModelPlaceholder": "搜索模型...",
+		"changeLaterInSettings": "您可以稍后在设置中更改此项",
+		"context": "上下文："
+	}
+}

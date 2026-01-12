@@ -1,0 +1,20 @@
+{
+	"terminal": {
+		"settings": {
+			"defaultTerminalProfile": "默认终端配置文件",
+			"defaultTerminalProfileDescription": "选择 Parrot 将使用的默认终端。'默认' 使用您的 VSCode 全局设置。",
+			"shellIntegrationTimeout": "Shell 集成超时（秒）",
+			"shellIntegrationTimeoutDescription": "设置 Parrot 在执行命令前等待 Shell 集成激活的时间。如果遇到终端连接超时，请增加此值。",
+			"shellIntegrationTimeoutPlaceholder": "输入超时时间（秒）",
+			"enableAggressiveTerminalReuse": "启用积极的终端重用",
+			"aggressiveTerminalReuseDescription": "启用后，Parrot 将重用未在当前工作目录中的现有终端窗口。如果在终端命令后遇到任务锁定问题，请禁用此选项。",
+			"terminalExecutionMode": "终端执行模式",
+			"terminalExecutionModeDescription": "选择 Parrot 是在 VS Code 终端还是后台进程中运行命令。",
+			"vscodeTerminal": "VS Code 终端",
+			"backgroundExec": "后台执行",
+			"havingTerminalIssues": "遇到终端问题？",
+			"terminalQuickFixes": "终端快速修复",
+			"completeTroubleshootingGuide": "完整故障排除指南"
+		}
+	}
+}

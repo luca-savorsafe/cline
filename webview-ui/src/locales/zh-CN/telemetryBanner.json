@@ -1,0 +1,13 @@
+{
+	"telemetryBanner": {
+		"title": "帮助改进 Parrot",
+		"experimentalFeatures": "（并访问实验性功能）",
+		"description": "Parrot 收集错误和使用数据，以帮助我们修复错误并改进扩展。从不发送代码、提示或个人隐私信息。",
+		"turnOffSetting": "您可以在",
+		"settings": "设置",
+		"closeButton": {
+			"ariaLabel": "关闭横幅并启用遥测",
+			"text": "✕"
+		}
+	}
+}

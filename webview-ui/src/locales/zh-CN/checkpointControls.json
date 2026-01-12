@@ -1,0 +1,19 @@
+{
+	"checkpointControls": {
+		"compare": "比较",
+		"restore": "恢复",
+		"restoreTaskAndWorkspace": "恢复任务和工作空间",
+		"restoreTaskOnly": "仅恢复任务",
+		"restoreWorkspaceOnly": "仅恢复工作空间",
+		"restoreTaskAndWorkspaceDescription": "将任务和项目文件恢复到此时间点拍摄的快照",
+		"restoreTaskOnlyDescription": "删除此时间点之后的消息（不影响工作空间）",
+		"restoreWorkspaceOnlyDescription": "将项目文件恢复到此时间点拍摄的快照（任务可能变得不同步）",
+		"checkpointLabel": "检查点",
+		"checkpointRestoredLabel": "检查点（已恢复）",
+		"restoreFiles": "恢复文件",
+		"restoreFilesDescription": "将项目文件恢复到此时间点拍摄的快照（使用“比较”查看将还原的内容）",
+		"restoreTaskOnlyDescriptionFiles": "删除此时间点之后的消息（不影响工作空间文件）",
+		"restoreFilesAndTask": "恢复文件和任务",
+		"restoreFilesAndTaskDescription": "恢复项目文件并删除此时间点之后的所有消息"
+	}
+}

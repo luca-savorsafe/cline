@@ -1,0 +1,51 @@
+{
+	"taskHeader": {
+		"buttons": {
+			"compactTask": "压缩任务",
+			"copyText": "复制文本",
+			"startNewTask": "开始新任务",
+			"openConversationHistory": "打开对话历史文件"
+		},
+		"deleteTaskButton": {
+			"tooltip": "删除任务 (大小: {{size}})",
+			"ariaLabel": "删除任务"
+		},
+		"contextWindow": {
+			"compactTaskQuestion": "是否压缩此任务以减少上下文窗口使用？",
+			"cancelTitle": "取消压缩任务",
+			"cancel": "取消",
+			"confirmTitle": "确认压缩任务",
+			"confirm": "确认",
+			"promptTokens": "提示词令牌",
+			"completionTokens": "完成令牌",
+			"cacheWrites": "缓存写入",
+			"cacheReads": "缓存读取",
+			"noTokenData": "无令牌使用数据",
+			"autoCondenseThreshold": "自动压缩阈值",
+			"thresholdDescription1": "点击上下文窗口栏设置新阈值。",
+			"thresholdDescription2": "当上下文窗口使用量超过此阈值时，任务将自动压缩。",
+			"contextWindow": "上下文窗口",
+			"used": "已使用：",
+			"total": "总计：",
+			"remaining": "剩余：",
+			"tokenUsage": "令牌使用量"
+		},
+		"focusChain": {
+			"allTasksCompleted": "所有任务已完成！",
+			"todoList": "待办列表",
+			"newStepsMessage": "继续任务将生成新步骤",
+			"clickToEditTitle": "点击在文件中编辑待办列表",
+			"collapseFocusChain": "收起焦点链",
+			"expandFocusChain": "展开焦点链"
+		},
+		"stickyUserMessage": {
+			"scrollToMessage": "滚动到您的消息",
+			"clickToScroll": "点击滚动到您的消息"
+		},
+		"checkpointError": {
+			"disableCheckpoints": "禁用检查点",
+			"seeInstructions": "请参阅说明",
+			"gitMustBeInstalled": "必须安装 Git 才能使用检查点。"
+		}
+	}
+}

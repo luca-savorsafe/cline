@@ -1,0 +1,9 @@
+{
+	"serversToggleModal": {
+		"manageMcpServers": "管理 MCP 服务器",
+		"hideMcpServers": "隐藏 MCP 服务器",
+		"showMcpServers": "显示 MCP 服务器",
+		"mcpServers": "MCP 服务器",
+		"goToMcpServerSettings": "转到 MCP 服务器设置"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"errorRow": {
+		"requestId": "请求 ID：",
+		"windowsPowershell": {
+			"message": "看起来您遇到了 Windows PowerShell 问题，请参阅此",
+			"troubleshootingGuide": "故障排除指南"
+		},
+		"signIn": {
+			"button": "登录到 Parrot",
+			"retryHint": "（点击下方的“重试”）"
+		},
+		"diffError": "模型使用的搜索模式与文件中的任何内容都不匹配。正在重试...",
+		"clineignoreError": {
+			"message": "Parrot 尝试访问",
+			"blockedBy": "但被",
+			"file": "文件阻止"
+		}
+	}
+}

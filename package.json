@@ -17,7 +17,6 @@
 		"url": "https://github.com/parrot/parrot"
 	},
 	"homepage": "https://parrot.bot",
-	"localization": "./i18n",
 	"categories": [
 		"AI",
 		"Chat",

@@ -1,0 +1,20 @@
+{
+	"terminal": {
+		"settings": {
+			"defaultTerminalProfile": "Default Terminal Profile",
+			"defaultTerminalProfileDescription": "Select the default terminal Parrot will use. 'Default' uses your VSCode global setting.",
+			"shellIntegrationTimeout": "Shell Integration Timeout (seconds)",
+			"shellIntegrationTimeoutDescription": "Set how long Parrot will wait for shell integration to activate before executing a command. Increase if experiencing terminal connection timeouts.",
+			"shellIntegrationTimeoutPlaceholder": "Enter timeout in seconds",
+			"enableAggressiveTerminalReuse": "Enable Aggressive Terminal Reuse",
+			"aggressiveTerminalReuseDescription": "When enabled, Parrot will reuse existing terminal windows not in the current working directory. Disable if experiencing task lockups after terminal commands.",
+			"terminalExecutionMode": "Terminal Execution Mode",
+			"terminalExecutionModeDescription": "Choose whether Parrot runs commands in VS Code terminals or background processes.",
+			"vscodeTerminal": "VS Code Terminal",
+			"backgroundExec": "Background Execution",
+			"havingTerminalIssues": "Having terminal issues?",
+			"terminalQuickFixes": "Terminal Quick Fixes",
+			"completeTroubleshootingGuide": "Complete Troubleshooting Guide"
+		}
+	}
+}

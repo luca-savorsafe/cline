@@ -1,0 +1,19 @@
+{
+	"checkpointControls": {
+		"compare": "Compare",
+		"restore": "Restore",
+		"restoreTaskAndWorkspace": "Restore Task & Workspace",
+		"restoreTaskOnly": "Restore Task Only",
+		"restoreWorkspaceOnly": "Restore Workspace Only",
+		"restoreTaskAndWorkspaceDescription": "Restore task and project files to snapshot taken at this point",
+		"restoreTaskOnlyDescription": "Delete messages after this point (does not affect workspace)",
+		"restoreWorkspaceOnlyDescription": "Restore project files to snapshot taken at this point (task may get out of sync)",
+		"checkpointLabel": "Checkpoint",
+		"checkpointRestoredLabel": "Checkpoint (Restored)",
+		"restoreFiles": "Restore Files",
+		"restoreFilesDescription": "Restore project files to snapshot taken at this point (use 'Compare' to see what would be restored)",
+		"restoreTaskOnlyDescriptionFiles": "Delete messages after this point (does not affect workspace files)",
+		"restoreFilesAndTask": "Restore Files & Task",
+		"restoreFilesAndTaskDescription": "Restore project files and delete all messages after this point"
+	}
+}

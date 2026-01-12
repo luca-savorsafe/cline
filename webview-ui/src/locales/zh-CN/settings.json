@@ -1,0 +1,175 @@
+{
+	"settings": {
+		"title": "设置",
+		"general": "通用",
+		"appearance": "外观",
+		"language": {
+			"title": "首选语言",
+			"description": "Parrot 用于通信的语言。",
+			"english": "英语",
+			"simplifiedChinese": "简体中文",
+			"traditionalChinese": "繁体中文",
+			"japanese": "日语",
+			"korean": "韩语",
+			"spanish": "西班牙语",
+			"german": "德语",
+			"french": "法语",
+			"arabic": "阿拉伯语",
+			"portugueseBR": "葡萄牙语 (巴西)",
+			"czech": "捷克语",
+			"hindi": "印地语",
+			"hungarian": "匈牙利语",
+			"italian": "意大利语",
+			"polish": "波兰语",
+			"portuguesePT": "葡萄牙语 (葡萄牙)",
+			"russian": "俄语",
+			"turkish": "土耳其语"
+		},
+		"tabs": {
+			"apiConfig": "API 配置",
+			"features": "功能",
+			"browser": "浏览器",
+			"terminal": "终端",
+			"general": "通用",
+			"about": "关于",
+			"debug": "调试"
+		},
+		"sections": {
+			"apiConfig": "API 配置",
+			"features": "功能设置",
+			"browser": "浏览器设置",
+			"terminal": "终端设置",
+			"general": "通用设置",
+			"about": "关于",
+			"debug": "调试工具"
+		},
+		"buttons": {
+			"done": "完成"
+		},
+		"telemetry": {
+			"checkbox": "允许错误和使用情况报告",
+			"tooltip": "此设置由您组织的远程配置管理",
+			"description": "通过发送使用数据和错误报告帮助改进 Parrot。从不发送代码、提示或个人隐私信息。详见我们的 <telemetryLink>遥测概览</telemetryLink> 和 <privacyLink>隐私政策</privacyLink> 获取更多详情。",
+			"telemetryLink": "遥测概览",
+			"privacyLink": "隐私政策"
+		},
+		"apiProvider": {
+			"label": "API 提供商",
+			"remoteConfigTooltip": "提供商选项由您组织的远程配置管理",
+			"searchPlaceholder": "搜索并选择提供商..."
+		},
+		"apiConfig": {
+			"planMode": "计划模式",
+			"actMode": "执行模式",
+			"useDifferentModels": "为计划模式和执行模式使用不同的模型",
+			"useDifferentModelsDescription": "在计划模式和执行模式之间切换时，将保留先前模式使用的 API 和模型。这可能很有帮助，例如使用强大的推理模型来制定计划，然后让更便宜的编码模型来执行。"
+		},
+		"apiKeyField": {
+			"apiKeyLabel": "{{providerName}} API 密钥",
+			"defaultHelpText": "此密钥存储在本地，仅用于从此扩展程序发出 API 请求。",
+			"signupLink": "您可以在此处注册获取 {{providerName}} API 密钥。"
+		},
+		"about": {
+			"title": "Cline v{{version}}",
+			"description": "一个可以使用您的 CLI 和编辑器的 AI 助手。Cline 可以逐步处理复杂的软件开发任务，使用允许他创建和编辑文件、探索大型项目、使用浏览器以及执行终端命令的工具（在您授予权限后）。",
+			"communitySupport": "社区与支持",
+			"x": "X",
+			"discord": "Discord",
+			"reddit": "r/cline",
+			"development": "开发",
+			"github": "GitHub",
+			"issues": "问题",
+			"featureRequests": "功能请求",
+			"resources": "资源",
+			"documentation": "文档",
+			"website": "https://cline.bot"
+		},
+		"features": {
+			"subagents": {
+				"title": "子代理",
+				"newBadge": "新",
+				"cliRequired": "子代理需要 Parrot CLI。通过以下命令安装：",
+				"installCommand": "npm install -g parrot",
+				"thenRun": "然后运行",
+				"authCommand": "parrot auth",
+				"authDescription": "用于与 Parrot 认证或配置 API 提供商。",
+				"installButton": "立即安装",
+				"enabled": "子代理已启用",
+				"enable": "启用子代理",
+				"experimental": "实验性：",
+				"description": "允许 Parrot 生成子进程来处理聚焦任务，例如探索大型代码库，保持您的主上下文清洁。"
+			},
+			"checkpoints": {
+				"title": "启用检查点",
+				"description": "启用扩展以在任务过程中保存工作空间检查点。底层使用 git，对于大型工作空间可能效果不佳。"
+			},
+			"mcpDisplay": {
+				"title": "MCP 显示模式",
+				"description": "控制 MCP 响应的显示方式：纯文本、带有链接/图像的富格式，或 Markdown 渲染。"
+			},
+			"openaiReasoning": {
+				"title": "OpenAI 推理努力度",
+				"description": "OpenAI 系列模型的推理努力度（适用于所有 OpenAI 模型提供商）"
+			},
+			"openaiReasoningEffort": {
+				"minimal": "最小",
+				"low": "低",
+				"medium": "中",
+				"high": "高"
+			},
+			"strictPlanMode": {
+				"title": "启用严格计划模式",
+				"description": "在计划模式中强制严格的工具使用，阻止文件编辑。"
+			},
+			"focusChain": {
+				"title": "启用焦点链",
+				"description": "启用增强的任务进度跟踪和任务过程中自动的焦点链列表管理。",
+				"reminderInterval": "焦点链提醒间隔",
+				"reminderDescription": "提醒 Parrot 其焦点链检查清单的间隔（以消息数为单位，1-100）。较低的值提供更频繁的提醒。"
+			},
+			"dictation": {
+				"title": "启用听写",
+				"description": "使用您的 Parrot 帐户启用语音转文本转录。使用 Aqua Voice 的 Avalon 模型，每分钟处理的音频收费 $0.0065 积分。每条消息最长 5 分钟。"
+			},
+			"autoCompact": {
+				"title": "启用自动压缩",
+				"description": "启用高级上下文管理系统，该系统为下一代模型使用基于 LLM 的压缩。",
+				"learnMore": "了解更多"
+			},
+			"webTools": {
+				"title": "启用 Parrot 网页工具",
+				"description": "在使用 Parrot 提供商时启用网页搜索和网页获取工具。"
+			},
+			"nativeToolCall": {
+				"title": "启用原生工具调用",
+				"description": "使用模型的原生工具调用 API 而非基于 XML 的工具解析。这将提高支持模型的性能。"
+			},
+			"parallelToolCalling": {
+				"title": "启用并行工具调用",
+				"description": "允许模型在单个响应中调用多个工具。对于 GPT-5 模型会自动启用。"
+			},
+			"backgroundEdit": {
+				"title": "启用后台编辑",
+				"description": "允许在后台编辑文件，而无需在编辑器中打开差异视图。"
+			},
+			"multiRootWorkspace": {
+				"title": "启用多根工作空间",
+				"description": "允许 parrot 跨多个工作空间工作。"
+			},
+			"hooks": {
+				"title": "启用钩子",
+				"windowsWarning": "Windows 尚不支持钩子。此功能目前仅在 macOS 和 Linux 上可用。",
+				"description": "允许从 .clinerules/hooks/ 目录执行钩子。"
+			},
+			"skills": {
+				"title": "启用技能",
+				"description": "启用来自 .cline/skills/ 目录的可复用、按需的智能体指令技能。"
+			},
+			"yoloMode": {
+				"title": "启用 YOLO 模式",
+				"remoteConfigTooltip": "此设置由您组织的远程配置管理",
+				"warning": "实验性且危险：此模式禁用安全检查和使用者确认。Parrot 将自动批准所有操作而不询问。请极度谨慎使用。"
+			}
+		}
+	}
+}

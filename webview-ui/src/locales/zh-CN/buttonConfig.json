@@ -1,0 +1,59 @@
+{
+	"buttonConfig": {
+		"apiReqFailed": {
+			"primary": "重试",
+			"secondary": "开始新任务"
+		},
+		"mistakeLimitReached": {
+			"primary": "继续执行",
+			"secondary": "开始新任务"
+		},
+		"toolApprove": {
+			"primary": "批准",
+			"secondary": "拒绝"
+		},
+		"toolSave": {
+			"primary": "保存",
+			"secondary": "拒绝"
+		},
+		"command": {
+			"primary": "运行命令",
+			"secondary": "拒绝"
+		},
+		"commandOutput": {
+			"primary": "继续执行"
+		},
+		"browserActionLaunch": {
+			"primary": "批准",
+			"secondary": "拒绝"
+		},
+		"useMcpServer": {
+			"primary": "批准",
+			"secondary": "拒绝"
+		},
+		"completionResult": {
+			"primary": "开始新任务"
+		},
+		"resumeTask": {
+			"primary": "恢复任务"
+		},
+		"resumeCompletedTask": {
+			"primary": "开始新任务"
+		},
+		"newTask": {
+			"primary": "使用上下文开始新任务"
+		},
+		"condense": {
+			"primary": "压缩对话"
+		},
+		"reportBug": {
+			"primary": "报告 GitHub 问题"
+		},
+		"partial": {
+			"secondary": "取消"
+		},
+		"apiReqActive": {
+			"secondary": "取消"
+		}
+	}
+}

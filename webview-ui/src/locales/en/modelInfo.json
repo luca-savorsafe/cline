@@ -1,0 +1,12 @@
+{
+	"modelInfo": {
+		"context": "Context:",
+		"input": "Input:",
+		"output": "Output:",
+		"promptCaching": "Prompt Caching",
+		"cacheReads": "Cache Reads",
+		"cacheWrites": "Cache Writes",
+		"tieredPricing": "Tiered Pricing:",
+		"providerRouting": "Provider Routing"
+	}
+}

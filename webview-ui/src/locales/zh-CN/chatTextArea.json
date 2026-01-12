@@ -1,0 +1,15 @@
+{
+	"chatTextArea": {
+		"placeholderHint": "输入 @ 添加上下文，/ 获取斜杠命令和工作流，按住 shift 拖入文件/图片",
+		"tooltips": {
+			"addContext": "添加上下文",
+			"addFilesImages": "添加文件和图片",
+			"selectModel": "选择模型 / API 提供商",
+			"modeToggle": {
+				"plan": "在计划模式中，Parrot 将收集信息以构建计划",
+				"act": "在执行模式中，Parrot 将立即完成任务",
+				"keyboardShortcut": "使用 {shortcut} 切换"
+			}
+		}
+	}
+}

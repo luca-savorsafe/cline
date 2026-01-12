@@ -1,0 +1,15 @@
+{
+	"chatTextArea": {
+		"placeholderHint": "Type @ to add context, / for slash commands & workflows, shift+drag to drop files/images",
+		"tooltips": {
+			"addContext": "Add Context",
+			"addFilesImages": "Add Files & Images",
+			"selectModel": "Select Model / API Provider",
+			"modeToggle": {
+				"plan": "In Plan mode, Parrot will gather info to build a plan",
+				"act": "In Act mode, Parrot will complete tasks immediately",
+				"keyboardShortcut": "Toggle with {shortcut}"
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"openRouter": {
+		"usingOpenRouterPreset": "Using OpenRouter preset:",
+		"searchModelPlaceholder": "Search and select a model...",
+		"thinkingLevel": "Thinking Level",
+		"clearSearch": "Clear Search",
+		"openRouterLink": "OpenRouter.",
+		"modelInfoDependsOnPreset": "Model info and pricing will depend on your preset configuration."
+	}
+}

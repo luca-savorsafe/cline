@@ -1,0 +1,11 @@
+{
+	"onboarding": {
+		"otherOptions": "Other Options",
+		"modelOverview": "Model Overview:",
+		"support": "Support:",
+		"speed": "Speed:",
+		"searchModelPlaceholder": "Search models...",
+		"changeLaterInSettings": "You can change this later in Settings",
+		"context": "Context:"
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"history": {
+		"title": "历史",
+		"done": "完成",
+		"searchPlaceholder": "模糊搜索历史...",
+		"sortOptions": {
+			"newest": "最新的",
+			"oldest": "最旧的",
+			"mostExpensive": "最昂贵的",
+			"mostTokens": "最多令牌的",
+			"mostRelevant": "最相关的"
+		},
+		"filters": {
+			"workspace": "工作空间",
+			"favorites": "收藏"
+		},
+		"buttons": {
+			"selectAll": "全选",
+			"selectNone": "全不选",
+			"deleteSelected": "删除选中的 {count} 项",
+			"deleteAll": "删除所有历史"
+		},
+		"labels": {
+			"tokens": "令牌：",
+			"cache": "缓存：",
+			"apiCost": "API 成本：",
+			"model": "模型："
+		}
+	}
+}

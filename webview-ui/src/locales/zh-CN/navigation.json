@@ -1,0 +1,12 @@
+{
+	"navigation": {
+		"chat": "聊天",
+		"history": "历史",
+		"mcp": "MCP",
+		"account": "账户",
+		"newTask": "新任务",
+		"planMode": "计划模式",
+		"actMode": "执行模式",
+		"settings": "设置"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"serversToggleModal": {
+		"manageMcpServers": "Manage MCP Servers",
+		"hideMcpServers": "Hide MCP Servers",
+		"showMcpServers": "Show MCP Servers",
+		"mcpServers": "MCP Servers",
+		"goToMcpServerSettings": "Go to MCP Server Settings"
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"clineRules": {
+		"title": "Manage Parrot Rules & Workflows",
+		"tabs": {
+			"rules": "Rules",
+			"workflows": "Workflows",
+			"hooks": "Hooks",
+			"skills": "Skills"
+		},
+		"sections": {
+			"enterpriseRules": "Enterprise Rules",
+			"globalRules": "Global Rules",
+			"workspaceRules": "Workspace Rules",
+			"enterpriseWorkflows": "Enterprise Workflows",
+			"globalWorkflows": "Global Workflows",
+			"workspaceWorkflows": "Workspace Workflows",
+			"globalHooks": "Global Hooks",
+			"globalSkills": "Global Skills",
+			"workspaceSkills": "Workspace Skills"
+		},
+		"descriptions": {
+			"rules": "Rules let you give Parrot system-level guidance. Think of it as a persistent way to include context and preferences for your project or globally per conversation.",
+			"workflows": "Workflows let you define a sequence of steps to guide Parrot through a sequence of repeatable tasks, like deploying a service or committing a PR. To invoke a workflow in chat, type /workflow-name.",
+			"skills": "Skills are reusable sets of instructions Parrot can activate on demand. When a task matches a skill's description, Parrot uses the use_skill tool to load the full instructions.",
+			"hooks": "Hooks allow you to execute custom scripts at specific points in Parrot's execution lifecycle, enabling automation and integration with external tools.",
+			"hooksToggle": "Toggle to enable/disable (chmod +x/-x)."
+		},
+		"remoteConfig": {
+			"managedRules": "Your organization manages some rules",
+			"managedWorkflows": "Your organization manages some workflows"
+		},
+		"windowsWarning": "Hooks toggling is not supported on Windows. Hooks can be created, edited, and deleted, but not enabled/disabled and will not execute."
+	}
+}

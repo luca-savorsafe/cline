@@ -1,0 +1,51 @@
+{
+	"taskHeader": {
+		"buttons": {
+			"compactTask": "Compact Task",
+			"copyText": "Copy Text",
+			"startNewTask": "Start New Task",
+			"openConversationHistory": "Open Conversation History File"
+		},
+		"deleteTaskButton": {
+			"tooltip": "Delete Task (size: {{size}})",
+			"ariaLabel": "Delete Task"
+		},
+		"contextWindow": {
+			"compactTaskQuestion": "Compact this task to reduce context window usage?",
+			"cancelTitle": "Cancel compact task",
+			"cancel": "Cancel",
+			"confirmTitle": "Confirm compact task",
+			"confirm": "Confirm",
+			"promptTokens": "Prompt Tokens",
+			"completionTokens": "Completion Tokens",
+			"cacheWrites": "Cache Writes",
+			"cacheReads": "Cache Reads",
+			"noTokenData": "No Token Usage Data",
+			"autoCondenseThreshold": "Auto-Condense Threshold",
+			"thresholdDescription1": "Click the context window bar to set a new threshold.",
+			"thresholdDescription2": "When context window usage exceeds this threshold, the task will be condensed automatically.",
+			"contextWindow": "Context Window",
+			"used": "Used:",
+			"total": "Total:",
+			"remaining": "Remaining:",
+			"tokenUsage": "Token Usage"
+		},
+		"focusChain": {
+			"allTasksCompleted": "All tasks completed!",
+			"todoList": "Todo List",
+			"newStepsMessage": "Continuing the task will generate new steps",
+			"clickToEditTitle": "Click to edit the todo list in file",
+			"collapseFocusChain": "Collapse Focus Chain",
+			"expandFocusChain": "Expand Focus Chain"
+		},
+		"stickyUserMessage": {
+			"scrollToMessage": "Scroll to your message",
+			"clickToScroll": "Click to scroll to your message"
+		},
+		"checkpointError": {
+			"disableCheckpoints": "Disable Checkpoints",
+			"seeInstructions": "See instructions",
+			"gitMustBeInstalled": "Git must be installed to use checkpoints."
+		}
+	}
+}

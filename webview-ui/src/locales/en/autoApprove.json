@@ -1,0 +1,52 @@
+{
+	"autoApprove": {
+		"bar": {
+			"yoloTitle": "Auto-Approve: YOLO",
+			"yoloMessage": "YOLO Mode Enabled",
+			"disableInSettings": "Disable in Settings",
+			"title": "Auto-Approve:",
+			"none": "None",
+			"closeSettings": "Close Auto-Approve Settings",
+			"openSettings": "Open Auto-Approve Settings"
+		},
+		"modal": {
+			"description": "Let Parrot execute these actions without asking for approval",
+			"docs": "Documentation",
+			"enableNotifications": "Enable Notifications"
+		},
+		"actions": {
+			"readFiles": {
+				"label": "Read project files",
+				"shortName": "Read"
+			},
+			"readFilesExternally": {
+				"label": "Read all files",
+				"shortName": "Read (all)"
+			},
+			"editFiles": {
+				"label": "Edit project files",
+				"shortName": "Edit"
+			},
+			"editFilesExternally": {
+				"label": "Edit all files",
+				"shortName": "Edit (all)"
+			},
+			"executeSafeCommands": {
+				"label": "Execute safe commands",
+				"shortName": "Safe Commands"
+			},
+			"executeAllCommands": {
+				"label": "Execute all commands",
+				"shortName": "All Commands"
+			},
+			"useBrowser": {
+				"label": "Use Browser",
+				"shortName": "Browser"
+			},
+			"useMcp": {
+				"label": "Use MCP Servers",
+				"shortName": "MCP"
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"debugSection": {
+		"resetWorkspaceState": "Reset Workspace State",
+		"resetGlobalState": "Reset Global State",
+		"resetStateDescription": "This will reset all global state and secret storage in the extension.",
+		"resetOnboardingState": "Reset Onboarding State"
+	}
+}

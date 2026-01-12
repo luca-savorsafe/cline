@@ -1,0 +1,28 @@
+{
+	"modelPicker": {
+		"searchPlaceholder": "搜索 {count} 个模型",
+		"providerLabel": "提供商：",
+		"thinking": {
+			"label": "推理（{tokens} 令牌）",
+			"notSupported": "此模型不支持推理",
+			"enabled": "扩展推理已启用",
+			"disabled": "启用扩展推理以增强推理能力"
+		},
+		"splitMode": {
+			"tooltip": "为计划模式与执行模式使用不同的模型",
+			"plan": "计划模式",
+			"act": "执行模式"
+		},
+		"currentModel": "当前模型：",
+		"endpoint": "端点：",
+		"configure": {
+			"edit": "在设置中编辑",
+			"add": "在设置中配置"
+		},
+		"emptyState": {
+			"selectModel": "在下方选择模型",
+			"noModels": "未找到模型"
+		},
+		"addProvider": "+ 添加提供商"
+	}
+}

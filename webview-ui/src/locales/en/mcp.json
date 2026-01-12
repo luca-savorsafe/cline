@@ -1,0 +1,74 @@
+{
+	"mcp": {
+		"title": "MCP Servers",
+		"done": "Done",
+		"tabs": {
+			"marketplace": "Marketplace",
+			"addRemote": "Remote Server",
+			"configure": "Configure"
+		},
+		"marketplace": {
+			"allCategories": "All Categories",
+			"searchPlaceholder": "Search MCP...",
+			"filter": "Filter:",
+			"sort": "Sort:",
+			"clearSearch": "Clear Search",
+			"organizationPreconfigured": "Your organization has preconfigured some MCP servers available",
+			"mostInstalls": "Most Installs",
+			"githubStars": "GitHub Stars"
+		},
+		"server": {
+			"restart": "Restart Server",
+			"delete": "Delete Server",
+			"restarting": "Restarting...",
+			"deleting": "Deleting...",
+			"noTools": "No tools found",
+			"noResources": "No resources found",
+			"autoApproveAllTools": "Auto-Approve All Tools",
+			"organizationEnabled": "This server cannot be disabled because your organization has enabled it",
+			"requestTimeout": "Request Timeout",
+			"authenticate": "Authenticate",
+			"retrying": "Retrying...",
+			"retryConnection": "Retry Connection",
+			"tools": "Tools",
+			"resources": "Resources"
+		},
+		"addServer": {
+			"title": "Add a remote MCP server by providing a name and its URL endpoint. Learn more",
+			"here": "here.",
+			"serverName": "Server Name",
+			"serverUrl": "Server URL",
+			"transportType": "Transport Type",
+			"streamableHttp": "Streamable HTTP",
+			"sseLegacy": "SSE (Legacy)",
+			"connecting": "Connecting...",
+			"addServer": "Add Server",
+			"editConfiguration": "Edit Configuration",
+			"errors": {
+				"serverNameRequired": "Server name is required",
+				"serverUrlRequired": "Server URL is required",
+				"invalidUrlFormat": "Invalid URL format",
+				"failedToAddServer": "Failed to add server"
+			}
+		},
+		"configureServers": {
+			"description": "The Model Context Protocol enables communication with locally running MCP servers that provide additional tools and resources to extend Parrot's capabilities. You can use community-made servers or ask Parrot to create new tools specialized for your workflows (e.g., \"Add a tool to fetch the latest npm docs\").",
+			"modelContextProtocol": "Model Context Protocol",
+			"communityMadeServers": "Community-Made Servers",
+			"seeDemoHere": "See a demo here.",
+			"organizationManagesServers": "Your organization manages some MCP servers",
+			"configureMcpServers": "Configure MCP Servers",
+			"advancedMcpSettings": "Advanced MCP Settings"
+		},
+		"displayMode": {
+			"plain": "Plain Text",
+			"rich": "Rich Display",
+			"markdown": "Markdown"
+		},
+		"response": {
+			"title": "Response",
+			"errorTitle": "Response (Error)",
+			"errorParsing": "Error parsing response:"
+		}
+	}
+}

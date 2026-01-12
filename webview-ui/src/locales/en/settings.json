@@ -1,0 +1,175 @@
+{
+	"settings": {
+		"title": "Settings",
+		"general": "General",
+		"appearance": "Appearance",
+		"language": {
+			"title": "Preferred Language",
+			"description": "The language that Parrot should use for communication.",
+			"english": "English",
+			"simplifiedChinese": "Simplified Chinese - 简体中文",
+			"traditionalChinese": "Traditional Chinese - 繁體中文",
+			"japanese": "Japanese - 日本語",
+			"korean": "Korean - 한국어",
+			"spanish": "Spanish - Español",
+			"german": "German - Deutsch",
+			"french": "French - Français",
+			"arabic": "Arabic - العربية",
+			"portugueseBR": "Portuguese - Português (Brasil)",
+			"czech": "Czech - Čeština",
+			"hindi": "Hindi - हिन्दी",
+			"hungarian": "Hungarian - Magyar",
+			"italian": "Italian - Italiano",
+			"polish": "Polish - Polski",
+			"portuguesePT": "Portuguese - Português (Portugal)",
+			"russian": "Russian - Русский",
+			"turkish": "Turkish - Türkçe"
+		},
+		"tabs": {
+			"apiConfig": "API Configuration",
+			"features": "Features",
+			"browser": "Browser",
+			"terminal": "Terminal",
+			"general": "General",
+			"about": "About",
+			"debug": "Debug"
+		},
+		"sections": {
+			"apiConfig": "API Configuration",
+			"features": "Feature Settings",
+			"browser": "Browser Settings",
+			"terminal": "Terminal Settings",
+			"general": "General Settings",
+			"about": "About",
+			"debug": "Debug Tools"
+		},
+		"buttons": {
+			"done": "Done"
+		},
+		"telemetry": {
+			"checkbox": "Allow error and usage reporting",
+			"tooltip": "This setting is managed by your organization's remote configuration",
+			"description": "Help improve Parrot by sending usage data and error reports. No code, prompts, or personal information are ever sent. See our <telemetryLink>telemetry overview</telemetryLink> and <privacyLink>privacy policy</privacyLink> for more details.",
+			"telemetryLink": "telemetry overview",
+			"privacyLink": "privacy policy"
+		},
+		"apiProvider": {
+			"label": "API Provider",
+			"remoteConfigTooltip": "Provider options are managed by your organization's remote config",
+			"searchPlaceholder": "Search and select a provider..."
+		},
+		"apiConfig": {
+			"planMode": "Plan Mode",
+			"actMode": "Act Mode",
+			"useDifferentModels": "Use different models for Plan and Act modes",
+			"useDifferentModelsDescription": "Switching between Plan and Act mode will persist the API and model used in the previous mode. This may be helpful e.g. when using a strong reasoning model to architect a plan for a cheaper coding model to act on."
+		},
+		"apiKeyField": {
+			"apiKeyLabel": "{{providerName}} API Key",
+			"defaultHelpText": "This key is stored locally and only used to make API requests from this extension.",
+			"signupLink": "You can get a{{#if providerNameStartsWithVowel}}n{{/if}} {{providerName}} API key by signing up here."
+		},
+		"about": {
+			"title": "Cline v{{version}}",
+			"description": "An AI assistant that can use your CLI and Editor. Cline can handle complex software development tasks step-by-step with tools that let him create & edit files, explore large projects, use the browser, and execute terminal commands (after you grant permission).",
+			"communitySupport": "Community & Support",
+			"x": "X",
+			"discord": "Discord",
+			"reddit": "r/cline",
+			"development": "Development",
+			"github": "GitHub",
+			"issues": "Issues",
+			"featureRequests": "Feature Requests",
+			"resources": "Resources",
+			"documentation": "Documentation",
+			"website": "https://cline.bot"
+		},
+		"features": {
+			"subagents": {
+				"title": "Subagents",
+				"newBadge": "New",
+				"cliRequired": "Subagents require Parrot CLI. Install via:",
+				"installCommand": "npm install -g parrot",
+				"thenRun": "then run",
+				"authCommand": "parrot auth",
+				"authDescription": "to authenticate with Parrot or configure API providers.",
+				"installButton": "Install Now",
+				"enabled": "Subagents Enabled",
+				"enable": "Enable Subagents",
+				"experimental": "Experimental:",
+				"description": "Allow Parrot to spawn subprocesses to handle focused tasks, like exploring large codebases, keeping your main context clean."
+			},
+			"checkpoints": {
+				"title": "Enable Checkpoints",
+				"description": "Enable the extension to save workspace checkpoints during tasks. Underlying uses git, may not work well for large workspaces."
+			},
+			"mcpDisplay": {
+				"title": "MCP Display Mode",
+				"description": "Controls how MCP responses are shown: plain text, rich format with links/images, or rendered markdown."
+			},
+			"openaiReasoning": {
+				"title": "OpenAI Reasoning Effort",
+				"description": "Reasoning effort for OpenAI family models (for all OpenAI model providers)"
+			},
+			"openaiReasoningEffort": {
+				"minimal": "Minimal",
+				"low": "Low",
+				"medium": "Medium",
+				"high": "High"
+			},
+			"strictPlanMode": {
+				"title": "Enable Strict Plan Mode",
+				"description": "Enforces strict tool usage in plan mode, preventing file edits."
+			},
+			"focusChain": {
+				"title": "Enable Focus Chain",
+				"description": "Enable enhanced task progress tracking and automatic focus chain list management during tasks.",
+				"reminderInterval": "Focus Chain Reminder Interval",
+				"reminderDescription": "Interval (in number of messages, 1-100) to remind Parrot of its focus chain checklist. Lower values provide more frequent reminders."
+			},
+			"dictation": {
+				"title": "Enable Dictation",
+				"description": "Enable speech-to-text transcription using your Parrot account. Uses the Avalon model from Aqua Voice, billed at $0.0065 credits per minute of processed audio. Up to 5 minutes per message."
+			},
+			"autoCompact": {
+				"title": "Enable Auto-Compact",
+				"description": "Enable the advanced context management system which uses LLM-based compression for next-generation models.",
+				"learnMore": "Learn More"
+			},
+			"webTools": {
+				"title": "Enable Parrot Web Tools",
+				"description": "Enable web search and web fetch tools when using a Parrot provider."
+			},
+			"nativeToolCall": {
+				"title": "Enable Native Tool Calling",
+				"description": "Use the model's native tool calling API instead of XML-based tool parsing. This improves performance for supported models."
+			},
+			"parallelToolCalling": {
+				"title": "Enable Parallel Tool Calling",
+				"description": "Allow models to call multiple tools in a single response. Enabled automatically for GPT-5 models."
+			},
+			"backgroundEdit": {
+				"title": "Enable Background Edit",
+				"description": "Allow file edits in the background without opening a diff view in the editor."
+			},
+			"multiRootWorkspace": {
+				"title": "Enable Multi-Root Workspace",
+				"description": "Allow Parrot to work across multiple workspaces."
+			},
+			"hooks": {
+				"title": "Enable Hooks",
+				"windowsWarning": "Hooks not yet supported on Windows. This feature is currently only available on macOS and Linux.",
+				"description": "Allow execution of hooks from the .clinerules/hooks/ directory."
+			},
+			"skills": {
+				"title": "Enable Skills",
+				"description": "Enable reusable, on-demand agent instruction skills from the .cline/skills/ directory."
+			},
+			"yoloMode": {
+				"title": "Enable YOLO Mode",
+				"remoteConfigTooltip": "This setting is managed by your organization's remote config",
+				"warning": "Experimental & Dangerous: This mode disables safety checks and user confirmations. Parrot will auto-approve all actions without asking. Use with extreme caution."
+			}
+		}
+	}
+}

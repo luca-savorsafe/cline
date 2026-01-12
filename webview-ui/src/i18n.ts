@@ -2,13 +2,13 @@ import i18n from "i18next"
 import LanguageDetector from "i18next-browser-languagedetector"
 import { initReactI18next } from "react-i18next"
 import deTranslations from "./locales/de/translation.json"
-// Import translations
-import enTranslations from "./locales/en/translation.json"
+// Import translations from split files
+import enTranslations from "./locales/en/index"
 import esTranslations from "./locales/es/translation.json"
 import frTranslations from "./locales/fr/translation.json"
 import jaTranslations from "./locales/ja/translation.json"
 import koTranslations from "./locales/ko/translation.json"
-import zhCNTranslations from "./locales/zh-CN/translation.json"
+import zhCNTranslations from "./locales/zh-CN/index"
 
 // Language code mapping from preferredLanguage values
 const languageCodeMap: Record<string, string> = {

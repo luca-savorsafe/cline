@@ -1,0 +1,8 @@
+{
+	"bannerCarousel": {
+		"ariaLabel": "Announcements",
+		"previousBanner": "Previous banner",
+		"nextBanner": "Next banner",
+		"dismissAllBanners": "Dismiss all banners"
+	}
+}

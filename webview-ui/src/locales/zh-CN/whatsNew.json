@@ -1,0 +1,15 @@
+{
+	"whatsNew": {
+		"title": "🎉 新功能 v{{version}}",
+		"skills": {
+			"title": "技能：",
+			"description": "使用专门的指令集扩展 Parrot 的能力。",
+			"learnMore": "了解更多"
+		},
+		"webSearch": {
+			"title": "网页搜索：",
+			"description": "改进了 Parrot 提供商中的网页搜索工具。"
+		},
+		"signUpWithParrot": "使用 Parrot 注册"
+	}
+}

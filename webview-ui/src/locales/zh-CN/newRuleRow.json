@@ -1,0 +1,19 @@
+{
+	"newRuleRow": {
+		"selectHookTypeToCreate": "选择要创建的钩子类型",
+		"hookSelectDescription": "选择要创建的钩子类型。钩子在 Parrot 生命周期的特定点执行。可用：{{availableHooks}}",
+		"allHooksCreated": "所有钩子已创建",
+		"newHook": "新建钩子...",
+		"workflowNamePlaceholder": "工作流名称（.md、.txt 或无扩展名）",
+		"skillNamePlaceholder": "技能名称（字母、数字、短横线、下划线）",
+		"ruleNamePlaceholder": "规则名称（.md、.txt 或无扩展名）",
+		"newWorkflowFile": "新建工作流文件...",
+		"newSkill": "新建技能...",
+		"newRuleFile": "新建规则文件...",
+		"createSkill": "创建技能",
+		"createFile": "创建文件",
+		"newFile": "新建文件",
+		"skillNameValidationError": "技能名称只能包含字母、数字、短横线和下划线",
+		"fileExtensionValidationError": "仅允许 .md、.txt 或无文件扩展名"
+	}
+}

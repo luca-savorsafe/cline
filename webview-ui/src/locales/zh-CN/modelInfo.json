@@ -1,0 +1,12 @@
+{
+	"modelInfo": {
+		"context": "上下文：",
+		"input": "输入：",
+		"output": "输出：",
+		"promptCaching": "提示缓存",
+		"cacheReads": "缓存读取",
+		"cacheWrites": "缓存写入",
+		"tieredPricing": "分层定价：",
+		"providerRouting": "提供商路由"
+	}
+}

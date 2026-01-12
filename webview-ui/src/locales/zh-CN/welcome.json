@@ -1,0 +1,40 @@
+{
+	"welcome": {
+		"title": "欢迎使用 Parrot",
+		"subtitle": "您的 AI 编程助手",
+		"getStarted": "免费开始",
+		"quickStart": "快速开始",
+		"tutorial": "教程",
+		"examples": "示例",
+		"description": {
+			"part1": "借助",
+			"claudeLink": "Claude 4 Sonnet",
+			"part2": "的智能编码能力突破以及访问工具的权限，我可以完成各种任务，这些工具允许我创建和编辑文件、探索复杂项目、使用浏览器以及执行终端命令",
+			"permissionNote": "当然，是在您的许可下",
+			"part3": "我甚至可以使用 MCP 来创建新工具并扩展自己的能力。"
+		},
+		"signupPrompt": "注册一个账户即可免费开始，或者使用一个提供对 Claude Sonnet 等模型访问的 API 密钥。",
+		"useOwnApiKey": "使用您自己的 API 密钥",
+		"letsGo": "出发吧！",
+		"homeHeader": {
+			"title": "我能为您做什么？",
+			"tooltip": "我可以通过编辑文件、探索项目、运行命令和使用浏览器来逐步开发软件。我甚至可以使用 MCP 工具扩展能力，超越基本的代码补全提供帮助。",
+			"takeTour": "开始导览"
+		},
+		"suggestedTasks": {
+			"title": "用 Parrot 快速 <span class=\"text-white\">[获胜]</span>",
+			"nextjsNotetakingApp": {
+				"title": "构建一个 Next.js 应用",
+				"description": "使用 Next.js 和 Tailwind 创建一个漂亮的笔记应用"
+			},
+			"terminalCliTool": {
+				"title": "制作一个 CLI 工具",
+				"description": "开发一个强大的终端 CLI 来自动化酷炫任务"
+			},
+			"snakeGame": {
+				"title": "开发一个游戏",
+				"description": "编写一个在浏览器中运行的经典贪吃蛇游戏"
+			}
+		}
+	}
+}

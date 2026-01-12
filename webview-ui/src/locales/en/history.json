@@ -1,0 +1,30 @@
+{
+	"history": {
+		"title": "History",
+		"done": "Done",
+		"searchPlaceholder": "Fuzzy search history...",
+		"sortOptions": {
+			"newest": "Newest",
+			"oldest": "Oldest",
+			"mostExpensive": "Most Expensive",
+			"mostTokens": "Most Tokens",
+			"mostRelevant": "Most Relevant"
+		},
+		"filters": {
+			"workspace": "Workspace",
+			"favorites": "Favorites"
+		},
+		"buttons": {
+			"selectAll": "Select All",
+			"selectNone": "Select None",
+			"deleteSelected": "Delete Selected {count} Items",
+			"deleteAll": "Delete All History"
+		},
+		"labels": {
+			"tokens": "Tokens:",
+			"cache": "Cache:",
+			"apiCost": "API Cost:",
+			"model": "Model:"
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"newRuleRow": {
+		"selectHookTypeToCreate": "Select Hook Type to Create",
+		"hookSelectDescription": "Select the type of hook to create. Hooks execute at specific points in Parrot's lifecycle. Available: {{availableHooks}}",
+		"allHooksCreated": "All hooks created",
+		"newHook": "New Hook...",
+		"workflowNamePlaceholder": "Workflow Name (.md, .txt, or no extension)",
+		"skillNamePlaceholder": "Skill Name (letters, numbers, hyphens, underscores)",
+		"ruleNamePlaceholder": "Rule Name (.md, .txt, or no extension)",
+		"newWorkflowFile": "New Workflow File...",
+		"newSkill": "New Skill...",
+		"newRuleFile": "New Rule File...",
+		"createSkill": "Create Skill",
+		"createFile": "Create File",
+		"newFile": "New File",
+		"skillNameValidationError": "Skill name can only contain letters, numbers, hyphens, and underscores",
+		"fileExtensionValidationError": "Only .md, .txt, or no file extension allowed"
+	}
+}

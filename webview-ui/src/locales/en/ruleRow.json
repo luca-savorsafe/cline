@@ -1,0 +1,10 @@
+{
+	"ruleRow": {
+		"agentsTooltip": "When a top-level AGENTS.md file exists, recursively searches all AGENTS.md files in the workspace",
+		"ruleRequiredCannotDisable": "This rule is required and cannot be disabled",
+		"viewRuleFile": "View Rule File",
+		"viewRuleFileReadOnly": "View Rule File (Read Only)",
+		"editRuleFile": "Edit Rule File",
+		"deleteRuleFile": "Delete Rule File"
+	}
+}

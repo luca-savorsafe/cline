@@ -1,0 +1,13 @@
+{
+	"hookRow": {
+		"editHookFile": {
+			"title": "编辑钩子文件",
+			"ariaLabel": "编辑钩子文件"
+		},
+		"deleteHookFile": {
+			"title": "删除钩子文件",
+			"ariaLabel": "删除钩子文件"
+		},
+		"windowsToggleTooltip": "Windows 不支持钩子切换。钩子可以编辑和删除，但不会执行。"
+	}
+}

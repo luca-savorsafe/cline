@@ -1,0 +1,19 @@
+{
+	"errorRow": {
+		"requestId": "Request ID:",
+		"windowsPowershell": {
+			"message": "Looks like you're having Windows PowerShell issues, please see this",
+			"troubleshootingGuide": "troubleshooting guide"
+		},
+		"signIn": {
+			"button": "Sign in to Parrot",
+			"retryHint": "(click 'Retry' below)"
+		},
+		"diffError": "The search pattern used by the model didn't match anything in the file. Retrying...",
+		"clineignoreError": {
+			"message": "Parrot tried to access",
+			"blockedBy": "but was blocked by",
+			"file": "file"
+		}
+	}
+}

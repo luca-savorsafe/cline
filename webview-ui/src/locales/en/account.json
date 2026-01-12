@@ -1,0 +1,45 @@
+{
+	"account": {
+		"title": "Account",
+		"done": "Done",
+		"personal": "Personal",
+		"dashboard": "Dashboard",
+		"logout": "Logout",
+		"clineEnvironment": "Parrot Environment",
+		"tooltips": {
+			"lockedOrganization": "Cannot be changed while your organization has remote config enabled."
+		},
+		"welcome": {
+			"description": "Sign up for a free Parrot account to get started with an AI programming assistant.",
+			"signUpButton": "Sign Up Free",
+			"termsAndPrivacy": "By signing up you agree to our <termsLink>Terms of Service</termsLink> and <privacyLink>Privacy Policy</privacyLink>.",
+			"termsOfService": "Terms of Service",
+			"privacyPolicy": "Privacy Policy"
+		},
+		"accountInfoCard": {
+			"viewBillingUsage": "View Billing & Usage",
+			"signUpWithCline": "Sign Up with Parrot"
+		},
+		"creditBalance": {
+			"addCredits": "Add Credits",
+			"currentBalance": "CURRENT BALANCE",
+			"lastUpdated": "Last updated:"
+		},
+		"creditsHistory": {
+			"credits": "Credits",
+			"creditsUsed": "Credits Used",
+			"date": "Date",
+			"loading": "Loading...",
+			"model": "Model",
+			"noPaymentHistory": "",
+			"noUsageHistory": "No usage history",
+			"paymentsHistory": "PAYMENTS HISTORY",
+			"tokensUsed": "Tokens Used",
+			"totalCost": "Total Cost",
+			"usageHistory": "USAGE HISTORY",
+			"webFetch": "Web Fetch",
+			"webFetchLLM": "Web Fetch (LLM)",
+			"webSearch": "Web Search"
+		}
+	}
+}

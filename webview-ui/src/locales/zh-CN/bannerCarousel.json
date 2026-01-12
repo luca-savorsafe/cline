@@ -1,0 +1,8 @@
+{
+	"bannerCarousel": {
+		"ariaLabel": "公告",
+		"previousBanner": "上一个横幅",
+		"nextBanner": "下一个横幅",
+		"dismissAllBanners": "关闭所有横幅"
+	}
+}

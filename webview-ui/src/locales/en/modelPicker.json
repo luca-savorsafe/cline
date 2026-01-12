@@ -1,0 +1,28 @@
+{
+	"modelPicker": {
+		"searchPlaceholder": "Search {count} models",
+		"providerLabel": "Provider:",
+		"thinking": {
+			"label": "Reasoning ({tokens} tokens)",
+			"notSupported": "Reasoning not supported for this model",
+			"enabled": "Extended reasoning enabled",
+			"disabled": "Enable extended reasoning for enhanced reasoning"
+		},
+		"splitMode": {
+			"tooltip": "Use different models for Plan mode vs Act mode",
+			"plan": "Plan Mode",
+			"act": "Act Mode"
+		},
+		"currentModel": "Current Model:",
+		"endpoint": "Endpoint:",
+		"configure": {
+			"edit": "Edit in Settings",
+			"add": "Configure in Settings"
+		},
+		"emptyState": {
+			"selectModel": "Select a model below",
+			"noModels": "No models found"
+		},
+		"addProvider": "+ Add Provider"
+	}
+}

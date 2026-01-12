@@ -1,0 +1,12 @@
+{
+	"navigation": {
+		"chat": "Chat",
+		"history": "History",
+		"mcp": "MCP",
+		"account": "Account",
+		"newTask": "New Task",
+		"planMode": "Plan Mode",
+		"actMode": "Act Mode",
+		"settings": "Settings"
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"telemetryBanner": {
+		"title": "Help Improve Parrot",
+		"experimentalFeatures": "(and access experimental features)",
+		"description": "Parrot collects errors and usage data to help us fix bugs and improve the extension. Never sends code, prompts, or personal private information.",
+		"turnOffSetting": "You can turn this off in",
+		"settings": "Settings",
+		"closeButton": {
+			"ariaLabel": "Dismiss banner and enable telemetry",
+			"text": "✕"
+		}
+	}
+}

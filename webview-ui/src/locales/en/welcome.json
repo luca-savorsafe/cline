@@ -1,0 +1,40 @@
+{
+	"welcome": {
+		"title": "Welcome to Parrot",
+		"subtitle": "Your AI Programming Assistant",
+		"getStarted": "Get Started Free",
+		"quickStart": "Quick Start",
+		"tutorial": "Tutorial",
+		"examples": "Examples",
+		"description": {
+			"part1": "Unlock the intelligent coding capabilities of",
+			"claudeLink": "Claude 4 Sonnet",
+			"part2": "along with access to tools that let me complete all sorts of tasks, including creating and editing files, exploring complex projects, using a browser, and executing terminal commands",
+			"permissionNote": "with your permission, of course",
+			"part3": "I can even use MCP to create new tools and extend my abilities."
+		},
+		"signupPrompt": "Sign up for an account to get started free, or use an API key with access to models like Claude Sonnet.",
+		"useOwnApiKey": "Use your own API key",
+		"letsGo": "Let's Go!",
+		"homeHeader": {
+			"title": "What can I do for you?",
+			"tooltip": "I can progressively develop software by editing files, exploring projects, running commands, and using a browser. I can even use MCP tools to extend beyond basic code completion to help.",
+			"takeTour": "Take the Tour"
+		},
+		"suggestedTasks": {
+			"title": "Quick <span class=\"text-white\">[Wins]</span> with Parrot",
+			"nextjsNotetakingApp": {
+				"title": "Build a Next.js App",
+				"description": "Create a beautiful note-taking app with Next.js and Tailwind"
+			},
+			"terminalCliTool": {
+				"title": "Make a CLI Tool",
+				"description": "Develop a powerful terminal CLI to automate cool tasks"
+			},
+			"snakeGame": {
+				"title": "Develop a Game",
+				"description": "Code a classic snake game that runs in the browser"
+			}
+		}
+	}
+}

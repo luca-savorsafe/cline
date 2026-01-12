@@ -1,0 +1,15 @@
+{
+	"whatsNew": {
+		"title": "🎉 What's New v{{version}}",
+		"skills": {
+			"title": "Skills:",
+			"description": "Extend Parrot's abilities with specialized sets of instructions.",
+			"learnMore": "Learn More"
+		},
+		"webSearch": {
+			"title": "Web Search:",
+			"description": "Improved web search tool within Parrot providers."
+		},
+		"signUpWithParrot": "Sign Up with Parrot"
+	}
+}

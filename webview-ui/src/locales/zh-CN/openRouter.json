@@ -1,0 +1,10 @@
+{
+	"openRouter": {
+		"usingOpenRouterPreset": "使用 OpenRouter 预设：",
+		"searchModelPlaceholder": "搜索并选择一个模型...",
+		"thinkingLevel": "推理级别",
+		"clearSearch": "清除搜索",
+		"openRouterLink": "OpenRouter。",
+		"modelInfoDependsOnPreset": "模型信息和定价将取决于您的预设配置。"
+	}
+}

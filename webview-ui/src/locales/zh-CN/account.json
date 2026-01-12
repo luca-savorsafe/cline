@@ -1,0 +1,45 @@
+{
+	"account": {
+		"title": "账户",
+		"done": "完成",
+		"personal": "个人",
+		"dashboard": "仪表板",
+		"logout": "登出",
+		"clineEnvironment": "Parrot 环境",
+		"tooltips": {
+			"lockedOrganization": "当您的组织启用远程配置时，此项无法更改。"
+		},
+		"welcome": {
+			"description": "注册免费的 Parrot 账户，开始使用 AI 编程助手。",
+			"signUpButton": "免费注册",
+			"termsAndPrivacy": "注册即表示您同意我们的 <termsLink>服务条款</termsLink> 和 <privacyLink>隐私政策</privacyLink>。",
+			"termsOfService": "服务条款",
+			"privacyPolicy": "隐私政策"
+		},
+		"accountInfoCard": {
+			"viewBillingUsage": "查看账单和使用情况",
+			"signUpWithCline": "使用 Parrot 注册"
+		},
+		"creditBalance": {
+			"addCredits": "充值",
+			"currentBalance": "当前余额",
+			"lastUpdated": "最后更新："
+		},
+		"creditsHistory": {
+			"credits": "积分",
+			"creditsUsed": "已用积分",
+			"date": "日期",
+			"loading": "加载中...",
+			"model": "模型",
+			"noPaymentHistory": "",
+			"noUsageHistory": "暂无使用记录",
+			"paymentsHistory": "支付历史",
+			"tokensUsed": "已用令牌数",
+			"totalCost": "总费用",
+			"usageHistory": "使用历史",
+			"webFetch": "网页抓取",
+			"webFetchLLM": "网页抓取（大语言模型）",
+			"webSearch": "网络搜索"
+		}
+	}
+}

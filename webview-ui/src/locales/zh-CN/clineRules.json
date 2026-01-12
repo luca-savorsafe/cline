@@ -1,0 +1,34 @@
+{
+	"clineRules": {
+		"title": "管理 Parrot 规则和工作流",
+		"tabs": {
+			"rules": "规则",
+			"workflows": "工作流",
+			"hooks": "钩子",
+			"skills": "技能"
+		},
+		"sections": {
+			"enterpriseRules": "企业规则",
+			"globalRules": "全局规则",
+			"workspaceRules": "工作空间规则",
+			"enterpriseWorkflows": "企业工作流",
+			"globalWorkflows": "全局工作流",
+			"workspaceWorkflows": "工作空间工作流",
+			"globalHooks": "全局钩子",
+			"globalSkills": "全局技能",
+			"workspaceSkills": "工作空间技能"
+		},
+		"descriptions": {
+			"rules": "规则允许您为 Parrot 提供系统级指导。将其视为为您的项目或针对每次对话全局包含上下文和偏好的持久方式。",
+			"workflows": "工作流允许您定义一系列步骤，以指导 Parrot 完成一系列重复性任务，例如部署服务或提交 PR。要在聊天中调用工作流，请键入 /工作流名称。",
+			"skills": "技能是 Parrot 可以按需激活的可复用指令集。当任务匹配技能描述时，Parrot 会使用 use_skill 工具来加载完整指令。",
+			"hooks": "钩子允许您在 Parrot 执行生命周期的特定点执行自定义脚本，从而实现与外部工具的自动化和集成。",
+			"hooksToggle": "切换以启用/禁用（chmod +x/-x）。"
+		},
+		"remoteConfig": {
+			"managedRules": "您的组织管理着一些规则",
+			"managedWorkflows": "您的组织管理着一些工作流"
+		},
+		"windowsWarning": "Windows 不支持钩子切换。可以创建、编辑和删除钩子，但无法启用/禁用，也不会执行。"
+	}
+}
