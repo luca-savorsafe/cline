@@ -170,6 +170,23 @@
 				"remoteConfigTooltip": "This setting is managed by your organization's remote config",
 				"warning": "Experimental & Dangerous: This mode disables safety checks and user confirmations. Parrot will auto-approve all actions without asking. Use with extreme caution."
 			}
+		},
+		"terminalOutputLimit": {
+			"title": "Terminal output limit",
+			"description": "Maximum number of lines to include in terminal output when executing commands. When exceeded, lines will be removed from the middle, saving tokens."
+		},
+		"subagentOutputLimit": {
+			"title": "Subagent output limit",
+			"description": "Maximum number of lines to include in output from CLI subagents. Truncates middle to save tokens."
+		},
+		"useCompactPrompt": {
+			"title": "Use compact prompt",
+			"description": "A system prompt optimized for smaller context window (e.g. 8k or less).",
+			"limitations": "Does not support Mcp and Focus Chain"
+		},
+		"thinkingBudget": {
+			"enableThinking": "Enable thinking{{#if tokens}} ({{tokens}} tokens){{/if}}",
+			"ariaLabel": "Thinking budget: {{tokens}} tokens"
 		}
 	}
 }

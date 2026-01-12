@@ -170,6 +170,23 @@
 				"remoteConfigTooltip": "此设置由您组织的远程配置管理",
 				"warning": "实验性且危险：此模式禁用安全检查和使用者确认。Parrot 将自动批准所有操作而不询问。请极度谨慎使用。"
 			}
+		},
+		"terminalOutputLimit": {
+			"title": "终端输出限制",
+			"description": "执行命令时包含在终端输出中的最大行数。超过时，将从中间删除行以节省令牌。"
+		},
+		"subagentOutputLimit": {
+			"title": "子代理输出限制",
+			"description": "包含在 CLI 子代理输出中的最大行数。截断中间部分以节省令牌。"
+		},
+		"useCompactPrompt": {
+			"title": "使用紧凑提示",
+			"description": "针对较小上下文窗口（例如 8k 或更少）优化的系统提示。",
+			"limitations": "不支持 Mcp 和 Focus Chain"
+		},
+		"thinkingBudget": {
+			"enableThinking": "启用思考{{#if tokens}} ({{tokens}} 令牌){{/if}}",
+			"ariaLabel": "思考预算：{{tokens}} 令牌"
 		}
 	}
 }
