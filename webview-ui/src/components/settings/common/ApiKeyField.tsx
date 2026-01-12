@@ -1,4 +1,5 @@
 import { VSCodeLink, VSCodeTextField } from "@vscode/webview-ui-toolkit/react"
+import { useTranslation } from "react-i18next"
 import { useDebouncedInput } from "../utils/useDebouncedInput"
 
 /**
@@ -24,6 +25,7 @@ export const ApiKeyField = ({
 	placeholder = "Enter API Key...",
 	helpText,
 }: ApiKeyFieldProps) => {
+	const { t } = useTranslation()
 	const [localValue, setLocalValue] = useDebouncedInput(initialValue, onChange)
 
 	return (
@@ -35,7 +37,7 @@ export const ApiKeyField = ({
 				style={{ width: "100%" }}
 				type="password"
 				value={localValue}>
-				<span style={{ fontWeight: 500 }}>{providerName} API Key</span>
+				<span style={{ fontWeight: 500 }}>{t("settings.apiKeyField.apiKeyLabel", { providerName })}</span>
 			</VSCodeTextField>
 			<p
 				style={{
@@ -43,7 +45,7 @@ export const ApiKeyField = ({
 					marginTop: 3,
 					color: "var(--vscode-descriptionForeground)",
 				}}>
-				{helpText || "This key is stored locally and only used to make API requests from this extension."}
+				{helpText || t("settings.apiKeyField.defaultHelpText")}
 				{!localValue && signupUrl && (
 					<VSCodeLink
 						href={signupUrl}
@@ -51,7 +53,7 @@ export const ApiKeyField = ({
 							display: "inline",
 							fontSize: "inherit",
 						}}>
-						You can get a{/^[aeiou]/i.test(providerName) ? "n" : ""} {providerName} API key by signing up here.
+						{t("settings.apiKeyField.signupLink", { providerName })}
 					</VSCodeLink>
 				)}
 			</p>

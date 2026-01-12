@@ -214,10 +214,10 @@ const FeatureSettingsSection = ({ renderSectionHeader }: FeatureSettingsSectionP
 								const newValue = e.target.currentValue as OpenaiReasoningEffort
 								handleReasoningEffortChange(newValue)
 							}}>
-							<VSCodeOption value="minimal">Minimal</VSCodeOption>
-							<VSCodeOption value="low">Low</VSCodeOption>
-							<VSCodeOption value="medium">Medium</VSCodeOption>
-							<VSCodeOption value="high">High</VSCodeOption>
+							<VSCodeOption value="minimal">{t("settings.features.openaiReasoningEffort.minimal")}</VSCodeOption>
+							<VSCodeOption value="low">{t("settings.features.openaiReasoningEffort.low")}</VSCodeOption>
+							<VSCodeOption value="medium">{t("settings.features.openaiReasoningEffort.medium")}</VSCodeOption>
+							<VSCodeOption value="high">{t("settings.features.openaiReasoningEffort.high")}</VSCodeOption>
 						</VSCodeDropdown>
 						<p className="text-xs mt-[5px] text-(--vscode-descriptionForeground)">
 							{t("settings.features.openaiReasoning.description")}

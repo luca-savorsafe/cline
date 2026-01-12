@@ -68,7 +68,7 @@
 		"telemetry": {
 			"checkbox": "Allow error and usage reporting",
 			"tooltip": "This setting is managed by your organization's remote configuration",
-			"description": "Help improve Parrot by sending usage data and error reports. No code, prompts, or personal information are ever sent. See our {telemetryLink} and {privacyLink} for more details.",
+			"description": "Help improve Parrot by sending usage data and error reports. No code, prompts, or personal information are ever sent. See our <telemetryLink>telemetry overview</telemetryLink> and <privacyLink>privacy policy</privacyLink> for more details.",
 			"telemetryLink": "telemetry overview",
 			"privacyLink": "privacy policy"
 		},
@@ -76,6 +76,32 @@
 			"label": "API Provider",
 			"remoteConfigTooltip": "Provider options are managed by your organization's remote config",
 			"searchPlaceholder": "Search and select a provider..."
+		},
+		"apiConfig": {
+			"planMode": "Plan Mode",
+			"actMode": "Act Mode",
+			"useDifferentModels": "Use different models for Plan and Act modes",
+			"useDifferentModelsDescription": "Switching between Plan and Act mode will persist the API and model used in the previous mode. This may be helpful e.g. when using a strong reasoning model to architect a plan for a cheaper coding model to act on."
+		},
+		"apiKeyField": {
+			"apiKeyLabel": "{{providerName}} API Key",
+			"defaultHelpText": "This key is stored locally and only used to make API requests from this extension.",
+			"signupLink": "You can get a{{#if providerNameStartsWithVowel}}n{{/if}} {{providerName}} API key by signing up here."
+		},
+		"about": {
+			"title": "Cline v{{version}}",
+			"description": "An AI assistant that can use your CLI and Editor. Cline can handle complex software development tasks step-by-step with tools that let him create & edit files, explore large projects, use the browser, and execute terminal commands (after you grant permission).",
+			"communitySupport": "Community & Support",
+			"x": "X",
+			"discord": "Discord",
+			"reddit": "r/cline",
+			"development": "Development",
+			"github": "GitHub",
+			"issues": "Issues",
+			"featureRequests": "Feature Requests",
+			"resources": "Resources",
+			"documentation": "Documentation",
+			"website": "https://cline.bot"
 		},
 		"features": {
 			"subagents": {
@@ -103,6 +129,12 @@
 			"openaiReasoning": {
 				"title": "OpenAI Reasoning Effort",
 				"description": "Reasoning effort for OpenAI family models (for all OpenAI model providers)"
+			},
+			"openaiReasoningEffort": {
+				"minimal": "Minimal",
+				"low": "Low",
+				"medium": "Medium",
+				"high": "High"
 			},
 			"strictPlanMode": {
 				"title": "Enable Strict Plan Mode",
@@ -626,6 +658,16 @@
 			"organizationManagesServers": "Your organization manages some MCP servers",
 			"configureMcpServers": "Configure MCP Servers",
 			"advancedMcpSettings": "Advanced MCP Settings"
+		},
+		"displayMode": {
+			"plain": "Plain Text",
+			"rich": "Rich Display",
+			"markdown": "Markdown"
+		},
+		"response": {
+			"title": "Response",
+			"errorTitle": "Response (Error)",
+			"errorParsing": "Error parsing response:"
 		}
 	},
 	"modelPicker": {

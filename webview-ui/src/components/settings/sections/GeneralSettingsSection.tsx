@@ -62,10 +62,6 @@ const GeneralSettingsSection = ({ renderSectionHeader }: GeneralSettingsSectionP
 								),
 							}}
 							i18nKey="settings.telemetry.description"
-							values={{
-								telemetryLink: t("settings.telemetry.telemetryLink"),
-								privacyLink: t("settings.telemetry.privacyLink"),
-							}}
 						/>
 					</p>
 				</div>

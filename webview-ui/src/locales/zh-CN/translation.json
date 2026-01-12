@@ -68,7 +68,7 @@
 		"telemetry": {
 			"checkbox": "允许错误和使用情况报告",
 			"tooltip": "此设置由您组织的远程配置管理",
-			"description": "通过发送使用数据和错误报告帮助改进 Parrot。从不发送代码、提示或个人隐私信息。详见我们的 {telemetryLink} 和 {privacyLink} 获取更多详情。",
+			"description": "通过发送使用数据和错误报告帮助改进 Parrot。从不发送代码、提示或个人隐私信息。详见我们的 <telemetryLink>遥测概览</telemetryLink> 和 <privacyLink>隐私政策</privacyLink> 获取更多详情。",
 			"telemetryLink": "遥测概览",
 			"privacyLink": "隐私政策"
 		},
@@ -76,6 +76,32 @@
 			"label": "API 提供商",
 			"remoteConfigTooltip": "提供商选项由您组织的远程配置管理",
 			"searchPlaceholder": "搜索并选择提供商..."
+		},
+		"apiConfig": {
+			"planMode": "计划模式",
+			"actMode": "执行模式",
+			"useDifferentModels": "为计划模式和执行模式使用不同的模型",
+			"useDifferentModelsDescription": "在计划模式和执行模式之间切换时，将保留先前模式使用的 API 和模型。这可能很有帮助，例如使用强大的推理模型来制定计划，然后让更便宜的编码模型来执行。"
+		},
+		"apiKeyField": {
+			"apiKeyLabel": "{{providerName}} API 密钥",
+			"defaultHelpText": "此密钥存储在本地，仅用于从此扩展程序发出 API 请求。",
+			"signupLink": "您可以在此处注册获取 {{providerName}} API 密钥。"
+		},
+		"about": {
+			"title": "Cline v{{version}}",
+			"description": "一个可以使用您的 CLI 和编辑器的 AI 助手。Cline 可以逐步处理复杂的软件开发任务，使用允许他创建和编辑文件、探索大型项目、使用浏览器以及执行终端命令的工具（在您授予权限后）。",
+			"communitySupport": "社区与支持",
+			"x": "X",
+			"discord": "Discord",
+			"reddit": "r/cline",
+			"development": "开发",
+			"github": "GitHub",
+			"issues": "问题",
+			"featureRequests": "功能请求",
+			"resources": "资源",
+			"documentation": "文档",
+			"website": "https://cline.bot"
 		},
 		"features": {
 			"subagents": {
@@ -103,6 +129,12 @@
 			"openaiReasoning": {
 				"title": "OpenAI 推理努力度",
 				"description": "OpenAI 系列模型的推理努力度（适用于所有 OpenAI 模型提供商）"
+			},
+			"openaiReasoningEffort": {
+				"minimal": "最小",
+				"low": "低",
+				"medium": "中",
+				"high": "高"
 			},
 			"strictPlanMode": {
 				"title": "启用严格计划模式",
@@ -626,6 +658,16 @@
 			"organizationManagesServers": "您的组织管理着一些 MCP 服务器",
 			"configureMcpServers": "配置 MCP 服务器",
 			"advancedMcpSettings": "高级 MCP 设置"
+		},
+		"displayMode": {
+			"plain": "纯文本",
+			"rich": "富格式显示",
+			"markdown": "Markdown"
+		},
+		"response": {
+			"title": "响应",
+			"errorTitle": "响应（错误）",
+			"errorParsing": "解析响应时出错："
 		}
 	},
 	"modelPicker": {

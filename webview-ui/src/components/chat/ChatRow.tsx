@@ -1921,7 +1921,7 @@ export const ChatRowContent = memo(
 							)
 						}
 					case "hook_status":
-						return <HookMessage CommandOutput={CommandOutput} message={message} />
+						return <HookMessage CommandOutput={CommandOutput} message={message} t={t} />
 					case "hook_output_stream":
 						// hook_output_stream messages are combined with hook_status messages, so we don't render them separately
 						return null
