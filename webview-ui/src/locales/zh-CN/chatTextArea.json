@@ -8,7 +8,7 @@
 			"modeToggle": {
 				"plan": "在计划模式中，Parrot 将收集信息以构建计划",
 				"act": "在执行模式中，Parrot 将立即完成任务",
-				"keyboardShortcut": "使用 {shortcut} 切换"
+				"keyboardShortcut": "使用 {{shortcut}} 切换"
 			}
 		}
 	}

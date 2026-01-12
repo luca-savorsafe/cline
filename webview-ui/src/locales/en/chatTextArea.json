@@ -8,7 +8,7 @@
 			"modeToggle": {
 				"plan": "In Plan mode, Parrot will gather info to build a plan",
 				"act": "In Act mode, Parrot will complete tasks immediately",
-				"keyboardShortcut": "Toggle with {shortcut}"
+				"keyboardShortcut": "Toggle with {{shortcut}}"
 			}
 		}
 	}

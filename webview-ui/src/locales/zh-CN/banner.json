@@ -2,7 +2,7 @@
 	"banner": {
 		"infoBanner": {
 			"title": "在右侧边栏中使用 Parrot",
-			"description": "为了获得最佳体验，请将 Parrot 图标拖到右侧边栏。这样可以在与 Parrot 聊天时保持文件资源管理器和编辑器可见，使您更容易导航代码库并实时查看更改。[查看如何操作 →](https://docs.cline.bot/features/customization/opening-cline-in-sidebar)"
+			"description": "为了获得最佳体验，请将 Parrot 图标拖到右侧边栏。这样可以在与 Parrot 聊天时保持文件资源管理器和编辑器可见，使您更容易导航代码库并实时查看更改。[查看如何操作 →](https://docs.parrot.bot/features/customization/opening-parrot-in-sidebar)"
 		},
 		"newModelOpus45": {
 			"title": "Claude Opus 4.5 现已可用",
@@ -14,7 +14,7 @@
 		},
 		"cliInstallUnix": {
 			"title": "CLI 和子代理可用",
-			"description": "在终端中使用 Parrot 并启用子代理功能。[了解更多](https://docs.cline.bot/cline-cli/overview)",
+			"description": "在终端中使用 Parrot 并启用子代理功能。[了解更多](https://docs.parrot.bot/parrot-cli/overview)",
 			"actions": {
 				"install": "安装",
 				"enableSubagents": "启用子代理"
@@ -22,7 +22,7 @@
 		},
 		"cliInfoWindows": {
 			"title": "Parrot CLI 信息",
-			"description": "适用于 macOS 和 Linux。即将支持其他平台。[了解更多](https://docs.cline.bot/cline-cli/overview)"
+			"description": "适用于 macOS 和 Linux。即将支持其他平台。[了解更多](https://docs.parrot.bot/parrot-cli/overview)"
 		}
 	}
 }

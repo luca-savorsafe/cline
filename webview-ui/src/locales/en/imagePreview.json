@@ -3,8 +3,8 @@
 		"errorTitle": "Error displaying this image",
 		"failedToLoadImage": "Failed to load image",
 		"clickToOpenInBrowser": "Click to open in browser",
-		"loadingImageFrom": "Loading image from {hostname}...",
-		"waitingForSeconds": "Waiting for {seconds}s...",
-		"waitingForMinutesSeconds": "Waiting for {minutes}m {seconds}s..."
+		"loadingImageFrom": "Loading image from {{hostname}}...",
+		"waitingForSeconds": "Waiting for {{seconds}}s...",
+		"waitingForMinutesSeconds": "Waiting for {{minutes}}m {{seconds}}s..."
 	}
 }

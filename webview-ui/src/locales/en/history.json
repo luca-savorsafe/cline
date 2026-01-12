@@ -17,7 +17,7 @@
 		"buttons": {
 			"selectAll": "Select All",
 			"selectNone": "Select None",
-			"deleteSelected": "Delete Selected {count} Items",
+			"deleteSelected": "Delete Selected {{count}} Items",
 			"deleteAll": "Delete All History"
 		},
 		"labels": {

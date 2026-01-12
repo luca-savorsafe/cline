@@ -70,19 +70,19 @@
 			"signupLink": "You can get a{{#if providerNameStartsWithVowel}}n{{/if}} {{providerName}} API key by signing up here."
 		},
 		"about": {
-			"title": "Cline v{{version}}",
-			"description": "An AI assistant that can use your CLI and Editor. Cline can handle complex software development tasks step-by-step with tools that let him create & edit files, explore large projects, use the browser, and execute terminal commands (after you grant permission).",
+			"title": "Parrot v{{version}}",
+			"description": "An AI assistant that can use your CLI and Editor. Parrot can handle complex software development tasks step-by-step with tools that let him create & edit files, explore large projects, use the browser, and execute terminal commands (after you grant permission).",
 			"communitySupport": "Community & Support",
 			"x": "X",
 			"discord": "Discord",
-			"reddit": "r/cline",
+			"reddit": "r/parrot",
 			"development": "Development",
 			"github": "GitHub",
 			"issues": "Issues",
 			"featureRequests": "Feature Requests",
 			"resources": "Resources",
 			"documentation": "Documentation",
-			"website": "https://cline.bot"
+			"website": "https://parrot.bot"
 		},
 		"features": {
 			"subagents": {

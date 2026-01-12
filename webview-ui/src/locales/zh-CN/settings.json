@@ -70,19 +70,19 @@
 			"signupLink": "您可以在此处注册获取 {{providerName}} API 密钥。"
 		},
 		"about": {
-			"title": "Cline v{{version}}",
-			"description": "一个可以使用您的 CLI 和编辑器的 AI 助手。Cline 可以逐步处理复杂的软件开发任务，使用允许他创建和编辑文件、探索大型项目、使用浏览器以及执行终端命令的工具（在您授予权限后）。",
+			"title": "Parrot v{{version}}",
+			"description": "一个可以使用您的 CLI 和编辑器的 AI 助手。Parrot 可以逐步处理复杂的软件开发任务，使用允许他创建和编辑文件、探索大型项目、使用浏览器以及执行终端命令的工具（在您授予权限后）。",
 			"communitySupport": "社区与支持",
 			"x": "X",
 			"discord": "Discord",
-			"reddit": "r/cline",
+			"reddit": "r/parrot",
 			"development": "开发",
 			"github": "GitHub",
 			"issues": "问题",
 			"featureRequests": "功能请求",
 			"resources": "资源",
 			"documentation": "文档",
-			"website": "https://cline.bot"
+			"website": "https://parrot.bot"
 		},
 		"features": {
 			"subagents": {

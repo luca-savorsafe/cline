@@ -1,9 +1,9 @@
 {
 	"modelPicker": {
-		"searchPlaceholder": "搜索 {count} 个模型",
+		"searchPlaceholder": "搜索 {{count}} 个模型",
 		"providerLabel": "提供商：",
 		"thinking": {
-			"label": "推理（{tokens} 令牌）",
+			"label": "推理（{{tokens}} 令牌）",
 			"notSupported": "此模型不支持推理",
 			"enabled": "扩展推理已启用",
 			"disabled": "启用扩展推理以增强推理能力"

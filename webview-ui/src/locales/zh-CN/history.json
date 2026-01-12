@@ -17,7 +17,7 @@
 		"buttons": {
 			"selectAll": "全选",
 			"selectNone": "全不选",
-			"deleteSelected": "删除选中的 {count} 项",
+			"deleteSelected": "删除选中的 {{count}} 项",
 			"deleteAll": "删除所有历史"
 		},
 		"labels": {

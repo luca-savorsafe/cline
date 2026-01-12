@@ -3,8 +3,8 @@
 		"errorTitle": "显示此图片时出错",
 		"failedToLoadImage": "加载图片失败",
 		"clickToOpenInBrowser": "点击在浏览器中打开",
-		"loadingImageFrom": "正在从 {hostname} 加载图片...",
-		"waitingForSeconds": "等待 {seconds} 秒...",
-		"waitingForMinutesSeconds": "等待 {minutes} 分 {seconds} 秒..."
+		"loadingImageFrom": "正在从 {{hostname}} 加载图片...",
+		"waitingForSeconds": "等待 {{seconds}} 秒...",
+		"waitingForMinutesSeconds": "等待 {{minutes}} 分 {{seconds}} 秒..."
 	}
 }

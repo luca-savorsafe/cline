@@ -1,9 +1,9 @@
 {
 	"modelPicker": {
-		"searchPlaceholder": "Search {count} models",
+		"searchPlaceholder": "Search {{count}} models",
 		"providerLabel": "Provider:",
 		"thinking": {
-			"label": "Reasoning ({tokens} tokens)",
+			"label": "Reasoning ({{tokens}} tokens)",
 			"notSupported": "Reasoning not supported for this model",
 			"enabled": "Extended reasoning enabled",
 			"disabled": "Enable extended reasoning for enhanced reasoning"
