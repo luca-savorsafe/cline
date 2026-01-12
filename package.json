@@ -1,7 +1,7 @@
 {
 	"name": "parrot-dev",
-	"displayName": "Parrot",
-	"description": "Autonomous coding agent right in your IDE, capable of creating/editing files, running commands, using the browser, and more with your permission every step of the way.",
+	"displayName": "%extension.displayName%",
+	"description": "%extension.description%",
 	"version": "3.49.0",
 	"icon": "assets/icons/icon.png",
 	"engines": {
@@ -49,7 +49,7 @@
 	"contributes": {
 		"icons": {
 			"cline-icon": {
-				"description": "parrot",
+				"description": "%icons.clineIcon.description%",
 				"default": {
 					"fontPath": "assets/icons/cline-bot.woff",
 					"fontCharacter": "\\e900"
@@ -59,45 +59,45 @@
 		"walkthroughs": [
 			{
 				"id": "ClineWalkthrough",
-				"title": "Meet Parrot, your new coding partner",
-				"description": "Parrot codes like a developer because it thinks like one. Here are 5 ways to put it to work:",
+				"title": "%walkthrough.title%",
+				"description": "%walkthrough.description%",
 				"steps": [
 					{
 						"id": "welcome",
-						"title": "Start with a Goal, Not Just a Prompt",
-						"description": "Tell Parrot what you want to achieve. It plans, asks, and then codes, like a true partner.",
+						"title": "%walkthrough.step1.title%",
+						"description": "%walkthrough.step1.description%",
 						"media": {
 							"markdown": "walkthrough/step1.md"
 						}
 					},
 					{
 						"id": "learn",
-						"title": "Let Parrot Learn Your Codebase",
-						"description": "Point Parrot to your project. It builds understanding to make smart, context-aware changes.",
+						"title": "%walkthrough.step2.title%",
+						"description": "%walkthrough.step2.description%",
 						"media": {
 							"markdown": "walkthrough/step2.md"
 						}
 					},
 					{
 						"id": "advanced-features",
-						"title": "Always Use the Best AI Models",
-						"description": "Cline empowers you with State-of-the-Art AI, connecting to top models (Anthropic, Gemini, OpenAI & more).",
+						"title": "%walkthrough.step3.title%",
+						"description": "%walkthrough.step3.description%",
 						"media": {
 							"markdown": "walkthrough/step3.md"
 						}
 					},
 					{
 						"id": "mcp",
-						"title": "Extend with Powerful Tools (MCP)",
-						"description": "Connect to databases, APIs, or discover new capabilities in the MCP Marketplace.",
+						"title": "%walkthrough.step4.title%",
+						"description": "%walkthrough.step4.description%",
 						"media": {
 							"markdown": "walkthrough/step4.md"
 						}
 					},
 					{
 						"id": "getting-started",
-						"title": "You're Always in Control",
-						"description": "Review Parrot's plans and diffs. Approve changes before they happen. No surprises.",
+						"title": "%walkthrough.step5.title%",
+						"description": "%walkthrough.step5.description%",
 						"media": {
 							"markdown": "walkthrough/step5.md"
 						},
@@ -112,7 +112,7 @@
 			"activitybar": [
 				{
 					"id": "parrot-dev-ActivityBar",
-					"title": "Parrot",
+					"title": "%views.activitybar.title%",
 					"icon": "assets/icons/icon.svg"
 				}
 			]
@@ -130,97 +130,97 @@
 		"commands": [
 			{
 				"command": "parrot.plusButtonClicked",
-				"title": "New Task",
+				"title": "%command.plusButtonClicked.title%",
 				"icon": "$(add)"
 			},
 			{
 				"command": "parrot.mcpButtonClicked",
-				"title": "MCP Servers",
+				"title": "%command.mcpButtonClicked.title%",
 				"icon": "$(server)"
 			},
 			{
 				"command": "parrot.historyButtonClicked",
-				"title": "History",
+				"title": "%command.historyButtonClicked.title%",
 				"icon": "$(history)"
 			},
 			{
 				"command": "parrot.accountButtonClicked",
-				"title": "Account",
+				"title": "%command.accountButtonClicked.title%",
 				"icon": "$(account)"
 			},
 			{
 				"command": "parrot.settingsButtonClicked",
-				"title": "Settings",
+				"title": "%command.settingsButtonClicked.title%",
 				"icon": "$(settings-gear)"
 			},
 			{
 				"command": "parrot.dev.createTestTasks",
-				"title": "Create Test Tasks",
+				"title": "%command.dev.createTestTasks.title%",
 				"category": "Cline",
 				"when": "parrot.isDevMode"
 			},
 			{
 				"command": "parrot.dev.expireMcpOAuthTokens",
-				"title": "Expire MCP OAuth Tokens (for testing)",
+				"title": "%command.dev.expireMcpOAuthTokens.title%",
 				"category": "Cline",
 				"when": "parrot.isDevMode"
 			},
 			{
 				"command": "parrot.addToChat",
-				"title": "Add to Parrot",
+				"title": "%command.addToChat.title%",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.addTerminalOutputToChat",
-				"title": "Add to Parrot",
+				"title": "%command.addTerminalOutputToChat.title%",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.focusChatInput",
-				"title": "Jump to Chat Input",
+				"title": "%command.focusChatInput.title%",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.generateGitCommitMessage",
-				"title": "Generate Commit Message with Parrot",
+				"title": "%command.generateGitCommitMessage.title%",
 				"category": "Cline",
 				"icon": "$(cline-icon)"
 			},
 			{
 				"command": "parrot.abortGitCommitMessage",
-				"title": "Generate Commit Message with Parrot - Stop",
+				"title": "%command.abortGitCommitMessage.title%",
 				"category": "Cline",
 				"icon": "$(debug-stop)"
 			},
 			{
 				"command": "parrot.explainCode",
-				"title": "Explain with Parrot",
+				"title": "%command.explainCode.title%",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.improveCode",
-				"title": "Improve with Parrot",
+				"title": "%command.improveCode.title%",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.openWalkthrough",
-				"title": "Open Walkthrough",
+				"title": "%command.openWalkthrough.title%",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.reconstructTaskHistory",
-				"title": "Reconstruct Task History",
+				"title": "%command.reconstructTaskHistory.title%",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.reviewComment.reply",
-				"title": "Reply",
+				"title": "%command.reviewComment.reply.title%",
 				"category": "Cline",
 				"enablement": "!commentIsEmpty"
 			},
 			{
 				"command": "parrot.reviewComment.addToChat",
-				"title": "Add to Parrot Chat",
+				"title": "%command.reviewComment.addToChat.title%",
 				"category": "Cline",
 				"icon": "$(link-external)"
 			}
@@ -335,7 +335,7 @@
 			]
 		},
 		"configuration": {
-			"title": "Cline",
+			"title": "%configuration.title%",
 			"properties": {}
 		}
 	},
@@ -510,6 +510,7 @@
 		"get-folder-size": "^5.0.0",
 		"globby": "^14.0.2",
 		"grpc-health-check": "^2.0.2",
+		"i18next": "^25.7.4",
 		"iconv-lite": "^0.6.3",
 		"ignore": "^7.0.3",
 		"image-size": "^2.0.2",

@@ -11,6 +11,7 @@ import { sendMcpButtonClickedEvent } from "./core/controller/ui/subscribeToMcpBu
 import { sendSettingsButtonClickedEvent } from "./core/controller/ui/subscribeToSettingsButtonClicked"
 import { WebviewProvider } from "./core/webview"
 import { createClineAPI } from "./exports"
+import { initializeI18n } from "./i18n"
 import { Logger } from "./services/logging/Logger"
 import { cleanupTestMode, initializeTestMode } from "./services/test/TestMode"
 import "./utils/path" // necessary to have access to String.prototype.toPosix
@@ -59,6 +60,9 @@ https://github.com/microsoft/vscode-webview-ui-toolkit-samples/tree/main/framewo
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export async function activate(context: vscode.ExtensionContext) {
+	// Initialize i18n for localization
+	await initializeI18n(context.globalState.get("language") as string | undefined)
+
 	setupHostProvider(context)
 
 	// Initialize hook discovery cache for performance optimization
