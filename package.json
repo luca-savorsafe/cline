@@ -14,9 +14,10 @@
 	"publisher": "Parrot",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/cline/cline"
+		"url": "https://github.com/parrot/parrot"
 	},
-	"homepage": "https://cline.bot",
+	"homepage": "https://parrot.bot",
+	"localization": "./i18n",
 	"categories": [
 		"AI",
 		"Chat",
@@ -27,6 +28,7 @@
 	],
 	"keywords": [
 		"cline",
+		"parrot",
 		"claude",
 		"dev",
 		"mcp",
@@ -48,7 +50,7 @@
 	"contributes": {
 		"icons": {
 			"cline-icon": {
-				"description": "cline",
+				"description": "parrot",
 				"default": {
 					"fontPath": "assets/icons/cline-bot.woff",
 					"fontCharacter": "\\e900"
@@ -58,21 +60,21 @@
 		"walkthroughs": [
 			{
 				"id": "ClineWalkthrough",
-				"title": "Meet Cline, your new coding partner",
-				"description": "Cline codes like a developer because it thinks like one. Here are 5 ways to put it to work:",
+				"title": "Meet Parrot, your new coding partner",
+				"description": "Parrot codes like a developer because it thinks like one. Here are 5 ways to put it to work:",
 				"steps": [
 					{
 						"id": "welcome",
 						"title": "Start with a Goal, Not Just a Prompt",
-						"description": "Tell Cline what you want to achieve. It plans, asks, and then codes, like a true partner.",
+						"description": "Tell Parrot what you want to achieve. It plans, asks, and then codes, like a true partner.",
 						"media": {
 							"markdown": "walkthrough/step1.md"
 						}
 					},
 					{
 						"id": "learn",
-						"title": "Let Cline Learn Your Codebase",
-						"description": "Point Cline to your project. It builds understanding to make smart, context-aware changes.",
+						"title": "Let Parrot Learn Your Codebase",
+						"description": "Point Parrot to your project. It builds understanding to make smart, context-aware changes.",
 						"media": {
 							"markdown": "walkthrough/step2.md"
 						}
@@ -96,7 +98,7 @@
 					{
 						"id": "getting-started",
 						"title": "You're Always in Control",
-						"description": "Review Cline's plans and diffs. Approve changes before they happen. No surprises.",
+						"description": "Review Parrot's plans and diffs. Approve changes before they happen. No surprises.",
 						"media": {
 							"markdown": "walkthrough/step5.md"
 						},
@@ -166,12 +168,12 @@
 			},
 			{
 				"command": "parrot.addToChat",
-				"title": "Add to Cline",
+				"title": "Add to Parrot",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.addTerminalOutputToChat",
-				"title": "Add to Cline",
+				"title": "Add to Parrot",
 				"category": "Cline"
 			},
 			{
@@ -181,24 +183,24 @@
 			},
 			{
 				"command": "parrot.generateGitCommitMessage",
-				"title": "Generate Commit Message with Cline",
+				"title": "Generate Commit Message with Parrot",
 				"category": "Cline",
 				"icon": "$(cline-icon)"
 			},
 			{
 				"command": "parrot.abortGitCommitMessage",
-				"title": "Generate Commit Message with Cline - Stop",
+				"title": "Generate Commit Message with Parrot - Stop",
 				"category": "Cline",
 				"icon": "$(debug-stop)"
 			},
 			{
 				"command": "parrot.explainCode",
-				"title": "Explain with Cline",
+				"title": "Explain with Parrot",
 				"category": "Cline"
 			},
 			{
 				"command": "parrot.improveCode",
-				"title": "Improve with Cline",
+				"title": "Improve with Parrot",
 				"category": "Cline"
 			},
 			{
@@ -219,7 +221,7 @@
 			},
 			{
 				"command": "parrot.reviewComment.addToChat",
-				"title": "Add to Cline Chat",
+				"title": "Add to Parrot Chat",
 				"category": "Cline",
 				"icon": "$(link-external)"
 			}

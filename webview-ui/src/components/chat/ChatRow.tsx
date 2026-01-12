@@ -523,6 +523,7 @@ export const ChatRowContent = memo(
 						apiReqCancelReason,
 						apiRequestFailedMessage,
 						retryStatus,
+						t,
 					})
 				case "followup":
 					return [

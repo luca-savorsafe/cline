@@ -508,7 +508,7 @@
 		"welcome": {
 			"description": "注册免费的 Parrot 账户，开始使用 AI 编程助手。",
 			"signUpButton": "免费注册",
-			"termsAndPrivacy": "注册即表示您同意我们的 {termsLink} 和 {privacyLink}。",
+			"termsAndPrivacy": "注册即表示您同意我们的 {{termsLink}} 和 {{privacyLink}}。",
 			"termsOfService": "服务条款",
 			"privacyPolicy": "隐私政策"
 		},

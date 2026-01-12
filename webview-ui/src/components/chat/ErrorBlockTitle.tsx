@@ -12,6 +12,7 @@ interface ErrorBlockTitleProps {
 		delaySec?: number
 		errorSnippet?: string
 	}
+	t: (key: string) => string
 }
 
 export const ErrorBlockTitle = ({
@@ -19,6 +20,7 @@ export const ErrorBlockTitle = ({
 	apiReqCancelReason,
 	apiRequestFailedMessage,
 	retryStatus,
+	t,
 }: ErrorBlockTitleProps): [React.ReactElement, React.ReactElement] => {
 	const getIconSpan = (iconName: string, colorClass: string) => (
 		<div className="w-4 h-4 flex items-center justify-center">
@@ -43,27 +45,29 @@ export const ErrorBlockTitle = ({
 
 	const title = (() => {
 		// Default loading state
-		const details = { title: "API Request...", classNames: ["font-bold"] }
+		const details = { title: t("chat.errorBlock.apiRequest"), classNames: ["font-bold"] }
 		// Handle cancellation states first
 		if (apiReqCancelReason === "user_cancelled") {
-			details.title = "API Request Cancelled"
+			details.title = t("chat.errorBlock.apiRequestCancelled")
 			details.classNames.push("text-(--vscode-foreground)")
 		} else if (apiReqCancelReason != null) {
-			details.title = "API Request Failed"
+			details.title = t("chat.errorBlock.apiRequestFailed")
 			details.classNames.push("text-(--vscode-errorForeground)")
 		} else if (cost != null) {
 			// Handle completed request
-			details.title = "API Request"
+			details.title = t("chat.errorBlock.apiRequest")
 			details.classNames.push("text-(--vscode-foreground)")
 		} else if (apiRequestFailedMessage) {
 			// Handle failed request
 			const clineError = ClineError.parse(apiRequestFailedMessage)
-			const titleText = clineError?.isErrorType(ClineErrorType.Balance) ? "Credit Limit Reached" : "API Request Failed"
+			const titleText = clineError?.isErrorType(ClineErrorType.Balance)
+				? t("chat.errorBlock.creditLimitReached")
+				: t("chat.errorBlock.apiRequestFailed")
 			details.title = titleText
 			details.classNames.push("font-bold text-(--vscode-errorForeground)")
 		} else if (retryStatus) {
 			// Handle retry state
-			details.title = "API Request"
+			details.title = t("chat.errorBlock.apiRequest")
 			details.classNames.push("text-(--vscode-foreground)")
 		}
 
