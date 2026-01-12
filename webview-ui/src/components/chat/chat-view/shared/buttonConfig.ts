@@ -28,22 +28,25 @@ export interface ButtonConfig {
 /**
  * Centralized button state configurations based on task lifecycle
  * This is the single source of truth for both button display and actions
+ *
+ * Note: primaryText and secondaryText fields use translation keys that will be translated
+ * in the frontend using the i18n system.
  */
 export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	// Error recovery states - user must take action
 	api_req_failed: {
 		sendingDisabled: true,
 		enableButtons: true,
-		primaryText: "Retry",
-		secondaryText: "Start New Task",
+		primaryText: "buttonConfig.apiReqFailed.primary",
+		secondaryText: "buttonConfig.apiReqFailed.secondary",
 		primaryAction: "retry",
 		secondaryAction: "new_task",
 	},
 	mistake_limit_reached: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Proceed Anyways",
-		secondaryText: "Start New Task",
+		primaryText: "buttonConfig.mistakeLimitReached.primary",
+		secondaryText: "buttonConfig.mistakeLimitReached.secondary",
 		primaryAction: "proceed",
 		secondaryAction: "new_task",
 	},
@@ -52,16 +55,16 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	tool_approve: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Approve",
-		secondaryText: "Reject",
+		primaryText: "buttonConfig.toolApprove.primary",
+		secondaryText: "buttonConfig.toolApprove.secondary",
 		primaryAction: "approve",
 		secondaryAction: "reject",
 	},
 	tool_save: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Save",
-		secondaryText: "Reject",
+		primaryText: "buttonConfig.toolSave.primary",
+		secondaryText: "buttonConfig.toolSave.secondary",
 		primaryAction: "approve",
 		secondaryAction: "reject",
 	},
@@ -70,15 +73,15 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	command: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Run Command",
-		secondaryText: "Reject",
+		primaryText: "buttonConfig.command.primary",
+		secondaryText: "buttonConfig.command.secondary",
 		primaryAction: "approve",
 		secondaryAction: "reject",
 	},
 	command_output: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Proceed While Running",
+		primaryText: "buttonConfig.commandOutput.primary",
 		secondaryText: undefined,
 		primaryAction: "proceed",
 		secondaryAction: undefined,
@@ -88,16 +91,16 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	browser_action_launch: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Approve",
-		secondaryText: "Reject",
+		primaryText: "buttonConfig.browserActionLaunch.primary",
+		secondaryText: "buttonConfig.browserActionLaunch.secondary",
 		primaryAction: "approve",
 		secondaryAction: "reject",
 	},
 	use_mcp_server: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Approve",
-		secondaryText: "Reject",
+		primaryText: "buttonConfig.useMcpServer.primary",
+		secondaryText: "buttonConfig.useMcpServer.secondary",
 		primaryAction: "approve",
 		secondaryAction: "reject",
 	},
@@ -122,7 +125,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	completion_result: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Start New Task",
+		primaryText: "buttonConfig.completionResult.primary",
 		secondaryText: undefined,
 		primaryAction: "new_task",
 		secondaryAction: undefined,
@@ -130,7 +133,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	resume_task: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Resume Task",
+		primaryText: "buttonConfig.resumeTask.primary",
 		secondaryText: undefined,
 		primaryAction: "proceed",
 		secondaryAction: undefined,
@@ -138,7 +141,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	resume_completed_task: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Start New Task",
+		primaryText: "buttonConfig.resumeCompletedTask.primary",
 		secondaryText: undefined,
 		primaryAction: "new_task",
 		secondaryAction: undefined,
@@ -146,7 +149,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	new_task: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Start New Task with Context",
+		primaryText: "buttonConfig.newTask.primary",
 		secondaryText: undefined,
 		primaryAction: "new_task",
 		secondaryAction: undefined,
@@ -156,7 +159,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	condense: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Condense Conversation",
+		primaryText: "buttonConfig.condense.primary",
 		secondaryText: undefined,
 		primaryAction: "utility",
 		secondaryAction: undefined,
@@ -164,7 +167,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 	report_bug: {
 		sendingDisabled: false,
 		enableButtons: true,
-		primaryText: "Report GitHub issue",
+		primaryText: "buttonConfig.reportBug.primary",
 		secondaryText: undefined,
 		primaryAction: "utility",
 		secondaryAction: undefined,
@@ -175,7 +178,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 		sendingDisabled: true,
 		enableButtons: true,
 		primaryText: undefined,
-		secondaryText: "Cancel",
+		secondaryText: "buttonConfig.partial.secondary",
 		primaryAction: undefined,
 		secondaryAction: "cancel",
 	},
@@ -193,7 +196,7 @@ export const BUTTON_CONFIGS: Record<string, ButtonConfig> = {
 		sendingDisabled: true,
 		enableButtons: true,
 		primaryText: undefined,
-		secondaryText: "Cancel",
+		secondaryText: "buttonConfig.apiReqActive.secondary",
 		primaryAction: undefined,
 		secondaryAction: "cancel",
 	},

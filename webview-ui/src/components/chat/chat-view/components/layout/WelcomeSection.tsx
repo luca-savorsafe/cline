@@ -1,6 +1,7 @@
 import { BANNER_DATA, BannerAction, BannerActionType, BannerCardData } from "@shared/cline/banner"
 import { EmptyRequest, Int64Request } from "@shared/proto/index.cline"
 import React, { useCallback, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import BannerCarousel from "@/components/common/BannerCarousel"
 import WhatsNewModal from "@/components/common/WhatsNewModal"
 import HistoryPreview from "@/components/history/HistoryPreview"
@@ -30,6 +31,7 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({
 	taskHistory,
 	shouldShowQuickWins,
 }) => {
+	const { t } = useTranslation()
 	const { lastDismissedInfoBannerVersion, lastDismissedCliBannerVersion, lastDismissedModelBannerVersion } = useExtensionState()
 
 	// Track if we've shown the "What's New" modal this session
@@ -172,12 +174,16 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({
 	const activeBanners = useMemo(() => {
 		// Convert to BannerData format for carousel
 		return bannerConfig.map((banner) =>
-			convertBannerData(banner, {
-				onAction: handleBannerAction,
-				onDismiss: handleBannerDismiss,
-			}),
+			convertBannerData(
+				banner,
+				{
+					onAction: handleBannerAction,
+					onDismiss: handleBannerDismiss,
+				},
+				t,
+			),
 		)
-	}, [bannerConfig, clineUser, subagentsEnabled, handleBannerAction, handleBannerDismiss])
+	}, [bannerConfig, clineUser, subagentsEnabled, handleBannerAction, handleBannerDismiss, t])
 
 	return (
 		<div className="flex flex-col flex-1 w-full h-full p-0 m-0">

@@ -24,25 +24,25 @@
 		"appearance": "Appearance",
 		"language": {
 			"title": "Preferred Language",
-			"description": "Language Cline will use for communication.",
+			"description": "The language that Parrot should use for communication.",
 			"english": "English",
-			"simplifiedChinese": "Simplified Chinese",
-			"traditionalChinese": "Traditional Chinese",
-			"japanese": "Japanese",
-			"korean": "Korean",
-			"spanish": "Spanish",
-			"german": "German",
-			"french": "French",
-			"arabic": "Arabic",
-			"portugueseBR": "Portuguese (Brazil)",
-			"czech": "Czech",
-			"hindi": "Hindi",
-			"hungarian": "Hungarian",
-			"italian": "Italian",
-			"polish": "Polish",
-			"portuguesePT": "Portuguese (Portugal)",
-			"russian": "Russian",
-			"turkish": "Turkish"
+			"simplifiedChinese": "Simplified Chinese - 简体中文",
+			"traditionalChinese": "Traditional Chinese - 繁體中文",
+			"japanese": "Japanese - 日本語",
+			"korean": "Korean - 한국어",
+			"spanish": "Spanish - Español",
+			"german": "German - Deutsch",
+			"french": "French - Français",
+			"arabic": "Arabic - العربية",
+			"portugueseBR": "Portuguese - Português (Brasil)",
+			"czech": "Czech - Čeština",
+			"hindi": "Hindi - हिन्दी",
+			"hungarian": "Hungarian - Magyar",
+			"italian": "Italian - Italiano",
+			"polish": "Polish - Polski",
+			"portuguesePT": "Portuguese - Português (Portugal)",
+			"russian": "Russian - Русский",
+			"turkish": "Turkish - Türkçe"
 		},
 		"tabs": {
 			"apiConfig": "API Configuration",
@@ -68,7 +68,7 @@
 		"telemetry": {
 			"checkbox": "Allow error and usage reporting",
 			"tooltip": "This setting is managed by your organization's remote configuration",
-			"description": "Help improve Cline by sending usage data and error reports. No code, prompts, or personal information are ever sent. See our {telemetryLink} and {privacyLink} for more details.",
+			"description": "Help improve Parrot by sending usage data and error reports. No code, prompts, or personal information are ever sent. See our {telemetryLink} and {privacyLink} for more details.",
 			"telemetryLink": "telemetry overview",
 			"privacyLink": "privacy policy"
 		},
@@ -81,16 +81,16 @@
 			"subagents": {
 				"title": "Subagents",
 				"newBadge": "New",
-				"cliRequired": "Subagents require Cline CLI. Install via:",
-				"installCommand": "npm install -g cline",
+				"cliRequired": "Subagents require Parrot CLI. Install via:",
+				"installCommand": "npm install -g parrot",
 				"thenRun": "then run",
-				"authCommand": "cline auth",
-				"authDescription": "to authenticate with Cline or configure API providers.",
+				"authCommand": "parrot auth",
+				"authDescription": "to authenticate with Parrot or configure API providers.",
 				"installButton": "Install Now",
 				"enabled": "Subagents Enabled",
 				"enable": "Enable Subagents",
 				"experimental": "Experimental:",
-				"description": "Allow Cline to spawn subprocesses to handle focused tasks, like exploring large codebases, keeping your main context clean."
+				"description": "Allow Parrot to spawn subprocesses to handle focused tasks, like exploring large codebases, keeping your main context clean."
 			},
 			"checkpoints": {
 				"title": "Enable Checkpoints",
@@ -112,11 +112,11 @@
 				"title": "Enable Focus Chain",
 				"description": "Enable enhanced task progress tracking and automatic focus chain list management during tasks.",
 				"reminderInterval": "Focus Chain Reminder Interval",
-				"reminderDescription": "Interval (in number of messages, 1-100) to remind Cline of its focus chain checklist. Lower values provide more frequent reminders."
+				"reminderDescription": "Interval (in number of messages, 1-100) to remind Parrot of its focus chain checklist. Lower values provide more frequent reminders."
 			},
 			"dictation": {
 				"title": "Enable Dictation",
-				"description": "Enable speech-to-text transcription using your Cline account. Uses the Avalon model from Aqua Voice, billed at $0.0065 credits per minute of processed audio. Up to 5 minutes per message."
+				"description": "Enable speech-to-text transcription using your Parrot account. Uses the Avalon model from Aqua Voice, billed at $0.0065 credits per minute of processed audio. Up to 5 minutes per message."
 			},
 			"autoCompact": {
 				"title": "Enable Auto-Compact",
@@ -124,8 +124,8 @@
 				"learnMore": "Learn More"
 			},
 			"webTools": {
-				"title": "Enable Cline Web Tools",
-				"description": "Enable web search and web fetch tools when using a Cline provider."
+				"title": "Enable Parrot Web Tools",
+				"description": "Enable web search and web fetch tools when using a Parrot provider."
 			},
 			"nativeToolCall": {
 				"title": "Enable Native Tool Calling",
@@ -141,7 +141,7 @@
 			},
 			"multiRootWorkspace": {
 				"title": "Enable Multi-Root Workspace",
-				"description": "Allow Cline to work across multiple workspaces."
+				"description": "Allow Parrot to work across multiple workspaces."
 			},
 			"hooks": {
 				"title": "Enable Hooks",
@@ -155,21 +155,21 @@
 			"yoloMode": {
 				"title": "Enable YOLO Mode",
 				"remoteConfigTooltip": "This setting is managed by your organization's remote config",
-				"warning": "Experimental & Dangerous: This mode disables safety checks and user confirmations. Cline will auto-approve all actions without asking. Use with extreme caution."
+				"warning": "Experimental & Dangerous: This mode disables safety checks and user confirmations. Parrot will auto-approve all actions without asking. Use with extreme caution."
 			}
 		}
 	},
 	"terminal": {
 		"settings": {
 			"defaultTerminalProfile": "Default Terminal Profile",
-			"defaultTerminalProfileDescription": "Select the default terminal Cline will use. 'Default' uses your VSCode global setting.",
+			"defaultTerminalProfileDescription": "Select the default terminal Parrot will use. 'Default' uses your VSCode global setting.",
 			"shellIntegrationTimeout": "Shell Integration Timeout (seconds)",
-			"shellIntegrationTimeoutDescription": "Set how long Cline will wait for shell integration to activate before executing a command. Increase if experiencing terminal connection timeouts.",
+			"shellIntegrationTimeoutDescription": "Set how long Parrot will wait for shell integration to activate before executing a command. Increase if experiencing terminal connection timeouts.",
 			"shellIntegrationTimeoutPlaceholder": "Enter timeout in seconds",
 			"enableAggressiveTerminalReuse": "Enable Aggressive Terminal Reuse",
-			"aggressiveTerminalReuseDescription": "When enabled, Cline will reuse existing terminal windows not in the current working directory. Disable if experiencing task lockups after terminal commands.",
+			"aggressiveTerminalReuseDescription": "When enabled, Parrot will reuse existing terminal windows not in the current working directory. Disable if experiencing task lockups after terminal commands.",
 			"terminalExecutionMode": "Terminal Execution Mode",
-			"terminalExecutionModeDescription": "Choose whether Cline runs commands in VS Code terminals or background processes.",
+			"terminalExecutionModeDescription": "Choose whether Parrot runs commands in VS Code terminals or background processes.",
 			"vscodeTerminal": "VS Code Terminal",
 			"backgroundExec": "Background Execution",
 			"havingTerminalIssues": "Having terminal issues?",
@@ -205,8 +205,8 @@
 			"workflowCommands": "Workflow Commands"
 		},
 		"browserSession": {
-			"clineUsingBrowser": "Cline is using the browser:",
-			"clineWantsToUseBrowser": "Cline wants to use the browser:",
+			"clineUsingBrowser": "Parrot is using the browser:",
+			"clineWantsToUseBrowser": "Parrot wants to use the browser:",
 			"consoleLogs": "Console Logs",
 			"noNewLogs": "(no new logs)",
 			"stepOf": "Step {current} of {total}",
@@ -249,14 +249,14 @@
 		},
 		"chatRow": {
 			"error": "Error",
-			"clineHavingTrouble": "Cline is having trouble...",
-			"executeCommand": "Cline wants to execute this command:",
+			"clineHavingTrouble": "Parrot is having trouble...",
+			"executeCommand": "Parrot wants to execute this command:",
 			"useMcpTool": "Use tool",
 			"useMcpResource": "Access resource",
 			"mcpServer": "MCP Server",
 			"taskCompleted": "Task Completed",
-			"clineHasQuestion": "Cline has a question:",
-			"condensingConversation": "Cline is condensing conversation:",
+			"clineHasQuestion": "Parrot has a question:",
+			"condensingConversation": "Parrot is condensing conversation:",
 			"summary": "Summary:",
 			"thinking": "Thinking:",
 			"viewChanges": "View Changes",
@@ -276,30 +276,30 @@
 			"explanationCancelled": "Explanation cancelled",
 			"generatedExplanation": "Generated explanation",
 			"shellIntegrationUnavailable": "Shell Integration Unavailable",
-			"shellIntegrationDescription": "Cline may not see command outputs. Please update VSCode ({updateLink}) and ensure you're using a supported shell: zsh, bash, fish, or PowerShell ({selectProfileLink}). {troubleshootLink}",
+			"shellIntegrationDescription": "Parrot may not see command outputs. Please update VSCode ({updateLink}) and ensure you're using a supported shell: zsh, bash, fish, or PowerShell ({selectProfileLink}). {troubleshootLink}",
 			"autoRetryFailed": "Auto-retry failed",
 			"autoRetryInProgress": "Auto-retry in progress",
 			"autoRetryFailedDescription": "Failed after {maxAttempts} auto-retry attempts. Manual intervention required.",
 			"autoRetryDescription": "Attempt {attempt} of {maxAttempts} - Retrying in {delaySeconds} seconds...",
 			"loadingMcpDocumentation": "Loading MCP documentation...",
-			"startNewTask": "Cline wants to start a new task:",
-			"condenseConversation": "Cline wants to condense conversation:",
-			"createGithubIssue": "Cline wants to create a GitHub issue:",
-			"useSubagent": "Cline wants to use a subagent:",
+			"startNewTask": "Parrot wants to start a new task:",
+			"condenseConversation": "Parrot wants to condense conversation:",
+			"createGithubIssue": "Parrot wants to create a GitHub issue:",
+			"useSubagent": "Parrot wants to use a subagent:",
 			"prompt": "Prompt:",
 			"mcpNotification": "MCP Notification:",
 			"shellIntegrationIssues": "Shell Integration Issues",
 			"shellIntegrationRecommendation": "Since you're experiencing repeated shell integration issues, we recommend switching to background terminal mode for improved reliability.",
 			"enableBackgroundTerminal": "Enable Background Terminal (Recommended)",
 			"backgroundTerminalEnabled": "Background Terminal Enabled",
-			"newTask": "Cline wants to start a new task:",
-			"condense": "Cline wants to condense conversation:",
-			"reportBug": "Cline wants to create a GitHub issue:",
+			"newTask": "Parrot wants to start a new task:",
+			"condense": "Parrot wants to condense conversation:",
+			"reportBug": "Parrot wants to create a GitHub issue:",
 			"outputLoggedTo": "📋 Output is being logged to:",
 			"subagentOutput": "Subagent Output",
 			"commandOutput": "Command Output",
 			"commandRunningInTerminal": "This command is running in the VSCode terminal. You can manually stop it using Ctrl+C in the terminal, or switch to Background Execution mode in settings for cancellable commands.",
-			"wantsTo": "Cline wants to",
+			"wantsTo": "Parrot wants to",
 			"onThe": "on the",
 			"collapseApiRequest": "Collapse API request",
 			"expandApiRequest": "Expand API request",
@@ -308,25 +308,25 @@
 			"collapseSummary": "Collapse summary",
 			"expandSummary": "Expand summary",
 			"tool": {
-				"editFile": "Cline wants to edit this file:",
-				"deleteFile": "Cline wants to delete this file:",
-				"createFile": "Cline wants to create a new file:",
-				"readFile": "Cline wants to read this file:",
-				"listFilesTopLevel": "Cline wants to view the top level files in this directory:",
-				"listFilesRecursive": "Cline wants to recursively view all files in this directory:",
-				"listCodeDefinitions": "Cline wants to view source code definition names used in this directory:",
-				"searchFiles": "Cline wants to search this directory for {regex}:",
-				"webFetch": "Cline wants to fetch content from this URL:",
-				"webSearch": "Cline wants to search the web for:",
-				"creatingPatches": "Cline is creating patches to edit this file:",
+				"editFile": "Parrot wants to edit this file:",
+				"deleteFile": "Parrot wants to delete this file:",
+				"createFile": "Parrot wants to create a new file:",
+				"readFile": "Parrot wants to read this file:",
+				"listFilesTopLevel": "Parrot wants to view the top level files in this directory:",
+				"listFilesRecursive": "Parrot wants to recursively view all files in this directory:",
+				"listCodeDefinitions": "Parrot wants to view source code definition names used in this directory:",
+				"searchFiles": "Parrot wants to search this directory for {regex}:",
+				"webFetch": "Parrot wants to fetch content from this URL:",
+				"webSearch": "Parrot wants to search the web for:",
+				"creatingPatches": "Parrot is creating patches to edit this file:",
 				"outsideWorkspace": "This is outside of your workspace",
-				"viewedTopLevelFiles": "Cline viewed the top level files in this directory:",
-				"viewedAllFiles": "Cline recursively viewed all files in this directory:",
-				"viewedCodeDefinitions": "Cline viewed source code definition names used in this directory:",
-				"condensingConversation": "Cline is condensing the conversation:",
-				"fetchedContentFromUrl": "Cline fetched content from this URL:",
-				"wantsToSearchWeb": "Cline wants to search the web for:",
-				"searchedWeb": "Cline searched the web for:"
+				"viewedTopLevelFiles": "Parrot viewed the top level files in this directory:",
+				"viewedAllFiles": "Parrot recursively viewed all files in this directory:",
+				"viewedCodeDefinitions": "Parrot viewed source code definition names used in this directory:",
+				"condensingConversation": "Parrot is condensing the conversation:",
+				"fetchedContentFromUrl": "Parrot fetched content from this URL:",
+				"wantsToSearchWeb": "Parrot wants to search the web for:",
+				"searchedWeb": "Parrot searched the web for:"
 			}
 		},
 		"reportBug": {
@@ -337,7 +337,7 @@
 			"providerAndModel": "Provider/Model",
 			"operatingSystem": "Operating System",
 			"systemInfo": "System Information",
-			"clineVersion": "Cline Version",
+			"clineVersion": "Parrot Version",
 			"additionalContext": "Additional Context"
 		},
 		"quoteButton": {
@@ -372,12 +372,42 @@
 		"nextBanner": "Next banner",
 		"dismissAllBanners": "Dismiss all banners"
 	},
+	"banner": {
+		"infoBanner": {
+			"title": "Use Parrot in Right Sidebar",
+			"description": "For the best experience, drag the Parrot icon to your right sidebar. This keeps your file explorer and editor visible while you chat with Parrot, making it easier to navigate your codebase and see changes in real-time. [See how →](https://docs.cline.bot/features/customization/opening-cline-in-sidebar)"
+		},
+		"newModelOpus45": {
+			"title": "Claude Opus 4.5 Now Available",
+			"description": "State-of-the-art performance at 3x lower cost than Opus 4.1. Available now in the Parrot provider.",
+			"actions": {
+				"tryNow": "Try Now",
+				"getStarted": "Get Started"
+			}
+		},
+		"cliInstallUnix": {
+			"title": "CLI & Subagents Available",
+			"description": "Use Parrot in your terminal and enable subagent capabilities. [Learn more](https://docs.cline.bot/cline-cli/overview)",
+			"actions": {
+				"install": "Install",
+				"enableSubagents": "Enable Subagents"
+			}
+		},
+		"cliInfoWindows": {
+			"title": "Parrot CLI Info",
+			"description": "Available for macOS and Linux. Coming soon to other platforms. [Learn more](https://docs.cline.bot/cline-cli/overview)"
+		}
+	},
 	"taskHeader": {
 		"buttons": {
 			"compactTask": "Compact Task",
 			"copyText": "Copy Text",
 			"startNewTask": "Start New Task",
 			"openConversationHistory": "Open Conversation History File"
+		},
+		"deleteTaskButton": {
+			"tooltip": "Delete Task (size: {{size}})",
+			"ariaLabel": "Delete Task"
 		},
 		"contextWindow": {
 			"compactTaskQuestion": "Compact this task to reduce context window usage?",
@@ -413,7 +443,8 @@
 		},
 		"checkpointError": {
 			"disableCheckpoints": "Disable Checkpoints",
-			"seeInstructions": "See instructions"
+			"seeInstructions": "See instructions",
+			"gitMustBeInstalled": "Git must be installed to use checkpoints."
 		}
 	},
 	"navigation": {
@@ -427,7 +458,7 @@
 		"settings": "Settings"
 	},
 	"welcome": {
-		"title": "Welcome to Cline",
+		"title": "Welcome to Parrot",
 		"subtitle": "Your AI Programming Assistant",
 		"getStarted": "Get Started Free",
 		"quickStart": "Quick Start",
@@ -449,7 +480,7 @@
 			"takeTour": "Take the Tour"
 		},
 		"suggestedTasks": {
-			"title": "Quick <span class=\"text-white\">[Wins]</span> with Cline",
+			"title": "Quick <span class=\"text-white\">[Wins]</span> with Parrot",
 			"nextjsNotetakingApp": {
 				"title": "Build a Next.js App",
 				"description": "Create a beautiful note-taking app with Next.js and Tailwind"
@@ -470,12 +501,12 @@
 		"personal": "Personal",
 		"dashboard": "Dashboard",
 		"logout": "Logout",
-		"clineEnvironment": "Cline Environment",
+		"clineEnvironment": "Parrot Environment",
 		"tooltips": {
 			"lockedOrganization": "Cannot be changed while your organization has remote config enabled."
 		},
 		"welcome": {
-			"description": "Sign up for a free Cline account to get started with an AI programming assistant.",
+			"description": "Sign up for a free Parrot account to get started with an AI programming assistant.",
 			"signUpButton": "Sign Up Free",
 			"termsAndPrivacy": "By signing up you agree to our {termsLink} and {privacyLink}.",
 			"termsOfService": "Terms of Service",
@@ -483,7 +514,7 @@
 		},
 		"accountInfoCard": {
 			"viewBillingUsage": "View Billing & Usage",
-			"signUpWithCline": "Sign Up with Cline"
+			"signUpWithCline": "Sign Up with Parrot"
 		},
 		"creditBalance": {
 			"addCredits": "Add Credits",
@@ -588,7 +619,7 @@
 			}
 		},
 		"configureServers": {
-			"description": "The Model Context Protocol enables communication with locally running MCP servers that provide additional tools and resources to extend Cline's capabilities. You can use community-made servers or ask Cline to create new tools specialized for your workflows (e.g., \"Add a tool to fetch the latest npm docs\").",
+			"description": "The Model Context Protocol enables communication with locally running MCP servers that provide additional tools and resources to extend Parrot's capabilities. You can use community-made servers or ask Parrot to create new tools specialized for your workflows (e.g., \"Add a tool to fetch the latest npm docs\").",
 			"modelContextProtocol": "Model Context Protocol",
 			"communityMadeServers": "Community-Made Servers",
 			"seeDemoHere": "See a demo here.",
@@ -630,8 +661,8 @@
 			"addFilesImages": "Add Files & Images",
 			"selectModel": "Select Model / API Provider",
 			"modeToggle": {
-				"plan": "In Plan mode, Cline will gather info to build a plan",
-				"act": "In Act mode, Cline will complete tasks immediately",
+				"plan": "In Plan mode, Parrot will gather info to build a plan",
+				"act": "In Act mode, Parrot will complete tasks immediately",
 				"keyboardShortcut": "Toggle with {shortcut}"
 			}
 		}
@@ -643,12 +674,12 @@
 			"troubleshootingGuide": "troubleshooting guide"
 		},
 		"signIn": {
-			"button": "Sign in to Cline",
+			"button": "Sign in to Parrot",
 			"retryHint": "(click 'Retry' below)"
 		},
 		"diffError": "The search pattern used by the model didn't match anything in the file. Retrying...",
 		"clineignoreError": {
-			"message": "Cline tried to access",
+			"message": "Parrot tried to access",
 			"blockedBy": "but was blocked by",
 			"file": "file"
 		}
@@ -667,7 +698,7 @@
 		},
 		"settings": {
 			"disableToolUse": "Disable Browser Tool Use",
-			"disableToolUseDescription": "Prevent Cline from using browser actions (e.g., launch, click, type).",
+			"disableToolUseDescription": "Prevent Parrot from using browser actions (e.g., launch, click, type).",
 			"viewportSize": "Viewport Size",
 			"viewportSizeDescription": "Set the size of the browser viewport, used for screenshots and interaction.",
 			"useRemoteConnection": "Use Remote Browser Connection",
@@ -677,7 +708,7 @@
 			"leaveBlankAutoDetect": "Leave blank for auto-detection.",
 			"customBrowserArgs": "Custom Browser Arguments (optional)",
 			"customBrowserArgsDescription": "Space-separated arguments passed to the browser executable.",
-			"enableClineToUseChrome": "Enable Cline to use your Chrome",
+			"enableClineToUseChrome": "Enable Parrot to use your Chrome",
 			"chromeNotDetected": "(not detected on your machine)",
 			"specifyCustomPath": "You can specify a custom path below.",
 			"remoteConnectionRequiresDebugMode": "Using remote browser connection requires launching Chrome in debug mode",
@@ -696,7 +727,7 @@
 			"openSettings": "Open Auto-Approve Settings"
 		},
 		"modal": {
-			"description": "Let Cline execute these actions without asking for approval",
+			"description": "Let Parrot execute these actions without asking for approval",
 			"docs": "Documentation",
 			"enableNotifications": "Enable Notifications"
 		},
@@ -736,7 +767,7 @@
 		}
 	},
 	"clineRules": {
-		"title": "Manage Cline Rules & Workflows",
+		"title": "Manage Parrot Rules & Workflows",
 		"tabs": {
 			"rules": "Rules",
 			"workflows": "Workflows",
@@ -755,10 +786,10 @@
 			"workspaceSkills": "Workspace Skills"
 		},
 		"descriptions": {
-			"rules": "Rules let you give Cline system-level guidance. Think of it as a persistent way to include context and preferences for your project or globally per conversation.",
-			"workflows": "Workflows let you define a sequence of steps to guide Cline through a sequence of repeatable tasks, like deploying a service or committing a PR. To invoke a workflow in chat, type /workflow-name.",
-			"skills": "Skills are reusable sets of instructions Cline can activate on demand. When a task matches a skill's description, Cline uses the use_skill tool to load the full instructions.",
-			"hooks": "Hooks allow you to execute custom scripts at specific points in Cline's execution lifecycle, enabling automation and integration with external tools.",
+			"rules": "Rules let you give Parrot system-level guidance. Think of it as a persistent way to include context and preferences for your project or globally per conversation.",
+			"workflows": "Workflows let you define a sequence of steps to guide Parrot through a sequence of repeatable tasks, like deploying a service or committing a PR. To invoke a workflow in chat, type /workflow-name.",
+			"skills": "Skills are reusable sets of instructions Parrot can activate on demand. When a task matches a skill's description, Parrot uses the use_skill tool to load the full instructions.",
+			"hooks": "Hooks allow you to execute custom scripts at specific points in Parrot's execution lifecycle, enabling automation and integration with external tools.",
 			"hooksToggle": "Toggle to enable/disable (chmod +x/-x)."
 		},
 		"remoteConfig": {
@@ -836,9 +867,9 @@
 		"signUpWithParrot": "Sign Up with Parrot"
 	},
 	"telemetryBanner": {
-		"title": "Help Improve Cline",
+		"title": "Help Improve Parrot",
 		"experimentalFeatures": "(and access experimental features)",
-		"description": "Cline collects errors and usage data to help us fix bugs and improve the extension. Never sends code, prompts, or personal private information.",
+		"description": "Parrot collects errors and usage data to help us fix bugs and improve the extension. Never sends code, prompts, or personal private information.",
 		"turnOffSetting": "You can turn this off in",
 		"settings": "Settings",
 		"closeButton": {
@@ -884,7 +915,7 @@
 	},
 	"newRuleRow": {
 		"selectHookTypeToCreate": "Select Hook Type to Create",
-		"hookSelectDescription": "Select the type of hook to create. Hooks execute at specific points in Cline's lifecycle. Available: {{availableHooks}}",
+		"hookSelectDescription": "Select the type of hook to create. Hooks execute at specific points in Parrot's lifecycle. Available: {{availableHooks}}",
 		"allHooksCreated": "All hooks created",
 		"newHook": "New Hook...",
 		"workflowNamePlaceholder": "Workflow Name (.md, .txt, or no extension)",
@@ -898,5 +929,62 @@
 		"newFile": "New File",
 		"skillNameValidationError": "Skill name can only contain letters, numbers, hyphens, and underscores",
 		"fileExtensionValidationError": "Only .md, .txt, or no file extension allowed"
+	},
+	"buttonConfig": {
+		"apiReqFailed": {
+			"primary": "Retry",
+			"secondary": "Start New Task"
+		},
+		"mistakeLimitReached": {
+			"primary": "Proceed Anyways",
+			"secondary": "Start New Task"
+		},
+		"toolApprove": {
+			"primary": "Approve",
+			"secondary": "Reject"
+		},
+		"toolSave": {
+			"primary": "Save",
+			"secondary": "Reject"
+		},
+		"command": {
+			"primary": "Run Command",
+			"secondary": "Reject"
+		},
+		"commandOutput": {
+			"primary": "Proceed While Running"
+		},
+		"browserActionLaunch": {
+			"primary": "Approve",
+			"secondary": "Reject"
+		},
+		"useMcpServer": {
+			"primary": "Approve",
+			"secondary": "Reject"
+		},
+		"completionResult": {
+			"primary": "Start New Task"
+		},
+		"resumeTask": {
+			"primary": "Resume Task"
+		},
+		"resumeCompletedTask": {
+			"primary": "Start New Task"
+		},
+		"newTask": {
+			"primary": "Start New Task with Context"
+		},
+		"condense": {
+			"primary": "Condense Conversation"
+		},
+		"reportBug": {
+			"primary": "Report GitHub issue"
+		},
+		"partial": {
+			"secondary": "Cancel"
+		},
+		"apiReqActive": {
+			"secondary": "Cancel"
+		}
 	}
 }

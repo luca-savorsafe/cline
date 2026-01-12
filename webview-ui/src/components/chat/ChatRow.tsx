@@ -10,7 +10,7 @@ import {
 	COMPLETION_RESULT_CHANGES_FLAG,
 } from "@shared/ExtensionMessage"
 import { BooleanRequest, Int64Request, StringRequest } from "@shared/proto/cline/common"
-import { VSCodeBadge, VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react"
+import { VSCodeProgressRing } from "@vscode/webview-ui-toolkit/react"
 import deepEqual from "fast-deep-equal"
 import { FoldVerticalIcon } from "lucide-react"
 import React, { MouseEvent, memo, useCallback, useEffect, useMemo, useRef, useState } from "react"
@@ -19,7 +19,6 @@ import { useSize } from "react-use"
 import styled from "styled-components"
 import { OptionsButtons } from "@/components/chat/OptionsButtons"
 import TaskFeedbackButtons from "@/components/chat/TaskFeedbackButtons"
-import { CheckmarkControl } from "@/components/common/CheckmarkControl"
 import { CheckpointControls } from "@/components/common/CheckpointControls"
 import CodeBlock, {
 	CHAT_ROW_EXPANDED_BG_COLOR,
@@ -34,7 +33,6 @@ import McpResourceRow from "@/components/mcp/configuration/tabs/installed/server
 import McpToolRow from "@/components/mcp/configuration/tabs/installed/server-row/McpToolRow"
 import { PLATFORM_CONFIG, PlatformType } from "@/config/platform.config"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { cn } from "@/lib/utils"
 import { FileServiceClient, TaskServiceClient, UiServiceClient } from "@/services/grpc-client"
 import { findMatchingResourceOrTemplate, getMcpServerDisplayName } from "@/utils/mcp"
 import CodeAccordian, { cleanPathPrefix } from "../common/CodeAccordian"
@@ -1417,17 +1415,6 @@ export const ChatRowContent = memo(
 										}}>
 										{icon}
 										{title}
-										{/* Need to render this every time since it affects height of row by 2px */}
-										<VSCodeBadge
-											className={cn("text-sm", {
-												"opacity-100": cost != null && cost > 0,
-												"opacity-0": cost == null || cost <= 0,
-											})}
-											style={{
-												opacity: cost != null && cost > 0 ? 1 : 0,
-											}}>
-											{cost != null && Number(cost || 0) > 0 ? `$${Number(cost || 0).toFixed(4)}` : ""}
-										</VSCodeBadge>
 									</div>
 									<span className={`codicon codicon-chevron-${isExpanded ? "up" : "down"}`}></span>
 								</div>
@@ -1595,38 +1582,27 @@ export const ChatRowContent = memo(
 						return (
 							<div
 								style={{
-									marginTop: -10,
-									width: "100%",
-								}}>
-								<CodeAccordian
-									diff={tool.diff!}
-									isExpanded={isExpanded}
-									isFeedback={true}
-									onToggleExpand={handleToggle}
-								/>
-							</div>
-						)
-					case "error":
-						return <ErrorRow errorType="error" message={message} />
-					case "diff_error":
-						return <ErrorRow errorType="diff_error" message={message} />
-					case "clineignore_error":
-						return <ErrorRow errorType="clineignore_error" message={message} />
-					case "checkpoint_created":
-						return <CheckmarkControl isCheckpointCheckedOut={message.isCheckpointCheckedOut} messageTs={message.ts} />
-					case "load_mcp_documentation":
-						return (
-							<div
-								style={{
-									display: "flex",
-									alignItems: "center",
-									color: "var(--vscode-foreground)",
-									opacity: 0.7,
-									fontSize: 12,
-									padding: "4px 0",
-								}}>
-								<i className="codicon codicon-book" style={{ marginRight: 6 }} />
-								{t("chat.chatRow.loadingMcpDocumentation")}
+									...headerStyle,
+									marginBottom:
+										(cost == null && apiRequestFailedMessage) || apiReqStreamingFailedMessage ? 10 : 0,
+									justifyContent: "space-between",
+									cursor: "pointer",
+									userSelect: "none",
+									WebkitUserSelect: "none",
+									MozUserSelect: "none",
+									msUserSelect: "none",
+								}}
+								tabIndex={0}>
+								<div
+									style={{
+										display: "flex",
+										alignItems: "center",
+										gap: "10px",
+									}}>
+									{icon}
+									{title}
+								</div>
+								<span className={`codicon codicon-chevron-${isExpanded ? "up" : "down"}`}></span>
 							</div>
 						)
 					case "generate_explanation": {

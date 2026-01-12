@@ -24,7 +24,7 @@
 		"appearance": "外观",
 		"language": {
 			"title": "首选语言",
-			"description": "Cline 用于通信的语言。",
+			"description": "Parrot 用于通信的语言。",
 			"english": "英语",
 			"simplifiedChinese": "简体中文",
 			"traditionalChinese": "繁体中文",
@@ -68,7 +68,7 @@
 		"telemetry": {
 			"checkbox": "允许错误和使用情况报告",
 			"tooltip": "此设置由您组织的远程配置管理",
-			"description": "通过发送使用数据和错误报告帮助改进 Cline。从不发送代码、提示或个人隐私信息。详见我们的 {telemetryLink} 和 {privacyLink} 获取更多详情。",
+			"description": "通过发送使用数据和错误报告帮助改进 Parrot。从不发送代码、提示或个人隐私信息。详见我们的 {telemetryLink} 和 {privacyLink} 获取更多详情。",
 			"telemetryLink": "遥测概览",
 			"privacyLink": "隐私政策"
 		},
@@ -81,16 +81,16 @@
 			"subagents": {
 				"title": "子代理",
 				"newBadge": "新",
-				"cliRequired": "子代理需要 Cline CLI。通过以下命令安装：",
-				"installCommand": "npm install -g cline",
+				"cliRequired": "子代理需要 Parrot CLI。通过以下命令安装：",
+				"installCommand": "npm install -g parrot",
 				"thenRun": "然后运行",
-				"authCommand": "cline auth",
-				"authDescription": "用于与 Cline 认证或配置 API 提供商。",
+				"authCommand": "parrot auth",
+				"authDescription": "用于与 Parrot 认证或配置 API 提供商。",
 				"installButton": "立即安装",
 				"enabled": "子代理已启用",
 				"enable": "启用子代理",
 				"experimental": "实验性：",
-				"description": "允许 Cline 生成子进程来处理聚焦任务，例如探索大型代码库，保持您的主上下文清洁。"
+				"description": "允许 Parrot 生成子进程来处理聚焦任务，例如探索大型代码库，保持您的主上下文清洁。"
 			},
 			"checkpoints": {
 				"title": "启用检查点",
@@ -112,11 +112,11 @@
 				"title": "启用焦点链",
 				"description": "启用增强的任务进度跟踪和任务过程中自动的焦点链列表管理。",
 				"reminderInterval": "焦点链提醒间隔",
-				"reminderDescription": "提醒 Cline 其焦点链检查清单的间隔（以消息数为单位，1-100）。较低的值提供更频繁的提醒。"
+				"reminderDescription": "提醒 Parrot 其焦点链检查清单的间隔（以消息数为单位，1-100）。较低的值提供更频繁的提醒。"
 			},
 			"dictation": {
 				"title": "启用听写",
-				"description": "使用您的 Cline 帐户启用语音转文本转录。使用 Aqua Voice 的 Avalon 模型，每分钟处理的音频收费 $0.0065 积分。每条消息最长 5 分钟。"
+				"description": "使用您的 Parrot 帐户启用语音转文本转录。使用 Aqua Voice 的 Avalon 模型，每分钟处理的音频收费 $0.0065 积分。每条消息最长 5 分钟。"
 			},
 			"autoCompact": {
 				"title": "启用自动压缩",
@@ -124,8 +124,8 @@
 				"learnMore": "了解更多"
 			},
 			"webTools": {
-				"title": "启用 Cline 网页工具",
-				"description": "在使用 Cline 提供商时启用网页搜索和网页获取工具。"
+				"title": "启用 Parrot 网页工具",
+				"description": "在使用 Parrot 提供商时启用网页搜索和网页获取工具。"
 			},
 			"nativeToolCall": {
 				"title": "启用原生工具调用",
@@ -141,7 +141,7 @@
 			},
 			"multiRootWorkspace": {
 				"title": "启用多根工作空间",
-				"description": "允许 cline 跨多个工作空间工作。"
+				"description": "允许 parrot 跨多个工作空间工作。"
 			},
 			"hooks": {
 				"title": "启用钩子",
@@ -155,21 +155,21 @@
 			"yoloMode": {
 				"title": "启用 YOLO 模式",
 				"remoteConfigTooltip": "此设置由您组织的远程配置管理",
-				"warning": "实验性且危险：此模式禁用安全检查和使用者确认。Cline 将自动批准所有操作而不询问。请极度谨慎使用。"
+				"warning": "实验性且危险：此模式禁用安全检查和使用者确认。Parrot 将自动批准所有操作而不询问。请极度谨慎使用。"
 			}
 		}
 	},
 	"terminal": {
 		"settings": {
 			"defaultTerminalProfile": "默认终端配置文件",
-			"defaultTerminalProfileDescription": "选择 Cline 将使用的默认终端。'默认' 使用您的 VSCode 全局设置。",
+			"defaultTerminalProfileDescription": "选择 Parrot 将使用的默认终端。'默认' 使用您的 VSCode 全局设置。",
 			"shellIntegrationTimeout": "Shell 集成超时（秒）",
-			"shellIntegrationTimeoutDescription": "设置 Cline 在执行命令前等待 Shell 集成激活的时间。如果遇到终端连接超时，请增加此值。",
+			"shellIntegrationTimeoutDescription": "设置 Parrot 在执行命令前等待 Shell 集成激活的时间。如果遇到终端连接超时，请增加此值。",
 			"shellIntegrationTimeoutPlaceholder": "输入超时时间（秒）",
 			"enableAggressiveTerminalReuse": "启用积极的终端重用",
-			"aggressiveTerminalReuseDescription": "启用后，Cline 将重用未在当前工作目录中的现有终端窗口。如果在终端命令后遇到任务锁定问题，请禁用此选项。",
+			"aggressiveTerminalReuseDescription": "启用后，Parrot 将重用未在当前工作目录中的现有终端窗口。如果在终端命令后遇到任务锁定问题，请禁用此选项。",
 			"terminalExecutionMode": "终端执行模式",
-			"terminalExecutionModeDescription": "选择 Cline 是在 VS Code 终端还是后台进程中运行命令。",
+			"terminalExecutionModeDescription": "选择 Parrot 是在 VS Code 终端还是后台进程中运行命令。",
 			"vscodeTerminal": "VS Code 终端",
 			"backgroundExec": "后台执行",
 			"havingTerminalIssues": "遇到终端问题？",
@@ -205,8 +205,8 @@
 			"workflowCommands": "工作流命令"
 		},
 		"browserSession": {
-			"clineUsingBrowser": "Cline 正在使用浏览器：",
-			"clineWantsToUseBrowser": "Cline 想要使用浏览器：",
+			"clineUsingBrowser": "Parrot 正在使用浏览器：",
+			"clineWantsToUseBrowser": "Parrot 想要使用浏览器：",
 			"consoleLogs": "控制台日志",
 			"noNewLogs": "（无新日志）",
 			"stepOf": "第 {current} 步，共 {total} 步",
@@ -249,14 +249,14 @@
 		},
 		"chatRow": {
 			"error": "错误",
-			"clineHavingTrouble": "Cline 遇到问题...",
-			"executeCommand": "Cline 想要执行此命令：",
+			"clineHavingTrouble": "Parrot 遇到问题...",
+			"executeCommand": "Parrot 想要执行此命令：",
 			"useMcpTool": "使用工具",
 			"useMcpResource": "访问资源",
 			"mcpServer": "MCP 服务器",
 			"taskCompleted": "任务已完成",
-			"clineHasQuestion": "Cline 有一个问题：",
-			"condensingConversation": "Cline 正在压缩对话：",
+			"clineHasQuestion": "Parrot 有一个问题：",
+			"condensingConversation": "Parrot 正在压缩对话：",
 			"summary": "摘要：",
 			"thinking": "思考中：",
 			"viewChanges": "查看更改",
@@ -276,30 +276,30 @@
 			"explanationCancelled": "解释已取消",
 			"generatedExplanation": "已生成解释",
 			"shellIntegrationUnavailable": "Shell 集成不可用",
-			"shellIntegrationDescription": "Cline 可能无法查看命令输出。请更新 VSCode ({updateLink}) 并确保使用支持的 shell：zsh、bash、fish 或 PowerShell ({selectProfileLink})。{troubleshootLink}",
+			"shellIntegrationDescription": "Parrot 可能无法查看命令输出。请更新 VSCode ({updateLink}) 并确保使用支持的 shell：zsh、bash、fish 或 PowerShell ({selectProfileLink})。{troubleshootLink}",
 			"autoRetryFailed": "自动重试失败",
 			"autoRetryInProgress": "自动重试进行中",
 			"autoRetryFailedDescription": "自动重试 {maxAttempts} 次后失败。需要手动干预。",
 			"autoRetryDescription": "第 {attempt} 次尝试，共 {maxAttempts} 次 - {delaySeconds} 秒后重试...",
 			"loadingMcpDocumentation": "正在加载 MCP 文档...",
-			"startNewTask": "Cline 想要开始新任务：",
-			"condenseConversation": "Cline 想要压缩对话：",
-			"createGithubIssue": "Cline 想要创建 GitHub issue：",
-			"useSubagent": "Cline 想要使用子代理：",
+			"startNewTask": "Parrot 想要开始新任务：",
+			"condenseConversation": "Parrot 想要压缩对话：",
+			"createGithubIssue": "Parrot 想要创建 GitHub issue：",
+			"useSubagent": "Parrot 想要使用子代理：",
 			"prompt": "提示：",
 			"mcpNotification": "MCP 通知：",
 			"shellIntegrationIssues": "Shell 集成问题",
 			"shellIntegrationRecommendation": "由于您遇到重复的 shell 集成问题，我们建议切换到后台终端模式以提高可靠性。",
 			"enableBackgroundTerminal": "启用后台终端（推荐）",
 			"backgroundTerminalEnabled": "后台终端已启用",
-			"newTask": "Cline 想要开始新任务：",
-			"condense": "Cline 想要压缩对话：",
-			"reportBug": "Cline 想要创建 GitHub issue：",
+			"newTask": "Parrot 想要开始新任务：",
+			"condense": "Parrot 想要压缩对话：",
+			"reportBug": "Parrot 想要创建 GitHub issue：",
 			"outputLoggedTo": "📋 输出正在记录到：",
 			"subagentOutput": "子代理输出",
 			"commandOutput": "命令输出",
 			"commandRunningInTerminal": "此命令正在 VSCode 终端中运行。您可以在终端中使用 Ctrl+C 手动停止它，或在设置中切换到后台执行模式以获得可取消的命令。",
-			"wantsTo": "Cline 想要",
+			"wantsTo": "Parrot 想要",
 			"onThe": "在",
 			"collapseApiRequest": "收起 API 请求",
 			"expandApiRequest": "展开 API 请求",
@@ -308,25 +308,25 @@
 			"collapseSummary": "收起摘要",
 			"expandSummary": "展开摘要",
 			"tool": {
-				"editFile": "Cline 想要编辑此文件：",
-				"deleteFile": "Cline 想要删除此文件：",
-				"createFile": "Cline 想要创建新文件：",
-				"readFile": "Cline 想要读取此文件：",
-				"listFilesTopLevel": "Cline 想要查看此目录中的顶层文件：",
-				"listFilesRecursive": "Cline 想要递归查看此目录中的所有文件：",
-				"listCodeDefinitions": "Cline 想要查看此目录中使用的源代码定义名称：",
-				"searchFiles": "Cline 想要在此目录中搜索 {regex}：",
-				"webFetch": "Cline 想要从此 URL 获取内容：",
-				"webSearch": "Cline 想要搜索网络：",
-				"creatingPatches": "Cline 正在创建补丁来编辑此文件：",
+				"editFile": "Parrot 想要编辑此文件：",
+				"deleteFile": "Parrot 想要删除此文件：",
+				"createFile": "Parrot 想要创建新文件：",
+				"readFile": "Parrot 想要读取此文件：",
+				"listFilesTopLevel": "Parrot 想要查看此目录中的顶层文件：",
+				"listFilesRecursive": "Parrot 想要递归查看此目录中的所有文件：",
+				"listCodeDefinitions": "Parrot 想要查看此目录中使用的源代码定义名称：",
+				"searchFiles": "Parrot 想要在此目录中搜索 {regex}：",
+				"webFetch": "Parrot 想要从此 URL 获取内容：",
+				"webSearch": "Parrot 想要搜索网络：",
+				"creatingPatches": "Parrot 正在创建补丁来编辑此文件：",
 				"outsideWorkspace": "这超出了您的工作空间",
-				"viewedTopLevelFiles": "Cline 查看了此目录中的顶层文件：",
-				"viewedAllFiles": "Cline 递归查看了此目录中的所有文件：",
-				"viewedCodeDefinitions": "Cline 查看了此目录中使用的源代码定义名称：",
-				"condensingConversation": "Cline 正在压缩对话：",
-				"fetchedContentFromUrl": "Cline 从此 URL 获取了内容：",
-				"wantsToSearchWeb": "Cline 想要搜索网络：",
-				"searchedWeb": "Cline 搜索了网络："
+				"viewedTopLevelFiles": "Parrot 查看了此目录中的顶层文件：",
+				"viewedAllFiles": "Parrot 递归查看了此目录中的所有文件：",
+				"viewedCodeDefinitions": "Parrot 查看了此目录中使用的源代码定义名称：",
+				"condensingConversation": "Parrot 正在压缩对话：",
+				"fetchedContentFromUrl": "Parrot 从此 URL 获取了内容：",
+				"wantsToSearchWeb": "Parrot 想要搜索网络：",
+				"searchedWeb": "Parrot 搜索了网络："
 			}
 		},
 		"reportBug": {
@@ -337,7 +337,7 @@
 			"providerAndModel": "提供商/模型",
 			"operatingSystem": "操作系统",
 			"systemInfo": "系统信息",
-			"clineVersion": "Cline 版本",
+			"clineVersion": "Parrot 版本",
 			"additionalContext": "附加上下文"
 		},
 		"quoteButton": {
@@ -372,12 +372,42 @@
 		"nextBanner": "下一个横幅",
 		"dismissAllBanners": "关闭所有横幅"
 	},
+	"banner": {
+		"infoBanner": {
+			"title": "在右侧边栏中使用 Parrot",
+			"description": "为了获得最佳体验，请将 Parrot 图标拖到右侧边栏。这样可以在与 Parrot 聊天时保持文件资源管理器和编辑器可见，使您更容易导航代码库并实时查看更改。[查看如何操作 →](https://docs.cline.bot/features/customization/opening-cline-in-sidebar)"
+		},
+		"newModelOpus45": {
+			"title": "Claude Opus 4.5 现已可用",
+			"description": "最先进的性能，成本比 Opus 4.1 低 3 倍。现已在 Parrot 提供商中可用。",
+			"actions": {
+				"tryNow": "立即尝试",
+				"getStarted": "开始使用"
+			}
+		},
+		"cliInstallUnix": {
+			"title": "CLI 和子代理可用",
+			"description": "在终端中使用 Parrot 并启用子代理功能。[了解更多](https://docs.cline.bot/cline-cli/overview)",
+			"actions": {
+				"install": "安装",
+				"enableSubagents": "启用子代理"
+			}
+		},
+		"cliInfoWindows": {
+			"title": "Parrot CLI 信息",
+			"description": "适用于 macOS 和 Linux。即将支持其他平台。[了解更多](https://docs.cline.bot/cline-cli/overview)"
+		}
+	},
 	"taskHeader": {
 		"buttons": {
 			"compactTask": "压缩任务",
 			"copyText": "复制文本",
 			"startNewTask": "开始新任务",
 			"openConversationHistory": "打开对话历史文件"
+		},
+		"deleteTaskButton": {
+			"tooltip": "删除任务 (大小: {{size}})",
+			"ariaLabel": "删除任务"
 		},
 		"contextWindow": {
 			"compactTaskQuestion": "是否压缩此任务以减少上下文窗口使用？",
@@ -413,7 +443,8 @@
 		},
 		"checkpointError": {
 			"disableCheckpoints": "禁用检查点",
-			"seeInstructions": "请参阅说明"
+			"seeInstructions": "请参阅说明",
+			"gitMustBeInstalled": "必须安装 Git 才能使用检查点。"
 		}
 	},
 	"navigation": {
@@ -427,7 +458,7 @@
 		"settings": "设置"
 	},
 	"welcome": {
-		"title": "欢迎使用 Cline",
+		"title": "欢迎使用 Parrot",
 		"subtitle": "您的 AI 编程助手",
 		"getStarted": "免费开始",
 		"quickStart": "快速开始",
@@ -449,7 +480,7 @@
 			"takeTour": "开始导览"
 		},
 		"suggestedTasks": {
-			"title": "用 Cline 快速 <span class=\"text-white\">[获胜]</span>",
+			"title": "用 Parrot 快速 <span class=\"text-white\">[获胜]</span>",
 			"nextjsNotetakingApp": {
 				"title": "构建一个 Next.js 应用",
 				"description": "使用 Next.js 和 Tailwind 创建一个漂亮的笔记应用"
@@ -470,12 +501,12 @@
 		"personal": "个人",
 		"dashboard": "仪表板",
 		"logout": "登出",
-		"clineEnvironment": "Cline 环境",
+		"clineEnvironment": "Parrot 环境",
 		"tooltips": {
 			"lockedOrganization": "当您的组织启用远程配置时，此项无法更改。"
 		},
 		"welcome": {
-			"description": "注册免费的 Cline 账户，开始使用 AI 编程助手。",
+			"description": "注册免费的 Parrot 账户，开始使用 AI 编程助手。",
 			"signUpButton": "免费注册",
 			"termsAndPrivacy": "注册即表示您同意我们的 {termsLink} 和 {privacyLink}。",
 			"termsOfService": "服务条款",
@@ -483,7 +514,7 @@
 		},
 		"accountInfoCard": {
 			"viewBillingUsage": "查看账单和使用情况",
-			"signUpWithCline": "使用 Cline 注册"
+			"signUpWithCline": "使用 Parrot 注册"
 		},
 		"creditBalance": {
 			"addCredits": "充值",
@@ -588,7 +619,7 @@
 			}
 		},
 		"configureServers": {
-			"description": "模型上下文协议支持与本地运行的 MCP 服务器通信，这些服务器提供额外的工具和资源来扩展 Cline 的能力。您可以使用社区制作的服务器，或要求 Cline 创建专门针对您工作流程的新工具（例如，“添加一个获取最新 npm 文档的工具”）。",
+			"description": "模型上下文协议支持与本地运行的 MCP 服务器通信，这些服务器提供额外的工具和资源来扩展 Parrot 的能力。您可以使用社区制作的服务器，或要求 Parrot 创建专门针对您工作流程的新工具（例如，“添加一个获取最新 npm 文档的工具”）。",
 			"modelContextProtocol": "模型上下文协议",
 			"communityMadeServers": "社区制作的服务器",
 			"seeDemoHere": "在此处查看演示。",
@@ -630,8 +661,8 @@
 			"addFilesImages": "添加文件和图片",
 			"selectModel": "选择模型 / API 提供商",
 			"modeToggle": {
-				"plan": "在计划模式中，Cline 将收集信息以构建计划",
-				"act": "在执行模式中，Cline 将立即完成任务",
+				"plan": "在计划模式中，Parrot 将收集信息以构建计划",
+				"act": "在执行模式中，Parrot 将立即完成任务",
 				"keyboardShortcut": "使用 {shortcut} 切换"
 			}
 		}
@@ -643,12 +674,12 @@
 			"troubleshootingGuide": "故障排除指南"
 		},
 		"signIn": {
-			"button": "登录到 Cline",
+			"button": "登录到 Parrot",
 			"retryHint": "（点击下方的“重试”）"
 		},
 		"diffError": "模型使用的搜索模式与文件中的任何内容都不匹配。正在重试...",
 		"clineignoreError": {
-			"message": "Cline 尝试访问",
+			"message": "Parrot 尝试访问",
 			"blockedBy": "但被",
 			"file": "文件阻止"
 		}
@@ -667,7 +698,7 @@
 		},
 		"settings": {
 			"disableToolUse": "禁用浏览器工具使用",
-			"disableToolUseDescription": "阻止 Cline 使用浏览器操作（例如启动、点击、输入）。",
+			"disableToolUseDescription": "阻止 Parrot 使用浏览器操作（例如启动、点击、输入）。",
 			"viewportSize": "视口大小",
 			"viewportSizeDescription": "设置浏览器视口的大小，用于截图和交互。",
 			"useRemoteConnection": "使用远程浏览器连接",
@@ -677,7 +708,7 @@
 			"leaveBlankAutoDetect": "留空以自动检测。",
 			"customBrowserArgs": "自定义浏览器参数（可选）",
 			"customBrowserArgsDescription": "传递给浏览器可执行文件的以空格分隔的参数。",
-			"enableClineToUseChrome": "启用 Cline 使用您的 Chrome",
+			"enableClineToUseChrome": "启用 Parrot 使用您的 Chrome",
 			"chromeNotDetected": "（未在您的机器上检测到）",
 			"specifyCustomPath": "您可以在下方指定自定义路径。",
 			"remoteConnectionRequiresDebugMode": "使用远程浏览器连接需要以调试模式启动 Chrome",
@@ -696,7 +727,7 @@
 			"openSettings": "打开自动批准设置"
 		},
 		"modal": {
-			"description": "让 Cline 执行这些操作而无需请求批准",
+			"description": "让 Parrot 执行这些操作而无需请求批准",
 			"docs": "文档",
 			"enableNotifications": "启用通知"
 		},
@@ -736,7 +767,7 @@
 		}
 	},
 	"clineRules": {
-		"title": "管理 Cline 规则和工作流",
+		"title": "管理 Parrot 规则和工作流",
 		"tabs": {
 			"rules": "规则",
 			"workflows": "工作流",
@@ -755,10 +786,10 @@
 			"workspaceSkills": "工作空间技能"
 		},
 		"descriptions": {
-			"rules": "规则允许您为 Cline 提供系统级指导。将其视为为您的项目或针对每次对话全局包含上下文和偏好的持久方式。",
-			"workflows": "工作流允许您定义一系列步骤，以指导 Cline 完成一系列重复性任务，例如部署服务或提交 PR。要在聊天中调用工作流，请键入 /工作流名称。",
-			"skills": "技能是 Cline 可以按需激活的可复用指令集。当任务匹配技能描述时，Cline 会使用 use_skill 工具来加载完整指令。",
-			"hooks": "钩子允许您在 Cline 执行生命周期的特定点执行自定义脚本，从而实现与外部工具的自动化和集成。",
+			"rules": "规则允许您为 Parrot 提供系统级指导。将其视为为您的项目或针对每次对话全局包含上下文和偏好的持久方式。",
+			"workflows": "工作流允许您定义一系列步骤，以指导 Parrot 完成一系列重复性任务，例如部署服务或提交 PR。要在聊天中调用工作流，请键入 /工作流名称。",
+			"skills": "技能是 Parrot 可以按需激活的可复用指令集。当任务匹配技能描述时，Parrot 会使用 use_skill 工具来加载完整指令。",
+			"hooks": "钩子允许您在 Parrot 执行生命周期的特定点执行自定义脚本，从而实现与外部工具的自动化和集成。",
 			"hooksToggle": "切换以启用/禁用（chmod +x/-x）。"
 		},
 		"remoteConfig": {
@@ -836,9 +867,9 @@
 		"signUpWithParrot": "使用 Parrot 注册"
 	},
 	"telemetryBanner": {
-		"title": "帮助改进 Cline",
+		"title": "帮助改进 Parrot",
 		"experimentalFeatures": "（并访问实验性功能）",
-		"description": "Cline 收集错误和使用数据，以帮助我们修复错误并改进扩展。从不发送代码、提示或个人隐私信息。",
+		"description": "Parrot 收集错误和使用数据，以帮助我们修复错误并改进扩展。从不发送代码、提示或个人隐私信息。",
 		"turnOffSetting": "您可以在",
 		"settings": "设置",
 		"closeButton": {
@@ -884,7 +915,7 @@
 	},
 	"newRuleRow": {
 		"selectHookTypeToCreate": "选择要创建的钩子类型",
-		"hookSelectDescription": "选择要创建的钩子类型。钩子在 Cline 生命周期的特定点执行。可用：{{availableHooks}}",
+		"hookSelectDescription": "选择要创建的钩子类型。钩子在 Parrot 生命周期的特定点执行。可用：{{availableHooks}}",
 		"allHooksCreated": "所有钩子已创建",
 		"newHook": "新建钩子...",
 		"workflowNamePlaceholder": "工作流名称（.md、.txt 或无扩展名）",
@@ -898,5 +929,62 @@
 		"newFile": "新建文件",
 		"skillNameValidationError": "技能名称只能包含字母、数字、短横线和下划线",
 		"fileExtensionValidationError": "仅允许 .md、.txt 或无文件扩展名"
+	},
+	"buttonConfig": {
+		"apiReqFailed": {
+			"primary": "重试",
+			"secondary": "开始新任务"
+		},
+		"mistakeLimitReached": {
+			"primary": "继续执行",
+			"secondary": "开始新任务"
+		},
+		"toolApprove": {
+			"primary": "批准",
+			"secondary": "拒绝"
+		},
+		"toolSave": {
+			"primary": "保存",
+			"secondary": "拒绝"
+		},
+		"command": {
+			"primary": "运行命令",
+			"secondary": "拒绝"
+		},
+		"commandOutput": {
+			"primary": "继续执行"
+		},
+		"browserActionLaunch": {
+			"primary": "批准",
+			"secondary": "拒绝"
+		},
+		"useMcpServer": {
+			"primary": "批准",
+			"secondary": "拒绝"
+		},
+		"completionResult": {
+			"primary": "开始新任务"
+		},
+		"resumeTask": {
+			"primary": "恢复任务"
+		},
+		"resumeCompletedTask": {
+			"primary": "开始新任务"
+		},
+		"newTask": {
+			"primary": "使用上下文开始新任务"
+		},
+		"condense": {
+			"primary": "压缩对话"
+		},
+		"reportBug": {
+			"primary": "报告 GitHub 问题"
+		},
+		"partial": {
+			"secondary": "取消"
+		},
+		"apiReqActive": {
+			"secondary": "取消"
+		}
 	}
 }
